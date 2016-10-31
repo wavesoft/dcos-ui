@@ -1,0 +1,167 @@
+schema {
+  query: Cluster
+}
+
+# An agent in the cluster
+type Agent {
+  # The ID of an object
+  id: String!
+
+  # Hostname for the Agent
+  hostname: String
+
+  # Tasks associated with an Agent
+  tasks(after: String, first: Int, before: String, last: Int): TaskConnection
+}
+
+# A connection to a list of Agents.
+type AgentConnection {
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+
+  # A list of edges.
+  edges: [AgentEdge]
+}
+
+# An edge in a connection.
+type AgentEdge {
+  # The item at the end of the edge
+  node: Agent
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+# An Application
+type Application {
+  # The ID of an object
+  id: String!
+
+  # Application name
+  name: String!
+}
+
+# A connection to a list of Applications.
+type ApplicationConnection {
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+
+  # A list of edges.
+  edges: [ApplicationEdge]
+}
+
+# An edge in a connection.
+type ApplicationEdge {
+  # The item at the end of the edge
+  node: Application
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+type Cluster {
+  agent(
+    # The ID of an object
+    id: String!
+  ): Agent
+
+  # Agents in the cluster
+  agents(after: String, first: Int, before: String, last: Int): AgentConnection
+}
+
+# A Framework
+type Framework {
+  # The ID of an object
+  id: String!
+
+  # Framework name
+  name: String!
+}
+
+# A connection to a list of Frameworks.
+type FrameworkConnection {
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+
+  # A list of edges.
+  edges: [FrameworkEdge]
+}
+
+# An edge in a connection.
+type FrameworkEdge {
+  # The item at the end of the edge
+  node: Framework
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+enum HEALTH {
+  Healthy
+  Unhealthy
+  Created
+  Staging
+  Starting
+  Started
+  Running
+  Killing
+  Finished
+  Killed
+  Failed
+  Lost
+  Error
+}
+
+# Information about pagination in a connection.
+type PageInfo {
+  # When paginating forwards, are there more items?
+  hasNextPage: Boolean!
+
+  # When paginating backwards, are there more items?
+  hasPreviousPage: Boolean!
+
+  # When paginating backwards, the cursor to continue.
+  startCursor: String
+
+  # When paginating forwards, the cursor to continue.
+  endCursor: String
+}
+
+# A Task
+type Task {
+  # The ID of an object
+  id: String!
+
+  # Task name
+  name: String!
+
+  # Framework Task belongs to
+  framework: Framework!
+
+  # Application Task belongs to
+  application: Application
+
+  # Status of Task
+  health: HEALTH!
+
+  # Agent task belongs to
+  agent: Agent!
+}
+
+# A connection to a list of Tasks.
+type TaskConnection {
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+
+  # A list of edges.
+  edges: [TaskEdge]
+}
+
+# An edge in a connection.
+type TaskEdge {
+  # The item at the end of the edge
+  node: Task
+
+  # A cursor for use in pagination
+  cursor: String!
+}
