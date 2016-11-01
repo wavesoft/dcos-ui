@@ -5,26 +5,23 @@ import { fetchWithAuth } from '../../../utils/fetch';
 
 export default class GroupsServerConnector {
   constructor({ authToken }) {
-    this.authToken = authToken;
 
-    const getGroups = fetchWithAuth(authToken, {
-      baseURI:
+    const getGroup = fetchWithAuth(authToken, {
+      baseURI: config.endpoints.marathon.groups
     });
 
-    this.groupsLoader = new DataLoader(getGroups, {
-      batch: false
-    });
-
-    this.groupByIdLoader = new DataLoader(fetchWithAuth(authToken), {
-      batch: false
-    });
+    this.groupsLoader = new DataLoader(getGroup, { batch: false });
   }
 
-  getGroups() {
-    return this.groupsLoader.load();
-  }
+  get(groupId = '/') {
+    if (groupId === '/') {
+      // Load root /groups endpoint
+      groupId = '';
+    } else {
+      // Load /groups/groupId endpoint
+      groupId = `/${encodeURIComponent(groupId)}`;
+    }
 
-  getGroupById(groupId) {
-    return this.groupByIdLoader.load(groupId);
+    return this.groupsLoader.load(groupId);
   }
 }

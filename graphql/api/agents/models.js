@@ -1,4 +1,4 @@
-export class Agents {
+export default class Agents {
   constructor({ connector }) {
     this.connector = connector;
   }

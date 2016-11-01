@@ -44,11 +44,9 @@ export function fetch(urls, options={}) {
 
 export function fetchWithAuth(authToken, options) {
   return function(urls) {
-    const options = {
-      headers: {
-        'Cookie': `${authToken}`,
-      }
-    };
+    options.headers = Object.assign({}, options.headers || {}, {
+      Cookie: authToken
+    });
 
     return fetch(urls, options);
   }

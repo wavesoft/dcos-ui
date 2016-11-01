@@ -3,12 +3,7 @@ import koa from 'koa';
 import graphQLHTTP from 'koa-graphql';
 import mount from 'koa-mount';
 
-import { Agents } from './api/agents/models';
-import AgentsConnector from './api/agents/connectors';
-
-import { Tasks } from './api/tasks/models';
-import TasksConnector from './api/tasks/connectors';
-
+import models from './api/models';
 import schema from './api';
 
 // Just copy in cookie from browser for now
@@ -28,18 +23,7 @@ graphQLServer.use(function *(next) {
     // Probably indicates someone trying to send an overly expensive query
     throw new Error('Query too large.');
   }
-  // Set models to context. This will be passed to all resolvers.
-  // This gives us a new Connector for each request. The Connector will
-  // cache results over it's lifetime for this request only so we can
-  // prevent multiple requests to the same backend.
-  this.models = {
-    Agents: new Agents({
-      connector: new AgentsConnector({ authToken })
-    }),
-    Tasks: new Tasks({
-      connector: new TasksConnector({ authToken })
-    })
-  };
+  this.models = models(authToken);
 
   yield next;
 });

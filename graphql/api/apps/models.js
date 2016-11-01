@@ -1,4 +1,4 @@
-export class Applications {
+export default class Applications {
   constructor({ connector }) {
     this.connector = connector;
     this.appsById = new Map();

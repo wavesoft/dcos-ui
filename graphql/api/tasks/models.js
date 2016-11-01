@@ -1,4 +1,4 @@
-export class Tasks {
+export default class Tasks {
   constructor({ connector }) {
     this.connector = connector;
     this.agentsById = new Map();

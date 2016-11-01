@@ -1,4 +1,4 @@
-export class Frameworks {
+export default class Frameworks {
   constructor({ connector }) {
     this.connector = connector;
     this.frameworksById = new Map();
