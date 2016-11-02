@@ -4,29 +4,27 @@ import assignTaskHealth from '../../utils/TaskHealth';
 export default {
   Task: {
     id(task) {
-      return toGlobalId('task', task.id);
+      return toGlobalId('task', task.mesos.id);
     },
 
     name(task) {
-      return task.name;
-    },
-
-    application(task) {
-      return task.application || null;
-    },
-
-    framework(task) {
-      return task.framework || null;
+      return task.mesos.name;
     },
 
     health(task) {
       assignTaskHealth(task);
 
-      return task.health;
+      return task.mesos.health || task.marathon.health;
     },
 
-    agent(task) {
-      return task.agent;
+    agent(task, args, ctx) {
+      const slaveId = task.mesos.slave_id;
+
+      if (!slaveId) {
+        return null;
+      }
+
+      return ctx.models.Agents.getById(slaveId);
     }
   }
 };

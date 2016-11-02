@@ -1,4 +1,4 @@
-const cluster = 'http://35.162.168.62';
+const cluster = 'http://frontend-elasticl-1fxiz8wjrmnfh-1011505372.us-west-1.elb.amazonaws.com';
 
 export default {
   mockEndpoints: false,

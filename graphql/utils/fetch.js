@@ -1,5 +1,6 @@
 import rp from 'request-promise';
 import DataLoader from 'dataloader';
+import querystring from 'querystring';
 
 function mergeOptions(opts) {
   const headers = Object.assign({}, opts.headers || {});
@@ -18,7 +19,13 @@ export function fetch(urls, options={}) {
 
   const promises = urls.map((url = '') => {
     if (options.baseURI) {
-      url = baseURI + url;
+      url = options.baseURI + url;
+      delete options.baseURI;
+    }
+
+    if (options.query) {
+      url = `${url}?${querystring.stringify(options.query)}`;
+      delete options.query;
     }
 
     return new Promise((resolve, reject) => {

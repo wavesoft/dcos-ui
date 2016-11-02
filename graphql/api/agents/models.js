@@ -1,21 +1,13 @@
 export default class Agents {
-  constructor({ connector }) {
-    this.connector = connector;
+  constructor({ store }) {
+    this.store = store;
   }
 
   getById(id) {
-    const dataPromise = this.connector.get();
-
-    return dataPromise.then((state) => {
-      return state.slaves.find((slave) => slave.id === id);
-    });
+    return this.store.Agents.getById(id);
   }
 
   getAll() {
-    const dataPromise = this.connector.get();
-    // Map data to actual agents
-    return dataPromise.then((state) => {
-      return state.slaves;
-    });
+    return this.store.Agents.getAll();
   }
 }

@@ -5,9 +5,22 @@ import { fetchWithAuth } from '../../../utils/fetch';
 
 export default class GroupsServerConnector {
   constructor({ authToken }) {
+    const query = {
+      embed: [
+        'group.groups',
+        'group.apps',
+        'group.pods',
+        'group.apps.deployments',
+        'group.apps.counts',
+        'group.apps.tasks',
+        'group.apps.taskStats',
+        'group.apps.lastTaskFailure'
+      ]
+    };
 
     const getGroup = fetchWithAuth(authToken, {
-      baseURI: config.endpoints.marathon.groups
+      baseURI: config.endpoints.marathon.groups,
+      query
     });
 
     this.groupsLoader = new DataLoader(getGroup, { batch: false });
