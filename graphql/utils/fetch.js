@@ -34,15 +34,8 @@ export function fetch(urls, options={}) {
       });
 
       rp(mergedOptions)
-      .then((response) => {
-        console.log('SUCCESS\n', mergedOptions, '\n', response.body);
-        resolve(response.body)
-      })
-      .catch((err) => {
-        console.error('ERROR\n', mergedOptions, '\n', err);
-        reject(err)
-      })
-
+      .then((response) => resolve(response.body))
+      .catch((err) => reject(err));
     })
   });
 
@@ -51,6 +44,7 @@ export function fetch(urls, options={}) {
 
 export function fetchWithAuth(authToken, options) {
   return function(urls) {
+    // We'll change the cookie based approach to jwt token
     options.headers = Object.assign({}, options.headers || {}, {
       Cookie: authToken
     });

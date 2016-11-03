@@ -1,32 +1,33 @@
 import Pagination from '../../helpers/pagination/schema';
 
-const Applications = `
-  # An Application
-  type Application {
+const Groups = `
+  # A Group
+  type Group {
     # The ID of an object
     id: String!
 
-    # Application name
-    name: String!
+    # Nested Groups
+    groups(after: String, first: Int, before: String, last: Int): GroupConnection
+
   }
 
-  # A connection to a list of Applications.
-  type ApplicationConnection {
+  # A connection to a list of nested Groups.
+  type GroupConnection {
     # Information to aid in pagination.
     pageInfo: PageInfo!
 
     # A list of edges.
-    edges: [ApplicationEdge]
+    edges: [GroupEdge]
   }
 
   # An edge in a connection.
-  type ApplicationEdge {
+  type GroupEdge {
     # The item at the end of the edge
-    node: Application
+    node: Group
 
     # A cursor for use in pagination
     cursor: String!
   }
 `;
 
-export default () => [Applications, Pagination];
+export default () => [Groups];

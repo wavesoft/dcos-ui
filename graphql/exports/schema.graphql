@@ -32,65 +32,45 @@ type AgentEdge {
   cursor: String!
 }
 
-# An Application
-type Application {
-  # The ID of an object
-  id: String!
-
-  # Application name
-  name: String!
-}
-
-# A connection to a list of Applications.
-type ApplicationConnection {
-  # Information to aid in pagination.
-  pageInfo: PageInfo!
-
-  # A list of edges.
-  edges: [ApplicationEdge]
-}
-
-# An edge in a connection.
-type ApplicationEdge {
-  # The item at the end of the edge
-  node: Application
-
-  # A cursor for use in pagination
-  cursor: String!
-}
-
 type Cluster {
   agent(
-    # The ID of an object
+    # The ID of the Agent
     id: String!
   ): Agent
 
   # Agents in the cluster
   agents(after: String, first: Int, before: String, last: Int): AgentConnection
+  group(
+    # The ID of the Group
+    id: String
+  ): Group
+
+  # Flat list of nested groups
+  groups(groupId: String, after: String, first: Int, before: String, last: Int): GroupConnection
 }
 
-# A Framework
-type Framework {
+# A Group
+type Group {
   # The ID of an object
   id: String!
 
-  # Framework name
-  name: String!
+  # Nested Groups
+  groups(after: String, first: Int, before: String, last: Int): GroupConnection
 }
 
-# A connection to a list of Frameworks.
-type FrameworkConnection {
+# A connection to a list of nested Groups.
+type GroupConnection {
   # Information to aid in pagination.
   pageInfo: PageInfo!
 
   # A list of edges.
-  edges: [FrameworkEdge]
+  edges: [GroupEdge]
 }
 
 # An edge in a connection.
-type FrameworkEdge {
+type GroupEdge {
   # The item at the end of the edge
-  node: Framework
+  node: Group
 
   # A cursor for use in pagination
   cursor: String!
@@ -134,12 +114,6 @@ type Task {
 
   # Task name
   name: String!
-
-  # Framework Task belongs to
-  framework: Framework!
-
-  # Application Task belongs to
-  application: Application
 
   # Status of Task
   health: HEALTH!

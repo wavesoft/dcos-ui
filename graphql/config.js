@@ -1,4 +1,4 @@
-const cluster = 'http://frontend-elasticl-1fxiz8wjrmnfh-1011505372.us-west-1.elb.amazonaws.com';
+const cluster = 'http://frontend-elasticl-15c0azoo348bq-1648430063.us-west-2.elb.amazonaws.com';
 
 export default {
   mockEndpoints: false,
@@ -9,9 +9,6 @@ export default {
     },
     mesos: {
       state: `${cluster}/mesos/master/state`
-    },
-    dcos: {
-      history: `${cluster}/dcos-history-service/history/last`,
     }
   }
 };
