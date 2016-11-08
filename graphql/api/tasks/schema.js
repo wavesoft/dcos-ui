@@ -18,6 +18,27 @@ const Tasks = `
     agent: Agent!
   }
 
+  # A summary of task states for a group or service
+  type TaskStatus {
+    # Number of tasks in Health state
+    healthy: Int!
+
+    # Number of tasks over capacity
+    overCapacity: Int!
+
+    # Number of tasks in Running state
+    running: Int!
+
+    # Number of tasks Staged
+    staged: Int!
+
+    # Number of tasks Unhealthy
+    unhealthy: Int!
+
+    # Number of tasks in unknown state
+    unknown: Int!
+  }
+
   # A connection to a list of Tasks.
   type TaskConnection {
     # Information to aid in pagination.

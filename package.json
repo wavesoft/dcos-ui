@@ -37,7 +37,7 @@
     "dcos-dygraphs": "1.1.0-beta.3",
     "deep-equal": "1.0.1",
     "flux": "2.1.1",
-    "graphql": "0.7.0",
+    "graphql": "^0.7.2",
     "graphql-tools": "0.8.0",
     "koa": "1.2.4",
     "koa-graphql": "0.5.6",

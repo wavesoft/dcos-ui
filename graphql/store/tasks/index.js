@@ -11,11 +11,7 @@ export default class TaskStore {
     const groupsPromise = this.endpoints.marathon.groups.get()
       .then((group) => this.parseGroups(group));
 
-    this.tasksPromise = Promise.all([statePromise, groupsPromise])
-      .then(() => {
-        this.tasksPromise = null;
-        this.tasksProcessed = true;
-      });
+    this.tasksPromise = Promise.all([statePromise, groupsPromise]);
 
     return this.tasksPromise;
   }
@@ -50,11 +46,7 @@ export default class TaskStore {
       return this.tasksPromise;
     }
 
-    if (!this.tasksProcessed) {
-      return this.fetchTasks();
-    }
-
-    return Promise.resolve(null);
+    return this.fetchTasks();
   }
 
   getById(id) {

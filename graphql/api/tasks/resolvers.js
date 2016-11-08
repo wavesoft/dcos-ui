@@ -1,5 +1,5 @@
 import { toGlobalId } from '../../utils/globalId';
-import assignTaskHealth from '../../utils/TaskHealth';
+import getTaskHealth from '../../utils/TaskHealth';
 
 export default {
   Task: {
@@ -12,9 +12,7 @@ export default {
     },
 
     health(task) {
-      assignTaskHealth(task);
-
-      return task.mesos.health || task.marathon.health;
+      return getTaskHealth(task);
     },
 
     agent(task, args, ctx) {

@@ -7,12 +7,12 @@ export default class Groups {
     return this.store.Groups.getById(id);
   }
 
-  getAll(id) {
+  getContents(id) {
     const groupsPromise = this.store.Groups.getAll();
-    const isChildGroup = new RegExp(`^${id}`);
+    const isChildGroup = new RegExp(`^${id}.{1}`);
 
     return groupsPromise.then((groups) => {
-      return groups.filter((group) => group.id.match(isChildGroup));
+      return groups.filter((content) => content.id.match(isChildGroup));
     });
   }
 }

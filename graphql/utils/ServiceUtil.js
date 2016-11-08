@@ -1,7 +1,7 @@
 import HealthStatus from '../../plugins/services/src/js/constants/HealthStatus';
 import ServiceStatus from '../../plugins/services/src/js/constants/ServiceStatus';
 
-export default const ServiceUtil = {
+const ServiceUtil = {
 
   getHealth(service) {
     const {
@@ -23,7 +23,7 @@ export default const ServiceUtil = {
     }
 
     return HealthStatus.NA;
-  }
+  },
 
   getStatus(service) {
     const status = this.getServiceStatus(service);
@@ -33,7 +33,7 @@ export default const ServiceUtil = {
     }
 
     return status.displayName;
-  }
+  },
 
   getServiceStatus(service) {
     const {
@@ -64,7 +64,7 @@ export default const ServiceUtil = {
     }
 
     return ServiceStatus.NA;
-  }
+  },
 
   getTasksSummary(service) {
     const {
@@ -90,13 +90,14 @@ export default const ServiceUtil = {
     const tasksOverCapacity = Math.max(0, tasksSum - instances);
 
     return {
-      tasksHealthy,
-      tasksOverCapacity,
-      tasksRunning,
-      tasksStaged,
-      tasksUnhealthy,
-      tasksUnknown
+      healthy: tasksHealthy,
+      overCapacity: tasksOverCapacity,
+      running: tasksRunning,
+      staged: tasksStaged,
+      unhealthy: tasksUnhealthy,
+      unknown: tasksUnknown
     };
   }
-
 };
+
+export default ServiceUtil;

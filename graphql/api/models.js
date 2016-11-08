@@ -2,6 +2,7 @@ import endpointsConnector from '../data';
 import createStore from '../store';
 
 import Agents from './agents/models';
+import Frameworks from './frameworks/models';
 import Groups from './groups/models';
 import Tasks from './tasks/models';
 
@@ -16,6 +17,7 @@ export default function models(authToken) {
 
   return {
     Agents: new Agents({ store }),
+    Frameworks: new Frameworks({ store }),
     Groups: new Groups({ store }),
     Tasks: new Tasks({ store })
   };

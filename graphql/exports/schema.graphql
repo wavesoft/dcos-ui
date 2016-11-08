@@ -32,6 +32,21 @@ type AgentEdge {
   cursor: String!
 }
 
+# An Application
+type Application {
+  # The ID of an object
+  id: String!
+
+  # The ID of parent group
+  parentId: String
+
+  # Summary of Tasks contained in Application
+  taskStatus: TaskStatus!
+
+  # Tasks associated with a Service
+  tasks(after: String, first: Int, before: String, last: Int): TaskConnection
+}
+
 type Cluster {
   agent(
     # The ID of the Agent
@@ -44,9 +59,24 @@ type Cluster {
     # The ID of the Group
     id: String
   ): Group
+}
 
-  # Flat list of nested groups
-  groups(groupId: String, after: String, first: Int, before: String, last: Int): GroupConnection
+# A Framework
+type Framework {
+  # The ID of an object
+  id: String!
+
+  # Name of Framework
+  name: String!
+
+  # The ID of parent group
+  parentId: String
+
+  # Summary of Tasks contained in Framework
+  taskStatus: TaskStatus!
+
+  # Tasks associated with a Framework
+  tasks(after: String, first: Int, before: String, last: Int): TaskConnection
 }
 
 # A Group
@@ -54,23 +84,32 @@ type Group {
   # The ID of an object
   id: String!
 
-  # Nested Groups
-  groups(after: String, first: Int, before: String, last: Int): GroupConnection
+  # The ID of parent group
+  parentId: String
+
+  # Summary of Tasks contained in Group
+  taskStatus: TaskStatus!
+
+  # Flat list of nested group contents
+  contents(groupId: String, after: String, first: Int, before: String, last: Int): GroupContentConnection
 }
 
+# Union which resolves to one of Group, Application or Framework
+union GroupContent = Group | Application | Framework
+
 # A connection to a list of nested Groups.
-type GroupConnection {
+type GroupContentConnection {
   # Information to aid in pagination.
   pageInfo: PageInfo!
 
   # A list of edges.
-  edges: [GroupEdge]
+  edges: [GroupContentEdge]
 }
 
 # An edge in a connection.
-type GroupEdge {
+type GroupContentEdge {
   # The item at the end of the edge
-  node: Group
+  node: GroupContent
 
   # A cursor for use in pagination
   cursor: String!
@@ -138,4 +177,25 @@ type TaskEdge {
 
   # A cursor for use in pagination
   cursor: String!
+}
+
+# A summary of task states for a group or service
+type TaskStatus {
+  # Number of tasks in Health state
+  healthy: Int!
+
+  # Number of tasks over capacity
+  overCapacity: Int!
+
+  # Number of tasks in Running state
+  running: Int!
+
+  # Number of tasks Staged
+  staged: Int!
+
+  # Number of tasks Unhealthy
+  unhealthy: Int!
+
+  # Number of tasks in unknown state
+  unknown: Int!
 }

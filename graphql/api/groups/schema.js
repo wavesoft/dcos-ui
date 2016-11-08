@@ -1,33 +1,46 @@
 import Pagination from '../../helpers/pagination/schema';
 
+import Applications from '../applications/schema';
+import Frameworks from '../frameworks/schema';
+import Tasks from '../tasks/schema';
+
 const Groups = `
+  # Union which resolves to one of Group, Application or Framework
+  union GroupContent = Group | Application | Framework
+
   # A Group
   type Group {
     # The ID of an object
     id: String!
 
-    # Nested Groups
-    groups(after: String, first: Int, before: String, last: Int): GroupConnection
+    # The ID of parent group
+    parentId: String
+
+    # Summary of Tasks contained in Group
+    taskStatus: TaskStatus!
+
+    # Flat list of nested group contents
+    contents(groupId: String, after: String, first: Int, before: String, last: Int): GroupContentConnection
 
   }
 
   # A connection to a list of nested Groups.
-  type GroupConnection {
+  type GroupContentConnection {
     # Information to aid in pagination.
     pageInfo: PageInfo!
 
     # A list of edges.
-    edges: [GroupEdge]
+    edges: [GroupContentEdge]
   }
 
   # An edge in a connection.
-  type GroupEdge {
+  type GroupContentEdge {
     # The item at the end of the edge
-    node: Group
+    node: GroupContent
 
     # A cursor for use in pagination
     cursor: String!
   }
 `;
 
-export default () => [Groups];
+export default () => [Groups, Applications, Frameworks, Tasks];

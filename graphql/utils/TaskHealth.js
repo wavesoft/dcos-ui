@@ -32,13 +32,13 @@ function getTaskHealthFromMarathon(task) {
   return null;
 }
 
-export default function assignTaskHealth(task) {
-  let health = TaskStates[task.state].displayName;
+export default function getTaskHealth(task) {
+  let health = TaskStates[task.mesos.state].displayName;
 
-  let taskHealth = getTaskHealthFromMesos(task);
+  let taskHealth = getTaskHealthFromMesos(task.mesos);
 
   if (taskHealth === null) {
-    taskHealth = getTaskHealthFromMarathon(task);
+    taskHealth = getTaskHealthFromMarathon(task.marathon || {});
   }
   // task status should only reflect health if taskHealth is defined
   if (taskHealth === true) {
@@ -48,7 +48,5 @@ export default function assignTaskHealth(task) {
     health = 'Unhealthy';
   }
 
-  task.health = health;
-
-  return task;
+  return health;
 }

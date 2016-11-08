@@ -3,90 +3,119 @@ import ServiceUtil from '../../utils/ServiceUtil';
 export default class GroupsStore {
   constructor({ endpoints }) {
     this.endpoints = endpoints;
-    this.groupsById = new Map();
+    this.contentsById = new Map();
   }
 
   fetchGroups() {
     this.groupsPromise = this.endpoints.marathon.groups.get()
-      .then((group) => this.parseGroups(group))
-      .then(() => {
-        this.groupsPromise = null;
-        this.groupsProcessed = true;
-      });
+      .then((group) => this.parseGroups(group));
 
     return this.groupsPromise;
   }
 
-  parseGroups(root) {
-    const stack = [];
+  parseGroups(rootGroup) {
+    const groups = [];
     // Top down depth-first
-    const parseDepthFirst => (group, parentId = null) {
+    const traverseTree = (group, parentId = null) => {
+      // Take advantantage of Map which enumerates on insertion order.
+      // By setting group first, all apps and sub groups will be inserted
+      // after this group, meaning our API response will show this group first
+      // followed by it's apps and finally sub-groups.
+      this.contentsById.set(group.id, group);
+      // Define it's type to help us later when we resolve the union
+      Object.defineProperty(group, '__graphQLType__', {
+        enumerable: false,
+        configurable: false,
+        writable: false,
+        value: 'group'
+      });
+
+      const {resources, taskStatus} = this.parseApplications(group);
+
       group.parentId = parentId;
+      group.resources = resources;
+      group.taskStatus = taskStatus;
 
-      this.groupsById.set(group.id, group);
-
-      stack.push(group);
+      groups.push(group);
 
       group.groups.forEach((subGroup) => {
-        parseDepthFirst(subGroup, group.id);
+        traverseTree(subGroup, group.id);
       });
-    }
-    parseDepthFirst(root);
+    };
+    // Traverse from root
+    traverseTree(rootGroup);
 
-    // Bottom up breadth-first
-    while(stack.length) {
-      const group = stack.pop();
+    // Bubble values to top with bottom-up breadth-first
+    while(groups.length) {
+      const childGroup = groups.pop();
 
-      const resources = this.getGroupResources(group);
-      const status = this.getGroupStatus(group);
-
-      group.resources = resources;
-      group.status = status;
-
-      if (group.parentId) {
-        const parent = this.groupsById.get(group.parentId);
+      if (childGroup.parentId) {
+        const parent = this.contentsById.get(childGroup.parentId);
         // Add to parents resources
         parent.resources = Object.keys(parent.resources)
           .reduce((memo, resource) => {
-            memo[resource] += group.resources[resource];
+            memo[resource] += childGroup.resources[resource];
 
             return memo;
           }, parent.resources);
+
+        // Add to parents taskStatus
+        parent.taskStatus = Object.keys(parent.taskStatus)
+          .reduce((memo, status) => {
+            memo[status] += childGroup.taskStatus[status];
+
+            return memo;
+          }, parent.taskStatus);
       }
     }
   }
 
-  getGroupResources(group) {
-    return group.apps.reduce((resources, service) {
+  parseApplications(group) {
+    const resources = {
+      cpus: 0,
+      mem: 0,
+      disk: 0
+    };
+    const taskStatus = {
+      healthy: 0,
+      running: 0,
+      staged: 0,
+      unhealthy: 0,
+      unknown: 0,
+      overCapacity: 0
+    };
+
+    group.apps.forEach((service) => {
       const {cpus = 0, mem = 0, disk = 0} = service;
+      const serviceTaskStatus = ServiceUtil.getTasksSummary(service);
+
+      Object.keys(taskStatus).forEach((statusType) => {
+        taskStatus[statusType] += serviceTaskStatus[statusType];
+      });
+      // Define it's type to help us later when we resolve the union
+      Object.defineProperty(service, '__graphQLType__', {
+        enumerable: false,
+        configurable: true, // We may change to Framework later
+        writable: false,
+        value: 'application'
+      });
+
+      service.parentId = group.id;
+      service.taskStatus = serviceTaskStatus;
+      service.resources = {
+        cpus,
+        disk,
+        mem
+      };
+
+      this.contentsById.set(service.id, service);
 
       resources.cpus += cpus;
       resources.mem += mem;
       resources.disk += disk;
-
-      return resources;
-    }, {cpus: 0, mem: 0, disk: 0});
-  }
-
-  getGroupStatus(group) {
-    return group.apps.reduce((groupStatus, service) => {
-      const status = ServiceUtil.getServiceStatus(service);
-
-      return Object.keys(groupStatus).reduce((memo, statusType) => {
-        memo[statusType] += status[statusType];
-
-        return memo;
-      }, groupStatus);
-
-    },
-    {
-      tasksHealthy: 0,
-      tasksRunning: 0,
-      tasksStaged: 0,
-      tasksUnhealthy: 0,
-      tasksUnknown: 0,
-      tasksOverCapacity: 0
     });
+
+    return {resources, taskStatus};
   }
 
   getGroupsPromise() {
@@ -94,22 +123,18 @@ export default class GroupsStore {
       return this.groupsPromise;
     }
 
-    if (!this.groupsProcessed) {
-      return this.fetchGroups();
-    }
-
-    return Promise.resolve(null);
+    return this.fetchGroups();
   }
 
   getById(id) {
     return this.getGroupsPromise().then(() => {
-      return this.groupsById.get(id);
+      return this.contentsById.get(id);
     });
   }
 
   getAll() {
     return this.getGroupsPromise().then(() => {
-      return [...this.groupsById.values()];
+      return [...this.contentsById.values()];
     });
   }
 }

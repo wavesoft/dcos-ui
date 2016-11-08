@@ -14,15 +14,7 @@ export default {
 
     group(_, { id = '/' }, ctx) {
       return ctx.models.Groups.getById(id);
-    },
-
-    groups(_, args, ctx) {
-      const {groupId = '/'} = args;
-      const groups = ctx.models.Groups.getAll(groupId);
-
-      return Paginate(groups, args);
-    },
-
+    }
 
   }
 }

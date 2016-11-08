@@ -6,11 +6,7 @@ export default class AgentStore {
 
   fetchAgents() {
     this.statePromise = this.endpoints.mesos.state.get()
-      .then((state) => this.processAgents(state))
-      .then(() => {
-        this.statePromise = null;
-        this.agentsProcessed = true;
-      });
+      .then((state) => this.processAgents(state));
 
     return this.statePromise;
   }
@@ -20,11 +16,7 @@ export default class AgentStore {
       return this.statePromise;
     }
 
-    if (!this.agentsProcessed) {
-      return this.fetchAgents();
-    }
-
-    return Promise.resolve(null);
+    return this.fetchAgents();
   }
 
   processAgents(state) {

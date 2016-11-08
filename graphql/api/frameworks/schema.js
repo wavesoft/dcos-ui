@@ -1,32 +1,23 @@
-import Pagination from '../../helpers/pagination/schema';
+import Tasks from '../tasks/schema';
 
-const Frameworks = `
+const Framework = `
   # A Framework
   type Framework {
     # The ID of an object
     id: String!
 
-    # Framework name
+    # Name of Framework
     name: String!
-  }
 
-  # A connection to a list of Frameworks.
-  type FrameworkConnection {
-    # Information to aid in pagination.
-    pageInfo: PageInfo!
+    # The ID of parent group
+    parentId: String
 
-    # A list of edges.
-    edges: [FrameworkEdge]
-  }
+    # Summary of Tasks contained in Framework
+    taskStatus: TaskStatus!
 
-  # An edge in a connection.
-  type FrameworkEdge {
-    # The item at the end of the edge
-    node: Framework
-
-    # A cursor for use in pagination
-    cursor: String!
+    # Tasks associated with a Framework
+    tasks(after: String, first: Int, before: String, last: Int): TaskConnection
   }
 `;
 
-export default () => [Frameworks, Pagination];
+export default () => [Framework, Tasks];

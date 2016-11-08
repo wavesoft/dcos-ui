@@ -17,9 +17,6 @@ const Cluster = `
       # The ID of the Group
       id: String
     ): Group
-
-    # Flat list of nested groups
-    groups(groupId: String, after: String, first: Int, before: String, last: Int): GroupConnection
   }
 `;
 
