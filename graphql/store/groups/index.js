@@ -22,12 +22,12 @@ export default class GroupsStore {
       // after this group, meaning our API response will show this group first
       // followed by it's apps and finally sub-groups.
       this.contentsById.set(group.id, group);
-      // Define it's type to help us later when we resolve the union
+      // Define its type to help us later when we resolve the union
       Object.defineProperty(group, '__graphQLType__', {
         enumerable: false,
         configurable: false,
         writable: false,
-        value: 'group'
+        value: 'Group'
       });
 
       const {resources, taskStatus} = this.parseApplications(group);
@@ -92,12 +92,12 @@ export default class GroupsStore {
       Object.keys(taskStatus).forEach((statusType) => {
         taskStatus[statusType] += serviceTaskStatus[statusType];
       });
-      // Define it's type to help us later when we resolve the union
+      // Define its type to help us later when we resolve the union
       Object.defineProperty(service, '__graphQLType__', {
         enumerable: false,
         configurable: true, // We may change to Framework later
         writable: false,
-        value: 'application'
+        value: 'Application'
       });
 
       service.parentId = group.id;

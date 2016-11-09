@@ -7,10 +7,6 @@ export default {
       return toGlobalId('agent', agent.id);
     },
 
-    hostname(agent) {
-      return agent.hostname;
-    },
-
     tasks(agent, args, ctx) {
       const tasks = ctx.models.Tasks.getByAgentId(agent.id);
 

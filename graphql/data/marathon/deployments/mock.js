@@ -1,14 +1,7 @@
-import mockResponse from './mock-data/groups';
+import mockResponse from './mock-data/deployments';
 
-export default class MockGroupsConnector {
-  getGroups() {
+export default class MockDeploymentsConnector {
+  get() {
     return Promise.resolve(mockResponse);
-  }
-
-  getGroupsById(groupId) {
-    // Find group by Id in MockResponse
-    let group = {};
-
-    return Promise.resolve(group);
   }
 }

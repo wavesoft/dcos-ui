@@ -3,7 +3,7 @@ export default class Frameworks {
     this.store = store;
   }
 
-  getMapByName() {
-    return this.store.Frameworks.getMapByName();
+  getAllByName() {
+    return this.store.Frameworks.getAllByName();
   }
 }

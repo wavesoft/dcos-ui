@@ -25,7 +25,7 @@ export default class FrameworkStore {
     return this.fetchFrameworks();
   }
 
-  getMapByName() {
+  getAllByName() {
     return this.getStatePromise().then(() => {
       return this.frameworksByName;
     });
