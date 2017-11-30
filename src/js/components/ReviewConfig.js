@@ -66,7 +66,11 @@ class ReviewConfig extends React.Component {
               download={fileName}
               href={`data:attachment/json;content-disposition=attachment;filename=${fileName};charset=utf-8,${encodeURIComponent(configString)}`}
             >
-              <Icon id="download" size="mini" /> Download config.json
+              <Icon id="download" size="mini" /><FormattedMessage
+                id="XXXX"
+                defaultMessage={` Download config.json
+            `}
+              />
             </a>
           </div>
         </div>

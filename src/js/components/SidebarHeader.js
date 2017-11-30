@@ -118,7 +118,11 @@ class SidebarHeader extends mixin(StoreMixin) {
       },
       {
         className: "dropdown-menu-section-header",
-        html: <label>Support</label>,
+        html: (
+          <label>
+            <FormattedMessage id="XXXX" defaultMessage={`Support`} />
+          </label>
+        ),
         id: "header-support",
         selectable: false
       },

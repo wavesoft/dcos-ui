@@ -61,7 +61,9 @@ const PodContainerConfigSection = ({
 
       {/* Container image goes to top */}
       <ConfigurationMapRow>
-        <ConfigurationMapLabel>Container Image</ConfigurationMapLabel>
+        <ConfigurationMapLabel>
+          <FormattedMessage id="XXXX" defaultMessage={`Container Image`} />
+        </ConfigurationMapLabel>
         <ConfigurationMapValueWithDefault
           value={findNestedPropertyInObject(containerConfig, "image.id")}
         />
@@ -71,7 +73,9 @@ const PodContainerConfigSection = ({
         />
       </ConfigurationMapRow>
       <ConfigurationMapRow>
-        <ConfigurationMapLabel>Force pull on launch</ConfigurationMapLabel>
+        <ConfigurationMapLabel>
+          <FormattedMessage id="XXXX" defaultMessage={`Force pull on launch`} />
+        </ConfigurationMapLabel>
         <ConfigurationMapBooleanValue
           value={findNestedPropertyInObject(containerConfig, "image.forcePull")}
         />
@@ -84,7 +88,9 @@ const PodContainerConfigSection = ({
       {/* Resources */}
       {Boolean(fields.resources.cpus) &&
         <ConfigurationMapRow>
-          <ConfigurationMapLabel>CPUs</ConfigurationMapLabel>
+          <ConfigurationMapLabel>
+            <FormattedMessage id="XXXX" defaultMessage={`CPUs`} />
+          </ConfigurationMapLabel>
           <ConfigurationMapValue value={fields.resources.cpus} />
           <ConfigurationMapEditAction
             onEditClick={onEditClick}
@@ -93,7 +99,9 @@ const PodContainerConfigSection = ({
         </ConfigurationMapRow>}
       {Boolean(fields.resources.mem) &&
         <ConfigurationMapRow>
-          <ConfigurationMapLabel>Memory</ConfigurationMapLabel>
+          <ConfigurationMapLabel>
+            <FormattedMessage id="XXXX" defaultMessage={`Memory`} />
+          </ConfigurationMapLabel>
           <ConfigurationMapSizeValue value={fields.resources.mem} />
           <ConfigurationMapEditAction
             onEditClick={onEditClick}
@@ -102,7 +110,9 @@ const PodContainerConfigSection = ({
         </ConfigurationMapRow>}
       {Boolean(fields.resources.disk) &&
         <ConfigurationMapRow>
-          <ConfigurationMapLabel>Disk</ConfigurationMapLabel>
+          <ConfigurationMapLabel>
+            <FormattedMessage id="XXXX" defaultMessage={`Disk`} />
+          </ConfigurationMapLabel>
           <ConfigurationMapSizeValue value={fields.resources.disk} />
           <ConfigurationMapEditAction
             onEditClick={onEditClick}
@@ -111,7 +121,9 @@ const PodContainerConfigSection = ({
         </ConfigurationMapRow>}
       {Boolean(fields.resources.gpus) &&
         <ConfigurationMapRow>
-          <ConfigurationMapLabel>GPUs</ConfigurationMapLabel>
+          <ConfigurationMapLabel>
+            <FormattedMessage id="XXXX" defaultMessage={`GPUs`} />
+          </ConfigurationMapLabel>
           <ConfigurationMapValue value={fields.resources.gpus} />
           <ConfigurationMapEditAction
             onEditClick={onEditClick}
@@ -122,7 +134,9 @@ const PodContainerConfigSection = ({
       {/* Global Properties */}
       {Boolean(fields.user) &&
         <ConfigurationMapRow>
-          <ConfigurationMapLabel>Run as User</ConfigurationMapLabel>
+          <ConfigurationMapLabel>
+            <FormattedMessage id="XXXX" defaultMessage={`Run as User`} />
+          </ConfigurationMapLabel>
           <ConfigurationMapValue value={fields.user} />
           <ConfigurationMapEditAction
             onEditClick={onEditClick}
@@ -131,7 +145,9 @@ const PodContainerConfigSection = ({
         </ConfigurationMapRow>}
       {Boolean(fields.command) &&
         <ConfigurationMapRow>
-          <ConfigurationMapLabel>Command</ConfigurationMapLabel>
+          <ConfigurationMapLabel>
+            <FormattedMessage id="XXXX" defaultMessage={`Command`} />
+          </ConfigurationMapLabel>
           <ConfigurationMapMultilineValue value={fields.command} />
           <ConfigurationMapEditAction
             onEditClick={onEditClick}

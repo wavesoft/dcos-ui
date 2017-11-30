@@ -148,7 +148,11 @@ class AddRepositoryFormModal extends mixin(StoreMixin) {
         disabled={state.disableButtons}
         buttonDefinition={this.getButtonDefinition()}
         modalProps={{
-          header: <ModalHeading>Add Repository</ModalHeading>,
+          header: (
+            <ModalHeading>
+              <FormattedMessage id="XXXX" defaultMessage={`Add Repository`} />
+            </ModalHeading>
+          ),
           showHeader: true
         }}
         onChange={this.resetState}

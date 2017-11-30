@@ -12,7 +12,7 @@ const METHODS_TO_BIND = ["toggleExpanded"];
  * An error bar component commonly used in the ServiceForm and the JobsForm
  * that contains collapsible error messages.
  *
- * @example <caption>How to use the CollapsibleErrorMessage</caption>
+ * @example <caption><FormattedMessage id="XXXX" defaultMessage={`How to use the CollapsibleErrorMessage`}/></caption>
  *   <CollapsibleErrorMessage
  *
  *        className="error-for-modal"

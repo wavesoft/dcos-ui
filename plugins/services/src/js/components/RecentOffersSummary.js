@@ -143,7 +143,12 @@ function getResourceTooltipContent(resource, data) {
 
   return (
     <span>
-      {explanatoryText} <a href={docsURI} target="_blank">Learn more</a>.
+      {explanatoryText}
+      {" "}
+      <a href={docsURI} target="_blank">
+        <FormattedMessage id="XXXX" defaultMessage={`Learn more`} />
+      </a>
+      .
     </span>
   );
 }
@@ -174,11 +179,21 @@ function RecentOffersSummary({ data }) {
       <div className="funnel-graph-key">
         <div className="funnel-graph-key-item">
           <span className="funnel-graph-key-dot funnel-graph-key-dot-matched dot" />
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
           Matched
+        `}
+          />
         </div>
         <div className="funnel-graph-key-item">
           <span className="funnel-graph-key-dot funnel-graph-key-dot-declined dot" />
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
           Declined
+        `}
+          />
         </div>
       </div>
     </div>

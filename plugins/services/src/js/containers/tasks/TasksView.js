@@ -206,7 +206,9 @@ class TasksView extends mixin(SaveStateMixin) {
         >
           <button className={restartButtonClasses} onClick={handleRestartClick}>
             <Icon id="repeat" size="mini" />
-            <span>Restart</span>
+            <span>
+              <FormattedMessage id="XXXX" defaultMessage={`Restart`} />
+            </span>
           </button>
         </Tooltip>
         <Tooltip
@@ -218,7 +220,7 @@ class TasksView extends mixin(SaveStateMixin) {
         >
           <button className={stopButtonClasses} onClick={handleStopClick}>
             <Icon id="circle-close" size="mini" />
-            <span>Stop</span>
+            <span><FormattedMessage id="XXXX" defaultMessage={`Stop`} /></span>
           </button>
         </Tooltip>
       </div>

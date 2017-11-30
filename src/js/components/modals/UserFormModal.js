@@ -112,7 +112,12 @@ class UserFormModal extends mixin(StoreMixin) {
     return Hooks.applyFilter(
       "userFormModalHeader",
       <ModalHeading>
+        <FormattedMessage
+          id="XXXX"
+          defaultMessage={`
         Add User to Cluster
+      `}
+        />
       </ModalHeading>
     );
   }

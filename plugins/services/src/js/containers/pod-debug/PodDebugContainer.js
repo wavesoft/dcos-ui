@@ -50,7 +50,12 @@ class PodDebugTabView extends React.Component {
     return (
       <div>
         <ConfigurationMapHeading level={2}>
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
           Details
+        `}
+          />
         </ConfigurationMapHeading>
         <DeclinedOffersTable
           offers={queue.declinedOffers.offers}
@@ -67,7 +72,12 @@ class PodDebugTabView extends React.Component {
       return (
         <ConfigurationMapSection>
           <ConfigurationMapHeading>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             Last Terminations
+          `}
+            />
           </ConfigurationMapHeading>
           <p>(No data)</p>
         </ConfigurationMapSection>
@@ -105,7 +115,12 @@ class PodDebugTabView extends React.Component {
           <ConfigurationMapSection>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
+                <FormattedMessage
+                  id="XXXX"
+                  defaultMessage={`
                 Instance ID
+              `}
+                />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {item.getId()}
@@ -113,7 +128,12 @@ class PodDebugTabView extends React.Component {
             </ConfigurationMapRow>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
+                <FormattedMessage
+                  id="XXXX"
+                  defaultMessage={`
                 Message
+              `}
+                />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {item.getMessage()}
@@ -121,7 +141,12 @@ class PodDebugTabView extends React.Component {
             </ConfigurationMapRow>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
+                <FormattedMessage
+                  id="XXXX"
+                  defaultMessage={`
                 Started At
+              `}
+                />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {startedAt.toString()} (<TimeAgo time={startedAt} />)
@@ -131,7 +156,12 @@ class PodDebugTabView extends React.Component {
         </ConfigurationMapSection>,
         <ConfigurationMapSection key={`container-${index}`}>
           <ConfigurationMapHeading level={3}>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             Containers
+          `}
+            />
           </ConfigurationMapHeading>
           <PodContainerTerminationTable containers={item.getContainers()} />
         </ConfigurationMapSection>
@@ -153,11 +183,21 @@ class PodDebugTabView extends React.Component {
     return (
       <ConfigurationMapSection>
         <ConfigurationMapHeading>
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
           Last Changes
+        `}
+          />
         </ConfigurationMapHeading>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             Configuration
+          `}
+            />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {lastUpdated.toString()} (<TimeAgo time={lastUpdated} />)
@@ -184,7 +224,12 @@ class PodDebugTabView extends React.Component {
       mainContent = (
         <div>
           <ConfigurationMapHeading level={2}>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             Summary
+          `}
+            />
           </ConfigurationMapHeading>
           <RecentOffersSummary data={summary} />
         </div>
@@ -231,7 +276,12 @@ class PodDebugTabView extends React.Component {
         }
         {DateUtil.getDuration(timeWaiting, null)}{". "}
         <a className="clickable" onClick={this.handleJumpToRecentOffersClick}>
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
           See recent resource offers
+        `}
+          />
         </a>.
       </Alert>
     );

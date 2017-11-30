@@ -46,7 +46,7 @@ const JestUtil = {
    * Generates a callback function to a filter() call that will
    * keep only DOMElements matching the given tag name(s)
    *
-   * @example <caption>How to use filterByTagName</caption>
+   * @example <caption><FormattedMessage id="XXXX" defaultMessage={`How to use filterByTagName`}/></caption>
    * const TestUtils = require('react-addons-test-utils');
    *
    * var componentInstance = TestUtils.renderIntoDocument(
@@ -76,7 +76,7 @@ const JestUtil = {
    * Helper callback function to be used when you want the text contents
    * of an array of DOMElements.
    *
-   * @example <caption>How to use mapTextContent</caption>
+   * @example <caption><FormattedMessage id="XXXX" defaultMessage={`How to use mapTextContent`}/></caption>
    * const TestUtils = require('react-addons-test-utils');
    *
    * var componentInstance = TestUtils.renderIntoDocument(
@@ -175,7 +175,7 @@ const JestUtil = {
    * find and return the textContent of DOM element(s) matching
    * the given selector
    *
-   * @example <caption>How to use reduceTextContentOfSelector</caption>
+   * @example <caption><FormattedMessage id="XXXX" defaultMessage={`How to use reduceTextContentOfSelector`}/></caption>
    * const TestUtils = require('react-addons-test-utils');
    *
    * var componentInstance = TestUtils.renderIntoDocument(

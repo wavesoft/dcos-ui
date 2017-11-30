@@ -49,7 +49,9 @@ class PodNetworkConfigSection extends React.Component {
           defaultMessage: "Load Balanced Address"
         }),
         prop: "lbAddress",
-        placeholder: <em>Not Enabled</em>
+        placeholder: (
+          <em><FormattedMessage id="XXXX" defaultMessage={`Not Enabled`} /></em>
+        )
       },
       {
         heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
@@ -96,12 +98,16 @@ class PodNetworkConfigSection extends React.Component {
 
     return (
       <div>
-        <ConfigurationMapHeading level={1}>Network</ConfigurationMapHeading>
+        <ConfigurationMapHeading level={1}>
+          <FormattedMessage id="XXXX" defaultMessage={`Network`} />
+        </ConfigurationMapHeading>
         <ConfigurationMapSection key="pod-general-section">
 
           {/* General section */}
           <ConfigurationMapRow>
-            <ConfigurationMapLabel>Network Type</ConfigurationMapLabel>
+            <ConfigurationMapLabel>
+              <FormattedMessage id="XXXX" defaultMessage={`Network Type`} />
+            </ConfigurationMapLabel>
             <ConfigurationMapValueWithDefault
               value={getNetworkTypes(appConfig.networks)}
             />
@@ -113,7 +119,12 @@ class PodNetworkConfigSection extends React.Component {
 
           {/* Service endpoints */}
           <ConfigurationMapHeading level={3}>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             Service Endpoints
+          `}
+            />
           </ConfigurationMapHeading>
           <ConfigurationMapTable
             columnDefaults={{ hideIfEmpty: true }}

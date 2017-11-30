@@ -26,7 +26,11 @@ const Schedule = {
       title: "CRON Schedule",
       helpBlock: (
         <span>
-          Use cron format to set your schedule, e.g. <i>0 0 20 * *</i>{". "}
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
+          Use cron format to set your schedule, e.g. `}
+          /><i>0 0 20 * *</i>{". "}
           <a
             href={MetadataStore.buildDocsURI("/usage/jobs/getting-started")}
             target="_blank"

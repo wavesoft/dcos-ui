@@ -216,7 +216,11 @@ class ServiceDestroyModal extends React.Component {
         <p>
           This action
           {" "}
-          <strong>CANNOT</strong> be undone. This will permanently delete the
+          <strong>
+            <FormattedMessage id="XXXX" defaultMessage={`CANNOT`} />
+          </strong>
+          {" "}
+          be undone. This will permanently delete the
           {" "}
           <strong>{serviceName}</strong>
           {" "}

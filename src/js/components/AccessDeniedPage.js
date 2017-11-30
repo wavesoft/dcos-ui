@@ -40,7 +40,9 @@ module.exports = class AccessDeniedPage extends React.Component {
         <div className="page">
           <div className="page-body-content vertical-center flex-item-grow-1">
             <AlertPanel>
-              <AlertPanelHeader>Access denied</AlertPanelHeader>
+              <AlertPanelHeader>
+                <FormattedMessage id="XXXX" defaultMessage={`Access denied`} />
+              </AlertPanelHeader>
               <p className="tall">
                 <FormattedMessage
                   id="XXXX"
@@ -58,7 +60,11 @@ module.exports = class AccessDeniedPage extends React.Component {
                   target="_blank"
                 >
                   security documentation
-                </a> for more information.
+                </a><FormattedMessage
+                  id="XXXX"
+                  defaultMessage={` for more information.
+              `}
+                />
               </p>
               {this.getFooter()}
             </AlertPanel>

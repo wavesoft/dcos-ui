@@ -132,12 +132,18 @@ class DeclinedOffersTable extends React.Component {
       const tooltipContent = (
         <div>
           <div>
-            <strong>Requested</strong>{": "}
+            <strong>
+              <FormattedMessage id="XXXX" defaultMessage={`Requested`} />
+            </strong>
+            {": "}
             {requestedResource}
             {` ${requestedResourceSuffix}`}
           </div>
           <div>
-            <strong>Received</strong>{": "}
+            <strong>
+              <FormattedMessage id="XXXX" defaultMessage={`Received`} />
+            </strong>
+            {": "}
             <span className={receivedResourceClasses}>{receivedResource}</span>
             <span className="text-nowrap">
               {` ${receivedResourceSuffix}`}

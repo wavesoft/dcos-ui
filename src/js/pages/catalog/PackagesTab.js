@@ -29,7 +29,9 @@ const PackagesBreadcrumbs = () => {
   const crumbs = [
     <Breadcrumb key={0} title="Catalog">
       <BreadcrumbTextContent>
-        <Link to="/catalog/packages">Catalog</Link>
+        <Link to="/catalog/packages">
+          <FormattedMessage id="XXXX" defaultMessage={`Catalog`} />
+        </Link>
       </BreadcrumbTextContent>
     </Breadcrumb>
   ];
@@ -109,7 +111,9 @@ class PackagesTab extends mixin(StoreMixin) {
 
     return (
       <AlertPanel>
-        <AlertPanelHeader>An Error Occurred</AlertPanelHeader>
+        <AlertPanelHeader>
+          <FormattedMessage id="XXXX" defaultMessage={`An Error Occurred`} />
+        </AlertPanelHeader>
         <CosmosErrorMessage error={errorMessage} flushBottom={true} />
       </AlertPanel>
     );
@@ -167,7 +171,9 @@ class PackagesTab extends mixin(StoreMixin) {
 
     return (
       <div className="pod flush-top flush-horizontal clearfix">
-        <h4 className="short flush-top">Certified</h4>
+        <h4 className="short flush-top">
+          <FormattedMessage id="XXXX" defaultMessage={`Certified`} />
+        </h4>
         <p className="tall flush-top">
           Certified packages are verified by Mesosphere for interoperability with DC/OS.
         </p>
@@ -185,7 +191,12 @@ class PackagesTab extends mixin(StoreMixin) {
 
     let subtitle = (
       <p className="tall flush-top">
+        <FormattedMessage
+          id="XXXX"
+          defaultMessage={`
         Community packages are unverified and unreviewed content from the community.
+      `}
+        />
       </p>
     );
     let title = "Community";

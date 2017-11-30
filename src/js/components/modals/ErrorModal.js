@@ -19,7 +19,12 @@ var ErrorModal = React.createClass({
   render() {
     const header = (
       <ModalHeading>
+        <FormattedMessage
+          id="XXXX"
+          defaultMessage={`
         Looks Like Something is Wrong
+      `}
+        />
       </ModalHeading>
     );
 

@@ -87,7 +87,11 @@ class ServiceGroupFormModal extends React.Component {
         buttonDefinition={buttonDefinition}
         disabled={isPending}
         modalProps={{
-          header: <ModalHeading>Create Group</ModalHeading>,
+          header: (
+            <ModalHeading>
+              <FormattedMessage id="XXXX" defaultMessage={`Create Group`} />
+            </ModalHeading>
+          ),
           showHeader: true
         }}
         onClose={onClose}

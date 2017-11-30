@@ -34,7 +34,7 @@ class ServiceStatusDSLSection extends React.Component {
         parts={EXPRESSION_PARTS}
       >
 
-        <label>Status</label>
+        <label><FormattedMessage id="XXXX" defaultMessage={`Status`} /></label>
         <div className="row">
           <div className="column-6">
             <FormGroup>
@@ -45,7 +45,12 @@ class ServiceStatusDSLSection extends React.Component {
                   name="is_running"
                   type="checkbox"
                 />
+                <FormattedMessage
+                  id="XXXX"
+                  defaultMessage={`
                 Running
+              `}
+                />
               </FieldLabel>
               <FieldLabel>
                 <FieldInput
@@ -54,7 +59,12 @@ class ServiceStatusDSLSection extends React.Component {
                   name="is_deploying"
                   type="checkbox"
                 />
+                <FormattedMessage
+                  id="XXXX"
+                  defaultMessage={`
                 Deploying
+              `}
+                />
               </FieldLabel>
               <FieldLabel>
                 <FieldInput
@@ -63,7 +73,12 @@ class ServiceStatusDSLSection extends React.Component {
                   name="is_suspended"
                   type="checkbox"
                 />
+                <FormattedMessage
+                  id="XXXX"
+                  defaultMessage={`
                 Suspended
+              `}
+                />
               </FieldLabel>
             </FormGroup>
           </div>
@@ -76,7 +91,12 @@ class ServiceStatusDSLSection extends React.Component {
                   name="is_delayed"
                   type="checkbox"
                 />
+                <FormattedMessage
+                  id="XXXX"
+                  defaultMessage={`
                 Delayed
+              `}
+                />
               </FieldLabel>
               <FieldLabel>
                 <FieldInput
@@ -85,7 +105,12 @@ class ServiceStatusDSLSection extends React.Component {
                   name="is_waiting"
                   type="checkbox"
                 />
+                <FormattedMessage
+                  id="XXXX"
+                  defaultMessage={`
                 Waiting
+              `}
+                />
               </FieldLabel>
             </FormGroup>
           </div>

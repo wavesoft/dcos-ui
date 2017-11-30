@@ -424,7 +424,12 @@ class ServicesTable extends React.Component {
               defaultMessage={`At-a-glance overview of the global application or group state. `}
             />
             <a href={Links.statusHelpLink} target="_blank">
+              <FormattedMessage
+                id="XXXX"
+                defaultMessage={`
               Read more
+            `}
+              />
             </a>.
           </span>
         ),

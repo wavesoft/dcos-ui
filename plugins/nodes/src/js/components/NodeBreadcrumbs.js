@@ -13,7 +13,9 @@ const NodeBreadcrumbs = ({ nodeID, taskID, taskName, unitID }) => {
   const crumbs = [
     <Breadcrumb key={-1} title="Nodes">
       <BreadcrumbTextContent>
-        <Link to="/nodes" key={-1}>Nodes</Link>
+        <Link to="/nodes" key={-1}>
+          <FormattedMessage id="XXXX" defaultMessage={`Nodes`} />
+        </Link>
       </BreadcrumbTextContent>
     </Breadcrumb>
   ];

@@ -50,11 +50,21 @@ class MarathonTaskDetailsList extends React.Component {
     return (
       <ConfigurationMapSection>
         <ConfigurationMapHeading>
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
           Marathon Task Configuration
+        `}
+          />
         </ConfigurationMapHeading>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             Host
+          `}
+            />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {task.host}
@@ -62,7 +72,12 @@ class MarathonTaskDetailsList extends React.Component {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             Ports
+          `}
+            />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {this.getTaskPorts(task)}
@@ -70,7 +85,12 @@ class MarathonTaskDetailsList extends React.Component {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             Status
+          `}
+            />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {this.getTaskStatus(task)}
@@ -78,7 +98,12 @@ class MarathonTaskDetailsList extends React.Component {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             Staged at
+          `}
+            />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {this.getTimeField(task.stagedAt)}
@@ -86,7 +111,12 @@ class MarathonTaskDetailsList extends React.Component {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             Started at
+          `}
+            />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {this.getTimeField(task.startedAt)}
@@ -94,7 +124,12 @@ class MarathonTaskDetailsList extends React.Component {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             Version
+          `}
+            />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {task.version}
@@ -128,7 +163,12 @@ class MarathonTaskDetailsList extends React.Component {
           </ConfigurationMapHeading>
           <ConfigurationMapRow>
             <ConfigurationMapLabel>
+              <FormattedMessage
+                id="XXXX"
+                defaultMessage={`
               First success
+            `}
+              />
             </ConfigurationMapLabel>
             <ConfigurationMapValue>
               {this.getTimeField(result.firstSuccess)}
@@ -136,7 +176,12 @@ class MarathonTaskDetailsList extends React.Component {
           </ConfigurationMapRow>
           <ConfigurationMapRow>
             <ConfigurationMapLabel>
+              <FormattedMessage
+                id="XXXX"
+                defaultMessage={`
               Last success
+            `}
+              />
             </ConfigurationMapLabel>
             <ConfigurationMapValue>
               {this.getTimeField(result.lastSuccess)}
@@ -144,7 +189,12 @@ class MarathonTaskDetailsList extends React.Component {
           </ConfigurationMapRow>
           <ConfigurationMapRow>
             <ConfigurationMapLabel>
+              <FormattedMessage
+                id="XXXX"
+                defaultMessage={`
               Last failure
+            `}
+              />
             </ConfigurationMapLabel>
             <ConfigurationMapValue>
               {this.getTimeField(result.lastFailure)}
@@ -152,7 +202,12 @@ class MarathonTaskDetailsList extends React.Component {
           </ConfigurationMapRow>
           <ConfigurationMapRow>
             <ConfigurationMapLabel>
+              <FormattedMessage
+                id="XXXX"
+                defaultMessage={`
               Consecutive failures
+            `}
+              />
             </ConfigurationMapLabel>
             <ConfigurationMapValue>
               {consecutiveFailures}
@@ -160,7 +215,12 @@ class MarathonTaskDetailsList extends React.Component {
           </ConfigurationMapRow>
           <ConfigurationMapRow>
             <ConfigurationMapLabel>
+              <FormattedMessage
+                id="XXXX"
+                defaultMessage={`
               Alive
+            `}
+              />
             </ConfigurationMapLabel>
             <ConfigurationMapValue>
               {alive}

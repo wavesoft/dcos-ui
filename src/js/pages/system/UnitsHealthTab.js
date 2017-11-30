@@ -24,7 +24,9 @@ const UnitHealthBreadcrumbs = () => {
   const crumbs = [
     <Breadcrumb key={0} title="Components">
       <BreadcrumbTextContent>
-        <Link to="/components">Components</Link>
+        <Link to="/components">
+          <FormattedMessage id="XXXX" defaultMessage={`Components`} />
+        </Link>
       </BreadcrumbTextContent>
     </Breadcrumb>
   ];

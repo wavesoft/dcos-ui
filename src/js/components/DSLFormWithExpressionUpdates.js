@@ -17,7 +17,7 @@ const METHODS_TO_BIND = [
 ];
 
 /**
- * This <form /> component wraps a set of <input /> elements and automates
+ * This <form /><FormattedMessage id="XXXX" defaultMessage={` component wraps a set of `}/><input /> elements and automates
  * the update of the DSL expression based on the part definition given.
  */
 class DSLFormWithExpressionUpdates extends React.Component {

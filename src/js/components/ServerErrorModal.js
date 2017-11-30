@@ -71,7 +71,12 @@ module.exports = class ServerErrorModal extends mixin(StoreMixin) {
     return (
       <div className="button-collection text-align-center flush-bottom">
         <div className="button" onClick={this.handleModalClose}>
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
           Close
+        `}
+          />
         </div>
       </div>
     );
@@ -103,7 +108,12 @@ module.exports = class ServerErrorModal extends mixin(StoreMixin) {
   render() {
     const header = (
       <ModalHeading level={5}>
+        <FormattedMessage
+          id="XXXX"
+          defaultMessage={`
         An error has occurred
+      `}
+        />
       </ModalHeading>
     );
 

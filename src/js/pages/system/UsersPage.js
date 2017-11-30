@@ -20,7 +20,9 @@ const UsersBreadcrumbs = () => {
   const crumbs = [
     <Breadcrumb key={0} title="Users">
       <BreadcrumbTextContent>
-        <Link to="/organization/users">Users</Link>
+        <Link to="/organization/users">
+          <FormattedMessage id="XXXX" defaultMessage={`Users`} />
+        </Link>
       </BreadcrumbTextContent>
     </Breadcrumb>
   ];

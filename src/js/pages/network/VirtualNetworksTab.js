@@ -22,7 +22,9 @@ const NetworksBreadcrumbs = () => {
   const crumbs = [
     <Breadcrumb key={0} title="Networks">
       <BreadcrumbTextContent>
-        <Link to="/networking/networks">Networks</Link>
+        <Link to="/networking/networks">
+          <FormattedMessage id="XXXX" defaultMessage={`Networks`} />
+        </Link>
       </BreadcrumbTextContent>
     </Breadcrumb>
   ];
@@ -84,7 +86,12 @@ class VirtualNetworksTabContent extends mixin(StoreMixin) {
   getEmptyScreen() {
     return (
       <AlertPanel>
-        <AlertPanelHeader>No virtual networks detected</AlertPanelHeader>
+        <AlertPanelHeader>
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`No virtual networks detected`}
+          />
+        </AlertPanelHeader>
         <p className="flush">
           There a currently no other virtual networks found on your datacenter. Virtual networks are configured during setup of your DC/OS cluster.
         </p>

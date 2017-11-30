@@ -97,7 +97,7 @@ var NodesGridView = React.createClass({
       items.push(
         <li key="other">
           <span className={classNameOther} />
-          <span>Other</span>
+          <span><FormattedMessage id="XXXX" defaultMessage={`Other`} /></span>
         </li>
       );
     }

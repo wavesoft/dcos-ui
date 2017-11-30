@@ -21,7 +21,9 @@ const RepositoriesBreadcrumbs = addButton => {
   const crumbs = [
     <Breadcrumb key={-1} title="Repositories">
       <BreadcrumbTextContent>
-        <Link to="/settings/repositories">Package Repositories</Link>
+        <Link to="/settings/repositories">
+          <FormattedMessage id="XXXX" defaultMessage={`Package Repositories`} />
+        </Link>
       </BreadcrumbTextContent>
     </Breadcrumb>
   ];

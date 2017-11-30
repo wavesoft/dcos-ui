@@ -10,11 +10,18 @@ const VirtualNetworkUtil = {
   getEmptyNetworkScreen() {
     return (
       <AlertPanel>
-        <AlertPanelHeader>Virtual network not found</AlertPanelHeader>
+        <AlertPanelHeader>
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`Virtual network not found`}
+          />
+        </AlertPanelHeader>
         <p className="flush">
           Could not find the requested virtual network. Go to
           {" "}
-          <Link to="/networking/networks">Networks</Link>
+          <Link to="/networking/networks">
+            <FormattedMessage id="XXXX" defaultMessage={`Networks`} />
+          </Link>
           {" "}
           overview to see all virtual networks.
         </p>

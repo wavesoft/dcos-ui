@@ -543,7 +543,12 @@ class CreateServiceModal extends Component {
             type="secondary"
           />
           <FullScreenModalHeaderTitle>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             Review & Run Service
+          `}
+            />
           </FullScreenModalHeaderTitle>
           <FullScreenModalHeaderActions
             actions={this.getPrimaryActions()}

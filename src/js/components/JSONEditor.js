@@ -33,7 +33,7 @@ const IS_TYPING_TIMEOUT = 2000;
  * - Callback on per-property updates as the user types
  * - Receive errors through properties and show them in the gutter
  *
- * @example <caption>How to use the JSONEditor</caption>
+ * @example <caption><FormattedMessage id="XXXX" defaultMessage={`How to use the JSONEditor`}/></caption>
  *
  * handleChange(newObject) {
  *   console.log('New object:', newObject);

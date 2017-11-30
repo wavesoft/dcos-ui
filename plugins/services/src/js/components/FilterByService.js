@@ -66,7 +66,11 @@ var FilterByService = React.createClass({
       };
 
       if (service.get("id") === defaultId) {
-        item.selectedHtml = <span>Filter by Service</span>;
+        item.selectedHtml = (
+          <span>
+            <FormattedMessage id="XXXX" defaultMessage={`Filter by Service`} />
+          </span>
+        );
       }
 
       return item;

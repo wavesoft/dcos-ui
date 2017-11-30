@@ -363,8 +363,18 @@ class DeploymentsModal extends mixin(StoreMixin) {
   renderEmpty() {
     return (
       <AlertPanel>
-        <AlertPanelHeader>No active deployments</AlertPanelHeader>
-        <p className="flush">Active deployments will be shown here.</p>
+        <AlertPanelHeader>
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`No active deployments`}
+          />
+        </AlertPanelHeader>
+        <p className="flush">
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`Active deployments will be shown here.`}
+          />
+        </p>
       </AlertPanel>
     );
   }
@@ -506,7 +516,9 @@ class DeploymentsModal extends mixin(StoreMixin) {
 
     const footer = (
       <div className="text-align-center">
-        <button className="button" onClick={onClose}>Close</button>
+        <button className="button" onClick={onClose}>
+          <FormattedMessage id="XXXX" defaultMessage={`Close`} />
+        </button>
       </div>
     );
     const heading = (

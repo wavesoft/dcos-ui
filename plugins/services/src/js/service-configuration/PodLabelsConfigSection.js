@@ -71,7 +71,9 @@ class PodLabelsConfigSection extends React.Component {
 
     return (
       <div>
-        <ConfigurationMapHeading level={1}>Labels</ConfigurationMapHeading>
+        <ConfigurationMapHeading level={1}>
+          <FormattedMessage id="XXXX" defaultMessage={`Labels`} />
+        </ConfigurationMapHeading>
         <ConfigurationMapSection key="pod-general-section">
           <ConfigurationMapTable
             columnDefaults={{ hideIfEmpty: true }}

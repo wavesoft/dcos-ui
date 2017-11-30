@@ -139,13 +139,23 @@ class PodHealthChecksConfigSection extends React.Component {
     return (
       <div>
         <ConfigurationMapHeading level={1}>
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
           Health Checks
+        `}
+          />
         </ConfigurationMapHeading>
 
         {healthChecks.endpoints.length !== 0 &&
           <div>
             <ConfigurationMapHeading level={2}>
+              <FormattedMessage
+                id="XXXX"
+                defaultMessage={`
               Service Endpoint Health Checks
+            `}
+              />
             </ConfigurationMapHeading>
             <ConfigurationMapSection key="pod-general-section">
               <ConfigurationMapTable
@@ -161,7 +171,12 @@ class PodHealthChecksConfigSection extends React.Component {
         {healthChecks.command.length !== 0 &&
           <div>
             <ConfigurationMapHeading level={2}>
+              <FormattedMessage
+                id="XXXX"
+                defaultMessage={`
               Command Health Checks
+            `}
+              />
             </ConfigurationMapHeading>
             <ConfigurationMapSection key="pod-general-section">
               <ConfigurationMapTable

@@ -205,7 +205,12 @@ class MesosLogContainer extends mixin(StoreMixin) {
     return (
       <div className="flex-grow vertical-center">
         <h3 className="text-align-center flush-top">
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
           This directory does not contain any logs.
+        `}
+          />
         </h3>
       </div>
     );

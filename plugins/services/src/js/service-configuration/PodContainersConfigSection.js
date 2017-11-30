@@ -25,7 +25,9 @@ const PodContainersConfigSection = ({ appConfig, onEditClick }) => {
   if (!appConfig.containers || !appConfig.containers.length) {
     return (
       <div>
-        <ConfigurationMapHeading level={2}>Containers</ConfigurationMapHeading>
+        <ConfigurationMapHeading level={2}>
+          <FormattedMessage id="XXXX" defaultMessage={`Containers`} />
+        </ConfigurationMapHeading>
         <Alert>
           No containers specified! Please specify at least one container when
           creating a multi-container definition!
@@ -36,7 +38,9 @@ const PodContainersConfigSection = ({ appConfig, onEditClick }) => {
 
   return (
     <div>
-      <ConfigurationMapHeading level={2}>Containers</ConfigurationMapHeading>
+      <ConfigurationMapHeading level={2}>
+        <FormattedMessage id="XXXX" defaultMessage={`Containers`} />
+      </ConfigurationMapHeading>
       {renderContainers(appConfig, onEditClick)}
     </div>
   );

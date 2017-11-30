@@ -94,8 +94,15 @@ class ComponentList extends React.Component {
   getErrorMessage() {
     return (
       <div>
-        <h3 className="flush-top text-align-center">Components Not Found</h3>
-        <p className="flush text-align-center">An error has occurred.</p>
+        <h3 className="flush-top text-align-center">
+          <FormattedMessage id="XXXX" defaultMessage={`Components Not Found`} />
+        </h3>
+        <p className="flush text-align-center">
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`An error has occurred.`}
+          />
+        </p>
       </div>
     );
   }

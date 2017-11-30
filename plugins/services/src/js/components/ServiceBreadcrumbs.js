@@ -177,7 +177,9 @@ class ServiceBreadcrumbs extends React.Component {
     let crumbs = [
       <Breadcrumb key={-1} title="Services">
         <BreadcrumbTextContent>
-          <Link to="/services">Services</Link>
+          <Link to="/services">
+            <FormattedMessage id="XXXX" defaultMessage={`Services`} />
+          </Link>
         </BreadcrumbTextContent>
       </Breadcrumb>
     ];

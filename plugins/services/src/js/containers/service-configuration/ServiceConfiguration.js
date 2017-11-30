@@ -146,7 +146,9 @@ class ServiceConfiguration extends mixin(StoreMixin) {
           itemCaption = (
             <span className="badge-container">
               <span className="badge-container-text">{localeVersion}</span>
-              <span className="badge">Active</span>
+              <span className="badge">
+                <FormattedMessage id="XXXX" defaultMessage={`Active`} />
+              </span>
             </span>
           );
         }

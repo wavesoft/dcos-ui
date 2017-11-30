@@ -25,7 +25,9 @@ class ConfigurationMapValueWithDefault extends React.Component {
 
 ConfigurationMapValueWithDefault.defaultProps = {
   value: undefined,
-  defaultValue: <em>Not Configured</em>
+  defaultValue: (
+    <em><FormattedMessage id="XXXX" defaultMessage={`Not Configured`} /></em>
+  )
 };
 
 ConfigurationMapValueWithDefault.propTypes = {

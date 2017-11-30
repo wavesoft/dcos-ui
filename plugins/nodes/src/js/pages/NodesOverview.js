@@ -232,10 +232,20 @@ var NodesOverview = React.createClass({
     return (
       <div className="button-group flush-bottom">
         <Link className={listClassSet} onClick={resetFilter} to="/nodes">
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
           List
+        `}
+          />
         </Link>
         <Link className={gridClassSet} onClick={resetFilter} to="/nodes/grid">
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
           Grid
+        `}
+          />
         </Link>
       </div>
     );
@@ -294,7 +304,9 @@ var NodesOverview = React.createClass({
     return (
       <Page>
         <AlertPanel>
-          <AlertPanelHeader>No nodes detected</AlertPanelHeader>
+          <AlertPanelHeader>
+            <FormattedMessage id="XXXX" defaultMessage={`No nodes detected`} />
+          </AlertPanelHeader>
           <p className="flush-bottom">
             There a currently no other nodes in your datacenter other than your DC/OS master node.
           </p>

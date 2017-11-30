@@ -59,7 +59,7 @@ function defaultRenderFunction(prop, row) {
  * to the underlaying <Table /> component, trying to be as least intrusive
  * as possible.
  *
- * @example <caption>Example of ConfigurationMapTable</caption>
+ * @example <caption><FormattedMessage id="XXXX" defaultMessage={`Example of ConfigurationMapTable`}/></caption>
  * <ConfigurationMapTable
  *   className='table table-simple table-break-word flush-bottom'
  *   columnDefaults={{
@@ -98,7 +98,11 @@ class ConfigurationMapTable extends React.Component {
           className = "",
           heading,
           hideIfEmpty = false,
-          placeholder = <em>Not Configured</em>,
+          placeholder = (
+            <em>
+              <FormattedMessage id="XXXX" defaultMessage={`Not Configured`} />
+            </em>
+          ),
           prop,
           render = defaultRenderFunction
         } = column;

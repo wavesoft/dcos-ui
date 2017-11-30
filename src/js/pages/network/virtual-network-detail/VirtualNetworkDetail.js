@@ -18,7 +18,9 @@ const NetworksDetailBreadcrumbs = ({ overlayID, overlay }) => {
   const crumbs = [
     <Breadcrumb key={0} title="Networks">
       <BreadcrumbTextContent>
-        <Link to="/networking/networks">Networks</Link>
+        <Link to="/networking/networks">
+          <FormattedMessage id="XXXX" defaultMessage={`Networks`} />
+        </Link>
       </BreadcrumbTextContent>
     </Breadcrumb>
   ];

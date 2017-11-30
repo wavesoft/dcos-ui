@@ -68,7 +68,12 @@ const PodEnvironmentVariablesConfigSection = ({ appConfig, onEditClick }) => {
   return (
     <div>
       <ConfigurationMapHeading level={1}>
+        <FormattedMessage
+          id="XXXX"
+          defaultMessage={`
         Environment Variables
+      `}
+        />
       </ConfigurationMapHeading>
       <ConfigurationMapSection key="pod-general-section">
         <ConfigurationMapTable

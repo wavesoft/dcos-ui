@@ -79,7 +79,12 @@ class PodContainerArtifactsConfigSection extends React.Component {
     return (
       <div>
         <ConfigurationMapHeading level={3}>
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
           Container Artifacts
+        `}
+          />
         </ConfigurationMapHeading>
         <ConfigurationMapTable
           columnDefaults={{ hideIfEmpty: true }}

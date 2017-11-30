@@ -32,7 +32,7 @@ class ServiceHealthDSLSection extends React.Component {
         parts={EXPRESSION_PARTS}
       >
 
-        <label>Health</label>
+        <label><FormattedMessage id="XXXX" defaultMessage={`Health`} /></label>
         <div className="row">
           <div className="column-6">
             <FormGroup>
@@ -43,7 +43,12 @@ class ServiceHealthDSLSection extends React.Component {
                   name="is_healthy"
                   type="checkbox"
                 />
+                <FormattedMessage
+                  id="XXXX"
+                  defaultMessage={`
                 Healthy
+              `}
+                />
               </FieldLabel>
               <FieldLabel>
                 <FieldInput
@@ -65,7 +70,12 @@ class ServiceHealthDSLSection extends React.Component {
                   name="is_unhealthy"
                   type="checkbox"
                 />
+                <FormattedMessage
+                  id="XXXX"
+                  defaultMessage={`
                 Unhealthy
+              `}
+                />
               </FieldLabel>
             </FormGroup>
           </div>

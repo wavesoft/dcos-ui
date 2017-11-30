@@ -218,9 +218,16 @@ class JobsTab extends mixin(StoreMixin) {
           breadcrumbs={<JobsBreadcrumbs tree={DCOSStore.jobTree} />}
         />
         <AlertPanel>
-          <AlertPanelHeader>No active jobs</AlertPanelHeader>
+          <AlertPanelHeader>
+            <FormattedMessage id="XXXX" defaultMessage={`No active jobs`} />
+          </AlertPanelHeader>
           <p className="tall">
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             Create both one-off or scheduled jobs to perform tasks at a predefined interval.
+          `}
+            />
           </p>
           {this.getAlertPanelFooter()}
         </AlertPanel>

@@ -39,7 +39,12 @@ const ErrorsAlert = function(props) {
 
   return (
     <Alert>
-      <strong>There is an error with your configuration</strong>
+      <strong>
+        <FormattedMessage
+          id="XXXX"
+          defaultMessage={`There is an error with your configuration`}
+        />
+      </strong>
       <div className="pod pod-narrower-left pod-shorter-top flush-bottom">
         <ul className="short flush-bottom">
           {errorItems}

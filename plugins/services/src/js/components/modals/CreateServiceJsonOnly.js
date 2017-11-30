@@ -95,9 +95,16 @@ class CreateServiceJsonOnly extends React.Component {
     return (
       <div className="create-service-modal-json-only container container-wide">
         <div className="create-service-modal-json-only-introduction">
-          <FieldLabel>JSON Configuration</FieldLabel>
+          <FieldLabel>
+            <FormattedMessage id="XXXX" defaultMessage={`JSON Configuration`} />
+          </FieldLabel>
           <FieldHelp>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             Use this text area to customize your configuration via JSON.
+          `}
+            />
           </FieldHelp>
         </div>
         <div className="create-service-modal-json-only-editor-container">

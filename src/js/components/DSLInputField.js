@@ -22,7 +22,7 @@ const METHODS_TO_BIND = [
  * WARNING: This component is stateless, meaning that the hosting component is
  *          responsible for updating the `expression` property on a change event
  *
- * @example <caption>Using the DSLInputField</caption>
+ * @example <caption><FormattedMessage id="XXXX" defaultMessage={`Using the DSLInputField`}/></caption>
  *
  * <DSLInputField
  *

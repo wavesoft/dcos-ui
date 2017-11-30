@@ -131,7 +131,11 @@ class CliInstallModal extends React.Component {
       <ol>
         <li>
           Download and install: <a href={downloadUrl + ".exe"}>
-            <Icon id="download" size="mini" /> Download dcos.exe
+            <Icon id="download" size="mini" /><FormattedMessage
+              id="XXXX"
+              defaultMessage={` Download dcos.exe
+          `}
+            />
           </a>.
         </li>
         {steps}
@@ -163,7 +167,9 @@ class CliInstallModal extends React.Component {
   getContent() {
     return (
       <div className="install-cli-modal-content">
-        <h4 className="flush-top">Installation</h4>
+        <h4 className="flush-top">
+          <FormattedMessage id="XXXX" defaultMessage={`Installation`} />
+        </h4>
         <p>
           {
             "Choose your operating system and follow the instructions. For any issues or questions, please refer to our "

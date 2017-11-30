@@ -225,7 +225,12 @@ class InstallPackageModal
       <div>
         <div className="modal-body">
           <CosmosErrorHeader>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             An Error Occurred
+          `}
+            />
           </CosmosErrorHeader>
           <CosmosErrorMessage error={installError} flushBottom={true} />
         </div>
@@ -349,7 +354,12 @@ class InstallPackageModal
       <div className="modal-footer">
         <div className="button-collection flush-bottom">
           <button className="button" onClick={this.handleModalClose}>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             Cancel
+          `}
+            />
           </button>
           <button
             disabled={pendingRequest || hasFormErrors}
@@ -385,7 +395,12 @@ class InstallPackageModal
         <div className="modal-footer">
           <div className="button-collection flush-bottom">
             <button className="button" onClick={this.handleModalClose}>
+              <FormattedMessage
+                id="XXXX"
+                defaultMessage={`
               Cancel
+            `}
+              />
             </button>
             <div className="button-collection flush">
               <button
@@ -463,7 +478,12 @@ class InstallPackageModal
       <div>
         <div className="modal-body">
           <div className="horizontal-center">
-            <h3>Invalid Configuration</h3>
+            <h3>
+              <FormattedMessage
+                id="XXXX"
+                defaultMessage={`Invalid Configuration`}
+              />
+            </h3>
             <p className="text-danger text-align-center">
               {errorText}
             </p>

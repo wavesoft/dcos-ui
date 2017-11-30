@@ -115,7 +115,9 @@ var TasksChart = React.createClass({
     return (
       <div className="description">
         <span className="unit unit-primary">{total}</span>
-        <span className="unit-label h4 flush text-muted">Total Tasks</span>
+        <span className="unit-label h4 flush text-muted">
+          <FormattedMessage id="XXXX" defaultMessage={`Total Tasks`} />
+        </span>
       </div>
     );
   },

@@ -137,7 +137,12 @@ class ServiceResumeModal extends React.Component {
 
     const heading = (
       <ModalHeading>
+        <FormattedMessage
+          id="XXXX"
+          defaultMessage={`
         Resume Service
+      `}
+        />
       </ModalHeading>
     );
 

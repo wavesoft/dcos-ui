@@ -135,7 +135,14 @@ class ServiceNetworkingConfigSection extends ServiceConfigBaseSectionDisplay {
                     );
                   }
 
-                  return <em>Not Enabled</em>;
+                  return (
+                    <em>
+                      <FormattedMessage
+                        id="XXXX"
+                        defaultMessage={`Not Enabled`}
+                      />
+                    </em>
+                  );
                 },
                 sortable: true
               }

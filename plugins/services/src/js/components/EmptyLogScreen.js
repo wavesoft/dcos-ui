@@ -10,7 +10,12 @@ function EmptyLogScreen({ logName }) {
         {`${logName} Log is Currently Empty`}
       </h3>
       <p className="text-align-center flush-bottom">
+        <FormattedMessage
+          id="XXXX"
+          defaultMessage={`
         Please try again later.
+      `}
+        />
       </p>
     </div>
   );

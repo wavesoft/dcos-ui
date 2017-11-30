@@ -38,7 +38,9 @@ const SystemOverviewBreadcrumbs = () => {
   const crumbs = [
     <Breadcrumb key={0} title="Cluster">
       <BreadcrumbTextContent>
-        <Link to="/overview">Overview</Link>
+        <Link to="/overview">
+          <FormattedMessage id="XXXX" defaultMessage={`Overview`} />
+        </Link>
       </BreadcrumbTextContent>
     </Breadcrumb>
   ];
@@ -130,7 +132,12 @@ class OverviewDetailTab extends mixin(StoreMixin) {
         </ConfigurationMapRow>
         <ConfigurationMapRow key="ccid">
           <ConfigurationMapLabel>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             Cryptographic Cluster ID
+          `}
+            />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {ccid}
@@ -138,7 +145,12 @@ class OverviewDetailTab extends mixin(StoreMixin) {
         </ConfigurationMapRow>
         <ConfigurationMapRow key="publicIP">
           <ConfigurationMapLabel>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             Public IP
+          `}
+            />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {publicIP}
@@ -314,14 +326,22 @@ class OverviewDetailTab extends mixin(StoreMixin) {
         <div className="container">
           <ConfigurationMap>
             <ConfigurationMapHeading className="flush-top">
-              Cluster <FormattedMessage id="COMMON.DETAILS" />
+              <FormattedMessage
+                id="XXXX"
+                defaultMessage={`
+              Cluster `}
+              /><FormattedMessage id="COMMON.DETAILS" />
             </ConfigurationMapHeading>
             <ConfigurationMapHeading level={2}>
               <FormattedMessage id="COMMON.GENERAL" />
             </ConfigurationMapHeading>
             {this.getClusterDetails()}
             <ConfigurationMapHeading level={2}>
-              Mesos <FormattedMessage id="COMMON.DETAILS" />
+              <FormattedMessage
+                id="XXXX"
+                defaultMessage={`
+              Mesos `}
+              /><FormattedMessage id="COMMON.DETAILS" />
             </ConfigurationMapHeading>
             {this.getMesosDetails()}
             {marathonDetails}

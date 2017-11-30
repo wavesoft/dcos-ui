@@ -35,7 +35,11 @@ class PodPlacementConstraintsConfigSection extends React.Component {
 
     return constraints.map(function({ fieldName, operator, value }) {
       if (PlacementConstraintsUtil.requiresEmptyValue(operator)) {
-        value = <em>Not Applicable</em>;
+        value = (
+          <em>
+            <FormattedMessage id="XXXX" defaultMessage={`Not Applicable`} />
+          </em>
+        );
       }
 
       return { fieldName, operator, value };
@@ -54,7 +58,12 @@ class PodPlacementConstraintsConfigSection extends React.Component {
     return (
       <div>
         <ConfigurationMapHeading level={3}>
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
           Placement Constraints
+        `}
+          />
         </ConfigurationMapHeading>
         <ConfigurationMapSection>
           <ConfigurationMapTable

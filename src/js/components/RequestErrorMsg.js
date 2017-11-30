@@ -6,7 +6,12 @@ import Config from "../config/Config";
 function getDefaultMessage() {
   const slackLink = (
     <a href={Config.slackChannel} target="_blank">
+      <FormattedMessage
+        id="XXXX"
+        defaultMessage={`
       Slack channel
+    `}
+      />
     </a>
   );
   const supportLink = (

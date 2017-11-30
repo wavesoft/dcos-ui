@@ -40,10 +40,16 @@ const ServiceConfigDisplayUtil = {
 
   getDisplayValue(value, isDisabled = false) {
     if (!isDisabled && (value == null || value === "")) {
-      return <em>Not Configured</em>;
+      return (
+        <em>
+          <FormattedMessage id="XXXX" defaultMessage={`Not Configured`} />
+        </em>
+      );
     }
     if (isDisabled && (value == null || value === "")) {
-      return <em>Not Supported</em>;
+      return (
+        <em><FormattedMessage id="XXXX" defaultMessage={`Not Supported`} /></em>
+      );
     }
 
     // Display nested objects nicely if the render didn't already cover it.

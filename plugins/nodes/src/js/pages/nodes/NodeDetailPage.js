@@ -124,7 +124,12 @@ class NodeDetailPage extends mixin(TabsMixin, StoreMixin) {
         <Page.Header breadcrumbs={<NodeBreadcrumbs />} />
         <div className="pod text-align-center">
           <h3 className="flush-top text-align-center">
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             Error finding node
+          `}
+            />
           </h3>
           <p className="flush">
             {`Did not find a node by the id "${nodeID}"`}

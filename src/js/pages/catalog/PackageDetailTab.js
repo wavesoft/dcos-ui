@@ -27,7 +27,9 @@ const PackageDetailBreadcrumbs = ({ cosmosPackage }) => {
   const crumbs = [
     <Breadcrumb key={0} title="Catalog">
       <BreadcrumbTextContent>
-        <Link to="/catalog/packages">Catalog</Link>
+        <Link to="/catalog/packages">
+          <FormattedMessage id="XXXX" defaultMessage={`Catalog`} />
+        </Link>
       </BreadcrumbTextContent>
     </Breadcrumb>,
     <Breadcrumb key={1} title={name}>
@@ -196,7 +198,9 @@ class PackageDetailTab extends mixin(StoreMixin) {
     if (cosmosPackage.isCLIOnly()) {
       return (
         <div>
-          <p>CLI Only Package</p>
+          <p>
+            <FormattedMessage id="XXXX" defaultMessage={`CLI Only Package`} />
+          </p>
           <p>
             <FormattedMessage
               id="XXXX"

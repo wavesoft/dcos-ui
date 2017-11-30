@@ -356,10 +356,20 @@ class CreateServiceModalForm extends Component {
             hideTopLevelErrors={!showAllErrors}
           />
           <h2 className="flush-top short-bottom">
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             Container
+          `}
+            />
           </h2>
           <p>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             Configure your container below. Enter a container image or command you want to run.
+          `}
+            />
           </p>
           <ContainerServiceFormSection
             data={data}
@@ -372,7 +382,12 @@ class CreateServiceModalForm extends Component {
 
           <AdvancedSection>
             <AdvancedSectionLabel>
+              <FormattedMessage
+                id="XXXX"
+                defaultMessage={`
               More Settings
+            `}
+              />
             </AdvancedSectionLabel>
             <AdvancedSectionContent>
               <MultiContainerFormAdvancedSection

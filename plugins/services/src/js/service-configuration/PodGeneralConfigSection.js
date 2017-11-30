@@ -39,7 +39,9 @@ function getContainerResourceSummary(resource, { containers = [] }) {
   );
 
   if (!summary.value) {
-    return <em>Not Supported</em>;
+    return (
+      <em><FormattedMessage id="XXXX" defaultMessage={`Not Supported`} /></em>
+    );
   }
 
   return (
@@ -96,10 +98,14 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
 
   return (
     <div>
-      <ConfigurationMapHeading level={1}>General</ConfigurationMapHeading>
+      <ConfigurationMapHeading level={1}>
+        <FormattedMessage id="XXXX" defaultMessage={`General`} />
+      </ConfigurationMapHeading>
       <ConfigurationMapSection key="pod-general-section">
         <ConfigurationMapRow>
-          <ConfigurationMapLabel>Service ID</ConfigurationMapLabel>
+          <ConfigurationMapLabel>
+            <FormattedMessage id="XXXX" defaultMessage={`Service ID`} />
+          </ConfigurationMapLabel>
           <ConfigurationMapValue value={appConfig.id} />
           <ConfigurationMapEditAction
             onEditClick={onEditClick}
@@ -107,7 +113,9 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
           />
         </ConfigurationMapRow>
         <ConfigurationMapRow>
-          <ConfigurationMapLabel>Instances</ConfigurationMapLabel>
+          <ConfigurationMapLabel>
+            <FormattedMessage id="XXXX" defaultMessage={`Instances`} />
+          </ConfigurationMapLabel>
           <ConfigurationMapValueWithDefault value={fields.instances} />
           <ConfigurationMapEditAction
             onEditClick={onEditClick}
@@ -115,7 +123,9 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
           />
         </ConfigurationMapRow>
         <ConfigurationMapRow>
-          <ConfigurationMapLabel>CPU</ConfigurationMapLabel>
+          <ConfigurationMapLabel>
+            <FormattedMessage id="XXXX" defaultMessage={`CPU`} />
+          </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {getContainerResourceSummary("cpus", appConfig)}
           </ConfigurationMapValue>
@@ -125,7 +135,9 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
           />
         </ConfigurationMapRow>
         <ConfigurationMapRow>
-          <ConfigurationMapLabel>Memory</ConfigurationMapLabel>
+          <ConfigurationMapLabel>
+            <FormattedMessage id="XXXX" defaultMessage={`Memory`} />
+          </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {getContainerResourceSummary("mem", appConfig)}
           </ConfigurationMapValue>
@@ -135,7 +147,9 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
           />
         </ConfigurationMapRow>
         <ConfigurationMapRow>
-          <ConfigurationMapLabel>Disk</ConfigurationMapLabel>
+          <ConfigurationMapLabel>
+            <FormattedMessage id="XXXX" defaultMessage={`Disk`} />
+          </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {getContainerResourceSummary("disk", appConfig)}
           </ConfigurationMapValue>
@@ -145,7 +159,9 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
           />
         </ConfigurationMapRow>
         <ConfigurationMapRow>
-          <ConfigurationMapLabel>GPU</ConfigurationMapLabel>
+          <ConfigurationMapLabel>
+            <FormattedMessage id="XXXX" defaultMessage={`GPU`} />
+          </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {getContainerResourceSummary("gpu", appConfig)}
           </ConfigurationMapValue>
@@ -156,7 +172,9 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
         </ConfigurationMapRow>
         {Boolean(fields.backoff) &&
           <ConfigurationMapRow>
-            <ConfigurationMapLabel>Backoff</ConfigurationMapLabel>
+            <ConfigurationMapLabel>
+              <FormattedMessage id="XXXX" defaultMessage={`Backoff`} />
+            </ConfigurationMapLabel>
             <DurationValue units="sec" value={fields.backoff} />
             <ConfigurationMapEditAction
               onEditClick={onEditClick}
@@ -165,7 +183,9 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
           </ConfigurationMapRow>}
         {Boolean(fields.backoffFactor) &&
           <ConfigurationMapRow>
-            <ConfigurationMapLabel>Backoff Factor</ConfigurationMapLabel>
+            <ConfigurationMapLabel>
+              <FormattedMessage id="XXXX" defaultMessage={`Backoff Factor`} />
+            </ConfigurationMapLabel>
             <ConfigurationMapValue value={fields.backoffFactor} />
             <ConfigurationMapEditAction
               onEditClick={onEditClick}
@@ -175,7 +195,12 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
         {Boolean(fields.maxLaunchDelay) &&
           <ConfigurationMapRow>
             <ConfigurationMapLabel>
+              <FormattedMessage
+                id="XXXX"
+                defaultMessage={`
               Backoff Max Launch Delay
+            `}
+              />
             </ConfigurationMapLabel>
             <DurationValue units="sec" value={fields.maxLaunchDelay} />
             <ConfigurationMapEditAction
@@ -186,7 +211,12 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
         {Boolean(fields.minimumHealthCapacity) &&
           <ConfigurationMapRow>
             <ConfigurationMapLabel>
+              <FormattedMessage
+                id="XXXX"
+                defaultMessage={`
               Upgrade Min Health Capacity
+            `}
+              />
             </ConfigurationMapLabel>
             <ConfigurationMapValue value={fields.minimumHealthCapacity} />
             <ConfigurationMapEditAction
@@ -197,7 +227,12 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
         {Boolean(fields.maximumOverCapacity) &&
           <ConfigurationMapRow>
             <ConfigurationMapLabel>
+              <FormattedMessage
+                id="XXXX"
+                defaultMessage={`
               Upgrade Max Overcapacity
+            `}
+              />
             </ConfigurationMapLabel>
             <ConfigurationMapValue value={fields.maximumOverCapacity} />
             <ConfigurationMapEditAction
