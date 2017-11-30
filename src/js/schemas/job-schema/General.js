@@ -8,8 +8,11 @@ import MesosConstants
 import JobResources from "../../constants/JobResources";
 
 const General = {
-  title: formatMessage({ id: "XXXX", defaultMessage: "General" }),
-  description: formatMessage({
+  title: this.props.intl.formatMessage({
+    id: "XXXX",
+    defaultMessage: "General"
+  }),
+  description: this.props.intl.formatMessage({
     id: "XXXX",
     defaultMessage: "Configure your job settings"
   }),
@@ -17,8 +20,14 @@ const General = {
   properties: {
     id: {
       focused: true,
-      title: formatMessage({ id: "XXXX", defaultMessage: "ID" }),
-      description: formatMessage({ id: "XXXX", defaultMessage: "The job ID" }),
+      title: this.props.intl.formatMessage({
+        id: "XXXX",
+        defaultMessage: "ID"
+      }),
+      description: this.props.intl.formatMessage({
+        id: "XXXX",
+        defaultMessage: "The job ID"
+      }),
       type: "string",
       getter(job) {
         return job.getId();
@@ -37,8 +46,11 @@ const General = {
       }
     },
     description: {
-      title: formatMessage({ id: "XXXX", defaultMessage: "Description" }),
-      description: formatMessage({
+      title: this.props.intl.formatMessage({
+        id: "XXXX",
+        defaultMessage: "Description"
+      }),
+      description: this.props.intl.formatMessage({
         id: "XXXX",
         defaultMessage: "Job description"
       }),
@@ -51,9 +63,12 @@ const General = {
       type: "group",
       properties: {
         cpus: {
-          title: formatMessage({ id: "XXXX", defaultMessage: "CPUs" }),
+          title: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "CPUs"
+          }),
           default: JobResources.DEFAULT_CPUS,
-          description: formatMessage({
+          description: this.props.intl.formatMessage({
             id: "XXXX",
             defaultMessage: "The amount of CPUs the job requires"
           }),
@@ -124,8 +139,11 @@ const General = {
       }
     },
     cmd: {
-      title: formatMessage({ id: "XXXX", defaultMessage: "Command" }),
-      description: formatMessage({
+      title: this.props.intl.formatMessage({
+        id: "XXXX",
+        defaultMessage: "Command"
+      }),
+      description: this.props.intl.formatMessage({
         id: "XXXX",
         defaultMessage: "The command executed by the service"
       }),

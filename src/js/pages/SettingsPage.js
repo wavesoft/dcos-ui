@@ -10,7 +10,10 @@ class SettingsPage extends React.Component {
 }
 
 SettingsPage.routeConfig = {
-  label: formatMessage({ id: "XXXX", defaultMessage: "Settings" }),
+  label: this.props.intl.formatMessage({
+    id: "XXXX",
+    defaultMessage: "Settings"
+  }),
   icon: <Icon id="gear-inverse" size="small" family="product" />,
   matches: /^\/settings/
 };

@@ -10,7 +10,10 @@ class CatalogPage extends React.Component {
 }
 
 CatalogPage.routeConfig = {
-  label: formatMessage({ id: "XXXX", defaultMessage: "Catalog" }),
+  label: this.props.intl.formatMessage({
+    id: "XXXX",
+    defaultMessage: "Catalog"
+  }),
   icon: <Icon id="packages-inverse" size="small" family="product" />,
   matches: /^\/catalog/
 };

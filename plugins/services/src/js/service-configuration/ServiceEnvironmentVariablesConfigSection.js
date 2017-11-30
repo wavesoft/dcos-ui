@@ -33,7 +33,7 @@ class ServiceEnvironmentVariablesConfigSection
       values: [
         {
           key: "env",
-          heading: formatMessage({
+          heading: this.props.intl.formatMessage({
             id: "XXXX",
             defaultMessage: "Environment Variables"
           }),

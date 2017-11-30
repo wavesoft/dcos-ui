@@ -69,20 +69,29 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
       tabViewID: "services",
       values: [
         {
-          heading: formatMessage({ id: "XXXX", defaultMessage: "General" }),
+          heading: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "General"
+          }),
           headingLevel: 1
         },
         {
           key: "id",
-          label: formatMessage({ id: "XXXX", defaultMessage: "Service ID" })
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Service ID"
+          })
         },
         {
           key: "instances",
-          label: formatMessage({ id: "XXXX", defaultMessage: "Instances" })
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Instances"
+          })
         },
         {
           key: "container.type",
-          label: formatMessage({
+          label: this.props.intl.formatMessage({
             id: "XXXX",
             defaultMessage: "Container Runtime"
           }),
@@ -92,11 +101,17 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         },
         {
           key: "cpus",
-          label: formatMessage({ id: "XXXX", defaultMessage: "CPU" })
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "CPU"
+          })
         },
         {
           key: "mem",
-          label: formatMessage({ id: "XXXX", defaultMessage: "Memory" }),
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Memory"
+          }),
           transformValue(value) {
             if (value == null) {
               return value;
@@ -107,7 +122,10 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         },
         {
           key: "disk",
-          label: formatMessage({ id: "XXXX", defaultMessage: "Disk" }),
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Disk"
+          }),
           transformValue(value) {
             if (value == null) {
               return value;
@@ -118,43 +136,49 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         },
         {
           key: "gpus",
-          label: formatMessage({ id: "XXXX", defaultMessage: "GPU" })
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "GPU"
+          })
         },
         {
           key: "backoffSeconds",
-          label: formatMessage({
+          label: this.props.intl.formatMessage({
             id: "XXXX",
             defaultMessage: "Backoff Seconds"
           })
         },
         {
           key: "backoffFactor",
-          label: formatMessage({ id: "XXXX", defaultMessage: "Backoff Factor" })
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Backoff Factor"
+          })
         },
         {
           key: "maxLaunchDelaySeconds",
-          label: formatMessage({
+          label: this.props.intl.formatMessage({
             id: "XXXX",
             defaultMessage: "Backoff Max Launch Delay"
           })
         },
         {
           key: "minHealthOpacity",
-          label: formatMessage({
+          label: this.props.intl.formatMessage({
             id: "XXXX",
             defaultMessage: "Upgrade Min Health Capacity"
           })
         },
         {
           key: "maxOverCapacity",
-          label: formatMessage({
+          label: this.props.intl.formatMessage({
             id: "XXXX",
             defaultMessage: "Upgrade Max Overcapacity"
           })
         },
         {
           key: "container.docker.image",
-          label: formatMessage({
+          label: this.props.intl.formatMessage({
             id: "XXXX",
             defaultMessage: "Container Image"
           }),
@@ -187,7 +211,7 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         },
         {
           key: "container.docker.forcePullImage",
-          label: formatMessage({
+          label: this.props.intl.formatMessage({
             id: "XXXX",
             defaultMessage: "Force Pull on Launch"
           }),
@@ -207,12 +231,15 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         },
         {
           key: "cmd",
-          label: formatMessage({ id: "XXXX", defaultMessage: "Command" }),
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Command"
+          }),
           type: "pre"
         },
         {
           key: "acceptedResourceRoles",
-          label: formatMessage({
+          label: this.props.intl.formatMessage({
             id: "XXXX",
             defaultMessage: "Resource Roles"
           }),
@@ -222,22 +249,34 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         },
         {
           key: "dependencies",
-          label: formatMessage({ id: "XXXX", defaultMessage: "Dependencies" }),
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Dependencies"
+          }),
           transformValue(value = []) {
             return value.join(", ");
           }
         },
         {
           key: "executor",
-          label: formatMessage({ id: "XXXX", defaultMessage: "Executor" })
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Executor"
+          })
         },
         {
           key: "user",
-          label: formatMessage({ id: "XXXX", defaultMessage: "User" })
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "User"
+          })
         },
         {
           key: "args",
-          label: formatMessage({ id: "XXXX", defaultMessage: "Args" }),
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Args"
+          }),
           transformValue(value = []) {
             if (!value.length) {
               return getDisplayValue(null);
@@ -252,11 +291,14 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         },
         {
           key: "version",
-          label: formatMessage({ id: "XXXX", defaultMessage: "Version" })
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Version"
+          })
         },
         {
           key: "fetch",
-          heading: formatMessage({
+          heading: this.props.intl.formatMessage({
             id: "XXXX",
             defaultMessage: "Container Artifacts"
           }),

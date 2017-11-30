@@ -28,7 +28,10 @@ class ServiceLabelsConfigSection extends ServiceConfigBaseSectionDisplay {
       values: [
         {
           key: "labels",
-          heading: formatMessage({ id: "XXXX", defaultMessage: "Labels" }),
+          heading: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Labels"
+          }),
           headingLevel: 1
         },
         {

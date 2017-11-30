@@ -162,7 +162,7 @@ class JobsTab extends mixin(StoreMixin) {
       <Page>
         <Page.Header
           addButton={{
-            label: formatMessage({
+            label: this.props.intl.formatMessage({
               id: "XXXX",
               defaultMessage: "Create a job"
             }),

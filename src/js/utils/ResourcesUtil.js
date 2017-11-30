@@ -5,15 +5,21 @@ import StringUtil from "./StringUtil";
 
 const DefaultResourceTypes = {
   cpus: {
-    label: formatMessage({ id: "XXXX", defaultMessage: "CPU" }),
+    label: this.props.intl.formatMessage({ id: "XXXX", defaultMessage: "CPU" }),
     colorID: 0
   },
   mem: {
-    label: formatMessage({ id: "XXXX", defaultMessage: "Memory" }),
+    label: this.props.intl.formatMessage({
+      id: "XXXX",
+      defaultMessage: "Memory"
+    }),
     colorID: 6
   },
   disk: {
-    label: formatMessage({ id: "XXXX", defaultMessage: "Disk" }),
+    label: this.props.intl.formatMessage({
+      id: "XXXX",
+      defaultMessage: "Disk"
+    }),
     colorID: 3
   }
 };

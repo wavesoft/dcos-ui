@@ -10,7 +10,10 @@ class SystemOverviewPage extends React.Component {
 }
 
 SystemOverviewPage.routeConfig = {
-  label: formatMessage({ id: "XXXX", defaultMessage: "Overview" }),
+  label: this.props.intl.formatMessage({
+    id: "XXXX",
+    defaultMessage: "Overview"
+  }),
   icon: <Icon id="cluster-inverse" size="small" family="product" />,
   matches: /^\/overview/
 };

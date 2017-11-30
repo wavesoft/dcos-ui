@@ -64,7 +64,10 @@ const nodesRoutes = {
       children: [
         {
           type: Route,
-          title: formatMessage({ id: "XXXX", defaultMessage: "Tasks" }),
+          title: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Tasks"
+          }),
           path: "tasks",
           component: NodeDetailTaskTab
         },
@@ -76,13 +79,19 @@ const nodesRoutes = {
         {
           type: Route,
           path: "health",
-          title: formatMessage({ id: "XXXX", defaultMessage: "Health" }),
+          title: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Health"
+          }),
           component: NodeDetailHealthTab
         },
         {
           type: Route,
           path: "details",
-          title: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+          title: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Details"
+          }),
           component: NodeDetailTab
         }
       ]
@@ -97,7 +106,10 @@ const nodesRoutes = {
           type: Route,
           component: TaskDetailsTab,
           hideHeaderNavigation: true,
-          title: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+          title: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Details"
+          }),
           path: "details",
           isTab: true
         },
@@ -106,7 +118,10 @@ const nodesRoutes = {
           component: TaskFilesTab,
           isTab: true,
           path: "files",
-          title: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+          title: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Files"
+          }),
           type: Route,
           children: [
             {
@@ -128,7 +143,10 @@ const nodesRoutes = {
           hideHeaderNavigation: true,
           isTab: true,
           path: "logs",
-          title: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+          title: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Logs"
+          }),
           type: Route,
           children: [
             {
@@ -142,7 +160,10 @@ const nodesRoutes = {
           hideHeaderNavigation: true,
           isTab: true,
           path: "volumes",
-          title: formatMessage({ id: "XXXX", defaultMessage: "Volumes" }),
+          title: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Volumes"
+          }),
           type: Route
         }
       ]

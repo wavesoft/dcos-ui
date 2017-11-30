@@ -10,7 +10,7 @@ class NodesPage extends React.Component {
 }
 
 NodesPage.routeConfig = {
-  label: formatMessage({ id: "XXXX", defaultMessage: "Nodes" }),
+  label: this.props.intl.formatMessage({ id: "XXXX", defaultMessage: "Nodes" }),
   icon: <Icon id="servers-inverse" size="small" family="product" />,
   matches: /^\/nodes/
 };

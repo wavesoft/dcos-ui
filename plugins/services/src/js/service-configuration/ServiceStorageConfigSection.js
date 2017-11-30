@@ -38,7 +38,10 @@ class ServiceStorageConfigSection extends ServiceConfigBaseSectionDisplay {
       values: [
         {
           key: "container.volumes",
-          heading: formatMessage({ id: "XXXX", defaultMessage: "Storage" }),
+          heading: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Storage"
+          }),
           headingLevel: 1
         },
         {

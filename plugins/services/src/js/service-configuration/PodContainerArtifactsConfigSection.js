@@ -17,11 +17,17 @@ class PodContainerArtifactsConfigSection extends React.Component {
   getColumns() {
     return [
       {
-        heading: formatMessage({ id: "XXXX", defaultMessage: "Artifact URI" }),
+        heading: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Artifact URI"
+        }),
         prop: "uri"
       },
       {
-        heading: formatMessage({ id: "XXXX", defaultMessage: "Executable" }),
+        heading: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Executable"
+        }),
         prop: "executable",
         render(prop, row) {
           return (
@@ -33,7 +39,10 @@ class PodContainerArtifactsConfigSection extends React.Component {
         }
       },
       {
-        heading: formatMessage({ id: "XXXX", defaultMessage: "Extract" }),
+        heading: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Extract"
+        }),
         prop: "extract",
         render(prop, row) {
           return (
@@ -45,7 +54,10 @@ class PodContainerArtifactsConfigSection extends React.Component {
         }
       },
       {
-        heading: formatMessage({ id: "XXXX", defaultMessage: "Cache" }),
+        heading: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Cache"
+        }),
         prop: "cache",
         render(prop, row) {
           return (
@@ -57,7 +69,7 @@ class PodContainerArtifactsConfigSection extends React.Component {
         }
       },
       {
-        heading: formatMessage({
+        heading: this.props.intl.formatMessage({
           id: "XXXX",
           defaultMessage: "Destination Path"
         }),

@@ -33,19 +33,28 @@ class PodNetworkConfigSection extends React.Component {
   getColumns() {
     return [
       {
-        heading: formatMessage({ id: "XXXX", defaultMessage: "Name" }),
+        heading: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Name"
+        }),
         prop: "name"
       },
       {
-        heading: formatMessage({ id: "XXXX", defaultMessage: "Protocol" }),
+        heading: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Protocol"
+        }),
         prop: "protocol"
       },
       {
-        heading: formatMessage({ id: "XXXX", defaultMessage: "Port" }),
+        heading: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Port"
+        }),
         prop: "port"
       },
       {
-        heading: formatMessage({
+        heading: this.props.intl.formatMessage({
           id: "XXXX",
           defaultMessage: "Load Balanced Address"
         }),
@@ -55,7 +64,10 @@ class PodNetworkConfigSection extends React.Component {
         )
       },
       {
-        heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
+        heading: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Container"
+        }),
         prop: "container"
       }
     ];

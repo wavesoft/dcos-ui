@@ -19,19 +19,31 @@ class PodStorageConfigSection extends React.Component {
   getColumns() {
     return [
       {
-        heading: formatMessage({ id: "XXXX", defaultMessage: "Volume" }),
+        heading: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Volume"
+        }),
         prop: "volume"
       },
       {
-        heading: formatMessage({ id: "XXXX", defaultMessage: "Type" }),
+        heading: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Type"
+        }),
         prop: "type"
       },
       {
-        heading: formatMessage({ id: "XXXX", defaultMessage: "Size" }),
+        heading: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Size"
+        }),
         prop: "size"
       },
       {
-        heading: formatMessage({ id: "XXXX", defaultMessage: "Read Only" }),
+        heading: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Read Only"
+        }),
         prop: "readOnly",
         render(prop, row) {
           if (row[prop]) {
@@ -42,18 +54,24 @@ class PodStorageConfigSection extends React.Component {
         }
       },
       {
-        heading: formatMessage({
+        heading: this.props.intl.formatMessage({
           id: "XXXX",
           defaultMessage: "Container Mount Path"
         }),
         prop: "mountPath"
       },
       {
-        heading: formatMessage({ id: "XXXX", defaultMessage: "Host Path" }),
+        heading: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Host Path"
+        }),
         prop: "hostPath"
       },
       {
-        heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
+        heading: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Container"
+        }),
         prop: "container"
       }
     ];

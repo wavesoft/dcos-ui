@@ -15,32 +15,47 @@ import ConfigurationMapValueWithDefault
 
 const COMMON_COLUMNS = [
   {
-    heading: formatMessage({ id: "XXXX", defaultMessage: "Grace Period" }),
+    heading: this.props.intl.formatMessage({
+      id: "XXXX",
+      defaultMessage: "Grace Period"
+    }),
     prop: "gracePeriod",
     render(prop, row) {
       return <ConfigurationMapDurationValue units="sec" value={row[prop]} />;
     }
   },
   {
-    heading: formatMessage({ id: "XXXX", defaultMessage: "Interval" }),
+    heading: this.props.intl.formatMessage({
+      id: "XXXX",
+      defaultMessage: "Interval"
+    }),
     prop: "interval",
     render(prop, row) {
       return <ConfigurationMapDurationValue units="sec" value={row[prop]} />;
     }
   },
   {
-    heading: formatMessage({ id: "XXXX", defaultMessage: "Timeout" }),
+    heading: this.props.intl.formatMessage({
+      id: "XXXX",
+      defaultMessage: "Timeout"
+    }),
     prop: "timeout",
     render(prop, row) {
       return <ConfigurationMapDurationValue units="sec" value={row[prop]} />;
     }
   },
   {
-    heading: formatMessage({ id: "XXXX", defaultMessage: "Max Failures" }),
+    heading: this.props.intl.formatMessage({
+      id: "XXXX",
+      defaultMessage: "Max Failures"
+    }),
     prop: "maxFailures"
   },
   {
-    heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
+    heading: this.props.intl.formatMessage({
+      id: "XXXX",
+      defaultMessage: "Container"
+    }),
     prop: "container"
   }
 ];
@@ -49,7 +64,10 @@ class PodHealthChecksConfigSection extends React.Component {
   getCommandColumns() {
     return [
       {
-        heading: formatMessage({ id: "XXXX", defaultMessage: "Command" }),
+        heading: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Command"
+        }),
         prop: "command"
       }
     ].concat(COMMON_COLUMNS);
@@ -70,18 +88,24 @@ class PodHealthChecksConfigSection extends React.Component {
   getEndpointsColumns() {
     return [
       {
-        heading: formatMessage({
+        heading: this.props.intl.formatMessage({
           id: "XXXX",
           defaultMessage: "Service Endpoint"
         }),
         prop: "endpoint"
       },
       {
-        heading: formatMessage({ id: "XXXX", defaultMessage: "Proto" }),
+        heading: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Proto"
+        }),
         prop: "protocol"
       },
       {
-        heading: formatMessage({ id: "XXXX", defaultMessage: "Path" }),
+        heading: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Path"
+        }),
         prop: "path"
       }
     ].concat(COMMON_COLUMNS);

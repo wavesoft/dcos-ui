@@ -14,21 +14,30 @@ import {
  */
 const UnitHealthStatus = {
   [SERVER_HEALTHY]: {
-    title: formatMessage({ id: "XXXX", defaultMessage: "Healthy" }),
+    title: this.props.intl.formatMessage({
+      id: "XXXX",
+      defaultMessage: "Healthy"
+    }),
     key: "HEALTHY",
     classNames: "text-success",
     sortingValue: 3,
     value: SERVER_HEALTHY
   },
   [SERVER_UNHEALTHY]: {
-    title: formatMessage({ id: "XXXX", defaultMessage: "Unhealthy" }),
+    title: this.props.intl.formatMessage({
+      id: "XXXX",
+      defaultMessage: "Unhealthy"
+    }),
     key: "UNHEALTHY",
     classNames: "text-danger",
     sortingValue: 0,
     value: SERVER_UNHEALTHY
   },
   [SERVER_WARN]: {
-    title: formatMessage({ id: "XXXX", defaultMessage: "Warning" }),
+    title: this.props.intl.formatMessage({
+      id: "XXXX",
+      defaultMessage: "Warning"
+    }),
     key: "WAR",
     classNames: "text-warning",
     sortingValue: 2,

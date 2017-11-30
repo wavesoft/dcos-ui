@@ -129,7 +129,7 @@ var NodesGridView = React.createClass({
                   fieldType: "checkbox",
                   name: "showServices",
                   checked: props.showServices,
-                  label: formatMessage({
+                  label: this.props.intl.formatMessage({
                     id: "XXXX",
                     defaultMessage: "Show Services by Share"
                   }),

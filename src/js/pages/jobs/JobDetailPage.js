@@ -330,18 +330,24 @@ class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
     const actions = [];
 
     actions.push({
-      label: formatMessage({ id: "XXXX", defaultMessage: "Edit" }),
+      label: this.props.intl.formatMessage({
+        id: "XXXX",
+        defaultMessage: "Edit"
+      }),
       onItemSelect: this.handleEditButtonClick
     });
 
     actions.push({
-      label: formatMessage({ id: "XXXX", defaultMessage: "Run Now" }),
+      label: this.props.intl.formatMessage({
+        id: "XXXX",
+        defaultMessage: "Run Now"
+      }),
       onItemSelect: this.handleRunNowButtonClick
     });
 
     if (schedule != null && schedule.enabled) {
       actions.push({
-        label: formatMessage({
+        label: this.props.intl.formatMessage({
           id: "XXXX",
           defaultMessage: "Disable Schedule"
         }),
@@ -351,7 +357,10 @@ class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
 
     if (schedule != null && !schedule.enabled) {
       actions.push({
-        label: formatMessage({ id: "XXXX", defaultMessage: "Enable Schedule" }),
+        label: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Enable Schedule"
+        }),
         onItemSelect: this.handleEnableScheduleButtonClick
       });
     }
@@ -370,14 +379,20 @@ class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
 
     return [
       {
-        label: formatMessage({ id: "XXXX", defaultMessage: "Run History" }),
+        label: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Run History"
+        }),
         callback: () => {
           this.setState({ currentTab: "runHistory" });
         },
         isActive: activeTab === "runHistory"
       },
       {
-        label: formatMessage({ id: "XXXX", defaultMessage: "Configuration" }),
+        label: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Configuration"
+        }),
         callback: () => {
           this.setState({ currentTab: "configuration" });
         },

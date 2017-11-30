@@ -175,21 +175,30 @@ class NodeDetailPage extends mixin(TabsMixin, StoreMixin) {
     const { currentTab } = this.state;
     const tabs = [
       {
-        label: formatMessage({ id: "XXXX", defaultMessage: "Tasks" }),
+        label: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Tasks"
+        }),
         callback: () => {
           this.context.router.push(`/nodes/${nodeID}/tasks`);
         },
         isActive: currentTab === "/nodes/:nodeID/tasks"
       },
       {
-        label: formatMessage({ id: "XXXX", defaultMessage: "Health" }),
+        label: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Health"
+        }),
         callback: () => {
           this.context.router.push(`/nodes/${nodeID}/health`);
         },
         isActive: currentTab === "/nodes/:nodeID/health"
       },
       {
-        label: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+        label: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Details"
+        }),
         callback: () => {
           this.context.router.push(`/nodes/${nodeID}/details`);
         },

@@ -3,16 +3,22 @@ import React from "react";
 /* eslint-enable no-unused-vars */
 
 const General = {
-  title: formatMessage({ id: "XXXX", defaultMessage: "Docker Container" }),
-  description: formatMessage({
+  title: this.props.intl.formatMessage({
+    id: "XXXX",
+    defaultMessage: "Docker Container"
+  }),
+  description: this.props.intl.formatMessage({
     id: "XXXX",
     defaultMessage: "Configure your job settings"
   }),
   type: "object",
   properties: {
     image: {
-      title: formatMessage({ id: "XXXX", defaultMessage: "Image" }),
-      description: formatMessage({
+      title: this.props.intl.formatMessage({
+        id: "XXXX",
+        defaultMessage: "Image"
+      }),
+      description: this.props.intl.formatMessage({
         id: "XXXX",
         defaultMessage: "Name of your Docker image"
       }),

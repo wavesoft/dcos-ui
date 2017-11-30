@@ -68,7 +68,10 @@ const RouteFactory = {
             hideHeaderNavigation: true,
             isTab: true,
             path: "details",
-            title: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+            title: this.props.intl.formatMessage({
+              id: "XXXX",
+              defaultMessage: "Details"
+            }),
             type: Route
           },
           {
@@ -76,7 +79,10 @@ const RouteFactory = {
             component: TaskFilesTab,
             isTab: true,
             path: "files",
-            title: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+            title: this.props.intl.formatMessage({
+              id: "XXXX",
+              defaultMessage: "Files"
+            }),
             type: Route,
             children: [
               {
@@ -98,7 +104,10 @@ const RouteFactory = {
             hideHeaderNavigation: true,
             isTab: true,
             path: "logs",
-            title: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+            title: this.props.intl.formatMessage({
+              id: "XXXX",
+              defaultMessage: "Logs"
+            }),
             type: Route,
             children: [
               {

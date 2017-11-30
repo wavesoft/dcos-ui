@@ -16,7 +16,7 @@ JobsPage.contextTypes = {
 };
 
 JobsPage.routeConfig = {
-  label: formatMessage({ id: "XXXX", defaultMessage: "Jobs" }),
+  label: this.props.intl.formatMessage({ id: "XXXX", defaultMessage: "Jobs" }),
   icon: <Icon id="jobs-inverse" size="small" family="product" />,
   matches: /^\/jobs/
 };

@@ -449,22 +449,34 @@ class CreateServiceModalForm extends Component {
         {
           id: "networking",
           key: "multinetworking",
-          label: formatMessage({ id: "XXXX", defaultMessage: "Networking" })
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Networking"
+          })
         },
         {
           id: "volumes",
           key: "multivolumes",
-          label: formatMessage({ id: "XXXX", defaultMessage: "Volumes" })
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Volumes"
+          })
         },
         {
           id: "healthChecks",
           key: "multihealthChecks",
-          label: formatMessage({ id: "XXXX", defaultMessage: "Health Checks" })
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Health Checks"
+          })
         },
         {
           id: "environment",
           key: "multienvironment",
-          label: formatMessage({ id: "XXXX", defaultMessage: "Environment" })
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Environment"
+          })
         }
       );
     } else {
@@ -472,22 +484,34 @@ class CreateServiceModalForm extends Component {
         {
           id: "networking",
           key: "networking",
-          label: formatMessage({ id: "XXXX", defaultMessage: "Networking" })
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Networking"
+          })
         },
         {
           id: "volumes",
           key: "volumes",
-          label: formatMessage({ id: "XXXX", defaultMessage: "Volumes" })
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Volumes"
+          })
         },
         {
           id: "healthChecks",
           key: "healthChecks",
-          label: formatMessage({ id: "XXXX", defaultMessage: "Health Checks" })
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Health Checks"
+          })
         },
         {
           id: "environment",
           key: "environment",
-          label: formatMessage({ id: "XXXX", defaultMessage: "Environment" })
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Environment"
+          })
         }
       );
     }

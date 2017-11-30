@@ -105,7 +105,7 @@ class ServiceTreeView extends React.Component {
           actions={[
             {
               onItemSelect: modalHandlers.createGroup,
-              label: formatMessage({
+              label: this.props.intl.formatMessage({
                 id: "XXXX",
                 defaultMessage: "Create Group"
               })
@@ -113,7 +113,7 @@ class ServiceTreeView extends React.Component {
           ]}
           addButton={{
             onItemSelect: createService,
-            label: formatMessage({
+            label: this.props.intl.formatMessage({
               id: "XXXX",
               defaultMessage: "Run a Service"
             })

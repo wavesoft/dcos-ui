@@ -261,7 +261,10 @@ class PackageDetailTab extends mixin(StoreMixin) {
 
     const definition = [
       {
-        label: formatMessage({ id: "XXXX", defaultMessage: "Description" }),
+        label: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Description"
+        }),
         value: description &&
           <div
             dangerouslySetInnerHTML={StringUtil.parseMarkdown(description)}
@@ -275,21 +278,33 @@ class PackageDetailTab extends mixin(StoreMixin) {
           />
       },
       {
-        label: formatMessage({ id: "XXXX", defaultMessage: "Information" }),
+        label: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Information"
+        }),
         type: "subItems",
         value: [
           {
-            label: formatMessage({ id: "XXXX", defaultMessage: "SCM" }),
+            label: this.props.intl.formatMessage({
+              id: "XXXX",
+              defaultMessage: "SCM"
+            }),
             value: cosmosPackage.getSCM()
           },
           {
-            label: formatMessage({ id: "XXXX", defaultMessage: "Maintainer" }),
+            label: this.props.intl.formatMessage({
+              id: "XXXX",
+              defaultMessage: "Maintainer"
+            }),
             value: cosmosPackage.getMaintainer()
           }
         ]
       },
       {
-        label: formatMessage({ id: "XXXX", defaultMessage: "Licenses" }),
+        label: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Licenses"
+        }),
         type: "subItems",
         value: this.mapLicenses(cosmosPackage.getLicenses())
       }

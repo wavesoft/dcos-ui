@@ -185,7 +185,7 @@ class OverviewDetailTab extends mixin(StoreMixin) {
   getPageHeaderActions() {
     return [
       {
-        label: formatMessage({
+        label: this.props.intl.formatMessage({
           id: "XXXX",
           defaultMessage: "View Cluster Configuration"
         }),
@@ -362,7 +362,10 @@ class OverviewDetailTab extends mixin(StoreMixin) {
 }
 
 OverviewDetailTab.routeConfig = {
-  label: formatMessage({ id: "XXXX", defaultMessage: "Overview" }),
+  label: this.props.intl.formatMessage({
+    id: "XXXX",
+    defaultMessage: "Overview"
+  }),
   matches: /^\/overview\/details/
 };
 

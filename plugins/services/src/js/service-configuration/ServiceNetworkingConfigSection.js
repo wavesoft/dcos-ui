@@ -43,16 +43,25 @@ class ServiceNetworkingConfigSection extends ServiceConfigBaseSectionDisplay {
       tabViewID: "networking",
       values: [
         {
-          heading: formatMessage({ id: "XXXX", defaultMessage: "Network" }),
+          heading: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Network"
+          }),
           headingLevel: 1
         },
         {
           key: "networks.0.mode",
-          label: formatMessage({ id: "XXXX", defaultMessage: "Network Mode" })
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Network Mode"
+          })
         },
         {
           key: "networks.0.name",
-          label: formatMessage({ id: "XXXX", defaultMessage: "Network Name" })
+          label: this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: "Network Name"
+          })
         },
         {
           key: "portDefinitions",

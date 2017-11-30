@@ -91,7 +91,7 @@ const serviceRoutes = [
           {
             type: Route,
             path: "configuration",
-            title: formatMessage({
+            title: this.props.intl.formatMessage({
               id: "XXXX",
               defaultMessage: "Configuration"
             }),
@@ -100,18 +100,27 @@ const serviceRoutes = [
           {
             type: Route,
             path: "debug",
-            title: formatMessage({ id: "XXXX", defaultMessage: "Debug" }),
+            title: this.props.intl.formatMessage({
+              id: "XXXX",
+              defaultMessage: "Debug"
+            }),
             component: HighOrderServiceDebug
           },
           {
             type: Route,
             path: "volumes",
-            title: formatMessage({ id: "XXXX", defaultMessage: "Volumes" }),
+            title: this.props.intl.formatMessage({
+              id: "XXXX",
+              defaultMessage: "Volumes"
+            }),
             component: VolumeTable
           },
           {
             type: Route,
-            title: formatMessage({ id: "XXXX", defaultMessage: "Instances" }),
+            title: this.props.intl.formatMessage({
+              id: "XXXX",
+              defaultMessage: "Instances"
+            }),
             path: "tasks",
             component: HighOrderServiceInstances
           },
@@ -122,7 +131,10 @@ const serviceRoutes = [
           },
           {
             type: Route,
-            title: formatMessage({ id: "XXXX", defaultMessage: "Instances" }),
+            title: this.props.intl.formatMessage({
+              id: "XXXX",
+              defaultMessage: "Instances"
+            }),
             path: "tasks/:taskID",
             component: ServiceTaskDetailPage,
             hideHeaderNavigation: true,
@@ -133,14 +145,20 @@ const serviceRoutes = [
                 hideHeaderNavigation: true,
                 isTab: true,
                 path: "details",
-                title: formatMessage({ id: "XXXX", defaultMessage: "Details" })
+                title: this.props.intl.formatMessage({
+                  id: "XXXX",
+                  defaultMessage: "Details"
+                })
               },
               {
                 hideHeaderNavigation: true,
                 component: TaskFilesTab,
                 isTab: true,
                 path: "files",
-                title: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+                title: this.props.intl.formatMessage({
+                  id: "XXXX",
+                  defaultMessage: "Files"
+                }),
                 type: Route,
                 children: [
                   {
@@ -162,7 +180,10 @@ const serviceRoutes = [
                 hideHeaderNavigation: true,
                 isTab: true,
                 path: "logs",
-                title: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+                title: this.props.intl.formatMessage({
+                  id: "XXXX",
+                  defaultMessage: "Logs"
+                }),
                 type: Route,
                 children: [
                   {
@@ -176,7 +197,10 @@ const serviceRoutes = [
                 hideHeaderNavigation: true,
                 isTab: true,
                 path: "volumes",
-                title: formatMessage({ id: "XXXX", defaultMessage: "Volumes" }),
+                title: this.props.intl.formatMessage({
+                  id: "XXXX",
+                  defaultMessage: "Volumes"
+                }),
                 type: Route
               },
               {

@@ -34,15 +34,24 @@ class NodesTaskDetailPage extends mixin(StoreMixin) {
     const routePrefix = `/nodes/${encodeURIComponent(nodeID)}/tasks/${encodeURIComponent(taskID)}`;
     const tabs = [
       {
-        label: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+        label: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Details"
+        }),
         routePath: routePrefix + "/details"
       },
       {
-        label: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+        label: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Files"
+        }),
         routePath: routePrefix + "/files"
       },
       {
-        label: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+        label: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Logs"
+        }),
         routePath: routePrefix + "/logs"
       }
     ];

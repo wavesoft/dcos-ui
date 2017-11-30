@@ -10,17 +10,26 @@ import MetadataStore from "../../stores/MetadataStore";
 import ValidatorUtil from "../../utils/ValidatorUtil";
 
 const Schedule = {
-  title: formatMessage({ id: "XXXX", defaultMessage: "Schedule" }),
-  description: formatMessage({
+  title: this.props.intl.formatMessage({
+    id: "XXXX",
+    defaultMessage: "Schedule"
+  }),
+  description: this.props.intl.formatMessage({
     id: "XXXX",
     defaultMessage: "Set time and date for the job to run"
   }),
   type: "object",
   properties: {
     runOnSchedule: {
-      label: formatMessage({ id: "XXXX", defaultMessage: "Run on a schedule" }),
+      label: this.props.intl.formatMessage({
+        id: "XXXX",
+        defaultMessage: "Run on a schedule"
+      }),
       showLabel: true,
-      title: formatMessage({ id: "XXXX", defaultMessage: "Run on a schedule" }),
+      title: this.props.intl.formatMessage({
+        id: "XXXX",
+        defaultMessage: "Run on a schedule"
+      }),
       type: "boolean",
       getter(job) {
         const [schedule] = job.getSchedules();
@@ -29,7 +38,10 @@ const Schedule = {
       }
     },
     cron: {
-      title: formatMessage({ id: "XXXX", defaultMessage: "CRON Schedule" }),
+      title: this.props.intl.formatMessage({
+        id: "XXXX",
+        defaultMessage: "CRON Schedule"
+      }),
       helpBlock: (
         <span>
           <FormattedMessage
@@ -68,7 +80,10 @@ const Schedule = {
       }
     },
     timezone: {
-      title: formatMessage({ id: "XXXX", defaultMessage: "Time Zone" }),
+      title: this.props.intl.formatMessage({
+        id: "XXXX",
+        defaultMessage: "Time Zone"
+      }),
       description: (
         <span>
           <FormattedMessage id="XXXX" defaultMessage={`Enter time zone in `} />
@@ -88,8 +103,11 @@ const Schedule = {
       }
     },
     startingDeadlineSeconds: {
-      title: formatMessage({ id: "XXXX", defaultMessage: "Starting Deadline" }),
-      description: formatMessage({
+      title: this.props.intl.formatMessage({
+        id: "XXXX",
+        defaultMessage: "Starting Deadline"
+      }),
+      description: this.props.intl.formatMessage({
         id: "XXXX",
         defaultMessage: "Time in seconds to start the job if it misses "
       }) +
@@ -120,9 +138,15 @@ const Schedule = {
       }
     },
     enabled: {
-      label: formatMessage({ id: "XXXX", defaultMessage: "Enabled" }),
+      label: this.props.intl.formatMessage({
+        id: "XXXX",
+        defaultMessage: "Enabled"
+      }),
       showLabel: true,
-      title: formatMessage({ id: "XXXX", defaultMessage: "Enabled" }),
+      title: this.props.intl.formatMessage({
+        id: "XXXX",
+        defaultMessage: "Enabled"
+      }),
       type: "boolean",
       getter(job) {
         const [schedule = {}] = job.getSchedules();

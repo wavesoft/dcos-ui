@@ -16,15 +16,24 @@ class PodLabelsConfigSection extends React.Component {
   getColumns() {
     return [
       {
-        heading: formatMessage({ id: "XXXX", defaultMessage: "Key" }),
+        heading: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Key"
+        }),
         prop: "key"
       },
       {
-        heading: formatMessage({ id: "XXXX", defaultMessage: "Value" }),
+        heading: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Value"
+        }),
         prop: "value"
       },
       {
-        heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
+        heading: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Container"
+        }),
         prop: "container"
       }
     ];

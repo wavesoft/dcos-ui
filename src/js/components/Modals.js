@@ -144,7 +144,7 @@ var Modals = React.createClass({
 
     if (this.state.showingCliModal) {
       Hooks.doAction("logFakePageView", {
-        title: formatMessage({
+        title: this.props.intl.formatMessage({
           id: "XXXX",
           defaultMessage: "CLI instructions"
         }),

@@ -607,7 +607,10 @@ ServicesContainer.contextTypes = {
 };
 
 ServicesContainer.routeConfig = {
-  label: formatMessage({ id: "XXXX", defaultMessage: "Services" }),
+  label: this.props.intl.formatMessage({
+    id: "XXXX",
+    defaultMessage: "Services"
+  }),
   icon: <Icon id="services" size="small" family="product" />,
   matches: /^\/services\/(detail|overview)/
 };

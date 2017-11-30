@@ -160,33 +160,48 @@ class PodDetail extends mixin(TabsMixin) {
     }
 
     actions.push({
-      label: formatMessage({ id: "XXXX", defaultMessage: "Edit" }),
+      label: this.props.intl.formatMessage({
+        id: "XXXX",
+        defaultMessage: "Edit"
+      }),
       onItemSelect: this.onActionsItemSelection.bind(this, EDIT)
     });
 
     if (instanceCount > 0) {
       actions.push({
-        label: formatMessage({ id: "XXXX", defaultMessage: "Restart" }),
+        label: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Restart"
+        }),
         onItemSelect: this.onActionsItemSelection.bind(this, RESTART)
       });
     }
     if (!pod.getLabels().MARATHON_SINGLE_INSTANCE_APP) {
       actions.push({
-        label: formatMessage({ id: "XXXX", defaultMessage: "Scale" }),
+        label: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Scale"
+        }),
         onItemSelect: this.onActionsItemSelection.bind(this, SCALE)
       });
     }
 
     if (instanceCount > 0) {
       actions.push({
-        label: formatMessage({ id: "XXXX", defaultMessage: "Suspend" }),
+        label: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Suspend"
+        }),
         onItemSelect: this.onActionsItemSelection.bind(this, SUSPEND)
       });
     }
 
     if (instanceCount === 0) {
       actions.push({
-        label: formatMessage({ id: "XXXX", defaultMessage: "Resume" }),
+        label: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Resume"
+        }),
         onItemSelect: this.onActionsItemSelection.bind(this, RESUME)
       });
     }
@@ -206,15 +221,24 @@ class PodDetail extends mixin(TabsMixin) {
 
     return [
       {
-        label: formatMessage({ id: "XXXX", defaultMessage: "Instances" }),
+        label: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Instances"
+        }),
         routePath: `${routePrefix}/tasks`
       },
       {
-        label: formatMessage({ id: "XXXX", defaultMessage: "Configuration" }),
+        label: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Configuration"
+        }),
         routePath: `${routePrefix}/configuration`
       },
       {
-        label: formatMessage({ id: "XXXX", defaultMessage: "Debug" }),
+        label: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Debug"
+        }),
         routePath: `${routePrefix}/debug`
       }
     ];

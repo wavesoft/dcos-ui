@@ -9,11 +9,17 @@ import DialChart from "./DialChart";
 const TASKS_PER_ROW = 3;
 const TASK_INFO = {
   TASK_RUNNING: {
-    label: formatMessage({ id: "XXXX", defaultMessage: "Tasks running" }),
+    label: this.props.intl.formatMessage({
+      id: "XXXX",
+      defaultMessage: "Tasks running"
+    }),
     colorIndex: 4
   },
   TASK_STAGING: {
-    label: formatMessage({ id: "XXXX", defaultMessage: "Tasks staging" }),
+    label: this.props.intl.formatMessage({
+      id: "XXXX",
+      defaultMessage: "Tasks staging"
+    }),
     colorIndex: 1
   }
 };

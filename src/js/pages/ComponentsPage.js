@@ -10,7 +10,10 @@ class ComponentsPage extends React.Component {
 }
 
 ComponentsPage.routeConfig = {
-  label: formatMessage({ id: "XXXX", defaultMessage: "Components" }),
+  label: this.props.intl.formatMessage({
+    id: "XXXX",
+    defaultMessage: "Components"
+  }),
   icon: <Icon id="components-inverse" size="small" family="product" />,
   matches: /^\/components/
 };

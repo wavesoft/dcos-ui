@@ -147,7 +147,7 @@ class RepositoriesTab extends mixin(StoreMixin) {
         <Page.Header
           addButton={{
             onItemSelect: this.handleOpenAddRepository,
-            label: formatMessage({
+            label: this.props.intl.formatMessage({
               id: "XXXX",
               defaultMessage: "Add Repository"
             })
@@ -161,7 +161,10 @@ class RepositoriesTab extends mixin(StoreMixin) {
 }
 
 RepositoriesTab.routeConfig = {
-  label: formatMessage({ id: "XXXX", defaultMessage: "Package Repositories" }),
+  label: this.props.intl.formatMessage({
+    id: "XXXX",
+    defaultMessage: "Package Repositories"
+  }),
   matches: /^\/settings\/repositories/
 };
 

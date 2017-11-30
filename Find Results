@@ -1,0 +1,4536 @@
+Searching 648 files for "formatMessage\(" (regex)
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/components/NodesGridView.js:
+  130                    name: "showServices",
+  131                    checked: props.showServices,
+  132:                   label: formatMessage({
+  133                      id: "XXXX",
+  134                      defaultMessage: "Show Services by Share"
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/pages/NodesOverview.js:
+   64    statics: {
+   65      routeConfig: {
+   66:       label: formatMessage({ id: "XXXX", defaultMessage: "Nodes" }),
+   67        icon: <Icon family="product" id="servers-inverse" />,
+   68        matches: /^\/nodes/
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/pages/NodesPage.js:
+   11  
+   12  NodesPage.routeConfig = {
+   13:   label: formatMessage({ id: "XXXX", defaultMessage: "Nodes" }),
+   14    icon: <Icon id="servers-inverse" size="small" family="product" />,
+   15    matches: /^\/nodes/
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/pages/nodes/NodeDetailPage.js:
+  176      const tabs = [
+  177        {
+  178:         label: formatMessage({ id: "XXXX", defaultMessage: "Tasks" }),
+  179          callback: () => {
+  180            this.context.router.push(`/nodes/${nodeID}/tasks`);
+  ...
+  183        },
+  184        {
+  185:         label: formatMessage({ id: "XXXX", defaultMessage: "Health" }),
+  186          callback: () => {
+  187            this.context.router.push(`/nodes/${nodeID}/health`);
+  ...
+  190        },
+  191        {
+  192:         label: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+  193          callback: () => {
+  194            this.context.router.push(`/nodes/${nodeID}/details`);
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/pages/nodes/NodesTaskDetailPage.js:
+   35      const tabs = [
+   36        {
+   37:         label: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+   38          routePath: routePrefix + "/details"
+   39        },
+   40        {
+   41:         label: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+   42          routePath: routePrefix + "/files"
+   43        },
+   44        {
+   45:         label: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+   46          routePath: routePrefix + "/logs"
+   47        }
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/routes/nodes.js:
+   65          {
+   66            type: Route,
+   67:           title: formatMessage({ id: "XXXX", defaultMessage: "Tasks" }),
+   68            path: "tasks",
+   69            component: NodeDetailTaskTab
+   ..
+   77            type: Route,
+   78            path: "health",
+   79:           title: formatMessage({ id: "XXXX", defaultMessage: "Health" }),
+   80            component: NodeDetailHealthTab
+   81          },
+   ..
+   83            type: Route,
+   84            path: "details",
+   85:           title: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+   86            component: NodeDetailTab
+   87          }
+   ..
+   98            component: TaskDetailsTab,
+   99            hideHeaderNavigation: true,
+  100:           title: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+  101            path: "details",
+  102            isTab: true
+  ...
+  107            isTab: true,
+  108            path: "files",
+  109:           title: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+  110            type: Route,
+  111            children: [
+  ...
+  129            isTab: true,
+  130            path: "logs",
+  131:           title: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+  132            type: Route,
+  133            children: [
+  ...
+  143            isTab: true,
+  144            path: "volumes",
+  145:           title: formatMessage({ id: "XXXX", defaultMessage: "Volumes" }),
+  146            type: Route
+  147          }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/DeploymentsModal.js:
+  524      const heading = (
+  525        <ModalHeading>
+  526:         {intl.formatMessage(
+  527            {
+  528              id: "SERVICES.DEPLOYMENT_MODAL_HEADING"
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/modals/CreateServiceModalForm.js:
+  450            id: "networking",
+  451            key: "multinetworking",
+  452:           label: formatMessage({ id: "XXXX", defaultMessage: "Networking" })
+  453          },
+  454          {
+  455            id: "volumes",
+  456            key: "multivolumes",
+  457:           label: formatMessage({ id: "XXXX", defaultMessage: "Volumes" })
+  458          },
+  459          {
+  460            id: "healthChecks",
+  461            key: "multihealthChecks",
+  462:           label: formatMessage({ id: "XXXX", defaultMessage: "Health Checks" })
+  463          },
+  464          {
+  465            id: "environment",
+  466            key: "multienvironment",
+  467:           label: formatMessage({ id: "XXXX", defaultMessage: "Environment" })
+  468          }
+  469        );
+  ...
+  473            id: "networking",
+  474            key: "networking",
+  475:           label: formatMessage({ id: "XXXX", defaultMessage: "Networking" })
+  476          },
+  477          {
+  478            id: "volumes",
+  479            key: "volumes",
+  480:           label: formatMessage({ id: "XXXX", defaultMessage: "Volumes" })
+  481          },
+  482          {
+  483            id: "healthChecks",
+  484            key: "healthChecks",
+  485:           label: formatMessage({ id: "XXXX", defaultMessage: "Health Checks" })
+  486          },
+  487          {
+  488            id: "environment",
+  489            key: "environment",
+  490:           label: formatMessage({ id: "XXXX", defaultMessage: "Environment" })
+  491          }
+  492        );
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/modals/ServiceDestroyModal.js:
+  163        >
+  164          <p>
+  165:           {intl.formatMessage({
+  166              id: "SERVICE_ACTIONS.DELETE_SERVICE_FRAMEWORK"
+  167            })}
+  ...
+  169              href="https://docs.mesosphere.com/service-docs/"
+  170              target="_blank"
+  171:             title={intl.formatMessage({
+  172                id: "COMMON.DOCUMENTATION_TITLE"
+  173              })}
+  174            >
+  175:             {intl.formatMessage({
+  176                id: "COMMON.DOCUMENTATION"
+  177              })}
+  178            </a>
+  179:           {intl.formatMessage({
+  180              id: "SERVICE_ACTIONS.DELETE_SERVICE_FRAMEWORK_2"
+  181            })}
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/constants/HealthBarStates.js:
+    3    tasksUnknown: {
+    4      className: "unknown",
+    5:     label: formatMessage({ id: "XXXX", defaultMessage: "Unknown" })
+    6    },
+    7    tasksHealthy: {
+    8      className: "healthy",
+    9:     label: formatMessage({ id: "XXXX", defaultMessage: "Healthy" })
+   10    },
+   11    tasksOverCapacity: {
+   12      className: "over-capacity",
+   13:     label: formatMessage({ id: "XXXX", defaultMessage: "Over Capacity" })
+   14    },
+   15    tasksUnhealthy: {
+   16      className: "unhealthy",
+   17:     label: formatMessage({ id: "XXXX", defaultMessage: "Unhealthy" })
+   18    },
+   19    tasksStaged: {
+   20      className: "staged",
+   21:     label: formatMessage({ id: "XXXX", defaultMessage: "Staged" })
+   22    }
+   23  };
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/pod-detail/PodDetail.js:
+  153      ) {
+  154        actions.push({
+  155:         label: this.props.intl.formatMessage({
+  156            id: ServiceActionLabels.open
+  157          }),
+  ...
+  161  
+  162      actions.push({
+  163:       label: formatMessage({ id: "XXXX", defaultMessage: "Edit" }),
+  164        onItemSelect: this.onActionsItemSelection.bind(this, EDIT)
+  165      });
+  ...
+  167      if (instanceCount > 0) {
+  168        actions.push({
+  169:         label: formatMessage({ id: "XXXX", defaultMessage: "Restart" }),
+  170          onItemSelect: this.onActionsItemSelection.bind(this, RESTART)
+  171        });
+  ...
+  173      if (!pod.getLabels().MARATHON_SINGLE_INSTANCE_APP) {
+  174        actions.push({
+  175:         label: formatMessage({ id: "XXXX", defaultMessage: "Scale" }),
+  176          onItemSelect: this.onActionsItemSelection.bind(this, SCALE)
+  177        });
+  ...
+  180      if (instanceCount > 0) {
+  181        actions.push({
+  182:         label: formatMessage({ id: "XXXX", defaultMessage: "Suspend" }),
+  183          onItemSelect: this.onActionsItemSelection.bind(this, SUSPEND)
+  184        });
+  ...
+  187      if (instanceCount === 0) {
+  188        actions.push({
+  189:         label: formatMessage({ id: "XXXX", defaultMessage: "Resume" }),
+  190          onItemSelect: this.onActionsItemSelection.bind(this, RESUME)
+  191        });
+  ...
+  207      return [
+  208        {
+  209:         label: formatMessage({ id: "XXXX", defaultMessage: "Instances" }),
+  210          routePath: `${routePrefix}/tasks`
+  211        },
+  212        {
+  213:         label: formatMessage({ id: "XXXX", defaultMessage: "Configuration" }),
+  214          routePath: `${routePrefix}/configuration`
+  215        },
+  216        {
+  217:         label: formatMessage({ id: "XXXX", defaultMessage: "Debug" }),
+  218          routePath: `${routePrefix}/debug`
+  219        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/service-detail/ServiceDetail.js:
+  180      ) {
+  181        actions.push({
+  182:         label: this.props.intl.formatMessage({
+  183            id: ServiceActionLabels.open
+  184          }),
+  ...
+  188  
+  189      actions.push({
+  190:       label: formatMessage({ id: "XXXX", defaultMessage: "Edit" }),
+  191        onItemSelect: this.onActionsItemSelection.bind(this, EDIT)
+  192      });
+  ...
+  194      if (instanceCount > 0 && !isSDK) {
+  195        actions.push({
+  196:         label: formatMessage({ id: "XXXX", defaultMessage: "Restart" }),
+  197          onItemSelect: this.onActionsItemSelection.bind(this, RESTART)
+  198        });
+  ...
+  200      if (!service.getLabels().MARATHON_SINGLE_INSTANCE_APP) {
+  201        actions.push({
+  202:         label: formatMessage({ id: "XXXX", defaultMessage: "Scale" }),
+  203          onItemSelect: this.onActionsItemSelection.bind(this, SCALE)
+  204        });
+  ...
+  207      if (instanceCount > 0 && !isSDK) {
+  208        actions.push({
+  209:         label: formatMessage({ id: "XXXX", defaultMessage: "Suspend" }),
+  210          onItemSelect: this.onActionsItemSelection.bind(this, SUSPEND)
+  211        });
+  ...
+  214      if (instanceCount === 0 && !isSDK) {
+  215        actions.push({
+  216:         label: formatMessage({ id: "XXXX", defaultMessage: "Resume" }),
+  217          onItemSelect: this.onActionsItemSelection.bind(this, RESUME)
+  218        });
+  ...
+  234      const tabs = [
+  235        {
+  236:         label: formatMessage({ id: "XXXX", defaultMessage: "Instances" }),
+  237          routePath: `${routePrefix}/tasks`
+  238        },
+  239        {
+  240:         label: formatMessage({ id: "XXXX", defaultMessage: "Configuration" }),
+  241          routePath: `${routePrefix}/configuration`
+  242        },
+  243        {
+  244:         label: formatMessage({ id: "XXXX", defaultMessage: "Debug" }),
+  245          routePath: `${routePrefix}/debug`
+  246        }
+  ...
+  249      if (this.hasVolumes()) {
+  250        tabs.push({
+  251:         label: formatMessage({ id: "XXXX", defaultMessage: "Volumes" }),
+  252          routePath: `${routePrefix}/volumes`
+  253        });
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/services/ServicesContainer.js:
+  608  
+  609  ServicesContainer.routeConfig = {
+  610:   label: formatMessage({ id: "XXXX", defaultMessage: "Services" }),
+  611    icon: <Icon id="services" size="small" family="product" />,
+  612    matches: /^\/services\/(detail|overview)/
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/services/ServicesTable.js:
+  260        actions.push({
+  261          id: OPEN,
+  262:         html: this.props.intl.formatMessage({ id: ServiceActionLabels.open })
+  263        });
+  264      }
+  ...
+  267        actions.push({
+  268          id: EDIT,
+  269:         html: this.props.intl.formatMessage({ id: ServiceActionLabels.edit })
+  270        });
+  271      }
+  ...
+  276        actions.push({
+  277          id: SCALE,
+  278:         html: this.props.intl.formatMessage({ id: scaleTextID })
+  279        });
+  280      }
+  ...
+  283        actions.push({
+  284          id: RESTART,
+  285:         html: this.props.intl.formatMessage({
+  286            id: ServiceActionLabels[RESTART]
+  287          })
+  ...
+  292        actions.push({
+  293          id: SUSPEND,
+  294:         html: this.props.intl.formatMessage({
+  295            id: ServiceActionLabels[SUSPEND]
+  296          })
+  ...
+  301        actions.push({
+  302          id: RESUME,
+  303:         html: this.props.intl.formatMessage({
+  304            id: ServiceActionLabels[RESUME]
+  305          })
+  ...
+  311        html: (
+  312          <span className="text-danger">
+  313:           {this.props.intl.formatMessage({
+  314              id: ServiceActionLabels[DELETE]
+  315            })}
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/services/ServiceTreeView.js:
+  106              {
+  107                onItemSelect: modalHandlers.createGroup,
+  108:               label: formatMessage({
+  109                  id: "XXXX",
+  110                  defaultMessage: "Create Group"
+  ...
+  114            addButton={{
+  115              onItemSelect: createService,
+  116:             label: formatMessage({
+  117                id: "XXXX",
+  118                defaultMessage: "Run a Service"
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/pages/ServicesPage.js:
+   19    statics: {
+   20      routeConfig: {
+   21:       label: formatMessage({ id: "XXXX", defaultMessage: "Services" }),
+   22        icon: <Icon id="services-inverse" size="small" family="product" />,
+   23        matches: /^\/services/
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/pages/task-details/ServiceTaskDetailPage.js:
+   18      const tabs = [
+   19        {
+   20:         label: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+   21          routePath: routePrefix + "/details"
+   22        },
+   23        {
+   24:         label: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+   25          routePath: routePrefix + "/files"
+   26        },
+   27        {
+   28:         label: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+   29          routePath: routePrefix + "/logs"
+   30        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/routes/services.js:
+   92              type: Route,
+   93              path: "configuration",
+   94:             title: formatMessage({
+   95                id: "XXXX",
+   96                defaultMessage: "Configuration"
+   ..
+  101              type: Route,
+  102              path: "debug",
+  103:             title: formatMessage({ id: "XXXX", defaultMessage: "Debug" }),
+  104              component: HighOrderServiceDebug
+  105            },
+  ...
+  107              type: Route,
+  108              path: "volumes",
+  109:             title: formatMessage({ id: "XXXX", defaultMessage: "Volumes" }),
+  110              component: VolumeTable
+  111            },
+  112            {
+  113              type: Route,
+  114:             title: formatMessage({ id: "XXXX", defaultMessage: "Instances" }),
+  115              path: "tasks",
+  116              component: HighOrderServiceInstances
+  ...
+  123            {
+  124              type: Route,
+  125:             title: formatMessage({ id: "XXXX", defaultMessage: "Instances" }),
+  126              path: "tasks/:taskID",
+  127              component: ServiceTaskDetailPage,
+  ...
+  134                  isTab: true,
+  135                  path: "details",
+  136:                 title: formatMessage({ id: "XXXX", defaultMessage: "Details" })
+  137                },
+  138                {
+  ...
+  141                  isTab: true,
+  142                  path: "files",
+  143:                 title: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+  144                  type: Route,
+  145                  children: [
+  ...
+  163                  isTab: true,
+  164                  path: "logs",
+  165:                 title: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+  166                  type: Route,
+  167                  children: [
+  ...
+  177                  isTab: true,
+  178                  path: "volumes",
+  179:                 title: formatMessage({ id: "XXXX", defaultMessage: "Volumes" }),
+  180                  type: Route
+  181                },
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodContainerArtifactsConfigSection.js:
+   18      return [
+   19        {
+   20:         heading: formatMessage({ id: "XXXX", defaultMessage: "Artifact URI" }),
+   21          prop: "uri"
+   22        },
+   23        {
+   24:         heading: formatMessage({ id: "XXXX", defaultMessage: "Executable" }),
+   25          prop: "executable",
+   26          render(prop, row) {
+   ..
+   34        },
+   35        {
+   36:         heading: formatMessage({ id: "XXXX", defaultMessage: "Extract" }),
+   37          prop: "extract",
+   38          render(prop, row) {
+   ..
+   46        },
+   47        {
+   48:         heading: formatMessage({ id: "XXXX", defaultMessage: "Cache" }),
+   49          prop: "cache",
+   50          render(prop, row) {
+   ..
+   58        },
+   59        {
+   60:         heading: formatMessage({
+   61            id: "XXXX",
+   62            defaultMessage: "Destination Path"
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodEnvironmentVariablesConfigSection.js:
+   15  const columns = [
+   16    {
+   17:     heading: formatMessage({ id: "XXXX", defaultMessage: "Key" }),
+   18      prop: "key"
+   19    },
+   20    {
+   21:     heading: formatMessage({ id: "XXXX", defaultMessage: "Value" }),
+   22      prop: "value"
+   23    },
+   24    {
+   25:     heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
+   26      prop: "container"
+   27    }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodHealthChecksConfigSection.js:
+   16  const COMMON_COLUMNS = [
+   17    {
+   18:     heading: formatMessage({ id: "XXXX", defaultMessage: "Grace Period" }),
+   19      prop: "gracePeriod",
+   20      render(prop, row) {
+   ..
+   23    },
+   24    {
+   25:     heading: formatMessage({ id: "XXXX", defaultMessage: "Interval" }),
+   26      prop: "interval",
+   27      render(prop, row) {
+   ..
+   30    },
+   31    {
+   32:     heading: formatMessage({ id: "XXXX", defaultMessage: "Timeout" }),
+   33      prop: "timeout",
+   34      render(prop, row) {
+   ..
+   37    },
+   38    {
+   39:     heading: formatMessage({ id: "XXXX", defaultMessage: "Max Failures" }),
+   40      prop: "maxFailures"
+   41    },
+   42    {
+   43:     heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
+   44      prop: "container"
+   45    }
+   ..
+   50      return [
+   51        {
+   52:         heading: formatMessage({ id: "XXXX", defaultMessage: "Command" }),
+   53          prop: "command"
+   54        }
+   ..
+   71      return [
+   72        {
+   73:         heading: formatMessage({
+   74            id: "XXXX",
+   75            defaultMessage: "Service Endpoint"
+   ..
+   78        },
+   79        {
+   80:         heading: formatMessage({ id: "XXXX", defaultMessage: "Proto" }),
+   81          prop: "protocol"
+   82        },
+   83        {
+   84:         heading: formatMessage({ id: "XXXX", defaultMessage: "Path" }),
+   85          prop: "path"
+   86        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodLabelsConfigSection.js:
+   17      return [
+   18        {
+   19:         heading: formatMessage({ id: "XXXX", defaultMessage: "Key" }),
+   20          prop: "key"
+   21        },
+   22        {
+   23:         heading: formatMessage({ id: "XXXX", defaultMessage: "Value" }),
+   24          prop: "value"
+   25        },
+   26        {
+   27:         heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
+   28          prop: "container"
+   29        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodNetworkConfigSection.js:
+   34      return [
+   35        {
+   36:         heading: formatMessage({ id: "XXXX", defaultMessage: "Name" }),
+   37          prop: "name"
+   38        },
+   39        {
+   40:         heading: formatMessage({ id: "XXXX", defaultMessage: "Protocol" }),
+   41          prop: "protocol"
+   42        },
+   43        {
+   44:         heading: formatMessage({ id: "XXXX", defaultMessage: "Port" }),
+   45          prop: "port"
+   46        },
+   47        {
+   48:         heading: formatMessage({
+   49            id: "XXXX",
+   50            defaultMessage: "Load Balanced Address"
+   ..
+   56        },
+   57        {
+   58:         heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
+   59          prop: "container"
+   60        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodPlacementConstraintsConfigSection.js:
+   15      return [
+   16        {
+   17:         heading: formatMessage({ id: "XXXX", defaultMessage: "Field Name" }),
+   18          prop: "fieldName"
+   19        },
+   20        {
+   21:         heading: formatMessage({ id: "XXXX", defaultMessage: "Operator" }),
+   22          prop: "operator"
+   23        },
+   24        {
+   25:         heading: formatMessage({ id: "XXXX", defaultMessage: "Value" }),
+   26          prop: "value"
+   27        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodStorageConfigSection.js:
+   20      return [
+   21        {
+   22:         heading: formatMessage({ id: "XXXX", defaultMessage: "Volume" }),
+   23          prop: "volume"
+   24        },
+   25        {
+   26:         heading: formatMessage({ id: "XXXX", defaultMessage: "Type" }),
+   27          prop: "type"
+   28        },
+   29        {
+   30:         heading: formatMessage({ id: "XXXX", defaultMessage: "Size" }),
+   31          prop: "size"
+   32        },
+   33        {
+   34:         heading: formatMessage({ id: "XXXX", defaultMessage: "Read Only" }),
+   35          prop: "readOnly",
+   36          render(prop, row) {
+   ..
+   43        },
+   44        {
+   45:         heading: formatMessage({
+   46            id: "XXXX",
+   47            defaultMessage: "Container Mount Path"
+   ..
+   50        },
+   51        {
+   52:         heading: formatMessage({ id: "XXXX", defaultMessage: "Host Path" }),
+   53          prop: "hostPath"
+   54        },
+   55        {
+   56:         heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
+   57          prop: "container"
+   58        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceEnvironmentVariablesConfigSection.js:
+   34          {
+   35            key: "env",
+   36:           heading: formatMessage({
+   37              id: "XXXX",
+   38              defaultMessage: "Environment Variables"
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceGeneralConfigSection.js:
+   70        values: [
+   71          {
+   72:           heading: formatMessage({ id: "XXXX", defaultMessage: "General" }),
+   73            headingLevel: 1
+   74          },
+   75          {
+   76            key: "id",
+   77:           label: formatMessage({ id: "XXXX", defaultMessage: "Service ID" })
+   78          },
+   79          {
+   80            key: "instances",
+   81:           label: formatMessage({ id: "XXXX", defaultMessage: "Instances" })
+   82          },
+   83          {
+   84            key: "container.type",
+   85:           label: formatMessage({
+   86              id: "XXXX",
+   87              defaultMessage: "Container Runtime"
+   ..
+   93          {
+   94            key: "cpus",
+   95:           label: formatMessage({ id: "XXXX", defaultMessage: "CPU" })
+   96          },
+   97          {
+   98            key: "mem",
+   99:           label: formatMessage({ id: "XXXX", defaultMessage: "Memory" }),
+  100            transformValue(value) {
+  101              if (value == null) {
+  ...
+  108          {
+  109            key: "disk",
+  110:           label: formatMessage({ id: "XXXX", defaultMessage: "Disk" }),
+  111            transformValue(value) {
+  112              if (value == null) {
+  ...
+  119          {
+  120            key: "gpus",
+  121:           label: formatMessage({ id: "XXXX", defaultMessage: "GPU" })
+  122          },
+  123          {
+  124            key: "backoffSeconds",
+  125:           label: formatMessage({
+  126              id: "XXXX",
+  127              defaultMessage: "Backoff Seconds"
+  ...
+  130          {
+  131            key: "backoffFactor",
+  132:           label: formatMessage({ id: "XXXX", defaultMessage: "Backoff Factor" })
+  133          },
+  134          {
+  135            key: "maxLaunchDelaySeconds",
+  136:           label: formatMessage({
+  137              id: "XXXX",
+  138              defaultMessage: "Backoff Max Launch Delay"
+  ...
+  141          {
+  142            key: "minHealthOpacity",
+  143:           label: formatMessage({
+  144              id: "XXXX",
+  145              defaultMessage: "Upgrade Min Health Capacity"
+  ...
+  148          {
+  149            key: "maxOverCapacity",
+  150:           label: formatMessage({
+  151              id: "XXXX",
+  152              defaultMessage: "Upgrade Max Overcapacity"
+  ...
+  155          {
+  156            key: "container.docker.image",
+  157:           label: formatMessage({
+  158              id: "XXXX",
+  159              defaultMessage: "Container Image"
+  ...
+  188          {
+  189            key: "container.docker.forcePullImage",
+  190:           label: formatMessage({
+  191              id: "XXXX",
+  192              defaultMessage: "Force Pull on Launch"
+  ...
+  208          {
+  209            key: "cmd",
+  210:           label: formatMessage({ id: "XXXX", defaultMessage: "Command" }),
+  211            type: "pre"
+  212          },
+  213          {
+  214            key: "acceptedResourceRoles",
+  215:           label: formatMessage({
+  216              id: "XXXX",
+  217              defaultMessage: "Resource Roles"
+  ...
+  223          {
+  224            key: "dependencies",
+  225:           label: formatMessage({ id: "XXXX", defaultMessage: "Dependencies" }),
+  226            transformValue(value = []) {
+  227              return value.join(", ");
+  ...
+  230          {
+  231            key: "executor",
+  232:           label: formatMessage({ id: "XXXX", defaultMessage: "Executor" })
+  233          },
+  234          {
+  235            key: "user",
+  236:           label: formatMessage({ id: "XXXX", defaultMessage: "User" })
+  237          },
+  238          {
+  239            key: "args",
+  240:           label: formatMessage({ id: "XXXX", defaultMessage: "Args" }),
+  241            transformValue(value = []) {
+  242              if (!value.length) {
+  ...
+  253          {
+  254            key: "version",
+  255:           label: formatMessage({ id: "XXXX", defaultMessage: "Version" })
+  256          },
+  257          {
+  258            key: "fetch",
+  259:           heading: formatMessage({
+  260              id: "XXXX",
+  261              defaultMessage: "Container Artifacts"
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceLabelsConfigSection.js:
+   29          {
+   30            key: "labels",
+   31:           heading: formatMessage({ id: "XXXX", defaultMessage: "Labels" }),
+   32            headingLevel: 1
+   33          },
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceNetworkingConfigSection.js:
+   44        values: [
+   45          {
+   46:           heading: formatMessage({ id: "XXXX", defaultMessage: "Network" }),
+   47            headingLevel: 1
+   48          },
+   49          {
+   50            key: "networks.0.mode",
+   51:           label: formatMessage({ id: "XXXX", defaultMessage: "Network Mode" })
+   52          },
+   53          {
+   54            key: "networks.0.name",
+   55:           label: formatMessage({ id: "XXXX", defaultMessage: "Network Name" })
+   56          },
+   57          {
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServicePlacementConstraintsConfigSection.js:
+   14      return [
+   15        {
+   16:         heading: formatMessage({ id: "XXXX", defaultMessage: "Field Name" }),
+   17          prop: "fieldName"
+   18        },
+   19        {
+   20:         heading: formatMessage({ id: "XXXX", defaultMessage: "Operator" }),
+   21          prop: "operator"
+   22        },
+   23        {
+   24:         heading: formatMessage({ id: "XXXX", defaultMessage: "Value" }),
+   25          prop: "value"
+   26        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceStorageConfigSection.js:
+   39          {
+   40            key: "container.volumes",
+   41:           heading: formatMessage({ id: "XXXX", defaultMessage: "Storage" }),
+   42            headingLevel: 1
+   43          },
+
+/Users/matappelman/coding/dcos-ui/src/js/components/Modals.js:
+  145      if (this.state.showingCliModal) {
+  146        Hooks.doAction("logFakePageView", {
+  147:         title: formatMessage({
+  148            id: "XXXX",
+  149            defaultMessage: "CLI instructions"
+
+/Users/matappelman/coding/dcos-ui/src/js/components/charts/TasksChart.js:
+   10  const TASK_INFO = {
+   11    TASK_RUNNING: {
+   12:     label: formatMessage({ id: "XXXX", defaultMessage: "Tasks running" }),
+   13      colorIndex: 4
+   14    },
+   15    TASK_STAGING: {
+   16:     label: formatMessage({ id: "XXXX", defaultMessage: "Tasks staging" }),
+   17      colorIndex: 1
+   18    }
+
+/Users/matappelman/coding/dcos-ui/src/js/constants/UnitHealthStatus.js:
+   15  const UnitHealthStatus = {
+   16    [SERVER_HEALTHY]: {
+   17:     title: formatMessage({ id: "XXXX", defaultMessage: "Healthy" }),
+   18      key: "HEALTHY",
+   19      classNames: "text-success",
+   ..
+   22    },
+   23    [SERVER_UNHEALTHY]: {
+   24:     title: formatMessage({ id: "XXXX", defaultMessage: "Unhealthy" }),
+   25      key: "UNHEALTHY",
+   26      classNames: "text-danger",
+   ..
+   29    },
+   30    [SERVER_WARN]: {
+   31:     title: formatMessage({ id: "XXXX", defaultMessage: "Warning" }),
+   32      key: "WAR",
+   33      classNames: "text-warning",
+
+/Users/matappelman/coding/dcos-ui/src/js/events/AuthActions.js:
+   58  if (Config.useFixtures) {
+   59    AuthActions.login = function() {
+   60:     // base64 encoded - {is_remote: false, uid: "bootstrapuser", description: formatMessage({id: "XXXX", defaultMessage: "Bootstrap superuser"})}
+   61      global.document.cookie =
+   62        "dcos-acs-info-cookie=" +
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/CatalogPage.js:
+   11  
+   12  CatalogPage.routeConfig = {
+   13:   label: formatMessage({ id: "XXXX", defaultMessage: "Catalog" }),
+   14    icon: <Icon id="packages-inverse" size="small" family="product" />,
+   15    matches: /^\/catalog/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/ComponentsPage.js:
+   11  
+   12  ComponentsPage.routeConfig = {
+   13:   label: formatMessage({ id: "XXXX", defaultMessage: "Components" }),
+   14    icon: <Icon id="components-inverse" size="small" family="product" />,
+   15    matches: /^\/components/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/DashboardPage.js:
+   62    statics: {
+   63      routeConfig: {
+   64:       label: formatMessage({ id: "XXXX", defaultMessage: "Dashboard" }),
+   65        icon: <Icon id="graph-inverse" size="small" family="product" />,
+   66        matches: /^\/dashboard/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/JobsPage.js:
+   17  
+   18  JobsPage.routeConfig = {
+   19:   label: formatMessage({ id: "XXXX", defaultMessage: "Jobs" }),
+   20    icon: <Icon id="jobs-inverse" size="small" family="product" />,
+   21    matches: /^\/jobs/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/NetworkPage.js:
+   72  
+   73  NetworkPage.routeConfig = {
+   74:   label: formatMessage({ id: "XXXX", defaultMessage: "Networking" }),
+   75    icon: <Icon id="network-inverse" size="small" family="product" />,
+   76    matches: /^\/networking/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/OrganizationPage.js:
+   11  
+   12  OrganizationPage.routeConfig = {
+   13:   label: formatMessage({ id: "XXXX", defaultMessage: "Organization" }),
+   14    icon: <Icon id="users-inverse" size="small" family="product" />,
+   15    matches: /^\/organization/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/SettingsPage.js:
+   11  
+   12  SettingsPage.routeConfig = {
+   13:   label: formatMessage({ id: "XXXX", defaultMessage: "Settings" }),
+   14    icon: <Icon id="gear-inverse" size="small" family="product" />,
+   15    matches: /^\/settings/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/SystemOverviewPage.js:
+   11  
+   12  SystemOverviewPage.routeConfig = {
+   13:   label: formatMessage({ id: "XXXX", defaultMessage: "Overview" }),
+   14    icon: <Icon id="cluster-inverse" size="small" family="product" />,
+   15    matches: /^\/overview/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/catalog/PackageDetailTab.js:
+  262      const definition = [
+  263        {
+  264:         label: formatMessage({ id: "XXXX", defaultMessage: "Description" }),
+  265          value: description &&
+  266            <div
+  ...
+  276        },
+  277        {
+  278:         label: formatMessage({ id: "XXXX", defaultMessage: "Information" }),
+  279          type: "subItems",
+  280          value: [
+  281            {
+  282:             label: formatMessage({ id: "XXXX", defaultMessage: "SCM" }),
+  283              value: cosmosPackage.getSCM()
+  284            },
+  285            {
+  286:             label: formatMessage({ id: "XXXX", defaultMessage: "Maintainer" }),
+  287              value: cosmosPackage.getMaintainer()
+  288            }
+  ...
+  290        },
+  291        {
+  292:         label: formatMessage({ id: "XXXX", defaultMessage: "Licenses" }),
+  293          type: "subItems",
+  294          value: this.mapLicenses(cosmosPackage.getLicenses())
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/jobs/JobDetailPage.js:
+  331  
+  332      actions.push({
+  333:       label: formatMessage({ id: "XXXX", defaultMessage: "Edit" }),
+  334        onItemSelect: this.handleEditButtonClick
+  335      });
+  336  
+  337      actions.push({
+  338:       label: formatMessage({ id: "XXXX", defaultMessage: "Run Now" }),
+  339        onItemSelect: this.handleRunNowButtonClick
+  340      });
+  ...
+  342      if (schedule != null && schedule.enabled) {
+  343        actions.push({
+  344:         label: formatMessage({
+  345            id: "XXXX",
+  346            defaultMessage: "Disable Schedule"
+  ...
+  352      if (schedule != null && !schedule.enabled) {
+  353        actions.push({
+  354:         label: formatMessage({ id: "XXXX", defaultMessage: "Enable Schedule" }),
+  355          onItemSelect: this.handleEnableScheduleButtonClick
+  356        });
+  ...
+  371      return [
+  372        {
+  373:         label: formatMessage({ id: "XXXX", defaultMessage: "Run History" }),
+  374          callback: () => {
+  375            this.setState({ currentTab: "runHistory" });
+  ...
+  378        },
+  379        {
+  380:         label: formatMessage({ id: "XXXX", defaultMessage: "Configuration" }),
+  381          callback: () => {
+  382            this.setState({ currentTab: "configuration" });
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/jobs/JobsTab.js:
+  163          <Page.Header
+  164            addButton={{
+  165:             label: formatMessage({
+  166                id: "XXXX",
+  167                defaultMessage: "Create a job"
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/jobs/JobTaskDetailPage.js:
+   24      const tabs = [
+   25        {
+   26:         label: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+   27          routePath: routePrefix + "/details"
+   28        },
+   29        {
+   30:         label: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+   31          routePath: routePrefix + "/files"
+   32        },
+   33        {
+   34:         label: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+   35          routePath: routePrefix + "/logs"
+   36        }
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/network/VirtualNetworksTab.js:
+  172  
+  173  VirtualNetworksTabContent.routeConfig = {
+  174:   label: formatMessage({ id: "XXXX", defaultMessage: "Networks" }),
+  175    matches: /^\/networking\/networks/
+  176  };
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/network/virtual-network-detail/VirtualNetworkDetail.js:
+  147      const tabs = [
+  148        {
+  149:         label: formatMessage({ id: "XXXX", defaultMessage: "Tasks" }),
+  150          callback: () => {
+  151            this.setState({ currentTab: "/networking/networks/:overlayName" });
+  ...
+  157        },
+  158        {
+  159:         label: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+  160          callback: () => {
+  161            this.setState({
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/network/virtual-network-detail/VirtualNetworkTaskPage.js:
+   83      const tabs = [
+   84        {
+   85:         label: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+   86          routePath: routePrefix + "/details"
+   87        },
+   88        {
+   89:         label: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+   90          routePath: routePrefix + "/files"
+   91        },
+   92        {
+   93:         label: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+   94          routePath: routePrefix + "/logs"
+   95        }
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/system/OverviewDetailTab.js:
+  186      return [
+  187        {
+  188:         label: formatMessage({
+  189            id: "XXXX",
+  190            defaultMessage: "View Cluster Configuration"
+  ...
+  363  
+  364  OverviewDetailTab.routeConfig = {
+  365:   label: formatMessage({ id: "XXXX", defaultMessage: "Overview" }),
+  366    matches: /^\/overview\/details/
+  367  };
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/system/RepositoriesTab.js:
+  148            addButton={{
+  149              onItemSelect: this.handleOpenAddRepository,
+  150:             label: formatMessage({
+  151                id: "XXXX",
+  152                defaultMessage: "Add Repository"
+  ...
+  162  
+  163  RepositoriesTab.routeConfig = {
+  164:   label: formatMessage({ id: "XXXX", defaultMessage: "Package Repositories" }),
+  165    matches: /^\/settings\/repositories/
+  166  };
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/system/UnitsHealthTab.js:
+  232  
+  233  UnitsHealthTab.routeConfig = {
+  234:   label: formatMessage({ id: "XXXX", defaultMessage: "Components" }),
+  235    matches: /^\/components\/overview/
+  236  };
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/system/UsersPage.js:
+  121  
+  122  UsersPage.routeConfig = {
+  123:   label: formatMessage({ id: "XXXX", defaultMessage: "Users" }),
+  124    matches: /^\/organization\/users/
+  125  };
+
+/Users/matappelman/coding/dcos-ui/src/js/routes/jobs.js:
+   69                  isTab: true,
+   70                  path: "details",
+   71:                 title: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+   72                  type: Route
+   73                },
+   ..
+   77                  isTab: true,
+   78                  path: "files",
+   79:                 title: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+   80                  type: Route,
+   81                  children: [
+   ..
+   99                  isTab: true,
+  100                  path: "logs",
+  101:                 title: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+  102                  type: Route,
+  103                  children: [
+
+/Users/matappelman/coding/dcos-ui/src/js/routes/factories/network.js:
+   69              isTab: true,
+   70              path: "details",
+   71:             title: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+   72              type: Route
+   73            },
+   ..
+   77              isTab: true,
+   78              path: "files",
+   79:             title: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+   80              type: Route,
+   81              children: [
+   ..
+   99              isTab: true,
+  100              path: "logs",
+  101:             title: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+  102              type: Route,
+  103              children: [
+
+/Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/Docker.js:
+    4  
+    5  const General = {
+    6:   title: formatMessage({ id: "XXXX", defaultMessage: "Docker Container" }),
+    7:   description: formatMessage({
+    8      id: "XXXX",
+    9      defaultMessage: "Configure your job settings"
+   ..
+   12    properties: {
+   13      image: {
+   14:       title: formatMessage({ id: "XXXX", defaultMessage: "Image" }),
+   15:       description: formatMessage({
+   16          id: "XXXX",
+   17          defaultMessage: "Name of your Docker image"
+
+/Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/General.js:
+    9  
+   10  const General = {
+   11:   title: formatMessage({ id: "XXXX", defaultMessage: "General" }),
+   12:   description: formatMessage({
+   13      id: "XXXX",
+   14      defaultMessage: "Configure your job settings"
+   ..
+   18      id: {
+   19        focused: true,
+   20:       title: formatMessage({ id: "XXXX", defaultMessage: "ID" }),
+   21:       description: formatMessage({ id: "XXXX", defaultMessage: "The job ID" }),
+   22        type: "string",
+   23        getter(job) {
+   ..
+   38      },
+   39      description: {
+   40:       title: formatMessage({ id: "XXXX", defaultMessage: "Description" }),
+   41:       description: formatMessage({
+   42          id: "XXXX",
+   43          defaultMessage: "Job description"
+   ..
+   52        properties: {
+   53          cpus: {
+   54:           title: formatMessage({ id: "XXXX", defaultMessage: "CPUs" }),
+   55            default: JobResources.DEFAULT_CPUS,
+   56:           description: formatMessage({
+   57              id: "XXXX",
+   58              defaultMessage: "The amount of CPUs the job requires"
+   ..
+  125      },
+  126      cmd: {
+  127:       title: formatMessage({ id: "XXXX", defaultMessage: "Command" }),
+  128:       description: formatMessage({
+  129          id: "XXXX",
+  130          defaultMessage: "The command executed by the service"
+
+/Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/Labels.js:
+    2  const Labels = {
+    3    type: "object",
+    4:   title: formatMessage({ id: "XXXX", defaultMessage: "Labels" }),
+    5    description: "Attach metadata to jobs to expose additional information to other jobs.",
+    6    properties: {
+    .
+    8        type: "array",
+    9        duplicable: true,
+   10:       addLabel: formatMessage({ id: "XXXX", defaultMessage: "Add Label" }),
+   11        getter(job) {
+   12          const labels = job.getLabels() || {};
+   ..
+   22          properties: {
+   23            key: {
+   24:             title: formatMessage({ id: "XXXX", defaultMessage: "Label Name" }),
+   25              type: "string"
+   26            },
+   27            value: {
+   28:             title: formatMessage({ id: "XXXX", defaultMessage: "Label Value" }),
+   29              type: "string"
+   30            }
+
+/Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/Schedule.js:
+   11  
+   12  const Schedule = {
+   13:   title: formatMessage({ id: "XXXX", defaultMessage: "Schedule" }),
+   14:   description: formatMessage({
+   15      id: "XXXX",
+   16      defaultMessage: "Set time and date for the job to run"
+   ..
+   19    properties: {
+   20      runOnSchedule: {
+   21:       label: formatMessage({ id: "XXXX", defaultMessage: "Run on a schedule" }),
+   22        showLabel: true,
+   23:       title: formatMessage({ id: "XXXX", defaultMessage: "Run on a schedule" }),
+   24        type: "boolean",
+   25        getter(job) {
+   ..
+   30      },
+   31      cron: {
+   32:       title: formatMessage({ id: "XXXX", defaultMessage: "CRON Schedule" }),
+   33        helpBlock: (
+   34          <span>
+   ..
+   69      },
+   70      timezone: {
+   71:       title: formatMessage({ id: "XXXX", defaultMessage: "Time Zone" }),
+   72        description: (
+   73          <span>
+   ..
+   89      },
+   90      startingDeadlineSeconds: {
+   91:       title: formatMessage({ id: "XXXX", defaultMessage: "Starting Deadline" }),
+   92:       description: formatMessage({
+   93          id: "XXXX",
+   94          defaultMessage: "Time in seconds to start the job if it misses "
+   ..
+  121      },
+  122      enabled: {
+  123:       label: formatMessage({ id: "XXXX", defaultMessage: "Enabled" }),
+  124        showLabel: true,
+  125:       title: formatMessage({ id: "XXXX", defaultMessage: "Enabled" }),
+  126        type: "boolean",
+  127        getter(job) {
+
+/Users/matappelman/coding/dcos-ui/src/js/utils/ResourcesUtil.js:
+    6  const DefaultResourceTypes = {
+    7    cpus: {
+    8:     label: formatMessage({ id: "XXXX", defaultMessage: "CPU" }),
+    9      colorID: 0
+   10    },
+   11    mem: {
+   12:     label: formatMessage({ id: "XXXX", defaultMessage: "Memory" }),
+   13      colorID: 6
+   14    },
+   15    disk: {
+   16:     label: formatMessage({ id: "XXXX", defaultMessage: "Disk" }),
+   17      colorID: 3
+   18    }
+
+222 matches across 61 files
+
+
+Searching 648 files for "intl" (regex)
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/components/HealthTab.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import PureRender from "react-addons-pure-render-mixin";
+    3  import React from "react";
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/components/NodeBreadcrumbs.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  import { Link } from "react-router";
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/components/NodesGridView.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import { Form } from "reactjs-components";
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/pages/NodesOverview.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import React from "react";
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/pages/NodesPage.js:
+    1: import { formatMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/pages/nodes/NodeDetailPage.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import mixin from "reactjs-mixin";
+    3  /* eslint-disable no-unused-vars */
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/pages/nodes/NodeDetailTab.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import PureRender from "react-addons-pure-render-mixin";
+    3  import React from "react";
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/pages/nodes/NodesTaskDetailPage.js:
+    1: import { formatMessage } from "react-intl";
+    2  import mixin from "reactjs-mixin";
+    3  /* eslint-disable no-unused-vars */
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/routes/nodes.js:
+    1: import { formatMessage } from "react-intl";
+    2  import { IndexRoute, Route, Redirect } from "react-router";
+    3  /* eslint-disable no-unused-vars */
+
+/Users/matappelman/coding/dcos-ui/plugins/oauth/components/LoginPage.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  import { routerShape } from "react-router";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/ConfigurationMapBooleanValue.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/ConfigurationMapDurationValue.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/ConfigurationMapMultilineValue.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/ConfigurationMapSizeValue.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/ConfigurationMapTable.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  import { Table } from "reactjs-components";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/ConfigurationMapValueWithDefault.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/DeclinedOffersTable.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import { Link } from "react-router";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/DeploymentsModal.js:
+    1: import { FormattedMessage, formatMessage, injectIntl } from "react-intl";
+    2  import classNames from "classnames";
+    3  import { Confirm, Dropdown, Modal } from "reactjs-components";
+    .
+  504      let content = null;
+  505      const deployments = DCOSStore.deploymentsList.getItems();
+  506:     const { intl, isOpen, onClose } = this.props;
+  507      const loading = !DCOSStore.serviceDataReceived;
+  508  
+  ...
+  524      const heading = (
+  525        <ModalHeading>
+  526:         {intl.formatMessage(
+  527            {
+  528              id: "SERVICES.DEPLOYMENT_MODAL_HEADING"
+  ...
+  551  }
+  552  
+  553: module.exports = injectIntl(DeploymentsModal);
+  554  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/DeploymentStatusIndicator.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import mixin from "reactjs-mixin";
+    3  /* eslint-disable no-unused-vars */
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/EmptyLogScreen.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React, { PropTypes } from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/FilterByService.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  import { Dropdown } from "reactjs-components";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/HealthBar.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import React from "react";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/MarathonTaskDetailsList.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/MesosLogContainer.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import mixin from "reactjs-mixin";
+    3  import React from "react";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/RecentOffersSummary.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import React from "react";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/ServiceBreadcrumbs.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import ReactDOM from "react-dom";
+    3  import React from "react";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/ServiceItemNotFound.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import { Link } from "react-router";
+    3  import React, { PropTypes } from "react";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/ServiceList.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import deepEqual from "deep-equal";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/dsl/FuzzyTextDSLSection.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React, { PropTypes } from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/dsl/ServiceHealthDSLSection.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React, { PropTypes } from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/dsl/ServiceOtherDSLSection.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React, { PropTypes } from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/dsl/ServiceStatusDSLSection.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React, { PropTypes } from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/modals/AppLockedMessage.js:
+    1  import {
+    2    FormattedMessage
+    3: } from "react-intl"; /* eslint-disable no-unused-vars */
+    4  import React from "react";
+    5  /* eslint-enable no-unused-vars */
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/modals/CreateServiceJsonOnly.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React, { PropTypes } from "react";
+    3  import deepEqual from "deep-equal";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/modals/CreateServiceModal.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import deepEqual from "deep-equal";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/modals/CreateServiceModalForm.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import deepEqual from "deep-equal";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/modals/CreateServiceModalServicePicker.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import { MountService } from "foundation-ui";
+    3  /* eslint-disable no-unused-vars */
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/modals/KillPodInstanceModal.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import { Confirm } from "reactjs-components";
+    3  import React, { PropTypes } from "react";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/modals/KillTaskModal.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import { Confirm } from "reactjs-components";
+    3  import React, { PropTypes } from "react";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/modals/ServiceDestroyModal.js:
+    1: import { FormattedMessage, formatMessage, injectIntl } from "react-intl";
+    2  import { Confirm, Modal } from "reactjs-components";
+    3  import { routerShape } from "react-router";
+    .
+  148  
+  149    getDestroyFrameworkModal() {
+  150:     const { open, service, intl } = this.props;
+  151      const packageName = service.getPackageName();
+  152  
+  ...
+  163        >
+  164          <p>
+  165:           {intl.formatMessage({
+  166              id: "SERVICE_ACTIONS.DELETE_SERVICE_FRAMEWORK"
+  167            })}
+  ...
+  169              href="https://docs.mesosphere.com/service-docs/"
+  170              target="_blank"
+  171:             title={intl.formatMessage({
+  172                id: "COMMON.DOCUMENTATION_TITLE"
+  173              })}
+  174            >
+  175:             {intl.formatMessage({
+  176                id: "COMMON.DOCUMENTATION"
+  177              })}
+  178            </a>
+  179:           {intl.formatMessage({
+  180              id: "SERVICE_ACTIONS.DELETE_SERVICE_FRAMEWORK_2"
+  181            })}
+  ...
+  306    deleteItem: PropTypes.func.isRequired,
+  307    errors: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  308:   intl: intlShape.isRequired,
+  309    isPending: PropTypes.bool.isRequired,
+  310    onClose: PropTypes.func.isRequired,
+  ...
+  318  };
+  319  
+  320: module.exports = injectIntl(ServiceDestroyModal);
+  321  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/modals/ServiceGroupFormModal.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React, { PropTypes } from "react";
+    3  import PureRender from "react-addons-pure-render-mixin";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/modals/ServiceRestartModal.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import { Confirm } from "reactjs-components";
+    3  import React, { PropTypes } from "react";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/modals/ServiceResumeModal.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import { Confirm } from "reactjs-components";
+    3  import React, { PropTypes } from "react";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/modals/ServiceScaleFormModal.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React, { PropTypes } from "react";
+    3  import PureRender from "react-addons-pure-render-mixin";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/modals/ServiceSuspendModal.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import { Confirm } from "reactjs-components";
+    3  import React, { PropTypes } from "react";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/constants/DeclinedOffersHelpText.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/constants/HealthBarStates.js:
+    1: import { formatMessage } from "react-intl";
+    2  const HealthBarStates = {
+    3    tasksUnknown: {
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/pod-debug/PodDebugContainer.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  import { routerShape } from "react-router";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/pod-detail/PodDetail.js:
+    1: import { formatMessage } from "react-intl";
+    2  import mixin from "reactjs-mixin";
+    3  import React, { PropTypes } from "react";
+    .
+  153      ) {
+  154        actions.push({
+  155:         label: this.props.intl.formatMessage({
+  156            id: ServiceActionLabels.open
+  157          }),
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/pod-instances/PodInstancesView.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  import { routerShape } from "react-router";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/service-configuration/ServiceConfiguration.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import { Dropdown, Tooltip } from "reactjs-components";
+    3  import mixin from "reactjs-mixin";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/service-debug/ServiceDebugContainer.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  import { routerShape } from "react-router";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/service-detail/ServiceDetail.js:
+    1: import { formatMessage, injectIntl } from "react-intl";
+    2  import mixin from "reactjs-mixin";
+    3  import React, { PropTypes } from "react";
+    .
+  180      ) {
+  181        actions.push({
+  182:         label: this.props.intl.formatMessage({
+  183            id: ServiceActionLabels.open
+  184          }),
+  ...
+  322  };
+  323  
+  324: module.exports = injectIntl(ServiceDetail);
+  325  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/services/EmptyServiceTree.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React, { PropTypes } from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/services/ServicesContainer.js:
+    1: import { formatMessage } from "react-intl";
+    2  import React, { PropTypes } from "react";
+    3  import { routerShape } from "react-router";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/services/ServicesTable.js:
+    1: import { FormattedMessage, formatMessage, injectIntl } from "react-intl";
+    2  import classNames from "classnames";
+    3  import { Dropdown, Table, Tooltip } from "reactjs-components";
+    .
+  260        actions.push({
+  261          id: OPEN,
+  262:         html: this.props.intl.formatMessage({ id: ServiceActionLabels.open })
+  263        });
+  264      }
+  ...
+  267        actions.push({
+  268          id: EDIT,
+  269:         html: this.props.intl.formatMessage({ id: ServiceActionLabels.edit })
+  270        });
+  271      }
+  ...
+  276        actions.push({
+  277          id: SCALE,
+  278:         html: this.props.intl.formatMessage({ id: scaleTextID })
+  279        });
+  280      }
+  ...
+  283        actions.push({
+  284          id: RESTART,
+  285:         html: this.props.intl.formatMessage({
+  286            id: ServiceActionLabels[RESTART]
+  287          })
+  ...
+  292        actions.push({
+  293          id: SUSPEND,
+  294:         html: this.props.intl.formatMessage({
+  295            id: ServiceActionLabels[SUSPEND]
+  296          })
+  ...
+  301        actions.push({
+  302          id: RESUME,
+  303:         html: this.props.intl.formatMessage({
+  304            id: ServiceActionLabels[RESUME]
+  305          })
+  ...
+  311        html: (
+  312          <span className="text-danger">
+  313:           {this.props.intl.formatMessage({
+  314              id: ServiceActionLabels[DELETE]
+  315            })}
+  ...
+  539  };
+  540  
+  541: module.exports = injectIntl(ServicesTable);
+  542  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/services/ServiceTreeView.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import React, { PropTypes } from "react";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/tasks/TasksView.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import mixin from "reactjs-mixin";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/volume-detail/VolumeDetail.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import React from "react";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/pages/ServicesPage.js:
+    1: import { formatMessage } from "react-intl";
+    2  import React from "react";
+    3  import { routerShape } from "react-router";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/pages/task-details/ServiceTaskDetailPage.js:
+    1: import { formatMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/pages/task-details/TaskDetailsTab.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/pages/task-details/TaskFileViewer.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import { Dropdown, Tooltip } from "reactjs-components";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/routes/services.js:
+    1: import { formatMessage } from "react-intl";
+    2  import { Redirect, Route, IndexRoute } from "react-router";
+    3  /* eslint-disable no-unused-vars */
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodContainerArtifactsConfigSection.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodContainerConfigSection.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodContainersConfigSection.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodEnvironmentVariablesConfigSection.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodGeneralConfigSection.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodHealthChecksConfigSection.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodLabelsConfigSection.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodNetworkConfigSection.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodPlacementConstraintsConfigSection.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodStorageConfigSection.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceEnvironmentVariablesConfigSection.js:
+    1: import { formatMessage } from "react-intl";
+    2  import React from "react";
+    3  import { Table } from "reactjs-components";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceGeneralConfigSection.js:
+    1: import { formatMessage } from "react-intl";
+    2  import React from "react";
+    3  import { Table } from "reactjs-components";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceHealthChecksConfigSection.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  import { Table } from "reactjs-components";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceLabelsConfigSection.js:
+    1: import { formatMessage } from "react-intl";
+    2  import React from "react";
+    3  import { Table } from "reactjs-components";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceNetworkingConfigSection.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import React from "react";
+    3  import { Table } from "reactjs-components";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServicePlacementConstraintsConfigSection.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceStorageConfigSection.js:
+    1: import { formatMessage } from "react-intl";
+    2  import React from "react";
+    3  import { Table } from "reactjs-components";
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/utils/ServiceConfigDisplayUtil.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import React from "react";
+
+/Users/matappelman/coding/dcos-ui/src/js/index.js:
+    4  /* eslint-enable no-unused-vars */
+    5  import ReactDOM from "react-dom";
+    6: import { IntlProvider } from "react-intl";
+    7  import { RequestUtil } from "mesosphere-shared-reactjs";
+    8  import { Router, hashHistory } from "react-router";
+    .
+   91          renderAppToDOM(
+   92            <Provider store={PluginSDK.Store}>
+   93:             <IntlProvider locale={navigatorLanguage} messages={enUS}>
+   94                <Router history={hashHistory} routes={routes} />
+   95:             </IntlProvider>
+   96            </Provider>
+   97          );
+   ..
+  136    }
+  137  
+  138:   if (!global.Intl) {
+  139:     require.ensure(["intl", "intl/locale-data/jsonp/en.js"], function(require) {
+  140:       require("intl");
+  141:       require("intl/locale-data/jsonp/en.js");
+  142  
+  143        startApplication();
+
+/Users/matappelman/coding/dcos-ui/src/js/components/AccessDeniedPage.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/src/js/components/CollapsibleErrorMessage.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import classNames from "classnames/dedupe";
+    3  import React from "react";
+
+/Users/matappelman/coding/dcos-ui/src/js/components/ComponentList.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import { Link } from "react-router";
+
+/Users/matappelman/coding/dcos-ui/src/js/components/CosmosErrorMessage.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/src/js/components/CreateServiceModalCatalogPanelOption.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/src/js/components/DSLFormWithExpressionUpdates.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import React, { PropTypes } from "react";
+
+/Users/matappelman/coding/dcos-ui/src/js/components/DSLInputField.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import React, { PropTypes } from "react";
+
+/Users/matappelman/coding/dcos-ui/src/js/components/ErrorsAlert.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/src/js/components/FilterHeadline.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import PureRender from "react-addons-pure-render-mixin";
+
+/Users/matappelman/coding/dcos-ui/src/js/components/ImageViewer.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  import ImageViewerModal from "./modals/ImageViewerModal";
+
+/Users/matappelman/coding/dcos-ui/src/js/components/JSONEditor.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import AceEditor from "react-ace";
+    3  import React from "react";
+
+/Users/matappelman/coding/dcos-ui/src/js/components/Modals.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import React from "react";
+    3  import { Hooks } from "PluginSDK";
+
+/Users/matappelman/coding/dcos-ui/src/js/components/RequestErrorMsg.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import classNames from "classnames/dedupe";
+    3  import React from "react";
+
+/Users/matappelman/coding/dcos-ui/src/js/components/ReviewConfig.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import GeminiScrollbar from "react-gemini-scrollbar";
+    3  import React from "react";
+
+/Users/matappelman/coding/dcos-ui/src/js/components/ServerErrorModal.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import mixin from "reactjs-mixin";
+
+/Users/matappelman/coding/dcos-ui/src/js/components/Sidebar.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import CSSTransitionGroup from "react-addons-css-transition-group";
+
+/Users/matappelman/coding/dcos-ui/src/js/components/SidebarHeader.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import mixin from "reactjs-mixin";
+    3  import { MountService } from "foundation-ui";
+
+/Users/matappelman/coding/dcos-ui/src/js/components/charts/HostTimeSeriesChart.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/src/js/components/charts/TasksChart.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import deepEqual from "deep-equal";
+
+/Users/matappelman/coding/dcos-ui/src/js/components/modals/AddRepositoryFormModal.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import mixin from "reactjs-mixin";
+    3  /* eslint-disable no-unused-vars */
+
+/Users/matappelman/coding/dcos-ui/src/js/components/modals/CliInstallModal.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import browserInfo from "browser-info";
+    3  import classNames from "classnames";
+
+/Users/matappelman/coding/dcos-ui/src/js/components/modals/ErrorModal.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/src/js/components/modals/InstallPackageModal.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import { Modal } from "reactjs-components";
+
+/Users/matappelman/coding/dcos-ui/src/js/components/modals/JobFormModal.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import Ace from "react-ace";
+    3  import mixin from "reactjs-mixin";
+
+/Users/matappelman/coding/dcos-ui/src/js/components/modals/JobStopRunModal.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import { Confirm } from "reactjs-components";
+    3  import mixin from "reactjs-mixin";
+
+/Users/matappelman/coding/dcos-ui/src/js/components/modals/UserFormModal.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import mixin from "reactjs-mixin";
+    3  import { Hooks } from "PluginSDK";
+
+/Users/matappelman/coding/dcos-ui/src/js/components/modals/VersionsModal.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import { Modal } from "reactjs-components";
+    3  import React from "react";
+
+/Users/matappelman/coding/dcos-ui/src/js/constants/UnitHealthStatus.js:
+    1: import { formatMessage } from "react-intl";
+    2  import {
+    3    SERVER_HEALTHY,
+
+/Users/matappelman/coding/dcos-ui/src/js/events/AuthActions.js:
+    1: import { formatMessage } from "react-intl";
+    2  import { RequestUtil } from "mesosphere-shared-reactjs";
+    3  
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/CatalogPage.js:
+    1: import { formatMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/ComponentsPage.js:
+    1: import { formatMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/DashboardPage.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import { routerShape, Link } from "react-router";
+    3  import React from "react";
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/JobsPage.js:
+    1: import { formatMessage } from "react-intl";
+    2  import React from "react";
+    3  import { routerShape } from "react-router";
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/NetworkPage.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import { routerShape, Link } from "react-router";
+    3  import mixin from "reactjs-mixin";
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/NotFoundPage.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import { Link } from "react-router";
+    3  import React from "react";
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/OrganizationPage.js:
+    1: import { formatMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/SettingsPage.js:
+    1: import { formatMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/SystemOverviewPage.js:
+    1: import { formatMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/catalog/PackageDetailTab.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import mixin from "reactjs-mixin";
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/catalog/PackagesTab.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import mixin from "reactjs-mixin";
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/jobs/JobConfiguration.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/jobs/JobDetailPage.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import { Confirm } from "reactjs-components";
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/jobs/JobsTab.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import mixin from "reactjs-mixin";
+    3  import React from "react";
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/jobs/JobTaskDetailPage.js:
+    1: import { formatMessage } from "react-intl";
+    2  import React from "react";
+    3  import { Link } from "react-router";
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/network/VirtualNetworksTab.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import mixin from "reactjs-mixin";
+    3  import { Link } from "react-router";
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/network/virtual-network-detail/VirtualNetworkDetail.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import mixin from "reactjs-mixin";
+    3  import { Link, routerShape } from "react-router";
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/network/virtual-network-detail/VirtualNetworkDetailsTab.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/network/virtual-network-detail/VirtualNetworkTaskPage.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import React from "react";
+    3  import { Link } from "react-router";
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/system/ComponentsUnitsHealthNodeDetailPage.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import mixin from "reactjs-mixin";
+    3  import { Link } from "react-router";
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/system/OrganizationTab.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import { Dropdown, Form, Table } from "reactjs-components";
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/system/OverviewDetailTab.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import mixin from "reactjs-mixin";
+    3  import { Link } from "react-router";
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/system/RepositoriesTab.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import mixin from "reactjs-mixin";
+    3  import { Link } from "react-router";
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/system/UnitsHealthDetail.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import mixin from "reactjs-mixin";
+    3  import { Link } from "react-router";
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/system/UnitsHealthTab.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  import { Link } from "react-router";
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/system/UsersPage.js:
+    1: import { FormattedMessage, formatMessage } from "react-intl";
+    2  import { Hooks } from "PluginSDK";
+    3  import mixin from "reactjs-mixin";
+
+/Users/matappelman/coding/dcos-ui/src/js/routes/jobs.js:
+    1: import { formatMessage } from "react-intl";
+    2  import { Redirect, IndexRoute, Route } from "react-router";
+    3  /* eslint-disable no-unused-vars */
+
+/Users/matappelman/coding/dcos-ui/src/js/routes/factories/network.js:
+    1: import { formatMessage } from "react-intl"; /* eslint-disable no-unused-vars */
+    2  import React, { PropTypes } from "react";
+    3  /* eslint-enable no-unused-vars */
+
+/Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/Docker.js:
+    1: import { formatMessage } from "react-intl"; /* eslint-disable no-unused-vars */
+    2  import React from "react";
+    3  /* eslint-enable no-unused-vars */
+
+/Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/General.js:
+    1: import { formatMessage } from "react-intl"; /* eslint-disable no-unused-vars */
+    2  import React from "react";
+    3  /* eslint-enable no-unused-vars */
+
+/Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/Labels.js:
+    1: import { formatMessage } from "react-intl";
+    2  const Labels = {
+    3    type: "object",
+
+/Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/Schedule.js:
+    2    FormattedMessage,
+    3    formatMessage
+    4: } from "react-intl"; /* eslint-disable no-unused-vars */
+    5  import React from "react";
+    6  /* eslint-enable no-unused-vars */
+
+/Users/matappelman/coding/dcos-ui/src/js/structs/Batch.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import TransactionTypes from "../constants/TransactionTypes";
+    3  
+
+/Users/matappelman/coding/dcos-ui/src/js/structs/DSLExpressionPart.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import DSLFilterTypes from "../constants/DSLFilterTypes";
+    3  import { FilterNode } from "./DSLASTNodes";
+
+/Users/matappelman/coding/dcos-ui/src/js/utils/JestUtil.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import TestUtils from "react-addons-test-utils";
+    3  import React from "react";
+
+/Users/matappelman/coding/dcos-ui/src/js/utils/ResourcesUtil.js:
+    1: import { formatMessage } from "react-intl";
+    2  import CompositeState from "../structs/CompositeState";
+    3  import Node from "../structs/Node";
+
+/Users/matappelman/coding/dcos-ui/src/js/utils/ResourceTableUtil.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import classNames from "classnames";
+    3  /* eslint-disable no-unused-vars */
+
+/Users/matappelman/coding/dcos-ui/src/js/utils/TemplateUtil.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import React from "react";
+    3  
+
+/Users/matappelman/coding/dcos-ui/src/js/utils/VirtualNetworkUtil.js:
+    1: import { FormattedMessage } from "react-intl";
+    2  import { Link } from "react-router";
+    3  /* eslint-disable no-unused-vars */
+
+185 matches across 151 files
+
+
+Searching 648 files for "intl\." (regex)
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/DeploymentsModal.js:
+  524      const heading = (
+  525        <ModalHeading>
+  526:         {intl.formatMessage(
+  527            {
+  528              id: "SERVICES.DEPLOYMENT_MODAL_HEADING"
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/modals/ServiceDestroyModal.js:
+  163        >
+  164          <p>
+  165:           {intl.formatMessage({
+  166              id: "SERVICE_ACTIONS.DELETE_SERVICE_FRAMEWORK"
+  167            })}
+  ...
+  169              href="https://docs.mesosphere.com/service-docs/"
+  170              target="_blank"
+  171:             title={intl.formatMessage({
+  172                id: "COMMON.DOCUMENTATION_TITLE"
+  173              })}
+  174            >
+  175:             {intl.formatMessage({
+  176                id: "COMMON.DOCUMENTATION"
+  177              })}
+  178            </a>
+  179:           {intl.formatMessage({
+  180              id: "SERVICE_ACTIONS.DELETE_SERVICE_FRAMEWORK_2"
+  181            })}
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/pod-detail/PodDetail.js:
+  153      ) {
+  154        actions.push({
+  155:         label: this.props.intl.formatMessage({
+  156            id: ServiceActionLabels.open
+  157          }),
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/service-detail/ServiceDetail.js:
+  180      ) {
+  181        actions.push({
+  182:         label: this.props.intl.formatMessage({
+  183            id: ServiceActionLabels.open
+  184          }),
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/services/ServicesTable.js:
+  260        actions.push({
+  261          id: OPEN,
+  262:         html: this.props.intl.formatMessage({ id: ServiceActionLabels.open })
+  263        });
+  264      }
+  ...
+  267        actions.push({
+  268          id: EDIT,
+  269:         html: this.props.intl.formatMessage({ id: ServiceActionLabels.edit })
+  270        });
+  271      }
+  ...
+  276        actions.push({
+  277          id: SCALE,
+  278:         html: this.props.intl.formatMessage({ id: scaleTextID })
+  279        });
+  280      }
+  ...
+  283        actions.push({
+  284          id: RESTART,
+  285:         html: this.props.intl.formatMessage({
+  286            id: ServiceActionLabels[RESTART]
+  287          })
+  ...
+  292        actions.push({
+  293          id: SUSPEND,
+  294:         html: this.props.intl.formatMessage({
+  295            id: ServiceActionLabels[SUSPEND]
+  296          })
+  ...
+  301        actions.push({
+  302          id: RESUME,
+  303:         html: this.props.intl.formatMessage({
+  304            id: ServiceActionLabels[RESUME]
+  305          })
+  ...
+  311        html: (
+  312          <span className="text-danger">
+  313:           {this.props.intl.formatMessage({
+  314              id: ServiceActionLabels[DELETE]
+  315            })}
+
+14 matches across 5 files
+
+
+Searching 648 files for "(?>!intl)formatMessage\.(" (regex)
+
+Unmatched marking parenthesis ( or \(.  The error occurred while parsing the regular expression fragment: 'Message\.(>>>HERE>>>'. in regular expression (?>!intl)formatMessage\.(
+
+0 matches
+
+Searching 648 files for "(?>!intl)formatMessage\.\(" (regex)
+
+0 matches
+
+Searching 648 files for "(?<!intl)formatMessage\.\(" (regex)
+
+0 matches
+
+Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/components/NodesGridView.js:
+  130                    name: "showServices",
+  131                    checked: props.showServices,
+  132:                   label: formatMessage({
+  133                      id: "XXXX",
+  134                      defaultMessage: "Show Services by Share"
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/pages/NodesOverview.js:
+   64    statics: {
+   65      routeConfig: {
+   66:       label: formatMessage({ id: "XXXX", defaultMessage: "Nodes" }),
+   67        icon: <Icon family="product" id="servers-inverse" />,
+   68        matches: /^\/nodes/
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/pages/NodesPage.js:
+   11  
+   12  NodesPage.routeConfig = {
+   13:   label: formatMessage({ id: "XXXX", defaultMessage: "Nodes" }),
+   14    icon: <Icon id="servers-inverse" size="small" family="product" />,
+   15    matches: /^\/nodes/
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/pages/nodes/NodeDetailPage.js:
+  176      const tabs = [
+  177        {
+  178:         label: formatMessage({ id: "XXXX", defaultMessage: "Tasks" }),
+  179          callback: () => {
+  180            this.context.router.push(`/nodes/${nodeID}/tasks`);
+  ...
+  183        },
+  184        {
+  185:         label: formatMessage({ id: "XXXX", defaultMessage: "Health" }),
+  186          callback: () => {
+  187            this.context.router.push(`/nodes/${nodeID}/health`);
+  ...
+  190        },
+  191        {
+  192:         label: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+  193          callback: () => {
+  194            this.context.router.push(`/nodes/${nodeID}/details`);
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/pages/nodes/NodesTaskDetailPage.js:
+   35      const tabs = [
+   36        {
+   37:         label: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+   38          routePath: routePrefix + "/details"
+   39        },
+   40        {
+   41:         label: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+   42          routePath: routePrefix + "/files"
+   43        },
+   44        {
+   45:         label: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+   46          routePath: routePrefix + "/logs"
+   47        }
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/routes/nodes.js:
+   65          {
+   66            type: Route,
+   67:           title: formatMessage({ id: "XXXX", defaultMessage: "Tasks" }),
+   68            path: "tasks",
+   69            component: NodeDetailTaskTab
+   ..
+   77            type: Route,
+   78            path: "health",
+   79:           title: formatMessage({ id: "XXXX", defaultMessage: "Health" }),
+   80            component: NodeDetailHealthTab
+   81          },
+   ..
+   83            type: Route,
+   84            path: "details",
+   85:           title: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+   86            component: NodeDetailTab
+   87          }
+   ..
+   98            component: TaskDetailsTab,
+   99            hideHeaderNavigation: true,
+  100:           title: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+  101            path: "details",
+  102            isTab: true
+  ...
+  107            isTab: true,
+  108            path: "files",
+  109:           title: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+  110            type: Route,
+  111            children: [
+  ...
+  129            isTab: true,
+  130            path: "logs",
+  131:           title: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+  132            type: Route,
+  133            children: [
+  ...
+  143            isTab: true,
+  144            path: "volumes",
+  145:           title: formatMessage({ id: "XXXX", defaultMessage: "Volumes" }),
+  146            type: Route
+  147          }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/modals/CreateServiceModalForm.js:
+  450            id: "networking",
+  451            key: "multinetworking",
+  452:           label: formatMessage({ id: "XXXX", defaultMessage: "Networking" })
+  453          },
+  454          {
+  455            id: "volumes",
+  456            key: "multivolumes",
+  457:           label: formatMessage({ id: "XXXX", defaultMessage: "Volumes" })
+  458          },
+  459          {
+  460            id: "healthChecks",
+  461            key: "multihealthChecks",
+  462:           label: formatMessage({ id: "XXXX", defaultMessage: "Health Checks" })
+  463          },
+  464          {
+  465            id: "environment",
+  466            key: "multienvironment",
+  467:           label: formatMessage({ id: "XXXX", defaultMessage: "Environment" })
+  468          }
+  469        );
+  ...
+  473            id: "networking",
+  474            key: "networking",
+  475:           label: formatMessage({ id: "XXXX", defaultMessage: "Networking" })
+  476          },
+  477          {
+  478            id: "volumes",
+  479            key: "volumes",
+  480:           label: formatMessage({ id: "XXXX", defaultMessage: "Volumes" })
+  481          },
+  482          {
+  483            id: "healthChecks",
+  484            key: "healthChecks",
+  485:           label: formatMessage({ id: "XXXX", defaultMessage: "Health Checks" })
+  486          },
+  487          {
+  488            id: "environment",
+  489            key: "environment",
+  490:           label: formatMessage({ id: "XXXX", defaultMessage: "Environment" })
+  491          }
+  492        );
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/constants/HealthBarStates.js:
+    3    tasksUnknown: {
+    4      className: "unknown",
+    5:     label: formatMessage({ id: "XXXX", defaultMessage: "Unknown" })
+    6    },
+    7    tasksHealthy: {
+    8      className: "healthy",
+    9:     label: formatMessage({ id: "XXXX", defaultMessage: "Healthy" })
+   10    },
+   11    tasksOverCapacity: {
+   12      className: "over-capacity",
+   13:     label: formatMessage({ id: "XXXX", defaultMessage: "Over Capacity" })
+   14    },
+   15    tasksUnhealthy: {
+   16      className: "unhealthy",
+   17:     label: formatMessage({ id: "XXXX", defaultMessage: "Unhealthy" })
+   18    },
+   19    tasksStaged: {
+   20      className: "staged",
+   21:     label: formatMessage({ id: "XXXX", defaultMessage: "Staged" })
+   22    }
+   23  };
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/pod-detail/PodDetail.js:
+  161  
+  162      actions.push({
+  163:       label: formatMessage({ id: "XXXX", defaultMessage: "Edit" }),
+  164        onItemSelect: this.onActionsItemSelection.bind(this, EDIT)
+  165      });
+  ...
+  167      if (instanceCount > 0) {
+  168        actions.push({
+  169:         label: formatMessage({ id: "XXXX", defaultMessage: "Restart" }),
+  170          onItemSelect: this.onActionsItemSelection.bind(this, RESTART)
+  171        });
+  ...
+  173      if (!pod.getLabels().MARATHON_SINGLE_INSTANCE_APP) {
+  174        actions.push({
+  175:         label: formatMessage({ id: "XXXX", defaultMessage: "Scale" }),
+  176          onItemSelect: this.onActionsItemSelection.bind(this, SCALE)
+  177        });
+  ...
+  180      if (instanceCount > 0) {
+  181        actions.push({
+  182:         label: formatMessage({ id: "XXXX", defaultMessage: "Suspend" }),
+  183          onItemSelect: this.onActionsItemSelection.bind(this, SUSPEND)
+  184        });
+  ...
+  187      if (instanceCount === 0) {
+  188        actions.push({
+  189:         label: formatMessage({ id: "XXXX", defaultMessage: "Resume" }),
+  190          onItemSelect: this.onActionsItemSelection.bind(this, RESUME)
+  191        });
+  ...
+  207      return [
+  208        {
+  209:         label: formatMessage({ id: "XXXX", defaultMessage: "Instances" }),
+  210          routePath: `${routePrefix}/tasks`
+  211        },
+  212        {
+  213:         label: formatMessage({ id: "XXXX", defaultMessage: "Configuration" }),
+  214          routePath: `${routePrefix}/configuration`
+  215        },
+  216        {
+  217:         label: formatMessage({ id: "XXXX", defaultMessage: "Debug" }),
+  218          routePath: `${routePrefix}/debug`
+  219        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/service-detail/ServiceDetail.js:
+  188  
+  189      actions.push({
+  190:       label: formatMessage({ id: "XXXX", defaultMessage: "Edit" }),
+  191        onItemSelect: this.onActionsItemSelection.bind(this, EDIT)
+  192      });
+  ...
+  194      if (instanceCount > 0 && !isSDK) {
+  195        actions.push({
+  196:         label: formatMessage({ id: "XXXX", defaultMessage: "Restart" }),
+  197          onItemSelect: this.onActionsItemSelection.bind(this, RESTART)
+  198        });
+  ...
+  200      if (!service.getLabels().MARATHON_SINGLE_INSTANCE_APP) {
+  201        actions.push({
+  202:         label: formatMessage({ id: "XXXX", defaultMessage: "Scale" }),
+  203          onItemSelect: this.onActionsItemSelection.bind(this, SCALE)
+  204        });
+  ...
+  207      if (instanceCount > 0 && !isSDK) {
+  208        actions.push({
+  209:         label: formatMessage({ id: "XXXX", defaultMessage: "Suspend" }),
+  210          onItemSelect: this.onActionsItemSelection.bind(this, SUSPEND)
+  211        });
+  ...
+  214      if (instanceCount === 0 && !isSDK) {
+  215        actions.push({
+  216:         label: formatMessage({ id: "XXXX", defaultMessage: "Resume" }),
+  217          onItemSelect: this.onActionsItemSelection.bind(this, RESUME)
+  218        });
+  ...
+  234      const tabs = [
+  235        {
+  236:         label: formatMessage({ id: "XXXX", defaultMessage: "Instances" }),
+  237          routePath: `${routePrefix}/tasks`
+  238        },
+  239        {
+  240:         label: formatMessage({ id: "XXXX", defaultMessage: "Configuration" }),
+  241          routePath: `${routePrefix}/configuration`
+  242        },
+  243        {
+  244:         label: formatMessage({ id: "XXXX", defaultMessage: "Debug" }),
+  245          routePath: `${routePrefix}/debug`
+  246        }
+  ...
+  249      if (this.hasVolumes()) {
+  250        tabs.push({
+  251:         label: formatMessage({ id: "XXXX", defaultMessage: "Volumes" }),
+  252          routePath: `${routePrefix}/volumes`
+  253        });
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/services/ServicesContainer.js:
+  608  
+  609  ServicesContainer.routeConfig = {
+  610:   label: formatMessage({ id: "XXXX", defaultMessage: "Services" }),
+  611    icon: <Icon id="services" size="small" family="product" />,
+  612    matches: /^\/services\/(detail|overview)/
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/services/ServiceTreeView.js:
+  106              {
+  107                onItemSelect: modalHandlers.createGroup,
+  108:               label: formatMessage({
+  109                  id: "XXXX",
+  110                  defaultMessage: "Create Group"
+  ...
+  114            addButton={{
+  115              onItemSelect: createService,
+  116:             label: formatMessage({
+  117                id: "XXXX",
+  118                defaultMessage: "Run a Service"
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/pages/ServicesPage.js:
+   19    statics: {
+   20      routeConfig: {
+   21:       label: formatMessage({ id: "XXXX", defaultMessage: "Services" }),
+   22        icon: <Icon id="services-inverse" size="small" family="product" />,
+   23        matches: /^\/services/
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/pages/task-details/ServiceTaskDetailPage.js:
+   18      const tabs = [
+   19        {
+   20:         label: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+   21          routePath: routePrefix + "/details"
+   22        },
+   23        {
+   24:         label: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+   25          routePath: routePrefix + "/files"
+   26        },
+   27        {
+   28:         label: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+   29          routePath: routePrefix + "/logs"
+   30        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/routes/services.js:
+   92              type: Route,
+   93              path: "configuration",
+   94:             title: formatMessage({
+   95                id: "XXXX",
+   96                defaultMessage: "Configuration"
+   ..
+  101              type: Route,
+  102              path: "debug",
+  103:             title: formatMessage({ id: "XXXX", defaultMessage: "Debug" }),
+  104              component: HighOrderServiceDebug
+  105            },
+  ...
+  107              type: Route,
+  108              path: "volumes",
+  109:             title: formatMessage({ id: "XXXX", defaultMessage: "Volumes" }),
+  110              component: VolumeTable
+  111            },
+  112            {
+  113              type: Route,
+  114:             title: formatMessage({ id: "XXXX", defaultMessage: "Instances" }),
+  115              path: "tasks",
+  116              component: HighOrderServiceInstances
+  ...
+  123            {
+  124              type: Route,
+  125:             title: formatMessage({ id: "XXXX", defaultMessage: "Instances" }),
+  126              path: "tasks/:taskID",
+  127              component: ServiceTaskDetailPage,
+  ...
+  134                  isTab: true,
+  135                  path: "details",
+  136:                 title: formatMessage({ id: "XXXX", defaultMessage: "Details" })
+  137                },
+  138                {
+  ...
+  141                  isTab: true,
+  142                  path: "files",
+  143:                 title: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+  144                  type: Route,
+  145                  children: [
+  ...
+  163                  isTab: true,
+  164                  path: "logs",
+  165:                 title: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+  166                  type: Route,
+  167                  children: [
+  ...
+  177                  isTab: true,
+  178                  path: "volumes",
+  179:                 title: formatMessage({ id: "XXXX", defaultMessage: "Volumes" }),
+  180                  type: Route
+  181                },
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodContainerArtifactsConfigSection.js:
+   18      return [
+   19        {
+   20:         heading: formatMessage({ id: "XXXX", defaultMessage: "Artifact URI" }),
+   21          prop: "uri"
+   22        },
+   23        {
+   24:         heading: formatMessage({ id: "XXXX", defaultMessage: "Executable" }),
+   25          prop: "executable",
+   26          render(prop, row) {
+   ..
+   34        },
+   35        {
+   36:         heading: formatMessage({ id: "XXXX", defaultMessage: "Extract" }),
+   37          prop: "extract",
+   38          render(prop, row) {
+   ..
+   46        },
+   47        {
+   48:         heading: formatMessage({ id: "XXXX", defaultMessage: "Cache" }),
+   49          prop: "cache",
+   50          render(prop, row) {
+   ..
+   58        },
+   59        {
+   60:         heading: formatMessage({
+   61            id: "XXXX",
+   62            defaultMessage: "Destination Path"
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodEnvironmentVariablesConfigSection.js:
+   15  const columns = [
+   16    {
+   17:     heading: formatMessage({ id: "XXXX", defaultMessage: "Key" }),
+   18      prop: "key"
+   19    },
+   20    {
+   21:     heading: formatMessage({ id: "XXXX", defaultMessage: "Value" }),
+   22      prop: "value"
+   23    },
+   24    {
+   25:     heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
+   26      prop: "container"
+   27    }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodHealthChecksConfigSection.js:
+   16  const COMMON_COLUMNS = [
+   17    {
+   18:     heading: formatMessage({ id: "XXXX", defaultMessage: "Grace Period" }),
+   19      prop: "gracePeriod",
+   20      render(prop, row) {
+   ..
+   23    },
+   24    {
+   25:     heading: formatMessage({ id: "XXXX", defaultMessage: "Interval" }),
+   26      prop: "interval",
+   27      render(prop, row) {
+   ..
+   30    },
+   31    {
+   32:     heading: formatMessage({ id: "XXXX", defaultMessage: "Timeout" }),
+   33      prop: "timeout",
+   34      render(prop, row) {
+   ..
+   37    },
+   38    {
+   39:     heading: formatMessage({ id: "XXXX", defaultMessage: "Max Failures" }),
+   40      prop: "maxFailures"
+   41    },
+   42    {
+   43:     heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
+   44      prop: "container"
+   45    }
+   ..
+   50      return [
+   51        {
+   52:         heading: formatMessage({ id: "XXXX", defaultMessage: "Command" }),
+   53          prop: "command"
+   54        }
+   ..
+   71      return [
+   72        {
+   73:         heading: formatMessage({
+   74            id: "XXXX",
+   75            defaultMessage: "Service Endpoint"
+   ..
+   78        },
+   79        {
+   80:         heading: formatMessage({ id: "XXXX", defaultMessage: "Proto" }),
+   81          prop: "protocol"
+   82        },
+   83        {
+   84:         heading: formatMessage({ id: "XXXX", defaultMessage: "Path" }),
+   85          prop: "path"
+   86        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodLabelsConfigSection.js:
+   17      return [
+   18        {
+   19:         heading: formatMessage({ id: "XXXX", defaultMessage: "Key" }),
+   20          prop: "key"
+   21        },
+   22        {
+   23:         heading: formatMessage({ id: "XXXX", defaultMessage: "Value" }),
+   24          prop: "value"
+   25        },
+   26        {
+   27:         heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
+   28          prop: "container"
+   29        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodNetworkConfigSection.js:
+   34      return [
+   35        {
+   36:         heading: formatMessage({ id: "XXXX", defaultMessage: "Name" }),
+   37          prop: "name"
+   38        },
+   39        {
+   40:         heading: formatMessage({ id: "XXXX", defaultMessage: "Protocol" }),
+   41          prop: "protocol"
+   42        },
+   43        {
+   44:         heading: formatMessage({ id: "XXXX", defaultMessage: "Port" }),
+   45          prop: "port"
+   46        },
+   47        {
+   48:         heading: formatMessage({
+   49            id: "XXXX",
+   50            defaultMessage: "Load Balanced Address"
+   ..
+   56        },
+   57        {
+   58:         heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
+   59          prop: "container"
+   60        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodPlacementConstraintsConfigSection.js:
+   15      return [
+   16        {
+   17:         heading: formatMessage({ id: "XXXX", defaultMessage: "Field Name" }),
+   18          prop: "fieldName"
+   19        },
+   20        {
+   21:         heading: formatMessage({ id: "XXXX", defaultMessage: "Operator" }),
+   22          prop: "operator"
+   23        },
+   24        {
+   25:         heading: formatMessage({ id: "XXXX", defaultMessage: "Value" }),
+   26          prop: "value"
+   27        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodStorageConfigSection.js:
+   20      return [
+   21        {
+   22:         heading: formatMessage({ id: "XXXX", defaultMessage: "Volume" }),
+   23          prop: "volume"
+   24        },
+   25        {
+   26:         heading: formatMessage({ id: "XXXX", defaultMessage: "Type" }),
+   27          prop: "type"
+   28        },
+   29        {
+   30:         heading: formatMessage({ id: "XXXX", defaultMessage: "Size" }),
+   31          prop: "size"
+   32        },
+   33        {
+   34:         heading: formatMessage({ id: "XXXX", defaultMessage: "Read Only" }),
+   35          prop: "readOnly",
+   36          render(prop, row) {
+   ..
+   43        },
+   44        {
+   45:         heading: formatMessage({
+   46            id: "XXXX",
+   47            defaultMessage: "Container Mount Path"
+   ..
+   50        },
+   51        {
+   52:         heading: formatMessage({ id: "XXXX", defaultMessage: "Host Path" }),
+   53          prop: "hostPath"
+   54        },
+   55        {
+   56:         heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
+   57          prop: "container"
+   58        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceEnvironmentVariablesConfigSection.js:
+   34          {
+   35            key: "env",
+   36:           heading: formatMessage({
+   37              id: "XXXX",
+   38              defaultMessage: "Environment Variables"
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceGeneralConfigSection.js:
+   70        values: [
+   71          {
+   72:           heading: formatMessage({ id: "XXXX", defaultMessage: "General" }),
+   73            headingLevel: 1
+   74          },
+   75          {
+   76            key: "id",
+   77:           label: formatMessage({ id: "XXXX", defaultMessage: "Service ID" })
+   78          },
+   79          {
+   80            key: "instances",
+   81:           label: formatMessage({ id: "XXXX", defaultMessage: "Instances" })
+   82          },
+   83          {
+   84            key: "container.type",
+   85:           label: formatMessage({
+   86              id: "XXXX",
+   87              defaultMessage: "Container Runtime"
+   ..
+   93          {
+   94            key: "cpus",
+   95:           label: formatMessage({ id: "XXXX", defaultMessage: "CPU" })
+   96          },
+   97          {
+   98            key: "mem",
+   99:           label: formatMessage({ id: "XXXX", defaultMessage: "Memory" }),
+  100            transformValue(value) {
+  101              if (value == null) {
+  ...
+  108          {
+  109            key: "disk",
+  110:           label: formatMessage({ id: "XXXX", defaultMessage: "Disk" }),
+  111            transformValue(value) {
+  112              if (value == null) {
+  ...
+  119          {
+  120            key: "gpus",
+  121:           label: formatMessage({ id: "XXXX", defaultMessage: "GPU" })
+  122          },
+  123          {
+  124            key: "backoffSeconds",
+  125:           label: formatMessage({
+  126              id: "XXXX",
+  127              defaultMessage: "Backoff Seconds"
+  ...
+  130          {
+  131            key: "backoffFactor",
+  132:           label: formatMessage({ id: "XXXX", defaultMessage: "Backoff Factor" })
+  133          },
+  134          {
+  135            key: "maxLaunchDelaySeconds",
+  136:           label: formatMessage({
+  137              id: "XXXX",
+  138              defaultMessage: "Backoff Max Launch Delay"
+  ...
+  141          {
+  142            key: "minHealthOpacity",
+  143:           label: formatMessage({
+  144              id: "XXXX",
+  145              defaultMessage: "Upgrade Min Health Capacity"
+  ...
+  148          {
+  149            key: "maxOverCapacity",
+  150:           label: formatMessage({
+  151              id: "XXXX",
+  152              defaultMessage: "Upgrade Max Overcapacity"
+  ...
+  155          {
+  156            key: "container.docker.image",
+  157:           label: formatMessage({
+  158              id: "XXXX",
+  159              defaultMessage: "Container Image"
+  ...
+  188          {
+  189            key: "container.docker.forcePullImage",
+  190:           label: formatMessage({
+  191              id: "XXXX",
+  192              defaultMessage: "Force Pull on Launch"
+  ...
+  208          {
+  209            key: "cmd",
+  210:           label: formatMessage({ id: "XXXX", defaultMessage: "Command" }),
+  211            type: "pre"
+  212          },
+  213          {
+  214            key: "acceptedResourceRoles",
+  215:           label: formatMessage({
+  216              id: "XXXX",
+  217              defaultMessage: "Resource Roles"
+  ...
+  223          {
+  224            key: "dependencies",
+  225:           label: formatMessage({ id: "XXXX", defaultMessage: "Dependencies" }),
+  226            transformValue(value = []) {
+  227              return value.join(", ");
+  ...
+  230          {
+  231            key: "executor",
+  232:           label: formatMessage({ id: "XXXX", defaultMessage: "Executor" })
+  233          },
+  234          {
+  235            key: "user",
+  236:           label: formatMessage({ id: "XXXX", defaultMessage: "User" })
+  237          },
+  238          {
+  239            key: "args",
+  240:           label: formatMessage({ id: "XXXX", defaultMessage: "Args" }),
+  241            transformValue(value = []) {
+  242              if (!value.length) {
+  ...
+  253          {
+  254            key: "version",
+  255:           label: formatMessage({ id: "XXXX", defaultMessage: "Version" })
+  256          },
+  257          {
+  258            key: "fetch",
+  259:           heading: formatMessage({
+  260              id: "XXXX",
+  261              defaultMessage: "Container Artifacts"
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceLabelsConfigSection.js:
+   29          {
+   30            key: "labels",
+   31:           heading: formatMessage({ id: "XXXX", defaultMessage: "Labels" }),
+   32            headingLevel: 1
+   33          },
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceNetworkingConfigSection.js:
+   44        values: [
+   45          {
+   46:           heading: formatMessage({ id: "XXXX", defaultMessage: "Network" }),
+   47            headingLevel: 1
+   48          },
+   49          {
+   50            key: "networks.0.mode",
+   51:           label: formatMessage({ id: "XXXX", defaultMessage: "Network Mode" })
+   52          },
+   53          {
+   54            key: "networks.0.name",
+   55:           label: formatMessage({ id: "XXXX", defaultMessage: "Network Name" })
+   56          },
+   57          {
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServicePlacementConstraintsConfigSection.js:
+   14      return [
+   15        {
+   16:         heading: formatMessage({ id: "XXXX", defaultMessage: "Field Name" }),
+   17          prop: "fieldName"
+   18        },
+   19        {
+   20:         heading: formatMessage({ id: "XXXX", defaultMessage: "Operator" }),
+   21          prop: "operator"
+   22        },
+   23        {
+   24:         heading: formatMessage({ id: "XXXX", defaultMessage: "Value" }),
+   25          prop: "value"
+   26        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceStorageConfigSection.js:
+   39          {
+   40            key: "container.volumes",
+   41:           heading: formatMessage({ id: "XXXX", defaultMessage: "Storage" }),
+   42            headingLevel: 1
+   43          },
+
+/Users/matappelman/coding/dcos-ui/src/js/components/Modals.js:
+  145      if (this.state.showingCliModal) {
+  146        Hooks.doAction("logFakePageView", {
+  147:         title: formatMessage({
+  148            id: "XXXX",
+  149            defaultMessage: "CLI instructions"
+
+/Users/matappelman/coding/dcos-ui/src/js/components/charts/TasksChart.js:
+   10  const TASK_INFO = {
+   11    TASK_RUNNING: {
+   12:     label: formatMessage({ id: "XXXX", defaultMessage: "Tasks running" }),
+   13      colorIndex: 4
+   14    },
+   15    TASK_STAGING: {
+   16:     label: formatMessage({ id: "XXXX", defaultMessage: "Tasks staging" }),
+   17      colorIndex: 1
+   18    }
+
+/Users/matappelman/coding/dcos-ui/src/js/constants/UnitHealthStatus.js:
+   15  const UnitHealthStatus = {
+   16    [SERVER_HEALTHY]: {
+   17:     title: formatMessage({ id: "XXXX", defaultMessage: "Healthy" }),
+   18      key: "HEALTHY",
+   19      classNames: "text-success",
+   ..
+   22    },
+   23    [SERVER_UNHEALTHY]: {
+   24:     title: formatMessage({ id: "XXXX", defaultMessage: "Unhealthy" }),
+   25      key: "UNHEALTHY",
+   26      classNames: "text-danger",
+   ..
+   29    },
+   30    [SERVER_WARN]: {
+   31:     title: formatMessage({ id: "XXXX", defaultMessage: "Warning" }),
+   32      key: "WAR",
+   33      classNames: "text-warning",
+
+/Users/matappelman/coding/dcos-ui/src/js/events/AuthActions.js:
+   58  if (Config.useFixtures) {
+   59    AuthActions.login = function() {
+   60:     // base64 encoded - {is_remote: false, uid: "bootstrapuser", description: formatMessage({id: "XXXX", defaultMessage: "Bootstrap superuser"})}
+   61      global.document.cookie =
+   62        "dcos-acs-info-cookie=" +
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/CatalogPage.js:
+   11  
+   12  CatalogPage.routeConfig = {
+   13:   label: formatMessage({ id: "XXXX", defaultMessage: "Catalog" }),
+   14    icon: <Icon id="packages-inverse" size="small" family="product" />,
+   15    matches: /^\/catalog/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/ComponentsPage.js:
+   11  
+   12  ComponentsPage.routeConfig = {
+   13:   label: formatMessage({ id: "XXXX", defaultMessage: "Components" }),
+   14    icon: <Icon id="components-inverse" size="small" family="product" />,
+   15    matches: /^\/components/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/DashboardPage.js:
+   62    statics: {
+   63      routeConfig: {
+   64:       label: formatMessage({ id: "XXXX", defaultMessage: "Dashboard" }),
+   65        icon: <Icon id="graph-inverse" size="small" family="product" />,
+   66        matches: /^\/dashboard/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/JobsPage.js:
+   17  
+   18  JobsPage.routeConfig = {
+   19:   label: formatMessage({ id: "XXXX", defaultMessage: "Jobs" }),
+   20    icon: <Icon id="jobs-inverse" size="small" family="product" />,
+   21    matches: /^\/jobs/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/NetworkPage.js:
+   72  
+   73  NetworkPage.routeConfig = {
+   74:   label: formatMessage({ id: "XXXX", defaultMessage: "Networking" }),
+   75    icon: <Icon id="network-inverse" size="small" family="product" />,
+   76    matches: /^\/networking/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/OrganizationPage.js:
+   11  
+   12  OrganizationPage.routeConfig = {
+   13:   label: formatMessage({ id: "XXXX", defaultMessage: "Organization" }),
+   14    icon: <Icon id="users-inverse" size="small" family="product" />,
+   15    matches: /^\/organization/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/SettingsPage.js:
+   11  
+   12  SettingsPage.routeConfig = {
+   13:   label: formatMessage({ id: "XXXX", defaultMessage: "Settings" }),
+   14    icon: <Icon id="gear-inverse" size="small" family="product" />,
+   15    matches: /^\/settings/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/SystemOverviewPage.js:
+   11  
+   12  SystemOverviewPage.routeConfig = {
+   13:   label: formatMessage({ id: "XXXX", defaultMessage: "Overview" }),
+   14    icon: <Icon id="cluster-inverse" size="small" family="product" />,
+   15    matches: /^\/overview/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/catalog/PackageDetailTab.js:
+  262      const definition = [
+  263        {
+  264:         label: formatMessage({ id: "XXXX", defaultMessage: "Description" }),
+  265          value: description &&
+  266            <div
+  ...
+  276        },
+  277        {
+  278:         label: formatMessage({ id: "XXXX", defaultMessage: "Information" }),
+  279          type: "subItems",
+  280          value: [
+  281            {
+  282:             label: formatMessage({ id: "XXXX", defaultMessage: "SCM" }),
+  283              value: cosmosPackage.getSCM()
+  284            },
+  285            {
+  286:             label: formatMessage({ id: "XXXX", defaultMessage: "Maintainer" }),
+  287              value: cosmosPackage.getMaintainer()
+  288            }
+  ...
+  290        },
+  291        {
+  292:         label: formatMessage({ id: "XXXX", defaultMessage: "Licenses" }),
+  293          type: "subItems",
+  294          value: this.mapLicenses(cosmosPackage.getLicenses())
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/jobs/JobDetailPage.js:
+  331  
+  332      actions.push({
+  333:       label: formatMessage({ id: "XXXX", defaultMessage: "Edit" }),
+  334        onItemSelect: this.handleEditButtonClick
+  335      });
+  336  
+  337      actions.push({
+  338:       label: formatMessage({ id: "XXXX", defaultMessage: "Run Now" }),
+  339        onItemSelect: this.handleRunNowButtonClick
+  340      });
+  ...
+  342      if (schedule != null && schedule.enabled) {
+  343        actions.push({
+  344:         label: formatMessage({
+  345            id: "XXXX",
+  346            defaultMessage: "Disable Schedule"
+  ...
+  352      if (schedule != null && !schedule.enabled) {
+  353        actions.push({
+  354:         label: formatMessage({ id: "XXXX", defaultMessage: "Enable Schedule" }),
+  355          onItemSelect: this.handleEnableScheduleButtonClick
+  356        });
+  ...
+  371      return [
+  372        {
+  373:         label: formatMessage({ id: "XXXX", defaultMessage: "Run History" }),
+  374          callback: () => {
+  375            this.setState({ currentTab: "runHistory" });
+  ...
+  378        },
+  379        {
+  380:         label: formatMessage({ id: "XXXX", defaultMessage: "Configuration" }),
+  381          callback: () => {
+  382            this.setState({ currentTab: "configuration" });
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/jobs/JobsTab.js:
+  163          <Page.Header
+  164            addButton={{
+  165:             label: formatMessage({
+  166                id: "XXXX",
+  167                defaultMessage: "Create a job"
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/jobs/JobTaskDetailPage.js:
+   24      const tabs = [
+   25        {
+   26:         label: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+   27          routePath: routePrefix + "/details"
+   28        },
+   29        {
+   30:         label: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+   31          routePath: routePrefix + "/files"
+   32        },
+   33        {
+   34:         label: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+   35          routePath: routePrefix + "/logs"
+   36        }
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/network/VirtualNetworksTab.js:
+  172  
+  173  VirtualNetworksTabContent.routeConfig = {
+  174:   label: formatMessage({ id: "XXXX", defaultMessage: "Networks" }),
+  175    matches: /^\/networking\/networks/
+  176  };
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/network/virtual-network-detail/VirtualNetworkDetail.js:
+  147      const tabs = [
+  148        {
+  149:         label: formatMessage({ id: "XXXX", defaultMessage: "Tasks" }),
+  150          callback: () => {
+  151            this.setState({ currentTab: "/networking/networks/:overlayName" });
+  ...
+  157        },
+  158        {
+  159:         label: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+  160          callback: () => {
+  161            this.setState({
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/network/virtual-network-detail/VirtualNetworkTaskPage.js:
+   83      const tabs = [
+   84        {
+   85:         label: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+   86          routePath: routePrefix + "/details"
+   87        },
+   88        {
+   89:         label: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+   90          routePath: routePrefix + "/files"
+   91        },
+   92        {
+   93:         label: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+   94          routePath: routePrefix + "/logs"
+   95        }
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/system/OverviewDetailTab.js:
+  186      return [
+  187        {
+  188:         label: formatMessage({
+  189            id: "XXXX",
+  190            defaultMessage: "View Cluster Configuration"
+  ...
+  363  
+  364  OverviewDetailTab.routeConfig = {
+  365:   label: formatMessage({ id: "XXXX", defaultMessage: "Overview" }),
+  366    matches: /^\/overview\/details/
+  367  };
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/system/RepositoriesTab.js:
+  148            addButton={{
+  149              onItemSelect: this.handleOpenAddRepository,
+  150:             label: formatMessage({
+  151                id: "XXXX",
+  152                defaultMessage: "Add Repository"
+  ...
+  162  
+  163  RepositoriesTab.routeConfig = {
+  164:   label: formatMessage({ id: "XXXX", defaultMessage: "Package Repositories" }),
+  165    matches: /^\/settings\/repositories/
+  166  };
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/system/UnitsHealthTab.js:
+  232  
+  233  UnitsHealthTab.routeConfig = {
+  234:   label: formatMessage({ id: "XXXX", defaultMessage: "Components" }),
+  235    matches: /^\/components\/overview/
+  236  };
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/system/UsersPage.js:
+  121  
+  122  UsersPage.routeConfig = {
+  123:   label: formatMessage({ id: "XXXX", defaultMessage: "Users" }),
+  124    matches: /^\/organization\/users/
+  125  };
+
+/Users/matappelman/coding/dcos-ui/src/js/routes/jobs.js:
+   69                  isTab: true,
+   70                  path: "details",
+   71:                 title: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+   72                  type: Route
+   73                },
+   ..
+   77                  isTab: true,
+   78                  path: "files",
+   79:                 title: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+   80                  type: Route,
+   81                  children: [
+   ..
+   99                  isTab: true,
+  100                  path: "logs",
+  101:                 title: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+  102                  type: Route,
+  103                  children: [
+
+/Users/matappelman/coding/dcos-ui/src/js/routes/factories/network.js:
+   69              isTab: true,
+   70              path: "details",
+   71:             title: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+   72              type: Route
+   73            },
+   ..
+   77              isTab: true,
+   78              path: "files",
+   79:             title: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+   80              type: Route,
+   81              children: [
+   ..
+   99              isTab: true,
+  100              path: "logs",
+  101:             title: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+  102              type: Route,
+  103              children: [
+
+/Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/Docker.js:
+    4  
+    5  const General = {
+    6:   title: formatMessage({ id: "XXXX", defaultMessage: "Docker Container" }),
+    7:   description: formatMessage({
+    8      id: "XXXX",
+    9      defaultMessage: "Configure your job settings"
+   ..
+   12    properties: {
+   13      image: {
+   14:       title: formatMessage({ id: "XXXX", defaultMessage: "Image" }),
+   15:       description: formatMessage({
+   16          id: "XXXX",
+   17          defaultMessage: "Name of your Docker image"
+
+/Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/General.js:
+    9  
+   10  const General = {
+   11:   title: formatMessage({ id: "XXXX", defaultMessage: "General" }),
+   12:   description: formatMessage({
+   13      id: "XXXX",
+   14      defaultMessage: "Configure your job settings"
+   ..
+   18      id: {
+   19        focused: true,
+   20:       title: formatMessage({ id: "XXXX", defaultMessage: "ID" }),
+   21:       description: formatMessage({ id: "XXXX", defaultMessage: "The job ID" }),
+   22        type: "string",
+   23        getter(job) {
+   ..
+   38      },
+   39      description: {
+   40:       title: formatMessage({ id: "XXXX", defaultMessage: "Description" }),
+   41:       description: formatMessage({
+   42          id: "XXXX",
+   43          defaultMessage: "Job description"
+   ..
+   52        properties: {
+   53          cpus: {
+   54:           title: formatMessage({ id: "XXXX", defaultMessage: "CPUs" }),
+   55            default: JobResources.DEFAULT_CPUS,
+   56:           description: formatMessage({
+   57              id: "XXXX",
+   58              defaultMessage: "The amount of CPUs the job requires"
+   ..
+  125      },
+  126      cmd: {
+  127:       title: formatMessage({ id: "XXXX", defaultMessage: "Command" }),
+  128:       description: formatMessage({
+  129          id: "XXXX",
+  130          defaultMessage: "The command executed by the service"
+
+/Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/Labels.js:
+    2  const Labels = {
+    3    type: "object",
+    4:   title: formatMessage({ id: "XXXX", defaultMessage: "Labels" }),
+    5    description: "Attach metadata to jobs to expose additional information to other jobs.",
+    6    properties: {
+    .
+    8        type: "array",
+    9        duplicable: true,
+   10:       addLabel: formatMessage({ id: "XXXX", defaultMessage: "Add Label" }),
+   11        getter(job) {
+   12          const labels = job.getLabels() || {};
+   ..
+   22          properties: {
+   23            key: {
+   24:             title: formatMessage({ id: "XXXX", defaultMessage: "Label Name" }),
+   25              type: "string"
+   26            },
+   27            value: {
+   28:             title: formatMessage({ id: "XXXX", defaultMessage: "Label Value" }),
+   29              type: "string"
+   30            }
+
+/Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/Schedule.js:
+   11  
+   12  const Schedule = {
+   13:   title: formatMessage({ id: "XXXX", defaultMessage: "Schedule" }),
+   14:   description: formatMessage({
+   15      id: "XXXX",
+   16      defaultMessage: "Set time and date for the job to run"
+   ..
+   19    properties: {
+   20      runOnSchedule: {
+   21:       label: formatMessage({ id: "XXXX", defaultMessage: "Run on a schedule" }),
+   22        showLabel: true,
+   23:       title: formatMessage({ id: "XXXX", defaultMessage: "Run on a schedule" }),
+   24        type: "boolean",
+   25        getter(job) {
+   ..
+   30      },
+   31      cron: {
+   32:       title: formatMessage({ id: "XXXX", defaultMessage: "CRON Schedule" }),
+   33        helpBlock: (
+   34          <span>
+   ..
+   69      },
+   70      timezone: {
+   71:       title: formatMessage({ id: "XXXX", defaultMessage: "Time Zone" }),
+   72        description: (
+   73          <span>
+   ..
+   89      },
+   90      startingDeadlineSeconds: {
+   91:       title: formatMessage({ id: "XXXX", defaultMessage: "Starting Deadline" }),
+   92:       description: formatMessage({
+   93          id: "XXXX",
+   94          defaultMessage: "Time in seconds to start the job if it misses "
+   ..
+  121      },
+  122      enabled: {
+  123:       label: formatMessage({ id: "XXXX", defaultMessage: "Enabled" }),
+  124        showLabel: true,
+  125:       title: formatMessage({ id: "XXXX", defaultMessage: "Enabled" }),
+  126        type: "boolean",
+  127        getter(job) {
+
+/Users/matappelman/coding/dcos-ui/src/js/utils/ResourcesUtil.js:
+    6  const DefaultResourceTypes = {
+    7    cpus: {
+    8:     label: formatMessage({ id: "XXXX", defaultMessage: "CPU" }),
+    9      colorID: 0
+   10    },
+   11    mem: {
+   12:     label: formatMessage({ id: "XXXX", defaultMessage: "Memory" }),
+   13      colorID: 6
+   14    },
+   15    disk: {
+   16:     label: formatMessage({ id: "XXXX", defaultMessage: "Disk" }),
+   17      colorID: 3
+   18    }
+
+208 matches across 58 files
+
+
+Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/components/NodesGridView.js:
+  130                    name: "showServices",
+  131                    checked: props.showServices,
+  132:                   label: formatMessage({
+  133                      id: "XXXX",
+  134                      defaultMessage: "Show Services by Share"
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/pages/NodesOverview.js:
+   64    statics: {
+   65      routeConfig: {
+   66:       label: formatMessage({ id: "XXXX", defaultMessage: "Nodes" }),
+   67        icon: <Icon family="product" id="servers-inverse" />,
+   68        matches: /^\/nodes/
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/pages/NodesPage.js:
+   11  
+   12  NodesPage.routeConfig = {
+   13:   label: formatMessage({ id: "XXXX", defaultMessage: "Nodes" }),
+   14    icon: <Icon id="servers-inverse" size="small" family="product" />,
+   15    matches: /^\/nodes/
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/pages/nodes/NodeDetailPage.js:
+  176      const tabs = [
+  177        {
+  178:         label: formatMessage({ id: "XXXX", defaultMessage: "Tasks" }),
+  179          callback: () => {
+  180            this.context.router.push(`/nodes/${nodeID}/tasks`);
+  ...
+  183        },
+  184        {
+  185:         label: formatMessage({ id: "XXXX", defaultMessage: "Health" }),
+  186          callback: () => {
+  187            this.context.router.push(`/nodes/${nodeID}/health`);
+  ...
+  190        },
+  191        {
+  192:         label: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+  193          callback: () => {
+  194            this.context.router.push(`/nodes/${nodeID}/details`);
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/pages/nodes/NodesTaskDetailPage.js:
+   35      const tabs = [
+   36        {
+   37:         label: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+   38          routePath: routePrefix + "/details"
+   39        },
+   40        {
+   41:         label: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+   42          routePath: routePrefix + "/files"
+   43        },
+   44        {
+   45:         label: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+   46          routePath: routePrefix + "/logs"
+   47        }
+
+/Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/routes/nodes.js:
+   65          {
+   66            type: Route,
+   67:           title: formatMessage({ id: "XXXX", defaultMessage: "Tasks" }),
+   68            path: "tasks",
+   69            component: NodeDetailTaskTab
+   ..
+   77            type: Route,
+   78            path: "health",
+   79:           title: formatMessage({ id: "XXXX", defaultMessage: "Health" }),
+   80            component: NodeDetailHealthTab
+   81          },
+   ..
+   83            type: Route,
+   84            path: "details",
+   85:           title: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+   86            component: NodeDetailTab
+   87          }
+   ..
+   98            component: TaskDetailsTab,
+   99            hideHeaderNavigation: true,
+  100:           title: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+  101            path: "details",
+  102            isTab: true
+  ...
+  107            isTab: true,
+  108            path: "files",
+  109:           title: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+  110            type: Route,
+  111            children: [
+  ...
+  129            isTab: true,
+  130            path: "logs",
+  131:           title: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+  132            type: Route,
+  133            children: [
+  ...
+  143            isTab: true,
+  144            path: "volumes",
+  145:           title: formatMessage({ id: "XXXX", defaultMessage: "Volumes" }),
+  146            type: Route
+  147          }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/modals/CreateServiceModalForm.js:
+  450            id: "networking",
+  451            key: "multinetworking",
+  452:           label: formatMessage({ id: "XXXX", defaultMessage: "Networking" })
+  453          },
+  454          {
+  455            id: "volumes",
+  456            key: "multivolumes",
+  457:           label: formatMessage({ id: "XXXX", defaultMessage: "Volumes" })
+  458          },
+  459          {
+  460            id: "healthChecks",
+  461            key: "multihealthChecks",
+  462:           label: formatMessage({ id: "XXXX", defaultMessage: "Health Checks" })
+  463          },
+  464          {
+  465            id: "environment",
+  466            key: "multienvironment",
+  467:           label: formatMessage({ id: "XXXX", defaultMessage: "Environment" })
+  468          }
+  469        );
+  ...
+  473            id: "networking",
+  474            key: "networking",
+  475:           label: formatMessage({ id: "XXXX", defaultMessage: "Networking" })
+  476          },
+  477          {
+  478            id: "volumes",
+  479            key: "volumes",
+  480:           label: formatMessage({ id: "XXXX", defaultMessage: "Volumes" })
+  481          },
+  482          {
+  483            id: "healthChecks",
+  484            key: "healthChecks",
+  485:           label: formatMessage({ id: "XXXX", defaultMessage: "Health Checks" })
+  486          },
+  487          {
+  488            id: "environment",
+  489            key: "environment",
+  490:           label: formatMessage({ id: "XXXX", defaultMessage: "Environment" })
+  491          }
+  492        );
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/constants/HealthBarStates.js:
+    3    tasksUnknown: {
+    4      className: "unknown",
+    5:     label: formatMessage({ id: "XXXX", defaultMessage: "Unknown" })
+    6    },
+    7    tasksHealthy: {
+    8      className: "healthy",
+    9:     label: formatMessage({ id: "XXXX", defaultMessage: "Healthy" })
+   10    },
+   11    tasksOverCapacity: {
+   12      className: "over-capacity",
+   13:     label: formatMessage({ id: "XXXX", defaultMessage: "Over Capacity" })
+   14    },
+   15    tasksUnhealthy: {
+   16      className: "unhealthy",
+   17:     label: formatMessage({ id: "XXXX", defaultMessage: "Unhealthy" })
+   18    },
+   19    tasksStaged: {
+   20      className: "staged",
+   21:     label: formatMessage({ id: "XXXX", defaultMessage: "Staged" })
+   22    }
+   23  };
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/pod-detail/PodDetail.js:
+  161  
+  162      actions.push({
+  163:       label: formatMessage({ id: "XXXX", defaultMessage: "Edit" }),
+  164        onItemSelect: this.onActionsItemSelection.bind(this, EDIT)
+  165      });
+  ...
+  167      if (instanceCount > 0) {
+  168        actions.push({
+  169:         label: formatMessage({ id: "XXXX", defaultMessage: "Restart" }),
+  170          onItemSelect: this.onActionsItemSelection.bind(this, RESTART)
+  171        });
+  ...
+  173      if (!pod.getLabels().MARATHON_SINGLE_INSTANCE_APP) {
+  174        actions.push({
+  175:         label: formatMessage({ id: "XXXX", defaultMessage: "Scale" }),
+  176          onItemSelect: this.onActionsItemSelection.bind(this, SCALE)
+  177        });
+  ...
+  180      if (instanceCount > 0) {
+  181        actions.push({
+  182:         label: formatMessage({ id: "XXXX", defaultMessage: "Suspend" }),
+  183          onItemSelect: this.onActionsItemSelection.bind(this, SUSPEND)
+  184        });
+  ...
+  187      if (instanceCount === 0) {
+  188        actions.push({
+  189:         label: formatMessage({ id: "XXXX", defaultMessage: "Resume" }),
+  190          onItemSelect: this.onActionsItemSelection.bind(this, RESUME)
+  191        });
+  ...
+  207      return [
+  208        {
+  209:         label: formatMessage({ id: "XXXX", defaultMessage: "Instances" }),
+  210          routePath: `${routePrefix}/tasks`
+  211        },
+  212        {
+  213:         label: formatMessage({ id: "XXXX", defaultMessage: "Configuration" }),
+  214          routePath: `${routePrefix}/configuration`
+  215        },
+  216        {
+  217:         label: formatMessage({ id: "XXXX", defaultMessage: "Debug" }),
+  218          routePath: `${routePrefix}/debug`
+  219        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/service-detail/ServiceDetail.js:
+  188  
+  189      actions.push({
+  190:       label: formatMessage({ id: "XXXX", defaultMessage: "Edit" }),
+  191        onItemSelect: this.onActionsItemSelection.bind(this, EDIT)
+  192      });
+  ...
+  194      if (instanceCount > 0 && !isSDK) {
+  195        actions.push({
+  196:         label: formatMessage({ id: "XXXX", defaultMessage: "Restart" }),
+  197          onItemSelect: this.onActionsItemSelection.bind(this, RESTART)
+  198        });
+  ...
+  200      if (!service.getLabels().MARATHON_SINGLE_INSTANCE_APP) {
+  201        actions.push({
+  202:         label: formatMessage({ id: "XXXX", defaultMessage: "Scale" }),
+  203          onItemSelect: this.onActionsItemSelection.bind(this, SCALE)
+  204        });
+  ...
+  207      if (instanceCount > 0 && !isSDK) {
+  208        actions.push({
+  209:         label: formatMessage({ id: "XXXX", defaultMessage: "Suspend" }),
+  210          onItemSelect: this.onActionsItemSelection.bind(this, SUSPEND)
+  211        });
+  ...
+  214      if (instanceCount === 0 && !isSDK) {
+  215        actions.push({
+  216:         label: formatMessage({ id: "XXXX", defaultMessage: "Resume" }),
+  217          onItemSelect: this.onActionsItemSelection.bind(this, RESUME)
+  218        });
+  ...
+  234      const tabs = [
+  235        {
+  236:         label: formatMessage({ id: "XXXX", defaultMessage: "Instances" }),
+  237          routePath: `${routePrefix}/tasks`
+  238        },
+  239        {
+  240:         label: formatMessage({ id: "XXXX", defaultMessage: "Configuration" }),
+  241          routePath: `${routePrefix}/configuration`
+  242        },
+  243        {
+  244:         label: formatMessage({ id: "XXXX", defaultMessage: "Debug" }),
+  245          routePath: `${routePrefix}/debug`
+  246        }
+  ...
+  249      if (this.hasVolumes()) {
+  250        tabs.push({
+  251:         label: formatMessage({ id: "XXXX", defaultMessage: "Volumes" }),
+  252          routePath: `${routePrefix}/volumes`
+  253        });
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/services/ServicesContainer.js:
+  608  
+  609  ServicesContainer.routeConfig = {
+  610:   label: formatMessage({ id: "XXXX", defaultMessage: "Services" }),
+  611    icon: <Icon id="services" size="small" family="product" />,
+  612    matches: /^\/services\/(detail|overview)/
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/services/ServiceTreeView.js:
+  106              {
+  107                onItemSelect: modalHandlers.createGroup,
+  108:               label: formatMessage({
+  109                  id: "XXXX",
+  110                  defaultMessage: "Create Group"
+  ...
+  114            addButton={{
+  115              onItemSelect: createService,
+  116:             label: formatMessage({
+  117                id: "XXXX",
+  118                defaultMessage: "Run a Service"
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/pages/ServicesPage.js:
+   19    statics: {
+   20      routeConfig: {
+   21:       label: formatMessage({ id: "XXXX", defaultMessage: "Services" }),
+   22        icon: <Icon id="services-inverse" size="small" family="product" />,
+   23        matches: /^\/services/
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/pages/task-details/ServiceTaskDetailPage.js:
+   18      const tabs = [
+   19        {
+   20:         label: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+   21          routePath: routePrefix + "/details"
+   22        },
+   23        {
+   24:         label: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+   25          routePath: routePrefix + "/files"
+   26        },
+   27        {
+   28:         label: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+   29          routePath: routePrefix + "/logs"
+   30        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/routes/services.js:
+   92              type: Route,
+   93              path: "configuration",
+   94:             title: formatMessage({
+   95                id: "XXXX",
+   96                defaultMessage: "Configuration"
+   ..
+  101              type: Route,
+  102              path: "debug",
+  103:             title: formatMessage({ id: "XXXX", defaultMessage: "Debug" }),
+  104              component: HighOrderServiceDebug
+  105            },
+  ...
+  107              type: Route,
+  108              path: "volumes",
+  109:             title: formatMessage({ id: "XXXX", defaultMessage: "Volumes" }),
+  110              component: VolumeTable
+  111            },
+  112            {
+  113              type: Route,
+  114:             title: formatMessage({ id: "XXXX", defaultMessage: "Instances" }),
+  115              path: "tasks",
+  116              component: HighOrderServiceInstances
+  ...
+  123            {
+  124              type: Route,
+  125:             title: formatMessage({ id: "XXXX", defaultMessage: "Instances" }),
+  126              path: "tasks/:taskID",
+  127              component: ServiceTaskDetailPage,
+  ...
+  134                  isTab: true,
+  135                  path: "details",
+  136:                 title: formatMessage({ id: "XXXX", defaultMessage: "Details" })
+  137                },
+  138                {
+  ...
+  141                  isTab: true,
+  142                  path: "files",
+  143:                 title: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+  144                  type: Route,
+  145                  children: [
+  ...
+  163                  isTab: true,
+  164                  path: "logs",
+  165:                 title: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+  166                  type: Route,
+  167                  children: [
+  ...
+  177                  isTab: true,
+  178                  path: "volumes",
+  179:                 title: formatMessage({ id: "XXXX", defaultMessage: "Volumes" }),
+  180                  type: Route
+  181                },
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodContainerArtifactsConfigSection.js:
+   18      return [
+   19        {
+   20:         heading: formatMessage({ id: "XXXX", defaultMessage: "Artifact URI" }),
+   21          prop: "uri"
+   22        },
+   23        {
+   24:         heading: formatMessage({ id: "XXXX", defaultMessage: "Executable" }),
+   25          prop: "executable",
+   26          render(prop, row) {
+   ..
+   34        },
+   35        {
+   36:         heading: formatMessage({ id: "XXXX", defaultMessage: "Extract" }),
+   37          prop: "extract",
+   38          render(prop, row) {
+   ..
+   46        },
+   47        {
+   48:         heading: formatMessage({ id: "XXXX", defaultMessage: "Cache" }),
+   49          prop: "cache",
+   50          render(prop, row) {
+   ..
+   58        },
+   59        {
+   60:         heading: formatMessage({
+   61            id: "XXXX",
+   62            defaultMessage: "Destination Path"
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodEnvironmentVariablesConfigSection.js:
+   15  const columns = [
+   16    {
+   17:     heading: formatMessage({ id: "XXXX", defaultMessage: "Key" }),
+   18      prop: "key"
+   19    },
+   20    {
+   21:     heading: formatMessage({ id: "XXXX", defaultMessage: "Value" }),
+   22      prop: "value"
+   23    },
+   24    {
+   25:     heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
+   26      prop: "container"
+   27    }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodHealthChecksConfigSection.js:
+   16  const COMMON_COLUMNS = [
+   17    {
+   18:     heading: formatMessage({ id: "XXXX", defaultMessage: "Grace Period" }),
+   19      prop: "gracePeriod",
+   20      render(prop, row) {
+   ..
+   23    },
+   24    {
+   25:     heading: formatMessage({ id: "XXXX", defaultMessage: "Interval" }),
+   26      prop: "interval",
+   27      render(prop, row) {
+   ..
+   30    },
+   31    {
+   32:     heading: formatMessage({ id: "XXXX", defaultMessage: "Timeout" }),
+   33      prop: "timeout",
+   34      render(prop, row) {
+   ..
+   37    },
+   38    {
+   39:     heading: formatMessage({ id: "XXXX", defaultMessage: "Max Failures" }),
+   40      prop: "maxFailures"
+   41    },
+   42    {
+   43:     heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
+   44      prop: "container"
+   45    }
+   ..
+   50      return [
+   51        {
+   52:         heading: formatMessage({ id: "XXXX", defaultMessage: "Command" }),
+   53          prop: "command"
+   54        }
+   ..
+   71      return [
+   72        {
+   73:         heading: formatMessage({
+   74            id: "XXXX",
+   75            defaultMessage: "Service Endpoint"
+   ..
+   78        },
+   79        {
+   80:         heading: formatMessage({ id: "XXXX", defaultMessage: "Proto" }),
+   81          prop: "protocol"
+   82        },
+   83        {
+   84:         heading: formatMessage({ id: "XXXX", defaultMessage: "Path" }),
+   85          prop: "path"
+   86        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodLabelsConfigSection.js:
+   17      return [
+   18        {
+   19:         heading: formatMessage({ id: "XXXX", defaultMessage: "Key" }),
+   20          prop: "key"
+   21        },
+   22        {
+   23:         heading: formatMessage({ id: "XXXX", defaultMessage: "Value" }),
+   24          prop: "value"
+   25        },
+   26        {
+   27:         heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
+   28          prop: "container"
+   29        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodNetworkConfigSection.js:
+   34      return [
+   35        {
+   36:         heading: formatMessage({ id: "XXXX", defaultMessage: "Name" }),
+   37          prop: "name"
+   38        },
+   39        {
+   40:         heading: formatMessage({ id: "XXXX", defaultMessage: "Protocol" }),
+   41          prop: "protocol"
+   42        },
+   43        {
+   44:         heading: formatMessage({ id: "XXXX", defaultMessage: "Port" }),
+   45          prop: "port"
+   46        },
+   47        {
+   48:         heading: formatMessage({
+   49            id: "XXXX",
+   50            defaultMessage: "Load Balanced Address"
+   ..
+   56        },
+   57        {
+   58:         heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
+   59          prop: "container"
+   60        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodPlacementConstraintsConfigSection.js:
+   15      return [
+   16        {
+   17:         heading: formatMessage({ id: "XXXX", defaultMessage: "Field Name" }),
+   18          prop: "fieldName"
+   19        },
+   20        {
+   21:         heading: formatMessage({ id: "XXXX", defaultMessage: "Operator" }),
+   22          prop: "operator"
+   23        },
+   24        {
+   25:         heading: formatMessage({ id: "XXXX", defaultMessage: "Value" }),
+   26          prop: "value"
+   27        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodStorageConfigSection.js:
+   20      return [
+   21        {
+   22:         heading: formatMessage({ id: "XXXX", defaultMessage: "Volume" }),
+   23          prop: "volume"
+   24        },
+   25        {
+   26:         heading: formatMessage({ id: "XXXX", defaultMessage: "Type" }),
+   27          prop: "type"
+   28        },
+   29        {
+   30:         heading: formatMessage({ id: "XXXX", defaultMessage: "Size" }),
+   31          prop: "size"
+   32        },
+   33        {
+   34:         heading: formatMessage({ id: "XXXX", defaultMessage: "Read Only" }),
+   35          prop: "readOnly",
+   36          render(prop, row) {
+   ..
+   43        },
+   44        {
+   45:         heading: formatMessage({
+   46            id: "XXXX",
+   47            defaultMessage: "Container Mount Path"
+   ..
+   50        },
+   51        {
+   52:         heading: formatMessage({ id: "XXXX", defaultMessage: "Host Path" }),
+   53          prop: "hostPath"
+   54        },
+   55        {
+   56:         heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
+   57          prop: "container"
+   58        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceEnvironmentVariablesConfigSection.js:
+   34          {
+   35            key: "env",
+   36:           heading: formatMessage({
+   37              id: "XXXX",
+   38              defaultMessage: "Environment Variables"
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceGeneralConfigSection.js:
+   70        values: [
+   71          {
+   72:           heading: formatMessage({ id: "XXXX", defaultMessage: "General" }),
+   73            headingLevel: 1
+   74          },
+   75          {
+   76            key: "id",
+   77:           label: formatMessage({ id: "XXXX", defaultMessage: "Service ID" })
+   78          },
+   79          {
+   80            key: "instances",
+   81:           label: formatMessage({ id: "XXXX", defaultMessage: "Instances" })
+   82          },
+   83          {
+   84            key: "container.type",
+   85:           label: formatMessage({
+   86              id: "XXXX",
+   87              defaultMessage: "Container Runtime"
+   ..
+   93          {
+   94            key: "cpus",
+   95:           label: formatMessage({ id: "XXXX", defaultMessage: "CPU" })
+   96          },
+   97          {
+   98            key: "mem",
+   99:           label: formatMessage({ id: "XXXX", defaultMessage: "Memory" }),
+  100            transformValue(value) {
+  101              if (value == null) {
+  ...
+  108          {
+  109            key: "disk",
+  110:           label: formatMessage({ id: "XXXX", defaultMessage: "Disk" }),
+  111            transformValue(value) {
+  112              if (value == null) {
+  ...
+  119          {
+  120            key: "gpus",
+  121:           label: formatMessage({ id: "XXXX", defaultMessage: "GPU" })
+  122          },
+  123          {
+  124            key: "backoffSeconds",
+  125:           label: formatMessage({
+  126              id: "XXXX",
+  127              defaultMessage: "Backoff Seconds"
+  ...
+  130          {
+  131            key: "backoffFactor",
+  132:           label: formatMessage({ id: "XXXX", defaultMessage: "Backoff Factor" })
+  133          },
+  134          {
+  135            key: "maxLaunchDelaySeconds",
+  136:           label: formatMessage({
+  137              id: "XXXX",
+  138              defaultMessage: "Backoff Max Launch Delay"
+  ...
+  141          {
+  142            key: "minHealthOpacity",
+  143:           label: formatMessage({
+  144              id: "XXXX",
+  145              defaultMessage: "Upgrade Min Health Capacity"
+  ...
+  148          {
+  149            key: "maxOverCapacity",
+  150:           label: formatMessage({
+  151              id: "XXXX",
+  152              defaultMessage: "Upgrade Max Overcapacity"
+  ...
+  155          {
+  156            key: "container.docker.image",
+  157:           label: formatMessage({
+  158              id: "XXXX",
+  159              defaultMessage: "Container Image"
+  ...
+  188          {
+  189            key: "container.docker.forcePullImage",
+  190:           label: formatMessage({
+  191              id: "XXXX",
+  192              defaultMessage: "Force Pull on Launch"
+  ...
+  208          {
+  209            key: "cmd",
+  210:           label: formatMessage({ id: "XXXX", defaultMessage: "Command" }),
+  211            type: "pre"
+  212          },
+  213          {
+  214            key: "acceptedResourceRoles",
+  215:           label: formatMessage({
+  216              id: "XXXX",
+  217              defaultMessage: "Resource Roles"
+  ...
+  223          {
+  224            key: "dependencies",
+  225:           label: formatMessage({ id: "XXXX", defaultMessage: "Dependencies" }),
+  226            transformValue(value = []) {
+  227              return value.join(", ");
+  ...
+  230          {
+  231            key: "executor",
+  232:           label: formatMessage({ id: "XXXX", defaultMessage: "Executor" })
+  233          },
+  234          {
+  235            key: "user",
+  236:           label: formatMessage({ id: "XXXX", defaultMessage: "User" })
+  237          },
+  238          {
+  239            key: "args",
+  240:           label: formatMessage({ id: "XXXX", defaultMessage: "Args" }),
+  241            transformValue(value = []) {
+  242              if (!value.length) {
+  ...
+  253          {
+  254            key: "version",
+  255:           label: formatMessage({ id: "XXXX", defaultMessage: "Version" })
+  256          },
+  257          {
+  258            key: "fetch",
+  259:           heading: formatMessage({
+  260              id: "XXXX",
+  261              defaultMessage: "Container Artifacts"
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceLabelsConfigSection.js:
+   29          {
+   30            key: "labels",
+   31:           heading: formatMessage({ id: "XXXX", defaultMessage: "Labels" }),
+   32            headingLevel: 1
+   33          },
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceNetworkingConfigSection.js:
+   44        values: [
+   45          {
+   46:           heading: formatMessage({ id: "XXXX", defaultMessage: "Network" }),
+   47            headingLevel: 1
+   48          },
+   49          {
+   50            key: "networks.0.mode",
+   51:           label: formatMessage({ id: "XXXX", defaultMessage: "Network Mode" })
+   52          },
+   53          {
+   54            key: "networks.0.name",
+   55:           label: formatMessage({ id: "XXXX", defaultMessage: "Network Name" })
+   56          },
+   57          {
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServicePlacementConstraintsConfigSection.js:
+   14      return [
+   15        {
+   16:         heading: formatMessage({ id: "XXXX", defaultMessage: "Field Name" }),
+   17          prop: "fieldName"
+   18        },
+   19        {
+   20:         heading: formatMessage({ id: "XXXX", defaultMessage: "Operator" }),
+   21          prop: "operator"
+   22        },
+   23        {
+   24:         heading: formatMessage({ id: "XXXX", defaultMessage: "Value" }),
+   25          prop: "value"
+   26        }
+
+/Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceStorageConfigSection.js:
+   39          {
+   40            key: "container.volumes",
+   41:           heading: formatMessage({ id: "XXXX", defaultMessage: "Storage" }),
+   42            headingLevel: 1
+   43          },
+
+/Users/matappelman/coding/dcos-ui/src/js/components/Modals.js:
+  145      if (this.state.showingCliModal) {
+  146        Hooks.doAction("logFakePageView", {
+  147:         title: formatMessage({
+  148            id: "XXXX",
+  149            defaultMessage: "CLI instructions"
+
+/Users/matappelman/coding/dcos-ui/src/js/components/charts/TasksChart.js:
+   10  const TASK_INFO = {
+   11    TASK_RUNNING: {
+   12:     label: formatMessage({ id: "XXXX", defaultMessage: "Tasks running" }),
+   13      colorIndex: 4
+   14    },
+   15    TASK_STAGING: {
+   16:     label: formatMessage({ id: "XXXX", defaultMessage: "Tasks staging" }),
+   17      colorIndex: 1
+   18    }
+
+/Users/matappelman/coding/dcos-ui/src/js/constants/UnitHealthStatus.js:
+   15  const UnitHealthStatus = {
+   16    [SERVER_HEALTHY]: {
+   17:     title: formatMessage({ id: "XXXX", defaultMessage: "Healthy" }),
+   18      key: "HEALTHY",
+   19      classNames: "text-success",
+   ..
+   22    },
+   23    [SERVER_UNHEALTHY]: {
+   24:     title: formatMessage({ id: "XXXX", defaultMessage: "Unhealthy" }),
+   25      key: "UNHEALTHY",
+   26      classNames: "text-danger",
+   ..
+   29    },
+   30    [SERVER_WARN]: {
+   31:     title: formatMessage({ id: "XXXX", defaultMessage: "Warning" }),
+   32      key: "WAR",
+   33      classNames: "text-warning",
+
+/Users/matappelman/coding/dcos-ui/src/js/events/AuthActions.js:
+   58  if (Config.useFixtures) {
+   59    AuthActions.login = function() {
+   60:     // base64 encoded - {is_remote: false, uid: "bootstrapuser", description: formatMessage({id: "XXXX", defaultMessage: "Bootstrap superuser"})}
+   61      global.document.cookie =
+   62        "dcos-acs-info-cookie=" +
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/CatalogPage.js:
+   11  
+   12  CatalogPage.routeConfig = {
+   13:   label: formatMessage({ id: "XXXX", defaultMessage: "Catalog" }),
+   14    icon: <Icon id="packages-inverse" size="small" family="product" />,
+   15    matches: /^\/catalog/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/ComponentsPage.js:
+   11  
+   12  ComponentsPage.routeConfig = {
+   13:   label: formatMessage({ id: "XXXX", defaultMessage: "Components" }),
+   14    icon: <Icon id="components-inverse" size="small" family="product" />,
+   15    matches: /^\/components/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/DashboardPage.js:
+   62    statics: {
+   63      routeConfig: {
+   64:       label: formatMessage({ id: "XXXX", defaultMessage: "Dashboard" }),
+   65        icon: <Icon id="graph-inverse" size="small" family="product" />,
+   66        matches: /^\/dashboard/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/JobsPage.js:
+   17  
+   18  JobsPage.routeConfig = {
+   19:   label: formatMessage({ id: "XXXX", defaultMessage: "Jobs" }),
+   20    icon: <Icon id="jobs-inverse" size="small" family="product" />,
+   21    matches: /^\/jobs/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/NetworkPage.js:
+   72  
+   73  NetworkPage.routeConfig = {
+   74:   label: formatMessage({ id: "XXXX", defaultMessage: "Networking" }),
+   75    icon: <Icon id="network-inverse" size="small" family="product" />,
+   76    matches: /^\/networking/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/OrganizationPage.js:
+   11  
+   12  OrganizationPage.routeConfig = {
+   13:   label: formatMessage({ id: "XXXX", defaultMessage: "Organization" }),
+   14    icon: <Icon id="users-inverse" size="small" family="product" />,
+   15    matches: /^\/organization/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/SettingsPage.js:
+   11  
+   12  SettingsPage.routeConfig = {
+   13:   label: formatMessage({ id: "XXXX", defaultMessage: "Settings" }),
+   14    icon: <Icon id="gear-inverse" size="small" family="product" />,
+   15    matches: /^\/settings/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/SystemOverviewPage.js:
+   11  
+   12  SystemOverviewPage.routeConfig = {
+   13:   label: formatMessage({ id: "XXXX", defaultMessage: "Overview" }),
+   14    icon: <Icon id="cluster-inverse" size="small" family="product" />,
+   15    matches: /^\/overview/
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/catalog/PackageDetailTab.js:
+  262      const definition = [
+  263        {
+  264:         label: formatMessage({ id: "XXXX", defaultMessage: "Description" }),
+  265          value: description &&
+  266            <div
+  ...
+  276        },
+  277        {
+  278:         label: formatMessage({ id: "XXXX", defaultMessage: "Information" }),
+  279          type: "subItems",
+  280          value: [
+  281            {
+  282:             label: formatMessage({ id: "XXXX", defaultMessage: "SCM" }),
+  283              value: cosmosPackage.getSCM()
+  284            },
+  285            {
+  286:             label: formatMessage({ id: "XXXX", defaultMessage: "Maintainer" }),
+  287              value: cosmosPackage.getMaintainer()
+  288            }
+  ...
+  290        },
+  291        {
+  292:         label: formatMessage({ id: "XXXX", defaultMessage: "Licenses" }),
+  293          type: "subItems",
+  294          value: this.mapLicenses(cosmosPackage.getLicenses())
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/jobs/JobDetailPage.js:
+  331  
+  332      actions.push({
+  333:       label: formatMessage({ id: "XXXX", defaultMessage: "Edit" }),
+  334        onItemSelect: this.handleEditButtonClick
+  335      });
+  336  
+  337      actions.push({
+  338:       label: formatMessage({ id: "XXXX", defaultMessage: "Run Now" }),
+  339        onItemSelect: this.handleRunNowButtonClick
+  340      });
+  ...
+  342      if (schedule != null && schedule.enabled) {
+  343        actions.push({
+  344:         label: formatMessage({
+  345            id: "XXXX",
+  346            defaultMessage: "Disable Schedule"
+  ...
+  352      if (schedule != null && !schedule.enabled) {
+  353        actions.push({
+  354:         label: formatMessage({ id: "XXXX", defaultMessage: "Enable Schedule" }),
+  355          onItemSelect: this.handleEnableScheduleButtonClick
+  356        });
+  ...
+  371      return [
+  372        {
+  373:         label: formatMessage({ id: "XXXX", defaultMessage: "Run History" }),
+  374          callback: () => {
+  375            this.setState({ currentTab: "runHistory" });
+  ...
+  378        },
+  379        {
+  380:         label: formatMessage({ id: "XXXX", defaultMessage: "Configuration" }),
+  381          callback: () => {
+  382            this.setState({ currentTab: "configuration" });
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/jobs/JobsTab.js:
+  163          <Page.Header
+  164            addButton={{
+  165:             label: formatMessage({
+  166                id: "XXXX",
+  167                defaultMessage: "Create a job"
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/jobs/JobTaskDetailPage.js:
+   24      const tabs = [
+   25        {
+   26:         label: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+   27          routePath: routePrefix + "/details"
+   28        },
+   29        {
+   30:         label: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+   31          routePath: routePrefix + "/files"
+   32        },
+   33        {
+   34:         label: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+   35          routePath: routePrefix + "/logs"
+   36        }
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/network/VirtualNetworksTab.js:
+  172  
+  173  VirtualNetworksTabContent.routeConfig = {
+  174:   label: formatMessage({ id: "XXXX", defaultMessage: "Networks" }),
+  175    matches: /^\/networking\/networks/
+  176  };
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/network/virtual-network-detail/VirtualNetworkDetail.js:
+  147      const tabs = [
+  148        {
+  149:         label: formatMessage({ id: "XXXX", defaultMessage: "Tasks" }),
+  150          callback: () => {
+  151            this.setState({ currentTab: "/networking/networks/:overlayName" });
+  ...
+  157        },
+  158        {
+  159:         label: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+  160          callback: () => {
+  161            this.setState({
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/network/virtual-network-detail/VirtualNetworkTaskPage.js:
+   83      const tabs = [
+   84        {
+   85:         label: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+   86          routePath: routePrefix + "/details"
+   87        },
+   88        {
+   89:         label: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+   90          routePath: routePrefix + "/files"
+   91        },
+   92        {
+   93:         label: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+   94          routePath: routePrefix + "/logs"
+   95        }
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/system/OverviewDetailTab.js:
+  186      return [
+  187        {
+  188:         label: formatMessage({
+  189            id: "XXXX",
+  190            defaultMessage: "View Cluster Configuration"
+  ...
+  363  
+  364  OverviewDetailTab.routeConfig = {
+  365:   label: formatMessage({ id: "XXXX", defaultMessage: "Overview" }),
+  366    matches: /^\/overview\/details/
+  367  };
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/system/RepositoriesTab.js:
+  148            addButton={{
+  149              onItemSelect: this.handleOpenAddRepository,
+  150:             label: formatMessage({
+  151                id: "XXXX",
+  152                defaultMessage: "Add Repository"
+  ...
+  162  
+  163  RepositoriesTab.routeConfig = {
+  164:   label: formatMessage({ id: "XXXX", defaultMessage: "Package Repositories" }),
+  165    matches: /^\/settings\/repositories/
+  166  };
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/system/UnitsHealthTab.js:
+  232  
+  233  UnitsHealthTab.routeConfig = {
+  234:   label: formatMessage({ id: "XXXX", defaultMessage: "Components" }),
+  235    matches: /^\/components\/overview/
+  236  };
+
+/Users/matappelman/coding/dcos-ui/src/js/pages/system/UsersPage.js:
+  121  
+  122  UsersPage.routeConfig = {
+  123:   label: formatMessage({ id: "XXXX", defaultMessage: "Users" }),
+  124    matches: /^\/organization\/users/
+  125  };
+
+/Users/matappelman/coding/dcos-ui/src/js/routes/jobs.js:
+   69                  isTab: true,
+   70                  path: "details",
+   71:                 title: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+   72                  type: Route
+   73                },
+   ..
+   77                  isTab: true,
+   78                  path: "files",
+   79:                 title: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+   80                  type: Route,
+   81                  children: [
+   ..
+   99                  isTab: true,
+  100                  path: "logs",
+  101:                 title: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+  102                  type: Route,
+  103                  children: [
+
+/Users/matappelman/coding/dcos-ui/src/js/routes/factories/network.js:
+   69              isTab: true,
+   70              path: "details",
+   71:             title: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+   72              type: Route
+   73            },
+   ..
+   77              isTab: true,
+   78              path: "files",
+   79:             title: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+   80              type: Route,
+   81              children: [
+   ..
+   99              isTab: true,
+  100              path: "logs",
+  101:             title: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+  102              type: Route,
+  103              children: [
+
+/Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/Docker.js:
+    4  
+    5  const General = {
+    6:   title: formatMessage({ id: "XXXX", defaultMessage: "Docker Container" }),
+    7:   description: formatMessage({
+    8      id: "XXXX",
+    9      defaultMessage: "Configure your job settings"
+   ..
+   12    properties: {
+   13      image: {
+   14:       title: formatMessage({ id: "XXXX", defaultMessage: "Image" }),
+   15:       description: formatMessage({
+   16          id: "XXXX",
+   17          defaultMessage: "Name of your Docker image"
+
+/Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/General.js:
+    9  
+   10  const General = {
+   11:   title: formatMessage({ id: "XXXX", defaultMessage: "General" }),
+   12:   description: formatMessage({
+   13      id: "XXXX",
+   14      defaultMessage: "Configure your job settings"
+   ..
+   18      id: {
+   19        focused: true,
+   20:       title: formatMessage({ id: "XXXX", defaultMessage: "ID" }),
+   21:       description: formatMessage({ id: "XXXX", defaultMessage: "The job ID" }),
+   22        type: "string",
+   23        getter(job) {
+   ..
+   38      },
+   39      description: {
+   40:       title: formatMessage({ id: "XXXX", defaultMessage: "Description" }),
+   41:       description: formatMessage({
+   42          id: "XXXX",
+   43          defaultMessage: "Job description"
+   ..
+   52        properties: {
+   53          cpus: {
+   54:           title: formatMessage({ id: "XXXX", defaultMessage: "CPUs" }),
+   55            default: JobResources.DEFAULT_CPUS,
+   56:           description: formatMessage({
+   57              id: "XXXX",
+   58              defaultMessage: "The amount of CPUs the job requires"
+   ..
+  125      },
+  126      cmd: {
+  127:       title: formatMessage({ id: "XXXX", defaultMessage: "Command" }),
+  128:       description: formatMessage({
+  129          id: "XXXX",
+  130          defaultMessage: "The command executed by the service"
+
+/Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/Labels.js:
+    2  const Labels = {
+    3    type: "object",
+    4:   title: formatMessage({ id: "XXXX", defaultMessage: "Labels" }),
+    5    description: "Attach metadata to jobs to expose additional information to other jobs.",
+    6    properties: {
+    .
+    8        type: "array",
+    9        duplicable: true,
+   10:       addLabel: formatMessage({ id: "XXXX", defaultMessage: "Add Label" }),
+   11        getter(job) {
+   12          const labels = job.getLabels() || {};
+   ..
+   22          properties: {
+   23            key: {
+   24:             title: formatMessage({ id: "XXXX", defaultMessage: "Label Name" }),
+   25              type: "string"
+   26            },
+   27            value: {
+   28:             title: formatMessage({ id: "XXXX", defaultMessage: "Label Value" }),
+   29              type: "string"
+   30            }
+
+/Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/Schedule.js:
+   11  
+   12  const Schedule = {
+   13:   title: formatMessage({ id: "XXXX", defaultMessage: "Schedule" }),
+   14:   description: formatMessage({
+   15      id: "XXXX",
+   16      defaultMessage: "Set time and date for the job to run"
+   ..
+   19    properties: {
+   20      runOnSchedule: {
+   21:       label: formatMessage({ id: "XXXX", defaultMessage: "Run on a schedule" }),
+   22        showLabel: true,
+   23:       title: formatMessage({ id: "XXXX", defaultMessage: "Run on a schedule" }),
+   24        type: "boolean",
+   25        getter(job) {
+   ..
+   30      },
+   31      cron: {
+   32:       title: formatMessage({ id: "XXXX", defaultMessage: "CRON Schedule" }),
+   33        helpBlock: (
+   34          <span>
+   ..
+   69      },
+   70      timezone: {
+   71:       title: formatMessage({ id: "XXXX", defaultMessage: "Time Zone" }),
+   72        description: (
+   73          <span>
+   ..
+   89      },
+   90      startingDeadlineSeconds: {
+   91:       title: formatMessage({ id: "XXXX", defaultMessage: "Starting Deadline" }),
+   92:       description: formatMessage({
+   93          id: "XXXX",
+   94          defaultMessage: "Time in seconds to start the job if it misses "
+   ..
+  121      },
+  122      enabled: {
+  123:       label: formatMessage({ id: "XXXX", defaultMessage: "Enabled" }),
+  124        showLabel: true,
+  125:       title: formatMessage({ id: "XXXX", defaultMessage: "Enabled" }),
+  126        type: "boolean",
+  127        getter(job) {
+
+/Users/matappelman/coding/dcos-ui/src/js/utils/ResourcesUtil.js:
+    6  const DefaultResourceTypes = {
+    7    cpus: {
+    8:     label: formatMessage({ id: "XXXX", defaultMessage: "CPU" }),
+    9      colorID: 0
+   10    },
+   11    mem: {
+   12:     label: formatMessage({ id: "XXXX", defaultMessage: "Memory" }),
+   13      colorID: 6
+   14    },
+   15    disk: {
+   16:     label: formatMessage({ id: "XXXX", defaultMessage: "Disk" }),
+   17      colorID: 3
+   18    }
+
+208 matches across 58 files
