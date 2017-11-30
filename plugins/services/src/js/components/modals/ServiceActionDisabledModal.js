@@ -20,7 +20,7 @@ import {
   SCALE,
   SUSPEND
 } from "../../constants/ServiceActionItem";
-import IntlContext from "./IntlContext";
+import IntlContext from "#SRC/js/components/IntlContext";
 
 const METHODS_TO_BIND = ["handleTextCopy"];
 

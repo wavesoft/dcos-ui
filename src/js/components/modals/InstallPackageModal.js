@@ -1,4 +1,4 @@
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import classNames from "classnames";
 import { Modal } from "reactjs-components";
 import mixin from "reactjs-mixin";
@@ -21,6 +21,7 @@ import SchemaFormUtil from "../../utils/SchemaFormUtil";
 import StringUtil from "../../utils/StringUtil";
 import TabsMixin from "../../mixins/TabsMixin";
 import UniversePackage from "../../structs/UniversePackage";
+import IntlContext from "../IntlContext";
 
 const PREINSTALL_NOTES_CHAR_LIMIT = 140;
 
@@ -572,7 +573,9 @@ class InstallPackageModal
         showFooter={false}
         useGemini={false}
       >
-        {this.getModalContents()}
+        <IntlContext intl={this.props.intl}>
+          {this.getModalContents()}
+        </IntlContext>
       </Modal>
     );
   }
@@ -589,4 +592,4 @@ InstallPackageModal.propTypes = {
   onClose: React.PropTypes.func
 };
 
-module.exports = InstallPackageModal;
+module.exports = injectIntl(InstallPackageModal);

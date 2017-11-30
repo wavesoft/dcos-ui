@@ -11,7 +11,7 @@ import ModalHeading from "#SRC/js/components/modals/ModalHeading";
 import AppLockedMessage from "./AppLockedMessage";
 import Service from "../../structs/Service";
 import ServiceTree from "../../structs/ServiceTree";
-import IntlContext from "./IntlContext";
+import IntlContext from "#SRC/js/components/IntlContext";
 
 const METHODS_TO_BIND = ["handleConfirmation", "handleInstancesFieldChange"];
 

@@ -7,7 +7,7 @@ import ModalHeading from "#SRC/js/components/modals/ModalHeading";
 import StringUtil from "#SRC/js/utils/StringUtil";
 
 import AppLockedMessage from "./AppLockedMessage";
-import IntlContext from "./IntlContext";
+import IntlContext from "#SRC/js/components/IntlContext";
 import Pod from "../../structs/Pod";
 
 const ACTION_DISPLAY_NAMES = {

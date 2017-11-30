@@ -1,4 +1,4 @@
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import mixin from "reactjs-mixin";
 /* eslint-disable no-unused-vars */
 import React from "react";
@@ -9,6 +9,7 @@ import CosmosPackagesStore from "../../stores/CosmosPackagesStore";
 import FormModal from "../FormModal";
 import ModalHeading from "../modals/ModalHeading";
 import ValidatorUtil from "../../utils/ValidatorUtil";
+import IntlContext from "#SRC/js/components/IntlContext";
 
 const METHODS_TO_BIND = [
   "handleAddRepository",
@@ -151,7 +152,9 @@ class AddRepositoryFormModal extends mixin(StoreMixin) {
         modalProps={{
           header: (
             <ModalHeading>
-              <FormattedMessage id="XXXX" defaultMessage={`Add Repository`} />
+              <IntlContext intl={this.props.intl}>
+                <FormattedMessage id="XXXX" defaultMessage={`Add Repository`} />
+              </IntlContext>
             </ModalHeading>
           ),
           showHeader: true
@@ -172,4 +175,4 @@ AddRepositoryFormModal.propTypes = {
   open: React.PropTypes.bool
 };
 
-module.exports = AddRepositoryFormModal;
+module.exports = injectIntl(AddRepositoryFormModal);

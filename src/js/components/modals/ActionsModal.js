@@ -1,7 +1,9 @@
+import { injectIntl } from "react-intl";
 import { Confirm, Dropdown } from "reactjs-components";
 import mixin from "reactjs-mixin";
 import React from "react";
 import { StoreMixin } from "mesosphere-shared-reactjs";
+import IntlContext from "#SRC/js/components/IntlContext";
 
 import ModalHeading from "./ModalHeading";
 import StringUtil from "../../utils/StringUtil";
@@ -239,7 +241,9 @@ class ActionsModal extends mixin(StoreMixin) {
 
     const heading = (
       <ModalHeading>
-        {this.props.actionText.title}
+        <IntlContext intl={this.props.intl}>
+          {this.props.actionText.title}
+        </IntlContext>
       </ModalHeading>
     );
 
@@ -271,4 +275,4 @@ ActionsModal.propTypes = {
   selectedItems: React.PropTypes.array.isRequired
 };
 
-module.exports = ActionsModal;
+module.exports = injectIntl(ActionsModal);

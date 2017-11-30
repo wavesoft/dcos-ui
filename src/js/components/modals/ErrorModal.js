@@ -1,4 +1,4 @@
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import React from "react";
 
 import { Modal } from "reactjs-components";
@@ -20,12 +20,14 @@ var ErrorModal = React.createClass({
   render() {
     const header = (
       <ModalHeading>
-        <FormattedMessage
-          id="XXXX"
-          defaultMessage={`
+        <IntlContext intl={this.props.intl}>
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
         Looks Like Something is Wrong
       `}
-        />
+          />
+        </IntlContext>
       </ModalHeading>
     );
 
@@ -37,10 +39,12 @@ var ErrorModal = React.createClass({
         showHeader={true}
         header={header}
       >
-        {this.props.errorMsg}
+        <IntlContext intl={this.props.intl}>
+          {this.props.errorMsg}
+        </IntlContext>
       </Modal>
     );
   }
 });
 
-module.exports = ErrorModal;
+module.exports = injectIntl(ErrorModal);

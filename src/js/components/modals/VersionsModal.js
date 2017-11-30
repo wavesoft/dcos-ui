@@ -1,10 +1,11 @@
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import { Modal } from "reactjs-components";
 import React from "react";
 
 import ClickToSelect from "../ClickToSelect";
 import Config from "../../config/Config";
 import ModalHeading from "../modals/ModalHeading";
+import IntlContext from "../IntlContext";
 
 var VersionsModal = React.createClass({
   displayName: "VersionsModal",
@@ -27,11 +28,13 @@ var VersionsModal = React.createClass({
   render() {
     const header = (
       <ModalHeading>
-        {Config.productName}<FormattedMessage
-          id="XXXX"
-          defaultMessage={` Info
+        <IntlContext intl={this.props.intl}>
+          {Config.productName}<FormattedMessage
+            id="XXXX"
+            defaultMessage={` Info
       `}
-        />
+          />
+        </IntlContext>
       </ModalHeading>
     );
 
@@ -51,4 +54,4 @@ var VersionsModal = React.createClass({
   }
 });
 
-module.exports = VersionsModal;
+module.exports = injectIntl(VersionsModal);

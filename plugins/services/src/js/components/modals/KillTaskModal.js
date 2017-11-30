@@ -6,7 +6,7 @@ import PureRender from "react-addons-pure-render-mixin";
 import ModalHeading from "#SRC/js/components/modals/ModalHeading";
 import StringUtil from "#SRC/js/utils/StringUtil";
 
-import IntlContext from "./IntlContext";
+import IntlContext from "#SRC/js/components/IntlContext";
 import AppLockedMessage from "./AppLockedMessage";
 
 const ACTION_DISPLAY_NAMES = {

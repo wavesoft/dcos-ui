@@ -20,6 +20,7 @@ import MetronomeStore from "../../stores/MetronomeStore";
 import ModalHeading from "../modals/ModalHeading";
 import SchemaUtil from "../../utils/SchemaUtil";
 import ToggleButton from "../ToggleButton";
+import IntlContext from "../IntlContext";
 
 const METHODS_TO_BIND = [
   "handleCancel",
@@ -405,19 +406,21 @@ class JobFormModal extends mixin(StoreMixin) {
     }
 
     return (
-      <div className="button-collection flush-bottom">
-        <button className="button" onClick={this.handleCancel}>
-          <FormattedMessage
-            id="XXXX"
-            defaultMessage={`
+      <IntlContext intl={this.props.intl}>
+        <div className="button-collection flush-bottom">
+          <button className="button" onClick={this.handleCancel}>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
           Cancel
         `}
-          />
-        </button>
-        <button className="button button-success" onClick={this.handleSubmit}>
-          {submitLabel}
-        </button>
-      </div>
+            />
+          </button>
+          <button className="button button-success" onClick={this.handleSubmit}>
+            {submitLabel}
+          </button>
+        </div>
+      </IntlContext>
     );
   }
 
@@ -428,28 +431,30 @@ class JobFormModal extends mixin(StoreMixin) {
     }
 
     return (
-      <div>
-        <div className="header-flex">
-          <div className="header-left">
-            <ModalHeading align="left" level={4}>
-              {heading}
-            </ModalHeading>
+      <IntlContext intl={this.props.intl}>
+        <div>
+          <div className="header-flex">
+            <div className="header-left">
+              <ModalHeading align="left" level={4}>
+                {heading}
+              </ModalHeading>
+            </div>
+            <div className="header-right">
+              <ToggleButton
+                className="modal-form-title-label flush-bottom"
+                checkboxClassName="toggle-button"
+                checked={this.state.jsonMode}
+                onChange={this.handleInputModeToggle}
+              >
+                JSON mode
+              </ToggleButton>
+            </div>
           </div>
-          <div className="header-right">
-            <ToggleButton
-              className="modal-form-title-label flush-bottom"
-              checkboxClassName="toggle-button"
-              checked={this.state.jsonMode}
-              onChange={this.handleInputModeToggle}
-            >
-              JSON mode
-            </ToggleButton>
+          <div className="header-full-width">
+            {this.getErrorMessage()}
           </div>
         </div>
-        <div className="header-full-width">
-          {this.getErrorMessage()}
-        </div>
-      </div>
+      </IntlContext>
     );
   }
 
@@ -466,7 +471,9 @@ class JobFormModal extends mixin(StoreMixin) {
         showFooter={true}
         useGemini={false}
       >
-        {this.getModalContents()}
+        <IntlContext intl={this.props.intl}>
+          {this.getModalContents()}
+        </IntlContext>
       </Modal>
     );
   }

@@ -1,4 +1,4 @@
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import browserInfo from "browser-info";
 import classNames from "classnames";
 import { Modal } from "reactjs-components";
@@ -8,6 +8,7 @@ import ClickToSelect from "../ClickToSelect";
 import Icon from "../Icon";
 import MetadataStore from "../../stores/MetadataStore";
 import ModalHeading from "../modals/ModalHeading";
+import IntlContext from "../IntlContext";
 
 const METHODS_TO_BIND = ["onClose"];
 const osTypes = {
@@ -205,7 +206,9 @@ class CliInstallModal extends React.Component {
         showFooter={showFooter}
         subHeader={this.getSubHeader()}
       >
-        {this.getContent()}
+        <IntlContext intl={this.props.intl}>
+          {this.getContent()}
+        </IntlContext>
       </Modal>
     );
   }
@@ -219,4 +222,4 @@ CliInstallModal.propTypes = {
   onClose: React.PropTypes.func.isRequired
 };
 
-module.exports = CliInstallModal;
+module.exports = injectIntl(CliInstallModal);

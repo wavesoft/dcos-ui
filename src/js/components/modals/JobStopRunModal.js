@@ -1,4 +1,4 @@
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import { Confirm } from "reactjs-components";
 import mixin from "reactjs-mixin";
 import React from "react";
@@ -6,6 +6,7 @@ import { StoreMixin } from "mesosphere-shared-reactjs";
 
 import MetronomeStore from "../../stores/MetronomeStore";
 import ModalHeading from "../modals/ModalHeading";
+import IntlContext from "../IntlContext";
 
 const METHODS_TO_BIND = ["handleButtonConfirm"];
 
@@ -58,7 +59,9 @@ class JobStopRunModal extends mixin(StoreMixin) {
 
     return (
       <ModalHeading key="confirmHeader">
-        {`Are you sure you want to stop ${headerContent}?`}
+        <IntlContext intl={this.props.intl}>
+          {`Are you sure you want to stop ${headerContent}?`}
+        </IntlContext>
       </ModalHeading>
     );
   }
@@ -73,13 +76,15 @@ class JobStopRunModal extends mixin(StoreMixin) {
     }
 
     return (
-      <span key="confirmText">
-        <FormattedMessage
-          id="XXXX"
-          defaultMessage={`
+      <IntlContext intl={this.props.intl}>
+        <span key="confirmText">
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
         You are about to stop `}
-        />{bodyText}.
-      </span>
+          />{bodyText}.
+        </span>
+      </IntlContext>
     );
   }
 
@@ -117,7 +122,9 @@ class JobStopRunModal extends mixin(StoreMixin) {
         rightButtonCallback={this.handleButtonConfirm}
         showHeader={true}
       >
-        {this.getModalContents()}
+        <IntlContext intl={this.props.intl}>
+          {this.getModalContents()}
+        </IntlContext>
       </Confirm>
     );
   }
@@ -135,4 +142,4 @@ JobStopRunModal.propTypes = {
   selectedItems: React.PropTypes.array.isRequired
 };
 
-module.exports = JobStopRunModal;
+module.exports = injectIntl(JobStopRunModal);

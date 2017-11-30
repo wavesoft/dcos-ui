@@ -14,7 +14,7 @@ import Framework from "../../structs/Framework";
 import Pod from "../../structs/Pod";
 import Service from "../../structs/Service";
 import ServiceTree from "../../structs/ServiceTree";
-import IntlContext from "./IntlContext";
+import IntlContext from "#SRC/js/components/IntlContext";
 
 // This needs to be at least equal to @modal-animation-duration
 const REDIRECT_DELAY = 300;

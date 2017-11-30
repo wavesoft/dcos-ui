@@ -5,7 +5,7 @@ import PureRender from "react-addons-pure-render-mixin";
 import FormModal from "#SRC/js/components/FormModal";
 import ModalHeading from "#SRC/js/components/modals/ModalHeading";
 import ServiceValidatorUtil from "../../utils/ServiceValidatorUtil";
-import IntlContext from "./IntlContext";
+import IntlContext from "#SRC/js/components/IntlContext";
 
 const METHODS_TO_BIND = ["handleNewGroupSubmit"];
 

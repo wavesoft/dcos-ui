@@ -28,7 +28,7 @@ import Application from "../../structs/Application";
 import ApplicationSpec from "../../structs/ApplicationSpec";
 import PodSpec from "../../structs/PodSpec";
 import Service from "../../structs/Service";
-import IntlContext from "./IntlContext";
+import IntlContext from "#SRC/js/components/IntlContext";
 
 import MarathonActions from "../../events/MarathonActions";
 import MarathonStore from "../../stores/MarathonStore";

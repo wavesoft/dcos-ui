@@ -23,6 +23,7 @@ import StatusBar from "#SRC/js/components/StatusBar";
 import StringUtil from "#SRC/js/utils/StringUtil";
 import TimeAgo from "#SRC/js/components/TimeAgo";
 import UserActions from "#SRC/js/constants/UserActions";
+import IntlContext from "#SRC/js/components/IntlContext";
 
 import defaultServiceImage from "../../img/icon-service-default-small@2x.png";
 import MarathonActions from "../events/MarathonActions";
@@ -392,7 +393,9 @@ class DeploymentsModal extends mixin(StoreMixin) {
 
     const heading = (
       <ModalHeading>
-        Are you sure?
+        <IntlContext intl={this.props.intl}>
+          <FormattedMessage id="XXXX" defaultMessage={`Are you sure?`} />
+        </IntlContext>
       </ModalHeading>
     );
 
@@ -410,10 +413,12 @@ class DeploymentsModal extends mixin(StoreMixin) {
           rightButtonText="Continue Rollback"
           showHeader={true}
         >
-          <div className="text-align-center">
-            <p>{this.getRollbackModalText(deploymentToRollback)}</p>
-            {this.renderRollbackError(deploymentRollbackError)}
-          </div>
+          <IntlContext intl={this.props.intl}>
+            <div className="text-align-center">
+              <p>{this.getRollbackModalText(deploymentToRollback)}</p>
+              {this.renderRollbackError(deploymentRollbackError)}
+            </div>
+          </IntlContext>
         </Confirm>
       );
     }
@@ -515,11 +520,13 @@ class DeploymentsModal extends mixin(StoreMixin) {
     }
 
     const footer = (
-      <div className="text-align-center">
-        <button className="button" onClick={onClose}>
-          <FormattedMessage id="XXXX" defaultMessage={`Close`} />
-        </button>
-      </div>
+      <IntlContext intl={this.props.intl}>
+        <div className="text-align-center">
+          <button className="button" onClick={onClose}>
+            <FormattedMessage id="XXXX" defaultMessage={`Close`} />
+          </button>
+        </div>
+      </IntlContext>
     );
     const heading = (
       <ModalHeading>
@@ -544,7 +551,10 @@ class DeploymentsModal extends mixin(StoreMixin) {
         showFooter={true}
         showHeader={true}
       >
-        {content}
+        <IntlContext intl={this.props.intl}>
+          {content}
+        </IntlContext>
+        }
       </Modal>
     );
   }

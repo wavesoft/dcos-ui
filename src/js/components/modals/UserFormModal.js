@@ -1,4 +1,4 @@
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import mixin from "reactjs-mixin";
 import { Hooks } from "PluginSDK";
 /* eslint-disable no-unused-vars */
@@ -10,6 +10,7 @@ import AuthStore from "../../stores/AuthStore";
 import FormModal from "../FormModal";
 import ModalHeading from "../modals/ModalHeading";
 import UserStore from "../../stores/UserStore";
+import IntlContext from "../IntlContext";
 
 const TELEMETRY_NOTIFICATION =
   "Because telemetry is disabled you must manually notify users of ACL changes.";
@@ -113,12 +114,14 @@ class UserFormModal extends mixin(StoreMixin) {
     return Hooks.applyFilter(
       "userFormModalHeader",
       <ModalHeading>
-        <FormattedMessage
-          id="XXXX"
-          defaultMessage={`
+        <IntlContext intl={this.props.intl}>
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
         Add User to Cluster
       `}
-        />
+          />
+        </IntlContext>
       </ModalHeading>
     );
   }
@@ -126,9 +129,11 @@ class UserFormModal extends mixin(StoreMixin) {
   getFooter() {
     return Hooks.applyFilter(
       "userFormModalFooter",
-      <p className="flush-bottom text-align-center">
-        <strong>Important:</strong> {TELEMETRY_NOTIFICATION}
-      </p>
+      <IntlContext intl={this.props.intl}>
+        <p className="flush-bottom text-align-center">
+          <strong>Important:</strong> {TELEMETRY_NOTIFICATION}
+        </p>
+      </IntlContext>
     );
   }
 
@@ -150,4 +155,4 @@ class UserFormModal extends mixin(StoreMixin) {
     );
   }
 }
-module.exports = UserFormModal;
+module.exports = injectIntl(UserFormModal);

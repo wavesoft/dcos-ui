@@ -1,6 +1,8 @@
+import { injectIntl } from "react-intl";
 import classNames from "classnames/dedupe";
 import { Form, Modal } from "reactjs-components";
 import React from "react";
+import IntlContext from "#SRC/js/components/IntlContext";
 
 const METHODS_TO_BIND = [
   "getTriggerSubmit",
@@ -94,10 +96,12 @@ class FormModal extends React.Component {
 
   getFooter() {
     return (
-      <div className="button-collection text-align-center flush">
-        {this.getButtons()}
-        {this.props.extraFooterContent}
-      </div>
+      <IntlContext intl={this.props.intl}>
+        <div className="button-collection text-align-center flush">
+          {this.getButtons()}
+          {this.props.extraFooterContent}
+        </div>
+      </IntlContext>
     );
   }
 
@@ -139,7 +143,9 @@ class FormModal extends React.Component {
         titleClass="text-align-center flush"
         {...this.props.modalProps}
       >
-        {this.getContent()}
+        <IntlContext intl={this.props.intl}>
+          {this.getContent()}
+        </IntlContext>
       </Modal>
     );
   }
@@ -185,4 +191,4 @@ FormModal.propTypes = {
   open: React.PropTypes.bool
 };
 
-module.exports = FormModal;
+module.exports = injectIntl(FormModal);

@@ -9,7 +9,7 @@ import AppLockedMessage from "./AppLockedMessage";
 import Pod from "../../structs/Pod";
 import Service from "../../structs/Service";
 import ServiceTree from "../../structs/ServiceTree";
-import IntlContext from "./IntlContext";
+import IntlContext from "#SRC/js/components/IntlContext";
 
 class ServiceSuspendModal extends React.Component {
   constructor() {
