@@ -1,23 +1,23 @@
 const HealthBarStates = {
   tasksUnknown: {
     className: "unknown",
-    label: "Unknown"
+    label: formatMessage({ id: "XXXX", defaultMessage: "Unknown" })
   },
   tasksHealthy: {
     className: "healthy",
-    label: "Healthy"
+    label: formatMessage({ id: "XXXX", defaultMessage: "Healthy" })
   },
   tasksOverCapacity: {
     className: "over-capacity",
-    label: "Over Capacity"
+    label: formatMessage({ id: "XXXX", defaultMessage: "Over Capacity" })
   },
   tasksUnhealthy: {
     className: "unhealthy",
-    label: "Unhealthy"
+    label: formatMessage({ id: "XXXX", defaultMessage: "Unhealthy" })
   },
   tasksStaged: {
     className: "staged",
-    label: "Staged"
+    label: formatMessage({ id: "XXXX", defaultMessage: "Staged" })
   }
 };
 

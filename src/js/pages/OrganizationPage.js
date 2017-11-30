@@ -9,7 +9,7 @@ class OrganizationPage extends React.Component {
 }
 
 OrganizationPage.routeConfig = {
-  label: "Organization",
+  label: formatMessage({ id: "XXXX", defaultMessage: "Organization" }),
   icon: <Icon id="users-inverse" size="small" family="product" />,
   matches: /^\/organization/
 };

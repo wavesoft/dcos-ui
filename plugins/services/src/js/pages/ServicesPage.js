@@ -17,7 +17,7 @@ var ServicesPage = React.createClass({
 
   statics: {
     routeConfig: {
-      label: "Services",
+      label: formatMessage({ id: "XXXX", defaultMessage: "Services" }),
       icon: <Icon id="services-inverse" size="small" family="product" />,
       matches: /^\/services/
     }

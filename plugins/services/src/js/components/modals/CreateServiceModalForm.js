@@ -445,21 +445,49 @@ class CreateServiceModalForm extends Component {
 
     if (this.state.isPod) {
       tabList.push(
-        { id: "networking", key: "multinetworking", label: "Networking" },
-        { id: "volumes", key: "multivolumes", label: "Volumes" },
+        {
+          id: "networking",
+          key: "multinetworking",
+          label: formatMessage({ id: "XXXX", defaultMessage: "Networking" })
+        },
+        {
+          id: "volumes",
+          key: "multivolumes",
+          label: formatMessage({ id: "XXXX", defaultMessage: "Volumes" })
+        },
         {
           id: "healthChecks",
           key: "multihealthChecks",
-          label: "Health Checks"
+          label: formatMessage({ id: "XXXX", defaultMessage: "Health Checks" })
         },
-        { id: "environment", key: "multienvironment", label: "Environment" }
+        {
+          id: "environment",
+          key: "multienvironment",
+          label: formatMessage({ id: "XXXX", defaultMessage: "Environment" })
+        }
       );
     } else {
       tabList.push(
-        { id: "networking", key: "networking", label: "Networking" },
-        { id: "volumes", key: "volumes", label: "Volumes" },
-        { id: "healthChecks", key: "healthChecks", label: "Health Checks" },
-        { id: "environment", key: "environment", label: "Environment" }
+        {
+          id: "networking",
+          key: "networking",
+          label: formatMessage({ id: "XXXX", defaultMessage: "Networking" })
+        },
+        {
+          id: "volumes",
+          key: "volumes",
+          label: formatMessage({ id: "XXXX", defaultMessage: "Volumes" })
+        },
+        {
+          id: "healthChecks",
+          key: "healthChecks",
+          label: formatMessage({ id: "XXXX", defaultMessage: "Health Checks" })
+        },
+        {
+          id: "environment",
+          key: "environment",
+          label: formatMessage({ id: "XXXX", defaultMessage: "Environment" })
+        }
       );
     }
 

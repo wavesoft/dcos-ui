@@ -21,9 +21,18 @@ class JobTaskDetailPage extends React.Component {
 
     const routePrefix = `/jobs/detail/${encodeURIComponent(id)}/tasks/${encodeURIComponent(taskID)}`;
     const tabs = [
-      { label: "Details", routePath: routePrefix + "/details" },
-      { label: "Files", routePath: routePrefix + "/files" },
-      { label: "Logs", routePath: routePrefix + "/logs" }
+      {
+        label: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
+        routePath: routePrefix + "/details"
+      },
+      {
+        label: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
+        routePath: routePrefix + "/files"
+      },
+      {
+        label: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
+        routePath: routePrefix + "/logs"
+      }
     ];
 
     const job = MetronomeStore.getJob(id);

@@ -119,7 +119,7 @@ UsersPage.propTypes = {
 };
 
 UsersPage.routeConfig = {
-  label: "Users",
+  label: formatMessage({ id: "XXXX", defaultMessage: "Users" }),
   matches: /^\/organization\/users/
 };
 

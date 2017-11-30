@@ -170,7 +170,7 @@ class VirtualNetworksTabContent extends mixin(StoreMixin) {
 }
 
 VirtualNetworksTabContent.routeConfig = {
-  label: "Networks",
+  label: formatMessage({ id: "XXXX", defaultMessage: "Networks" }),
   matches: /^\/networking\/networks/
 };
 

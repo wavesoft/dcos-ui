@@ -7,14 +7,17 @@ import MetadataStore from "../../stores/MetadataStore";
 import ValidatorUtil from "../../utils/ValidatorUtil";
 
 const Schedule = {
-  title: "Schedule",
-  description: "Set time and date for the job to run",
+  title: formatMessage({ id: "XXXX", defaultMessage: "Schedule" }),
+  description: formatMessage({
+    id: "XXXX",
+    defaultMessage: "Set time and date for the job to run"
+  }),
   type: "object",
   properties: {
     runOnSchedule: {
-      label: "Run on a schedule",
+      label: formatMessage({ id: "XXXX", defaultMessage: "Run on a schedule" }),
       showLabel: true,
-      title: "Run on a schedule",
+      title: formatMessage({ id: "XXXX", defaultMessage: "Run on a schedule" }),
       type: "boolean",
       getter(job) {
         const [schedule] = job.getSchedules();
@@ -23,7 +26,7 @@ const Schedule = {
       }
     },
     cron: {
-      title: "CRON Schedule",
+      title: formatMessage({ id: "XXXX", defaultMessage: "CRON Schedule" }),
       helpBlock: (
         <span>
           <FormattedMessage
@@ -62,7 +65,7 @@ const Schedule = {
       }
     },
     timezone: {
-      title: "Time Zone",
+      title: formatMessage({ id: "XXXX", defaultMessage: "Time Zone" }),
       description: (
         <span>
           <FormattedMessage id="XXXX" defaultMessage={`Enter time zone in `} />
@@ -82,8 +85,11 @@ const Schedule = {
       }
     },
     startingDeadlineSeconds: {
-      title: "Starting Deadline",
-      description: "Time in seconds to start the job if it misses " +
+      title: formatMessage({ id: "XXXX", defaultMessage: "Starting Deadline" }),
+      description: formatMessage({
+        id: "XXXX",
+        defaultMessage: "Time in seconds to start the job if it misses "
+      }) +
         "scheduled time for any reason. Missed jobs executions will be " +
         "counted as failed ones.",
       type: "number",
@@ -111,9 +117,9 @@ const Schedule = {
       }
     },
     enabled: {
-      label: "Enabled",
+      label: formatMessage({ id: "XXXX", defaultMessage: "Enabled" }),
       showLabel: true,
-      title: "Enabled",
+      title: formatMessage({ id: "XXXX", defaultMessage: "Enabled" }),
       type: "boolean",
       getter(job) {
         const [schedule = {}] = job.getSchedules();

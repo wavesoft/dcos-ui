@@ -230,7 +230,7 @@ class UnitsHealthTab extends mixin(StoreMixin) {
 }
 
 UnitsHealthTab.routeConfig = {
-  label: "Components",
+  label: formatMessage({ id: "XXXX", defaultMessage: "Components" }),
   matches: /^\/components\/overview/
 };
 

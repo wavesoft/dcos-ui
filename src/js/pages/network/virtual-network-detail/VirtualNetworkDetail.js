@@ -145,7 +145,7 @@ class VirtualNetworkDetail extends mixin(StoreMixin, TabsMixin) {
 
     const tabs = [
       {
-        label: "Tasks",
+        label: formatMessage({ id: "XXXX", defaultMessage: "Tasks" }),
         callback: () => {
           this.setState({ currentTab: "/networking/networks/:overlayName" });
           this.context.router.push(
@@ -155,7 +155,7 @@ class VirtualNetworkDetail extends mixin(StoreMixin, TabsMixin) {
         isActive: currentTab === "/networking/networks/:overlayName"
       },
       {
-        label: "Details",
+        label: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
         callback: () => {
           this.setState({
             currentTab: "/networking/networks/:overlayName/details"

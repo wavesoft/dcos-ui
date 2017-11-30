@@ -1,12 +1,12 @@
 const Labels = {
   type: "object",
-  title: "Labels",
+  title: formatMessage({ id: "XXXX", defaultMessage: "Labels" }),
   description: "Attach metadata to jobs to expose additional information to other jobs.",
   properties: {
     items: {
       type: "array",
       duplicable: true,
-      addLabel: "Add Label",
+      addLabel: formatMessage({ id: "XXXX", defaultMessage: "Add Label" }),
       getter(job) {
         const labels = job.getLabels() || {};
 
@@ -20,11 +20,11 @@ const Labels = {
       itemShape: {
         properties: {
           key: {
-            title: "Label Name",
+            title: formatMessage({ id: "XXXX", defaultMessage: "Label Name" }),
             type: "string"
           },
           value: {
-            title: "Label Value",
+            title: formatMessage({ id: "XXXX", defaultMessage: "Label Value" }),
             type: "string"
           }
         }

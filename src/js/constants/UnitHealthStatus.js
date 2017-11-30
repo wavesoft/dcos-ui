@@ -13,21 +13,21 @@ import {
  */
 const UnitHealthStatus = {
   [SERVER_HEALTHY]: {
-    title: "Healthy",
+    title: formatMessage({ id: "XXXX", defaultMessage: "Healthy" }),
     key: "HEALTHY",
     classNames: "text-success",
     sortingValue: 3,
     value: SERVER_HEALTHY
   },
   [SERVER_UNHEALTHY]: {
-    title: "Unhealthy",
+    title: formatMessage({ id: "XXXX", defaultMessage: "Unhealthy" }),
     key: "UNHEALTHY",
     classNames: "text-danger",
     sortingValue: 0,
     value: SERVER_UNHEALTHY
   },
   [SERVER_WARN]: {
-    title: "Warning",
+    title: formatMessage({ id: "XXXX", defaultMessage: "Warning" }),
     key: "WAR",
     classNames: "text-warning",
     sortingValue: 2,

@@ -329,25 +329,28 @@ class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
     const actions = [];
 
     actions.push({
-      label: "Edit",
+      label: formatMessage({ id: "XXXX", defaultMessage: "Edit" }),
       onItemSelect: this.handleEditButtonClick
     });
 
     actions.push({
-      label: "Run Now",
+      label: formatMessage({ id: "XXXX", defaultMessage: "Run Now" }),
       onItemSelect: this.handleRunNowButtonClick
     });
 
     if (schedule != null && schedule.enabled) {
       actions.push({
-        label: "Disable Schedule",
+        label: formatMessage({
+          id: "XXXX",
+          defaultMessage: "Disable Schedule"
+        }),
         onItemSelect: this.handleDisableScheduleButtonClick
       });
     }
 
     if (schedule != null && !schedule.enabled) {
       actions.push({
-        label: "Enable Schedule",
+        label: formatMessage({ id: "XXXX", defaultMessage: "Enable Schedule" }),
         onItemSelect: this.handleEnableScheduleButtonClick
       });
     }
@@ -366,14 +369,14 @@ class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
 
     return [
       {
-        label: "Run History",
+        label: formatMessage({ id: "XXXX", defaultMessage: "Run History" }),
         callback: () => {
           this.setState({ currentTab: "runHistory" });
         },
         isActive: activeTab === "runHistory"
       },
       {
-        label: "Configuration",
+        label: formatMessage({ id: "XXXX", defaultMessage: "Configuration" }),
         callback: () => {
           this.setState({ currentTab: "configuration" });
         },

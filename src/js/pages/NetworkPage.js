@@ -70,7 +70,7 @@ NetworkPage.contextTypes = {
 };
 
 NetworkPage.routeConfig = {
-  label: "Networking",
+  label: formatMessage({ id: "XXXX", defaultMessage: "Networking" }),
   icon: <Icon id="network-inverse" size="small" family="product" />,
   matches: /^\/networking/
 };

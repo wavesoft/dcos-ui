@@ -63,7 +63,7 @@ const nodesRoutes = {
       children: [
         {
           type: Route,
-          title: "Tasks",
+          title: formatMessage({ id: "XXXX", defaultMessage: "Tasks" }),
           path: "tasks",
           component: NodeDetailTaskTab
         },
@@ -75,13 +75,13 @@ const nodesRoutes = {
         {
           type: Route,
           path: "health",
-          title: "Health",
+          title: formatMessage({ id: "XXXX", defaultMessage: "Health" }),
           component: NodeDetailHealthTab
         },
         {
           type: Route,
           path: "details",
-          title: "Details",
+          title: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
           component: NodeDetailTab
         }
       ]
@@ -96,7 +96,7 @@ const nodesRoutes = {
           type: Route,
           component: TaskDetailsTab,
           hideHeaderNavigation: true,
-          title: "Details",
+          title: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
           path: "details",
           isTab: true
         },
@@ -105,7 +105,7 @@ const nodesRoutes = {
           component: TaskFilesTab,
           isTab: true,
           path: "files",
-          title: "Files",
+          title: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
           type: Route,
           children: [
             {
@@ -127,7 +127,7 @@ const nodesRoutes = {
           hideHeaderNavigation: true,
           isTab: true,
           path: "logs",
-          title: "Logs",
+          title: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
           type: Route,
           children: [
             {
@@ -141,7 +141,7 @@ const nodesRoutes = {
           hideHeaderNavigation: true,
           isTab: true,
           path: "volumes",
-          title: "Volumes",
+          title: formatMessage({ id: "XXXX", defaultMessage: "Volumes" }),
           type: Route
         }
       ]

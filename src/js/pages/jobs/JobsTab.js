@@ -161,7 +161,10 @@ class JobsTab extends mixin(StoreMixin) {
       <Page>
         <Page.Header
           addButton={{
-            label: "Create a job",
+            label: formatMessage({
+              id: "XXXX",
+              defaultMessage: "Create a job"
+            }),
             onItemSelect: this.handleOpenJobFormModal
           }}
           breadcrumbs={<JobsBreadcrumbs tree={DCOSStore.jobTree} item={item} />}

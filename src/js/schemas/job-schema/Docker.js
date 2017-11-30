@@ -3,13 +3,19 @@ import React from "react";
 /* eslint-enable no-unused-vars */
 
 const General = {
-  title: "Docker Container",
-  description: "Configure your job settings",
+  title: formatMessage({ id: "XXXX", defaultMessage: "Docker Container" }),
+  description: formatMessage({
+    id: "XXXX",
+    defaultMessage: "Configure your job settings"
+  }),
   type: "object",
   properties: {
     image: {
-      title: "Image",
-      description: "Name of your Docker image",
+      title: formatMessage({ id: "XXXX", defaultMessage: "Image" }),
+      description: formatMessage({
+        id: "XXXX",
+        defaultMessage: "Name of your Docker image"
+      }),
       type: "string",
       getter(job) {
         return job.getDocker().image;

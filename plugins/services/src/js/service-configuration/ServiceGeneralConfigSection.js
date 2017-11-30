@@ -73,26 +73,29 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         },
         {
           key: "id",
-          label: "Service ID"
+          label: formatMessage({ id: "XXXX", defaultMessage: "Service ID" })
         },
         {
           key: "instances",
-          label: "Instances"
+          label: formatMessage({ id: "XXXX", defaultMessage: "Instances" })
         },
         {
           key: "container.type",
-          label: "Container Runtime",
+          label: formatMessage({
+            id: "XXXX",
+            defaultMessage: "Container Runtime"
+          }),
           transformValue(runtime) {
             return labelMap[runtime] || labelMap[MESOS];
           }
         },
         {
           key: "cpus",
-          label: "CPU"
+          label: formatMessage({ id: "XXXX", defaultMessage: "CPU" })
         },
         {
           key: "mem",
-          label: "Memory",
+          label: formatMessage({ id: "XXXX", defaultMessage: "Memory" }),
           transformValue(value) {
             if (value == null) {
               return value;
@@ -103,7 +106,7 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         },
         {
           key: "disk",
-          label: "Disk",
+          label: formatMessage({ id: "XXXX", defaultMessage: "Disk" }),
           transformValue(value) {
             if (value == null) {
               return value;
@@ -114,31 +117,46 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         },
         {
           key: "gpus",
-          label: "GPU"
+          label: formatMessage({ id: "XXXX", defaultMessage: "GPU" })
         },
         {
           key: "backoffSeconds",
-          label: "Backoff Seconds"
+          label: formatMessage({
+            id: "XXXX",
+            defaultMessage: "Backoff Seconds"
+          })
         },
         {
           key: "backoffFactor",
-          label: "Backoff Factor"
+          label: formatMessage({ id: "XXXX", defaultMessage: "Backoff Factor" })
         },
         {
           key: "maxLaunchDelaySeconds",
-          label: "Backoff Max Launch Delay"
+          label: formatMessage({
+            id: "XXXX",
+            defaultMessage: "Backoff Max Launch Delay"
+          })
         },
         {
           key: "minHealthOpacity",
-          label: "Upgrade Min Health Capacity"
+          label: formatMessage({
+            id: "XXXX",
+            defaultMessage: "Upgrade Min Health Capacity"
+          })
         },
         {
           key: "maxOverCapacity",
-          label: "Upgrade Max Overcapacity"
+          label: formatMessage({
+            id: "XXXX",
+            defaultMessage: "Upgrade Max Overcapacity"
+          })
         },
         {
           key: "container.docker.image",
-          label: "Container Image",
+          label: formatMessage({
+            id: "XXXX",
+            defaultMessage: "Container Image"
+          }),
           transformValue(value, appConfig) {
             const runtime = findNestedPropertyInObject(
               appConfig,
@@ -168,7 +186,10 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         },
         {
           key: "container.docker.forcePullImage",
-          label: "Force Pull on Launch",
+          label: formatMessage({
+            id: "XXXX",
+            defaultMessage: "Force Pull on Launch"
+          }),
           transformValue(value, appConfig) {
             const runtime = findNestedPropertyInObject(
               appConfig,
@@ -185,34 +206,37 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         },
         {
           key: "cmd",
-          label: "Command",
+          label: formatMessage({ id: "XXXX", defaultMessage: "Command" }),
           type: "pre"
         },
         {
           key: "acceptedResourceRoles",
-          label: "Resource Roles",
+          label: formatMessage({
+            id: "XXXX",
+            defaultMessage: "Resource Roles"
+          }),
           transformValue(value = []) {
             return value.join(", ");
           }
         },
         {
           key: "dependencies",
-          label: "Dependencies",
+          label: formatMessage({ id: "XXXX", defaultMessage: "Dependencies" }),
           transformValue(value = []) {
             return value.join(", ");
           }
         },
         {
           key: "executor",
-          label: "Executor"
+          label: formatMessage({ id: "XXXX", defaultMessage: "Executor" })
         },
         {
           key: "user",
-          label: "User"
+          label: formatMessage({ id: "XXXX", defaultMessage: "User" })
         },
         {
           key: "args",
-          label: "Args",
+          label: formatMessage({ id: "XXXX", defaultMessage: "Args" }),
           transformValue(value = []) {
             if (!value.length) {
               return getDisplayValue(null);
@@ -227,7 +251,7 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         },
         {
           key: "version",
-          label: "Version"
+          label: formatMessage({ id: "XXXX", defaultMessage: "Version" })
         },
         {
           key: "fetch",

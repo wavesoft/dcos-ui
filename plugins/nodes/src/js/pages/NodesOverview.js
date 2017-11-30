@@ -62,7 +62,7 @@ var NodesOverview = React.createClass({
 
   statics: {
     routeConfig: {
-      label: "Nodes",
+      label: formatMessage({ id: "XXXX", defaultMessage: "Nodes" }),
       icon: <Icon family="product" id="servers-inverse" />,
       matches: /^\/nodes/
     },

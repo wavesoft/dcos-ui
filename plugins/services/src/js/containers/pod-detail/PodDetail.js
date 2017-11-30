@@ -159,33 +159,33 @@ class PodDetail extends mixin(TabsMixin) {
     }
 
     actions.push({
-      label: "Edit",
+      label: formatMessage({ id: "XXXX", defaultMessage: "Edit" }),
       onItemSelect: this.onActionsItemSelection.bind(this, EDIT)
     });
 
     if (instanceCount > 0) {
       actions.push({
-        label: "Restart",
+        label: formatMessage({ id: "XXXX", defaultMessage: "Restart" }),
         onItemSelect: this.onActionsItemSelection.bind(this, RESTART)
       });
     }
     if (!pod.getLabels().MARATHON_SINGLE_INSTANCE_APP) {
       actions.push({
-        label: "Scale",
+        label: formatMessage({ id: "XXXX", defaultMessage: "Scale" }),
         onItemSelect: this.onActionsItemSelection.bind(this, SCALE)
       });
     }
 
     if (instanceCount > 0) {
       actions.push({
-        label: "Suspend",
+        label: formatMessage({ id: "XXXX", defaultMessage: "Suspend" }),
         onItemSelect: this.onActionsItemSelection.bind(this, SUSPEND)
       });
     }
 
     if (instanceCount === 0) {
       actions.push({
-        label: "Resume",
+        label: formatMessage({ id: "XXXX", defaultMessage: "Resume" }),
         onItemSelect: this.onActionsItemSelection.bind(this, RESUME)
       });
     }
@@ -204,9 +204,18 @@ class PodDetail extends mixin(TabsMixin) {
     const routePrefix = `/services/detail/${encodeURIComponent(id)}`;
 
     return [
-      { label: "Instances", routePath: `${routePrefix}/tasks` },
-      { label: "Configuration", routePath: `${routePrefix}/configuration` },
-      { label: "Debug", routePath: `${routePrefix}/debug` }
+      {
+        label: formatMessage({ id: "XXXX", defaultMessage: "Instances" }),
+        routePath: `${routePrefix}/tasks`
+      },
+      {
+        label: formatMessage({ id: "XXXX", defaultMessage: "Configuration" }),
+        routePath: `${routePrefix}/configuration`
+      },
+      {
+        label: formatMessage({ id: "XXXX", defaultMessage: "Debug" }),
+        routePath: `${routePrefix}/debug`
+      }
     ];
   }
 

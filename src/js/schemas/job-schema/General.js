@@ -8,14 +8,17 @@ import MesosConstants
 import JobResources from "../../constants/JobResources";
 
 const General = {
-  title: "General",
-  description: "Configure your job settings",
+  title: formatMessage({ id: "XXXX", defaultMessage: "General" }),
+  description: formatMessage({
+    id: "XXXX",
+    defaultMessage: "Configure your job settings"
+  }),
   type: "object",
   properties: {
     id: {
       focused: true,
-      title: "ID",
-      description: "The job ID",
+      title: formatMessage({ id: "XXXX", defaultMessage: "ID" }),
+      description: formatMessage({ id: "XXXX", defaultMessage: "The job ID" }),
       type: "string",
       getter(job) {
         return job.getId();
@@ -34,8 +37,11 @@ const General = {
       }
     },
     description: {
-      title: "Description",
-      description: "Job description",
+      title: formatMessage({ id: "XXXX", defaultMessage: "Description" }),
+      description: formatMessage({
+        id: "XXXX",
+        defaultMessage: "Job description"
+      }),
       type: "string",
       getter(job) {
         return job.getDescription();
@@ -45,9 +51,12 @@ const General = {
       type: "group",
       properties: {
         cpus: {
-          title: "CPUs",
+          title: formatMessage({ id: "XXXX", defaultMessage: "CPUs" }),
           default: JobResources.DEFAULT_CPUS,
-          description: "The amount of CPUs the job requires",
+          description: formatMessage({
+            id: "XXXX",
+            defaultMessage: "The amount of CPUs the job requires"
+          }),
           type: "number",
           getter(job) {
             return `${job.getCpus()}`;
@@ -115,8 +124,11 @@ const General = {
       }
     },
     cmd: {
-      title: "Command",
-      description: "The command executed by the service",
+      title: formatMessage({ id: "XXXX", defaultMessage: "Command" }),
+      description: formatMessage({
+        id: "XXXX",
+        defaultMessage: "The command executed by the service"
+      }),
       type: "string",
       multiLine: true,
       getter(job) {

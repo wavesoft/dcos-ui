@@ -3,9 +3,18 @@ import Node from "../structs/Node";
 import StringUtil from "./StringUtil";
 
 const DefaultResourceTypes = {
-  cpus: { label: "CPU", colorID: 0 },
-  mem: { label: "Memory", colorID: 6 },
-  disk: { label: "Disk", colorID: 3 }
+  cpus: {
+    label: formatMessage({ id: "XXXX", defaultMessage: "CPU" }),
+    colorID: 0
+  },
+  mem: {
+    label: formatMessage({ id: "XXXX", defaultMessage: "Memory" }),
+    colorID: 6
+  },
+  disk: {
+    label: formatMessage({ id: "XXXX", defaultMessage: "Disk" }),
+    colorID: 3
+  }
 };
 
 // Let's create an instance of a Node with our default resources

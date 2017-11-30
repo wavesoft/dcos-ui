@@ -90,24 +90,27 @@ const serviceRoutes = [
           {
             type: Route,
             path: "configuration",
-            title: "Configuration",
+            title: formatMessage({
+              id: "XXXX",
+              defaultMessage: "Configuration"
+            }),
             component: HighOrderServiceConfiguration
           },
           {
             type: Route,
             path: "debug",
-            title: "Debug",
+            title: formatMessage({ id: "XXXX", defaultMessage: "Debug" }),
             component: HighOrderServiceDebug
           },
           {
             type: Route,
             path: "volumes",
-            title: "Volumes",
+            title: formatMessage({ id: "XXXX", defaultMessage: "Volumes" }),
             component: VolumeTable
           },
           {
             type: Route,
-            title: "Instances",
+            title: formatMessage({ id: "XXXX", defaultMessage: "Instances" }),
             path: "tasks",
             component: HighOrderServiceInstances
           },
@@ -118,7 +121,7 @@ const serviceRoutes = [
           },
           {
             type: Route,
-            title: "Instances",
+            title: formatMessage({ id: "XXXX", defaultMessage: "Instances" }),
             path: "tasks/:taskID",
             component: ServiceTaskDetailPage,
             hideHeaderNavigation: true,
@@ -129,14 +132,14 @@ const serviceRoutes = [
                 hideHeaderNavigation: true,
                 isTab: true,
                 path: "details",
-                title: "Details"
+                title: formatMessage({ id: "XXXX", defaultMessage: "Details" })
               },
               {
                 hideHeaderNavigation: true,
                 component: TaskFilesTab,
                 isTab: true,
                 path: "files",
-                title: "Files",
+                title: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
                 type: Route,
                 children: [
                   {
@@ -158,7 +161,7 @@ const serviceRoutes = [
                 hideHeaderNavigation: true,
                 isTab: true,
                 path: "logs",
-                title: "Logs",
+                title: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
                 type: Route,
                 children: [
                   {
@@ -172,7 +175,7 @@ const serviceRoutes = [
                 hideHeaderNavigation: true,
                 isTab: true,
                 path: "volumes",
-                title: "Volumes",
+                title: formatMessage({ id: "XXXX", defaultMessage: "Volumes" }),
                 type: Route
               },
               {

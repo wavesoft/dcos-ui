@@ -47,11 +47,11 @@ class ServiceNetworkingConfigSection extends ServiceConfigBaseSectionDisplay {
         },
         {
           key: "networks.0.mode",
-          label: "Network Mode"
+          label: formatMessage({ id: "XXXX", defaultMessage: "Network Mode" })
         },
         {
           key: "networks.0.name",
-          label: "Network Name"
+          label: formatMessage({ id: "XXXX", defaultMessage: "Network Name" })
         },
         {
           key: "portDefinitions",

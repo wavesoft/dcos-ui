@@ -7,8 +7,14 @@ import DialChart from "./DialChart";
 
 const TASKS_PER_ROW = 3;
 const TASK_INFO = {
-  TASK_RUNNING: { label: "Tasks running", colorIndex: 4 },
-  TASK_STAGING: { label: "Tasks staging", colorIndex: 1 }
+  TASK_RUNNING: {
+    label: formatMessage({ id: "XXXX", defaultMessage: "Tasks running" }),
+    colorIndex: 4
+  },
+  TASK_STAGING: {
+    label: formatMessage({ id: "XXXX", defaultMessage: "Tasks staging" }),
+    colorIndex: 1
+  }
 };
 const DISPLAYED_TASK_KEYS = Object.keys(TASK_INFO);
 

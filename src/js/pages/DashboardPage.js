@@ -61,7 +61,7 @@ var DashboardPage = React.createClass({
 
   statics: {
     routeConfig: {
-      label: "Dashboard",
+      label: formatMessage({ id: "XXXX", defaultMessage: "Dashboard" }),
       icon: <Icon id="graph-inverse" size="small" family="product" />,
       matches: /^\/dashboard/
     },

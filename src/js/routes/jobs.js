@@ -67,7 +67,7 @@ const jobsRoutes = [
                 component: TaskDetailsTab,
                 isTab: true,
                 path: "details",
-                title: "Details",
+                title: formatMessage({ id: "XXXX", defaultMessage: "Details" }),
                 type: Route
               },
               {
@@ -75,7 +75,7 @@ const jobsRoutes = [
                 component: TaskFilesTab,
                 isTab: true,
                 path: "files",
-                title: "Files",
+                title: formatMessage({ id: "XXXX", defaultMessage: "Files" }),
                 type: Route,
                 children: [
                   {
@@ -97,7 +97,7 @@ const jobsRoutes = [
                 hideHeaderNavigation: true,
                 isTab: true,
                 path: "logs",
-                title: "Logs",
+                title: formatMessage({ id: "XXXX", defaultMessage: "Logs" }),
                 type: Route,
                 children: [
                   {

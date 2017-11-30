@@ -185,7 +185,10 @@ class OverviewDetailTab extends mixin(StoreMixin) {
   getPageHeaderActions() {
     return [
       {
-        label: "View Cluster Configuration",
+        label: formatMessage({
+          id: "XXXX",
+          defaultMessage: "View Cluster Configuration"
+        }),
         onItemSelect: this.handleClusterConfigModalOpen
       }
     ];
@@ -359,7 +362,7 @@ class OverviewDetailTab extends mixin(StoreMixin) {
 }
 
 OverviewDetailTab.routeConfig = {
-  label: "Overview",
+  label: formatMessage({ id: "XXXX", defaultMessage: "Overview" }),
   matches: /^\/overview\/details/
 };
 
