@@ -26,8 +26,12 @@ const VirtualNetworkUtil = {
           <Link to="/networking/networks">
             <FormattedMessage id="XXXX" defaultMessage={`Networks`} />
           </Link>
-          {" "}
+          {" "}<FormattedMessage
+            id="XXXX"
+            defaultMessage={`
           overview to see all virtual networks.
+        `}
+          />
         </p>
       </AlertPanel>
     );

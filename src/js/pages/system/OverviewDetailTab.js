@@ -124,7 +124,11 @@ class OverviewDetailTab extends mixin(StoreMixin) {
       <ConfigurationMapSection>
         <ConfigurationMapRow key="version">
           <ConfigurationMapLabel>
-            {Config.productName} Version
+            {Config.productName}<FormattedMessage
+              id="XXXX"
+              defaultMessage={` Version
+          `}
+            />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {productVersion}

@@ -26,7 +26,11 @@ var VersionsModal = React.createClass({
   render() {
     const header = (
       <ModalHeading>
-        {Config.productName} Info
+        {Config.productName}<FormattedMessage
+          id="XXXX"
+          defaultMessage={` Info
+      `}
+        />
       </ModalHeading>
     );
 

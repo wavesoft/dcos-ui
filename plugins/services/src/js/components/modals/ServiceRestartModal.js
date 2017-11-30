@@ -140,8 +140,12 @@ class ServiceRestartModal extends React.Component {
           will remove all currently running instances of the
           {" "}
           {serviceLabel.toLowerCase()}
-          {" "}
+          {" "}<FormattedMessage
+            id="XXXX"
+            defaultMessage={`
           and then attempt to create new instances identical to those removed.
+        `}
+          />
         </p>
         {this.getErrorMessage()}
       </Confirm>

@@ -94,8 +94,12 @@ var Modals = React.createClass({
           `}
           />{" "}
           {Config.productName}
-          {" "}
+          {" "}<FormattedMessage
+            id="XXXX"
+            defaultMessage={`
           versions. Please try again.
+        `}
+          />
         </p>
       )
     });

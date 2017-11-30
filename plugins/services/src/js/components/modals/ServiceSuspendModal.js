@@ -139,7 +139,11 @@ class ServiceSuspendModal extends React.Component {
           {" "}
           {serviceLabel.toLowerCase()}.
           {" "}
-          The {serviceLabel.toLowerCase()} will not be deleted.
+          The {serviceLabel.toLowerCase()}<FormattedMessage
+            id="XXXX"
+            defaultMessage={` will not be deleted.
+        `}
+          />
         </p>
         {this.getErrorMessage()}
       </Confirm>
