@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage, injectIntl } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import classNames from "classnames";
 import { Dropdown, Table, Tooltip } from "reactjs-components";
 import { Link, routerShape } from "react-router";
@@ -538,4 +538,4 @@ ServicesTable.propTypes = {
   services: PropTypes.array
 };
 
-module.exports = injectIntl(ServicesTable);
+module.exports = injectIntl(injectIntl)(ServicesTable);

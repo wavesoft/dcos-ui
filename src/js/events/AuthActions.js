@@ -1,4 +1,4 @@
-import { formatMessage } from "react-intl";
+import { injectIntl } from "react-intl";
 import { RequestUtil } from "mesosphere-shared-reactjs";
 
 import {
@@ -67,4 +67,4 @@ if (Config.useFixtures) {
   };
 }
 
-module.exports = AuthActions;
+module.exports = injectIntl(AuthActions);

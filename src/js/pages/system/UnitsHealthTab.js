@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import classNames from "classnames";
 import { Link } from "react-router";
 import mixin from "reactjs-mixin";
@@ -238,4 +238,4 @@ UnitsHealthTab.routeConfig = {
   matches: /^\/components\/overview/
 };
 
-module.exports = UnitsHealthTab;
+module.exports = injectIntl(UnitsHealthTab);

@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage, injectIntl } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import { Confirm, Modal } from "reactjs-components";
 import { routerShape } from "react-router";
 import PureRender from "react-addons-pure-render-mixin";
@@ -317,4 +317,4 @@ ServiceDestroyModal.propTypes = {
   ]).isRequired
 };
 
-module.exports = injectIntl(ServiceDestroyModal);
+module.exports = injectIntl(injectIntl)(ServiceDestroyModal);

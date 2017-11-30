@@ -1,4 +1,4 @@
-import { formatMessage } from "react-intl"; /* eslint-disable no-unused-vars */
+import { injectIntl } from "react-intl"; /* eslint-disable no-unused-vars */
 import React from "react";
 /* eslint-enable no-unused-vars */
 import JobValidatorUtil from "../../utils/JobValidatorUtil";
@@ -157,4 +157,4 @@ const General = {
   required: ["id"]
 };
 
-module.exports = General;
+module.exports = injectIntl(General);

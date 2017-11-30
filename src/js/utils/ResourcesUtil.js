@@ -1,4 +1,4 @@
-import { formatMessage } from "react-intl";
+import { injectIntl } from "react-intl";
 import CompositeState from "../structs/CompositeState";
 import Node from "../structs/Node";
 import StringUtil from "./StringUtil";
@@ -156,4 +156,4 @@ const ResourcesUtil = {
   }
 };
 
-module.exports = ResourcesUtil;
+module.exports = injectIntl(ResourcesUtil);

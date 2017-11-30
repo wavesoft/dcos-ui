@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import { Hooks } from "PluginSDK";
 import mixin from "reactjs-mixin";
 import { Link } from "react-router";
@@ -124,4 +124,4 @@ UsersPage.routeConfig = {
   matches: /^\/organization\/users/
 };
 
-module.exports = UsersPage;
+module.exports = injectIntl(UsersPage);

@@ -1,4 +1,4 @@
-import { formatMessage, injectIntl } from "react-intl";
+import { injectIntl } from "react-intl";
 import mixin from "reactjs-mixin";
 import React, { PropTypes } from "react";
 import { routerShape } from "react-router";
@@ -348,4 +348,4 @@ ServiceDetail.propTypes = {
   children: PropTypes.node
 };
 
-module.exports = injectIntl(ServiceDetail);
+module.exports = injectIntl(injectIntl)(ServiceDetail);

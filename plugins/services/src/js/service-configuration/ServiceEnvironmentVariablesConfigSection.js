@@ -1,4 +1,4 @@
-import { formatMessage } from "react-intl";
+import { injectIntl } from "react-intl";
 import React from "react";
 import { Table } from "reactjs-components";
 
@@ -110,4 +110,4 @@ class ServiceEnvironmentVariablesConfigSection
   }
 }
 
-module.exports = ServiceEnvironmentVariablesConfigSection;
+module.exports = injectIntl(ServiceEnvironmentVariablesConfigSection);

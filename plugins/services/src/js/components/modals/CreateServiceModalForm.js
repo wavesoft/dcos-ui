@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import classNames from "classnames";
 import deepEqual from "deep-equal";
 import React, { PropTypes, Component } from "react";
@@ -810,4 +810,4 @@ CreateServiceModalForm.propTypes = {
   showAllErrors: PropTypes.bool
 };
 
-module.exports = CreateServiceModalForm;
+module.exports = injectIntl(CreateServiceModalForm);

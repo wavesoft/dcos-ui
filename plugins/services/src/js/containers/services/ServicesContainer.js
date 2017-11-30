@@ -1,4 +1,4 @@
-import { formatMessage } from "react-intl";
+import { injectIntl } from "react-intl";
 import React, { PropTypes } from "react";
 import { routerShape } from "react-router";
 
@@ -615,4 +615,4 @@ ServicesContainer.routeConfig = {
   matches: /^\/services\/(detail|overview)/
 };
 
-module.exports = ServicesContainer;
+module.exports = injectIntl(ServicesContainer);

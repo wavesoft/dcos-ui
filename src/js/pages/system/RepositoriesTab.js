@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import mixin from "reactjs-mixin";
 import { Link } from "react-router";
 /* eslint-disable no-unused-vars */
@@ -168,4 +168,4 @@ RepositoriesTab.routeConfig = {
   matches: /^\/settings\/repositories/
 };
 
-module.exports = RepositoriesTab;
+module.exports = injectIntl(RepositoriesTab);

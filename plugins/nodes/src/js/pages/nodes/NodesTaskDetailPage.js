@@ -1,4 +1,4 @@
-import { formatMessage } from "react-intl";
+import { injectIntl } from "react-intl";
 import mixin from "reactjs-mixin";
 /* eslint-disable no-unused-vars */
 import React from "react";
@@ -90,4 +90,4 @@ NodesTaskDetailPage.propTypes = {
   routes: React.PropTypes.array
 };
 
-module.exports = NodesTaskDetailPage;
+module.exports = injectIntl(NodesTaskDetailPage);

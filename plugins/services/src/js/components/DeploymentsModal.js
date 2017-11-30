@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage, injectIntl } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import classNames from "classnames";
 import { Confirm, Dropdown, Modal } from "reactjs-components";
 import { hashHistory } from "react-router";
@@ -550,4 +550,4 @@ class DeploymentsModal extends mixin(StoreMixin) {
   }
 }
 
-module.exports = injectIntl(DeploymentsModal);
+module.exports = injectIntl(injectIntl)(DeploymentsModal);

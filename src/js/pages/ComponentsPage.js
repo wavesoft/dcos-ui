@@ -1,4 +1,4 @@
-import { formatMessage } from "react-intl";
+import { injectIntl } from "react-intl";
 import React from "react";
 
 import Icon from "../components/Icon";
@@ -18,4 +18,4 @@ ComponentsPage.routeConfig = {
   matches: /^\/components/
 };
 
-module.exports = ComponentsPage;
+module.exports = injectIntl(ComponentsPage);

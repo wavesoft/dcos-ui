@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import React from "react";
 
 import ConfigurationMapHeading
@@ -107,4 +107,4 @@ PodLabelsConfigSection.propTypes = {
   onEditClick: React.PropTypes.func
 };
 
-module.exports = PodLabelsConfigSection;
+module.exports = injectIntl(PodLabelsConfigSection);

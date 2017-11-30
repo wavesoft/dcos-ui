@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import { routerShape, Link } from "react-router";
 import mixin from "reactjs-mixin";
 /* eslint-disable no-unused-vars */
@@ -83,4 +83,4 @@ NetworkPage.willTransitionTo = function() {
   SidebarActions.close();
 };
 
-module.exports = NetworkPage;
+module.exports = injectIntl(NetworkPage);

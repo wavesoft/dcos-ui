@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import classNames from "classnames";
 import React, { PropTypes } from "react";
 import { routerShape } from "react-router";
@@ -162,4 +162,4 @@ ServiceTreeView.propTypes = {
   serviceTree: PropTypes.instanceOf(ServiceTree)
 };
 
-module.exports = ServiceTreeView;
+module.exports = injectIntl(ServiceTreeView);

@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import mixin from "reactjs-mixin";
 import React from "react";
 import { routerShape } from "react-router";
@@ -263,4 +263,4 @@ JobsTab.contextTypes = {
   location: React.PropTypes.object.isRequired
 };
 
-module.exports = JobsTab;
+module.exports = injectIntl(JobsTab);

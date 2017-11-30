@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import React from "react";
 
 import { findNestedPropertyInObject } from "#SRC/js/utils/Util";
@@ -97,4 +97,4 @@ PodPlacementConstraintsConfigSection.propTypes = {
   onEditClick: React.PropTypes.func
 };
 
-module.exports = PodPlacementConstraintsConfigSection;
+module.exports = injectIntl(PodPlacementConstraintsConfigSection);

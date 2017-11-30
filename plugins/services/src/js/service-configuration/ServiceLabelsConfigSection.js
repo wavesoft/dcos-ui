@@ -1,4 +1,4 @@
-import { formatMessage } from "react-intl";
+import { injectIntl } from "react-intl";
 import React from "react";
 import { Table } from "reactjs-components";
 
@@ -102,4 +102,4 @@ class ServiceLabelsConfigSection extends ServiceConfigBaseSectionDisplay {
   }
 }
 
-module.exports = ServiceLabelsConfigSection;
+module.exports = injectIntl(ServiceLabelsConfigSection);

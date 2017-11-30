@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import classNames from "classnames";
 import { Form } from "reactjs-components";
 import PureRender from "react-addons-pure-render-mixin";
@@ -172,4 +172,4 @@ var NodesGridView = React.createClass({
   }
 });
 
-module.exports = NodesGridView;
+module.exports = injectIntl(NodesGridView);

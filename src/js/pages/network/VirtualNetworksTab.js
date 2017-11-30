@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import mixin from "reactjs-mixin";
 import { Link } from "react-router";
 /* eslint-disable no-unused-vars */
@@ -178,4 +178,4 @@ VirtualNetworksTabContent.routeConfig = {
   matches: /^\/networking\/networks/
 };
 
-module.exports = VirtualNetworksTabContent;
+module.exports = injectIntl(VirtualNetworksTabContent);

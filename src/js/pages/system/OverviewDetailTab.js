@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import mixin from "reactjs-mixin";
 import { Link } from "react-router";
 import { MountService } from "foundation-ui";
@@ -369,4 +369,4 @@ OverviewDetailTab.routeConfig = {
   matches: /^\/overview\/details/
 };
 
-module.exports = OverviewDetailTab;
+module.exports = injectIntl(OverviewDetailTab);

@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import React from "react";
 
 import ConfigurationMapHeading
@@ -159,4 +159,4 @@ PodStorageConfigSection.propTypes = {
   onEditClick: React.PropTypes.func
 };
 
-module.exports = PodStorageConfigSection;
+module.exports = injectIntl(PodStorageConfigSection);

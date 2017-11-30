@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import mixin from "reactjs-mixin";
 import { Link, routerShape } from "react-router";
 /* eslint-disable no-unused-vars */
@@ -195,4 +195,4 @@ VirtualNetworkDetail.contextTypes = {
   router: routerShape
 };
 
-module.exports = VirtualNetworkDetail;
+module.exports = injectIntl(VirtualNetworkDetail);

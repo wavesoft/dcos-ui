@@ -1,4 +1,4 @@
-import { formatMessage } from "react-intl";
+import { injectIntl } from "react-intl";
 import React from "react";
 import { Link } from "react-router";
 
@@ -86,4 +86,4 @@ JobTaskDetailPage.propTypes = {
   routes: React.PropTypes.array
 };
 
-module.exports = JobTaskDetailPage;
+module.exports = injectIntl(JobTaskDetailPage);

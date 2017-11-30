@@ -1,4 +1,4 @@
-import { formatMessage } from "react-intl";
+import { injectIntl } from "react-intl";
 import React from "react";
 import { routerShape } from "react-router";
 
@@ -25,4 +25,4 @@ JobsPage.willTransitionTo = function() {
   SidebarActions.close();
 };
 
-module.exports = JobsPage;
+module.exports = injectIntl(JobsPage);

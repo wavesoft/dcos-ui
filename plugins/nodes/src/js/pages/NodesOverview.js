@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import classNames from "classnames";
 import React from "react";
 import { Link, routerShape } from "react-router";
@@ -336,4 +336,4 @@ var NodesOverview = React.createClass({
   }
 });
 
-module.exports = NodesOverview;
+module.exports = injectIntl(NodesOverview);

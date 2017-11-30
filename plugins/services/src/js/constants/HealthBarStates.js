@@ -1,4 +1,4 @@
-import { formatMessage } from "react-intl";
+import { injectIntl } from "react-intl";
 const HealthBarStates = {
   tasksUnknown: {
     className: "unknown",
@@ -37,4 +37,4 @@ const HealthBarStates = {
   }
 };
 
-module.exports = HealthBarStates;
+module.exports = injectIntl(HealthBarStates);

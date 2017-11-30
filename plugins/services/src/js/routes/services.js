@@ -1,4 +1,4 @@
-import { formatMessage } from "react-intl";
+import { injectIntl } from "react-intl";
 import { Redirect, Route, IndexRoute } from "react-router";
 /* eslint-disable no-unused-vars */
 import React from "react";
@@ -217,4 +217,4 @@ const serviceRoutes = [
   }
 ];
 
-module.exports = serviceRoutes;
+module.exports = injectIntl(serviceRoutes);

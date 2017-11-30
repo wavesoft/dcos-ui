@@ -1,4 +1,4 @@
-import { formatMessage } from "react-intl";
+import { injectIntl } from "react-intl";
 import React from "react";
 import { routerShape } from "react-router";
 import { StoreMixin } from "mesosphere-shared-reactjs";
@@ -81,4 +81,4 @@ var ServicesPage = React.createClass({
   }
 });
 
-module.exports = ServicesPage;
+module.exports = injectIntl(ServicesPage);

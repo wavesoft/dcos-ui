@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import classNames from "classnames";
 import { Confirm } from "reactjs-components";
 import mixin from "reactjs-mixin";
@@ -443,4 +443,4 @@ JobDetailPage.contextTypes = {
   router: routerShape
 };
 
-module.exports = JobDetailPage;
+module.exports = injectIntl(JobDetailPage);

@@ -1,4 +1,4 @@
-import { formatMessage } from "react-intl";
+import { injectIntl } from "react-intl";
 import {
   SERVER_HEALTHY,
   SERVER_NA,
@@ -52,4 +52,4 @@ const UnitHealthStatus = {
   }
 };
 
-module.exports = UnitHealthStatus;
+module.exports = injectIntl(UnitHealthStatus);

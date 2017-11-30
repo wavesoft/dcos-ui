@@ -1,4 +1,4 @@
-import { formatMessage } from "react-intl";
+import { injectIntl } from "react-intl";
 import React from "react";
 
 import Icon from "../components/Icon";
@@ -18,4 +18,4 @@ SystemOverviewPage.routeConfig = {
   matches: /^\/overview/
 };
 
-module.exports = SystemOverviewPage;
+module.exports = injectIntl(SystemOverviewPage);

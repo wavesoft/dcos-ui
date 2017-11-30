@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import React from "react";
 import { Table } from "reactjs-components";
 
@@ -246,4 +246,4 @@ class ServiceNetworkingConfigSection extends ServiceConfigBaseSectionDisplay {
   }
 }
 
-module.exports = ServiceNetworkingConfigSection;
+module.exports = injectIntl(ServiceNetworkingConfigSection);

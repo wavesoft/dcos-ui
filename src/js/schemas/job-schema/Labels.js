@@ -1,4 +1,4 @@
-import { formatMessage } from "react-intl";
+import { injectIntl } from "react-intl";
 const Labels = {
   type: "object",
   title: this.props.intl.formatMessage({
@@ -46,4 +46,4 @@ const Labels = {
   }
 };
 
-module.exports = Labels;
+module.exports = injectIntl(Labels);

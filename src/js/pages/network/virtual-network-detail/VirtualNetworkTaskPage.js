@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import React from "react";
 import { Link } from "react-router";
 
@@ -144,4 +144,4 @@ VirtualNetworkTaskPage.propTypes = {
   routes: React.PropTypes.array
 };
 
-module.exports = VirtualNetworkTaskPage;
+module.exports = injectIntl(VirtualNetworkTaskPage);

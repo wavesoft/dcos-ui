@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import classNames from "classnames";
 import deepEqual from "deep-equal";
 import React from "react";
@@ -151,4 +151,4 @@ var TasksChart = React.createClass({
   }
 });
 
-module.exports = TasksChart;
+module.exports = injectIntl(TasksChart);

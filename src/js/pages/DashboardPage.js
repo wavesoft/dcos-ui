@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import { routerShape, Link } from "react-router";
 import React from "react";
 import { StoreMixin } from "mesosphere-shared-reactjs";
@@ -286,4 +286,4 @@ var DashboardPage = React.createClass({
   }
 });
 
-module.exports = DashboardPage;
+module.exports = injectIntl(DashboardPage);

@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import mixin from "reactjs-mixin";
 /* eslint-disable no-unused-vars */
 import React from "react";
@@ -222,4 +222,4 @@ NodeDetailPage.contextTypes = {
   router: routerShape
 };
 
-module.exports = NodeDetailPage;
+module.exports = injectIntl(NodeDetailPage);

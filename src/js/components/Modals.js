@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import React from "react";
 import { Hooks } from "PluginSDK";
 
@@ -200,4 +200,4 @@ var Modals = React.createClass({
   }
 });
 
-module.exports = Modals;
+module.exports = injectIntl(Modals);

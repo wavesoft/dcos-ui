@@ -1,4 +1,4 @@
-import { formatMessage } from "react-intl";
+import { injectIntl } from "react-intl";
 import React from "react";
 
 import MesosStateStore from "#SRC/js/stores/MesosStateStore";
@@ -73,4 +73,4 @@ ServiceTaskDetailPage.propTypes = {
   routes: React.PropTypes.array
 };
 
-module.exports = ServiceTaskDetailPage;
+module.exports = injectIntl(ServiceTaskDetailPage);

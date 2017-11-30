@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import React from "react";
 
 import ConfigurationMapHeading
@@ -94,4 +94,4 @@ ServicePlacementConstraintsConfigSection.propTypes = {
   onEditClick: React.PropTypes.func
 };
 
-module.exports = ServicePlacementConstraintsConfigSection;
+module.exports = injectIntl(ServicePlacementConstraintsConfigSection);

@@ -1,4 +1,4 @@
-import { FormattedMessage, formatMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import classNames from "classnames";
 import mixin from "reactjs-mixin";
 import { Link } from "react-router";
@@ -368,4 +368,4 @@ class PackageDetailTab extends mixin(StoreMixin) {
   }
 }
 
-module.exports = PackageDetailTab;
+module.exports = injectIntl(PackageDetailTab);

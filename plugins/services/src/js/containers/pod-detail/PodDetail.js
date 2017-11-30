@@ -1,4 +1,4 @@
-import { formatMessage } from "react-intl";
+import { injectIntl } from "react-intl";
 import mixin from "reactjs-mixin";
 import React, { PropTypes } from "react";
 import { routerShape } from "react-router";
@@ -303,4 +303,4 @@ PodDetail.propTypes = {
   pod: React.PropTypes.instanceOf(Pod)
 };
 
-module.exports = PodDetail;
+module.exports = injectIntl(PodDetail);
