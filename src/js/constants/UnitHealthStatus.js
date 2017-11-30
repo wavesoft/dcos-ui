@@ -1,4 +1,3 @@
-import { injectIntl } from "react-intl";
 import {
   SERVER_HEALTHY,
   SERVER_NA,
@@ -14,30 +13,21 @@ import {
  */
 const UnitHealthStatus = {
   [SERVER_HEALTHY]: {
-    title: this.props.intl.formatMessage({
-      id: "XXXX",
-      defaultMessage: "Healthy"
-    }),
+    title: "Healthy",
     key: "HEALTHY",
     classNames: "text-success",
     sortingValue: 3,
     value: SERVER_HEALTHY
   },
   [SERVER_UNHEALTHY]: {
-    title: this.props.intl.formatMessage({
-      id: "XXXX",
-      defaultMessage: "Unhealthy"
-    }),
+    title: "Unhealthy",
     key: "UNHEALTHY",
     classNames: "text-danger",
     sortingValue: 0,
     value: SERVER_UNHEALTHY
   },
   [SERVER_WARN]: {
-    title: this.props.intl.formatMessage({
-      id: "XXXX",
-      defaultMessage: "Warning"
-    }),
+    title: "Warning",
     key: "WAR",
     classNames: "text-warning",
     sortingValue: 2,
@@ -52,4 +42,4 @@ const UnitHealthStatus = {
   }
 };
 
-module.exports = injectIntl(UnitHealthStatus);
+module.exports = UnitHealthStatus;

@@ -1,4 +1,4 @@
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import React from "react";
 
 import CompositeState from "#SRC/js/structs/CompositeState";
@@ -62,23 +62,22 @@ class TaskDetailsTab extends React.Component {
     let resourceRows = null;
 
     if (mesosTask.resources != null) {
-      const resourceLabels = ResourcesUtil.getResourceLabels();
+      const resourceLabels = ResourcesUtil(this.props.intl).getResourceLabels();
 
-      resourceRows = ResourcesUtil.getDefaultResources().map(function(
-        resource,
-        index
-      ) {
-        return (
-          <ConfigurationMapRow key={index}>
-            <ConfigurationMapLabel>
-              {resourceLabels[resource]}
-            </ConfigurationMapLabel>
-            <ConfigurationMapValue>
-              {Units.formatResource(resource, mesosTask.resources[resource])}
-            </ConfigurationMapValue>
-          </ConfigurationMapRow>
-        );
-      });
+      resourceRows = ResourcesUtil(this.props.intl)
+        .getDefaultResources()
+        .map(function(resource, index) {
+          return (
+            <ConfigurationMapRow key={index}>
+              <ConfigurationMapLabel>
+                {resourceLabels[resource]}
+              </ConfigurationMapLabel>
+              <ConfigurationMapValue>
+                {Units.formatResource(resource, mesosTask.resources[resource])}
+              </ConfigurationMapValue>
+            </ConfigurationMapRow>
+          );
+        });
     }
 
     if (service != null) {
@@ -244,4 +243,4 @@ TaskDetailsTab.defaultProps = {
   task: {}
 };
 
-module.exports = TaskDetailsTab;
+module.exports = injectIntl(TaskDetailsTab);

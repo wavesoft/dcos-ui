@@ -1,4 +1,4 @@
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import Ace from "react-ace";
 import mixin from "reactjs-mixin";
 import { Modal } from "reactjs-components";
@@ -61,8 +61,10 @@ const responseAttributePathToFieldIdMap = {
 };
 
 class JobFormModal extends mixin(StoreMixin) {
-  constructor() {
+  constructor(props) {
     super(...arguments);
+
+    this.JobSchema = JobSchema(props.intl);
 
     this.state = {
       defaultTab: "",
@@ -137,7 +139,7 @@ class JobFormModal extends mixin(StoreMixin) {
     this.setState({
       defaultTab: "",
       errorMessage: null,
-      jobFormModel: JobUtil.createFormModelFromSchema(JobSchema, job),
+      jobFormModel: JobUtil.createFormModelFromSchema(this.JobSchema, job),
       jobJsonString: JSON.stringify(
         cleanJobJSON(JobUtil.createJobSpecFromJob(job)),
         null,
@@ -174,9 +176,9 @@ class JobFormModal extends mixin(StoreMixin) {
         return <div />;
       };
 
-      const formModel = JobUtil.createFormModelFromSchema(JobSchema, job);
+      const formModel = JobUtil.createFormModelFromSchema(this.JobSchema, job);
       const formMultiDef = SchemaUtil.schemaToMultipleDefinition({
-        schema: JobSchema,
+        schema: this.JobSchema,
         renderSubheader: dummyItemRenderer,
         renderLabel: dummyItemRenderer,
         renderRemove: dummyItemRenderer,
@@ -253,7 +255,7 @@ class JobFormModal extends mixin(StoreMixin) {
     if (this.state.jsonMode) {
       this.setState({
         errorMessage: null,
-        jobFormModel: JobUtil.createFormModelFromSchema(JobSchema, job),
+        jobFormModel: JobUtil.createFormModelFromSchema(this.JobSchema, job),
         jsonMode: false
       });
     } else {
@@ -391,7 +393,7 @@ class JobFormModal extends mixin(StoreMixin) {
         getTriggerSubmit={this.handleTriggerSubmit}
         model={jobFormModel}
         isEdit={this.props.isEdit}
-        schema={JobSchema}
+        schema={this.JobSchema}
       />
     );
   }
@@ -484,4 +486,4 @@ JobFormModal.propTypes = {
   onClose: React.PropTypes.func
 };
 
-module.exports = JobFormModal;
+module.exports = injectIntl(JobFormModal);

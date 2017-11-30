@@ -1,3 +1,4 @@
+import { injectIntl } from "react-intl";
 import classNames from "classnames";
 import React from "react";
 
@@ -44,7 +45,9 @@ const ResourceBarChart = React.createClass({
       {
         id: "used_resources",
         name: selectedResource + " allocated",
-        colorIndex: ResourcesUtil.getResourceColor(selectedResource),
+        colorIndex: ResourcesUtil(props.intl).getResourceColor(
+          selectedResource
+        ),
         values: props.resources[selectedResource]
       }
     ];
@@ -65,24 +68,26 @@ const ResourceBarChart = React.createClass({
   getModeButtons() {
     const selectedResource = this.props.selectedResource;
 
-    const resourceColors = ResourcesUtil.getResourceColors();
-    const resourceLabels = ResourcesUtil.getResourceLabels();
+    const resourceColors = ResourcesUtil(this.props.intl).getResourceColors();
+    const resourceLabels = ResourcesUtil(this.props.intl).getResourceLabels();
 
-    return ResourcesUtil.getDefaultResources().map(resource => {
-      const classSet = classNames("button button-stroke", {
-        active: selectedResource === resource
+    return ResourcesUtil(this.props.intl)
+      .getDefaultResources()
+      .map(resource => {
+        const classSet = classNames("button button-stroke", {
+          active: selectedResource === resource
+        });
+
+        return (
+          <button
+            key={resource}
+            className={`${classSet} path-color-${resourceColors[resource]}`}
+            onClick={this.handleSelectedResourceChange.bind(this, resource)}
+          >
+            {resourceLabels[resource]}
+          </button>
+        );
       });
-
-      return (
-        <button
-          key={resource}
-          className={`${classSet} path-color-${resourceColors[resource]}`}
-          onClick={this.handleSelectedResourceChange.bind(this, resource)}
-        >
-          {resourceLabels[resource]}
-        </button>
-      );
-    });
   },
 
   getBarChart() {
@@ -104,7 +109,7 @@ const ResourceBarChart = React.createClass({
   },
 
   getHeadline(resource) {
-    const label = ResourcesUtil.getResourceLabel(resource);
+    const label = ResourcesUtil(this.props.intl).getResourceLabel(resource);
     const headline = `${label} Allocation Rate`;
 
     return (
@@ -140,4 +145,4 @@ const ResourceBarChart = React.createClass({
   }
 });
 
-module.exports = ResourceBarChart;
+module.exports = injectIntl(ResourceBarChart);

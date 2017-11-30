@@ -7,15 +7,17 @@ import General from "./job-schema/General";
 import Labels from "./job-schema/Labels";
 import Schedule from "./job-schema/Schedule";
 
-const JobSchema = {
-  type: "object",
-  properties: {
-    general: General,
-    schedule: Schedule,
-    docker: Docker,
-    labels: Labels
-  },
-  required: ["general"]
+const JobSchema = intl => {
+  return {
+    type: "object",
+    properties: {
+      general: General(intl),
+      schedule: Schedule(intl),
+      docker: Docker(intl),
+      labels: Labels(intl)
+    },
+    required: ["general"]
+  };
 };
 
 module.exports = JobSchema;

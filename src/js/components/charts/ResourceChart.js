@@ -1,3 +1,4 @@
+import { injectIntl } from "react-intl";
 import React from "react";
 
 import BarChart from "../../components/charts/BarChart";
@@ -12,8 +13,12 @@ const WIDTH_HEIGHT_RATIO = 4.5;
 
 class ResourceChart extends React.Component {
   getResourceChart(resource, totalResources) {
-    const colorIndex = ResourcesUtil.getResourceColor(resource);
-    const resourceLabel = ResourcesUtil.getResourceLabel(resource);
+    const colorIndex = ResourcesUtil(this.props.intl).getResourceColor(
+      resource
+    );
+    const resourceLabel = ResourcesUtil(this.props.intl).getResourceLabel(
+      resource
+    );
     const resourceData = [
       {
         name: "Alloc",
@@ -100,4 +105,4 @@ ResourceChart.propTypes = {
   resources: React.PropTypes.object
 };
 
-module.exports = ResourceChart;
+module.exports = injectIntl(ResourceChart);

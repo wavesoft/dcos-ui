@@ -1,3 +1,4 @@
+import { injectIntl } from "react-intl";
 import React from "react";
 import { routerShape } from "react-router";
 import { Tooltip } from "reactjs-components";
@@ -57,9 +58,9 @@ var NodesGridDials = React.createClass({
   },
 
   getUsedSliceConfig(node) {
-    const { selectedResource } = this.props;
-    const colorIndex = ResourcesUtil.getResourceColor(selectedResource);
-    const label = ResourcesUtil.getResourceLabel(selectedResource);
+    const { selectedResource, intl } = this.props;
+    const colorIndex = ResourcesUtil(intl).getResourceColor(selectedResource);
+    const label = ResourcesUtil(intl).getResourceLabel(selectedResource);
     var serviceSlices = this.getServiceSlicesConfig(node);
     var percentage;
 
@@ -120,8 +121,10 @@ var NodesGridDials = React.createClass({
   },
 
   getDialConfig(node) {
-    const { selectedResource } = this.props;
-    const resourceLabel = ResourcesUtil.getResourceLabel(selectedResource);
+    const { selectedResource, intl } = this.props;
+    const resourceLabel = ResourcesUtil(intl).getResourceLabel(
+      selectedResource
+    );
 
     if (node.isActive()) {
       var sliceData = this.getActiveSliceData(node);
@@ -209,4 +212,4 @@ var NodesGridDials = React.createClass({
   }
 });
 
-module.exports = NodesGridDials;
+module.exports = injectIntl(NodesGridDials);

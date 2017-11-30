@@ -6,17 +6,57 @@ import { Tooltip } from "reactjs-components";
 import StatusBar from "#SRC/js/components/StatusBar";
 import StringUtil from "#SRC/js/utils/StringUtil";
 
-import HealthBarStates from "../constants/HealthBarStates";
-
 class HealthBar extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.HealthBarStates = {
+      tasksUnknown: {
+        className: "unknown",
+        label: props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Unknown"
+        })
+      },
+      tasksHealthy: {
+        className: "healthy",
+        label: props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Healthy"
+        })
+      },
+      tasksOverCapacity: {
+        className: "over-capacity",
+        label: props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Over Capacity"
+        })
+      },
+      tasksUnhealthy: {
+        className: "unhealthy",
+        label: props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Unhealthy"
+        })
+      },
+      tasksStaged: {
+        className: "staged",
+        label: props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Staged"
+        })
+      }
+    };
+  }
+
   getMappedTasksSummary(tasksSummary) {
     return Object.keys(tasksSummary)
-      .filter(function(task) {
+      .filter(task => {
         return task !== "tasksRunning";
       })
-      .map(function(taskStatus) {
+      .map(taskStatus => {
         return {
-          className: HealthBarStates[taskStatus].className,
+          className: this.HealthBarStates[taskStatus].className,
           value: tasksSummary[taskStatus]
         };
       });
@@ -24,23 +64,23 @@ class HealthBar extends React.Component {
 
   getTaskList(tasksSummary, instancesCount) {
     return Object.keys(tasksSummary)
-      .filter(function(task) {
+      .filter(task => {
         return tasksSummary[task] !== 0 && task !== "tasksRunning";
       })
-      .map(function(task, index) {
+      .map((task, index) => {
         const taskCount = tasksSummary[task];
         const taskNoun = StringUtil.pluralize("Task", taskCount);
         const percentage = parseInt(taskCount / instancesCount * 100, 10);
 
         const classSet = classNames(
-          HealthBarStates[task].className,
+          this.HealthBarStates[task].className,
           "dot icon"
         );
 
         return (
           <div key={index} className="tooltip-line-item">
             <span className={classSet} />
-            {` ${taskCount} ${HealthBarStates[task].label} ${taskNoun} `}
+            {` ${taskCount} ${this.HealthBarStates[task].label} ${taskNoun} `}
             <span className="health-bar-tooltip-instances-total">
               <FormattedMessage
                 id="XXXX"
