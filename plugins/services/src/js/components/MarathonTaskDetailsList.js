@@ -159,7 +159,11 @@ class MarathonTaskDetailsList extends React.Component {
       return (
         <ConfigurationMapSection key={i}>
           <ConfigurationMapHeading>
-            Health Check Result {i + 1}
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
+            Health Check Result `}
+            />{i + 1}
           </ConfigurationMapHeading>
           <ConfigurationMapRow>
             <ConfigurationMapLabel>

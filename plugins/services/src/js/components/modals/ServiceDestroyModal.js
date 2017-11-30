@@ -183,8 +183,12 @@ class ServiceDestroyModal extends React.Component {
         <div className="flush-top snippet-wrapper">
           <ClickToSelect>
             <pre className="prettyprint flush-bottom">
+              <FormattedMessage
+                id="XXXX"
+                defaultMessage={`
               dcos package uninstall
-              {" "}
+              `}
+              />{" "}
               {packageName} --app-id={service.getId()}
             </pre>
           </ClickToSelect>
@@ -214,8 +218,12 @@ class ServiceDestroyModal extends React.Component {
         showHeader={true}
       >
         <p>
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
           This action
-          {" "}
+          `}
+          />{" "}
           <strong>
             <FormattedMessage id="XXXX" defaultMessage={`CANNOT`} />
           </strong>

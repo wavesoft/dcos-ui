@@ -22,8 +22,12 @@ function getDefaultMessage() {
 
   return (
     <p className="text-align-center flush-bottom">
+      <FormattedMessage
+        id="XXXX"
+        defaultMessage={`
       You can also join us on our
-      {" "}
+      `}
+      />{" "}
       {slackLink}
       {" "}
       or send us an email at

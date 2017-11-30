@@ -90,7 +90,11 @@ class KillPodInstanceModal extends React.Component {
     return (
       <div className="text-align-center">
         <p>
-          You are about to {action.toLowerCase()} {instanceCountContent}.
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
+          You are about to `}
+          />{action.toLowerCase()} {instanceCountContent}.
           <br />
           Are you sure you want to continue?
         </p>

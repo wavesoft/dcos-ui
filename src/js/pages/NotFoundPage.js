@@ -27,8 +27,12 @@ var NotFoundPage = React.createClass({
             <FormattedMessage id="XXXX" defaultMessage={`Page not found`} />
           </AlertPanelHeader>
           <p>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             The page you requested cannot be found. Check the address you provided, or head back to the
-            {" "}
+            `}
+            />{" "}
             <Link to="/dashboard">
               <FormattedMessage id="XXXX" defaultMessage={`Dashboard`} />
             </Link>

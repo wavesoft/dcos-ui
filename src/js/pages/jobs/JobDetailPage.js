@@ -268,7 +268,10 @@ class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
             id="repeat"
             size="mini"
           />
-          <span>Scheduled {StringUtil.lowercase(scheduleText)}</span>
+          <span>
+            <FormattedMessage id="XXXX" defaultMessage={`Scheduled `} />
+            {StringUtil.lowercase(scheduleText)}
+          </span>
         </p>
       );
     }

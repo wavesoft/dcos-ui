@@ -300,7 +300,11 @@ class ServiceDebugContainer extends React.Component {
         }}
       >
         <ConfigurationMapHeading>
-          Recent Resource Offers{offerCount}
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
+          Recent Resource Offers`}
+          />{offerCount}
         </ConfigurationMapHeading>
         <p>{introText}</p>
         {mainContent}

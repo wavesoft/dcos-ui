@@ -98,8 +98,12 @@ class PodDebugTabView extends React.Component {
       } else {
         headline = (
           <ConfigurationMapHeading level={2}>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
             Terminated at
-            {" "}
+            `}
+            />{" "}
             {terminatedAt.toString()}
             {" "}
             (
@@ -245,7 +249,11 @@ class PodDebugTabView extends React.Component {
         }}
       >
         <ConfigurationMapHeading>
-          Recent Resource Offers{offerCount}
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
+          Recent Resource Offers`}
+          />{offerCount}
         </ConfigurationMapHeading>
         <p>{introText}</p>
         {mainContent}

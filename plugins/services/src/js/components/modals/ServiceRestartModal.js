@@ -99,7 +99,11 @@ class ServiceRestartModal extends React.Component {
 
     return (
       <ModalHeading>
-        Restart {serviceLabel}
+        <FormattedMessage
+          id="XXXX"
+          defaultMessage={`
+        Restart `}
+        />{serviceLabel}
       </ModalHeading>
     );
   }
@@ -123,8 +127,12 @@ class ServiceRestartModal extends React.Component {
         showHeader={true}
       >
         <p>
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
           Restarting the
-          {" "}
+          `}
+          />{" "}
           <strong>{serviceName}</strong>
           {" "}
           {serviceLabel.toLowerCase()}

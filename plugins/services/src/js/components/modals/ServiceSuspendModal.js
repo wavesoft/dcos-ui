@@ -99,7 +99,11 @@ class ServiceSuspendModal extends React.Component {
 
     return (
       <ModalHeading>
-        Suspend {serviceLabel}
+        <FormattedMessage
+          id="XXXX"
+          defaultMessage={`
+        Suspend `}
+        />{serviceLabel}
       </ModalHeading>
     );
   }
@@ -121,8 +125,12 @@ class ServiceSuspendModal extends React.Component {
         showHeader={true}
       >
         <p>
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
           Suspending the
-          {" "}
+          `}
+          />{" "}
           <strong>{serviceName}</strong>
           {" "}
           {serviceLabel.toLowerCase()}

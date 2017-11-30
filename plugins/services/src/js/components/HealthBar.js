@@ -41,7 +41,11 @@ class HealthBar extends React.Component {
             <span className={classSet} />
             {` ${taskCount} ${HealthBarStates[task].label} ${taskNoun} `}
             <span className="health-bar-tooltip-instances-total">
-              of {instancesCount}
+              <FormattedMessage
+                id="XXXX"
+                defaultMessage={`
+              of `}
+              />{instancesCount}
             </span>
             {` (${percentage}%)`}
           </div>

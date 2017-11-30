@@ -87,8 +87,12 @@ var Modals = React.createClass({
       showErrorModal: true,
       modalErrorMsg: (
         <p className="text-align-center flush-bottom">
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
           We are unable to retrieve the version
-          {" "}
+          `}
+          />{" "}
           {Config.productName}
           {" "}
           versions. Please try again.

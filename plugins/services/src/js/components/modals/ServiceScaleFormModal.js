@@ -114,7 +114,11 @@ class ServiceScaleFormModal extends React.Component {
       headerText = "Group";
     }
 
-    return <ModalHeading>Scale {headerText}</ModalHeading>;
+    return (
+      <ModalHeading>
+        <FormattedMessage id="XXXX" defaultMessage={`Scale `} />{headerText}
+      </ModalHeading>
+    );
   }
 
   getBodyText() {

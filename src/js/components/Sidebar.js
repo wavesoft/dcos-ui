@@ -288,7 +288,11 @@ var Sidebar = React.createClass({
       return null;
     }
 
-    return <span className="version-number">v.{data.version}</span>;
+    return (
+      <span className="version-number">
+        <FormattedMessage id="XXXX" defaultMessage={`v.`} />{data.version}
+      </span>
+    );
   },
 
   handleClusterHeaderUpdate() {
