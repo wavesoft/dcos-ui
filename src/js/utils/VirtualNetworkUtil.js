@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import { Link } from "react-router";
 /* eslint-disable no-unused-vars */
 import React from "react";

@@ -1,3 +1,5 @@
+import { FormattedMessage } from "react-intl";
+import { formatMessage } from "react-intl";
 import { Confirm, Modal } from "reactjs-components";
 import { routerShape } from "react-router";
 import PureRender from "react-addons-pure-render-mixin";

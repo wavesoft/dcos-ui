@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import classNames from "classnames";
 import mixin from "reactjs-mixin";
 import { Modal } from "reactjs-components";

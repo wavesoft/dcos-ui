@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import TestUtils from "react-addons-test-utils";
 import React from "react";
 import ReactDOM from "react-dom";

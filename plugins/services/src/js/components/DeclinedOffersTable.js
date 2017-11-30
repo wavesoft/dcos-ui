@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import classNames from "classnames";
 import { Link } from "react-router";
 import { MountService } from "foundation-ui";

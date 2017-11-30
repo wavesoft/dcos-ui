@@ -1,3 +1,5 @@
+import { FormattedMessage } from "react-intl";
+import { formatMessage } from "react-intl";
 import classNames from "classnames";
 import { Dropdown, Table, Tooltip } from "reactjs-components";
 import { injectIntl } from "react-intl";

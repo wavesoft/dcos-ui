@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import DSLFilterTypes from "../constants/DSLFilterTypes";
 import { FilterNode } from "./DSLASTNodes";
 

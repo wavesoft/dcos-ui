@@ -1,3 +1,5 @@
+import { FormattedMessage } from "react-intl";
+import { formatMessage } from "react-intl";
 import classNames from "classnames";
 import { Link } from "react-router";
 import mixin from "reactjs-mixin";

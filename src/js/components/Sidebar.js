@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import classNames from "classnames";
 import CSSTransitionGroup from "react-addons-css-transition-group";
 import GeminiScrollbar from "react-gemini-scrollbar";

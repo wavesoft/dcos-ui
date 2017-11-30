@@ -1,3 +1,4 @@
+import { formatMessage } from "react-intl";
 import { RequestUtil } from "mesosphere-shared-reactjs";
 
 import {

@@ -1,3 +1,5 @@
+import { FormattedMessage } from "react-intl";
+import { formatMessage } from "react-intl";
 import React from "react";
 import { Table } from "reactjs-components";
 

@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import classNames from "classnames";
 import React, { PropTypes } from "react";
 

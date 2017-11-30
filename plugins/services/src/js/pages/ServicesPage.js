@@ -1,3 +1,4 @@
+import { formatMessage } from "react-intl";
 import React from "react";
 import { routerShape } from "react-router";
 import { StoreMixin } from "mesosphere-shared-reactjs";

@@ -1,3 +1,4 @@
+import { formatMessage } from "react-intl";
 const Labels = {
   type: "object",
   title: formatMessage({ id: "XXXX", defaultMessage: "Labels" }),

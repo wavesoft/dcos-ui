@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import classNames from "classnames";
 /* eslint-disable no-unused-vars */
 import React from "react";

@@ -1,3 +1,5 @@
+import { FormattedMessage } from "react-intl";
+import { formatMessage } from "react-intl";
 import mixin from "reactjs-mixin";
 import React from "react";
 import { routerShape } from "react-router";

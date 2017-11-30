@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import mixin from "reactjs-mixin";
 import { MountService } from "foundation-ui";
 import React from "react";

@@ -1,4 +1,5 @@
-/* eslint-disable no-unused-vars */
+import { FormattedMessage } from "react-intl";
+import { formatMessage } from "react-intl"; /* eslint-disable no-unused-vars */
 import React from "react";
 /* eslint-enable no-unused-vars */
 

@@ -1,3 +1,4 @@
+import { formatMessage } from "react-intl";
 import React from "react";
 import { Link } from "react-router";
 

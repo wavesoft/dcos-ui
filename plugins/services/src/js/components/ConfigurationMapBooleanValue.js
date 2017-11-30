@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import React from "react";
 
 import ConfigurationMapValue from "#SRC/js/components/ConfigurationMapValue";

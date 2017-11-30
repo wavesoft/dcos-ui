@@ -1,3 +1,5 @@
+import { FormattedMessage } from "react-intl";
+import { formatMessage } from "react-intl";
 import classNames from "classnames";
 import React, { PropTypes } from "react";
 import { routerShape } from "react-router";

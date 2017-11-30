@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import classNames from "classnames";
 import { Dropdown, Form, Table } from "reactjs-components";
 import { Hooks } from "PluginSDK";

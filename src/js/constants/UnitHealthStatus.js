@@ -1,3 +1,4 @@
+import { formatMessage } from "react-intl";
 import {
   SERVER_HEALTHY,
   SERVER_NA,

@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import { Confirm } from "reactjs-components";
 import mixin from "reactjs-mixin";
 import React from "react";

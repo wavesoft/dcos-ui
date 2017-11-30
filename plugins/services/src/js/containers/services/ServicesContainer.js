@@ -1,3 +1,4 @@
+import { formatMessage } from "react-intl";
 import React, { PropTypes } from "react";
 import { routerShape } from "react-router";
 

@@ -1,3 +1,4 @@
+import { formatMessage } from "react-intl";
 const HealthBarStates = {
   tasksUnknown: {
     className: "unknown",

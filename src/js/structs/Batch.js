@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import TransactionTypes from "../constants/TransactionTypes";
 
 /**

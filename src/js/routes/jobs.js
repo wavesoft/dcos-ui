@@ -1,3 +1,4 @@
+import { formatMessage } from "react-intl";
 import { Redirect, IndexRoute, Route } from "react-router";
 /* eslint-disable no-unused-vars */
 import React from "react";

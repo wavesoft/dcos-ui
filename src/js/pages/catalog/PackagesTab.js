@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import classNames from "classnames";
 import mixin from "reactjs-mixin";
 import { Hooks } from "PluginSDK";
@@ -7,7 +8,7 @@ import { MountService } from "foundation-ui";
 import React from "react";
 /* eslint-enable no-unused-vars */
 import { StoreMixin } from "mesosphere-shared-reactjs";
-
+import { FormattedMessage } from "react-intl";
 import AlertPanel from "../../components/AlertPanel";
 import AlertPanelHeader from "../../components/AlertPanelHeader";
 import Breadcrumb from "../../components/Breadcrumb";

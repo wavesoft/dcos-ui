@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import classNames from "classnames";
 import deepEqual from "deep-equal";
 import { List, Tooltip } from "reactjs-components";

@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+import { formatMessage } from "react-intl"; /* eslint-disable no-unused-vars */
 import React, { PropTypes } from "react";
 /* eslint-enable no-unused-vars */
 import { IndexRoute, Route, Redirect } from "react-router";

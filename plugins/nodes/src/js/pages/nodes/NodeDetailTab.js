@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import PureRender from "react-addons-pure-render-mixin";
 import React from "react";
 

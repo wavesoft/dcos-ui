@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import AceEditor from "react-ace";
 import React from "react";
 import deepEqual from "deep-equal";

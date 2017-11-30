@@ -1,3 +1,5 @@
+import { FormattedMessage } from "react-intl";
+import { formatMessage } from "react-intl";
 import { routerShape, Link } from "react-router";
 import React from "react";
 import { StoreMixin } from "mesosphere-shared-reactjs";

@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import React, { PropTypes } from "react";
 
 import AlertPanel from "#SRC/js/components/AlertPanel";

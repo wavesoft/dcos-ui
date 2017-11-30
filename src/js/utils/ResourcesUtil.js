@@ -1,3 +1,4 @@
+import { formatMessage } from "react-intl";
 import CompositeState from "../structs/CompositeState";
 import Node from "../structs/Node";
 import StringUtil from "./StringUtil";

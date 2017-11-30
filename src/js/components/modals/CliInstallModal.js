@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import browserInfo from "browser-info";
 import classNames from "classnames";
 import { Modal } from "reactjs-components";

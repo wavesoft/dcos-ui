@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import mixin from "reactjs-mixin";
 import { Hooks } from "PluginSDK";
 /* eslint-disable no-unused-vars */

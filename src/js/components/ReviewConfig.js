@@ -1,3 +1,4 @@
+import { FormattedMessage } from "react-intl";
 import GeminiScrollbar from "react-gemini-scrollbar";
 import React from "react";
 
