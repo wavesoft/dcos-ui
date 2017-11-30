@@ -348,4 +348,4 @@ ServiceDetail.propTypes = {
   children: PropTypes.node
 };
 
-module.exports = injectIntl(injectIntl)(ServiceDetail);
+module.exports = injectIntl(ServiceDetail);

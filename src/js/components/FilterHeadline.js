@@ -34,7 +34,7 @@ class FilterHeadline extends React.Component {
     const hideFilteredClasses =
       (isFiltering == null && currentLength === totalLength) ||
       (isFiltering != null && !isFiltering);
-    name = StringUtil.pluralize(name, totalLength);
+    //name = StringUtil.pluralize(name, totalLength);
 
     const filteredClassSet = classNames("flush", {
       inverse: inverseStyle,

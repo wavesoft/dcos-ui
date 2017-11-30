@@ -8,11 +8,11 @@ class NodesPage extends React.Component {
     return this.props.children;
   }
 }
-
-NodesPage.routeConfig = {
-  label: this.props.intl.formatMessage({ id: "XXXX", defaultMessage: "Nodes" }),
+const comp = injectIntl(NodesPage);
+comp.routeConfig = {
+  label: "Nodes",
   icon: <Icon id="servers-inverse" size="small" family="product" />,
   matches: /^\/nodes/
 };
 
-module.exports = injectIntl(NodesPage);
+module.exports = comp;

@@ -7,33 +7,6 @@ import Chart from "./Chart";
 import DialChart from "./DialChart";
 
 const TASKS_PER_ROW = 3;
-const TASK_INFO = {
-  TASK_RUNNING: {
-    label: this.props.intl.formatMessage({
-      id: "XXXX",
-      defaultMessage: "Tasks running"
-    }),
-    colorIndex: 4
-  },
-  TASK_STAGING: {
-    label: this.props.intl.formatMessage({
-      id: "XXXX",
-      defaultMessage: "Tasks staging"
-    }),
-    colorIndex: 1
-  }
-};
-const DISPLAYED_TASK_KEYS = Object.keys(TASK_INFO);
-
-function getEmptyTaskData() {
-  return DISPLAYED_TASK_KEYS.map(function(key) {
-    return {
-      name: key,
-      colorIndex: TASK_INFO[key].colorIndex,
-      value: 0
-    };
-  });
-}
 
 var TasksChart = React.createClass({
   displayName: "TasksChart",
@@ -41,6 +14,36 @@ var TasksChart = React.createClass({
   propTypes: {
     // {TASK_RUNNING: 0, TASK_STAGING: 4}
     tasks: React.PropTypes.object.isRequired
+  },
+
+  componentWillMount() {
+    this.TASK_INFO = {
+      TASK_RUNNING: {
+        label: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Tasks running"
+        }),
+        colorIndex: 4
+      },
+      TASK_STAGING: {
+        label: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Tasks staging"
+        }),
+        colorIndex: 1
+      }
+    };
+    this.DISPLAYED_TASK_KEYS = Object.keys(this.TASK_INFO);
+  },
+
+  getEmptyTaskData() {
+    return this.DISPLAYED_TASK_KEYS.map(key => {
+      return {
+        name: key,
+        colorIndex: this.TASK_INFO[key].colorIndex,
+        value: 0
+      };
+    });
   },
 
   shouldComponentUpdate(nextProps) {
@@ -53,13 +56,13 @@ var TasksChart = React.createClass({
 
   getTaskInfo(tasks) {
     if (tasks.length === 0) {
-      tasks = getEmptyTaskData();
+      tasks = this.getEmptyTaskData();
     }
 
-    var numberOfTasks = DISPLAYED_TASK_KEYS.length;
+    var numberOfTasks = this.DISPLAYED_TASK_KEYS.length;
 
-    return DISPLAYED_TASK_KEYS.map(function(key) {
-      const info = TASK_INFO[key];
+    return this.DISPLAYED_TASK_KEYS.map(key => {
+      const info = this.TASK_INFO[key];
       var task = tasks.find(function(task) {
         return task.name === key;
       });
@@ -101,9 +104,9 @@ var TasksChart = React.createClass({
   },
 
   getTasks(tasks = {}) {
-    return DISPLAYED_TASK_KEYS.map(function(key) {
+    return this.DISPLAYED_TASK_KEYS.map(key => {
       return {
-        colorIndex: TASK_INFO[key].colorIndex,
+        colorIndex: this.TASK_INFO[key].colorIndex,
         name: key,
         value: tasks[key]
       };
@@ -114,11 +117,11 @@ var TasksChart = React.createClass({
     var total = this.getTotal(tasks);
 
     if (tasks.length === 0) {
-      tasks = getEmptyTaskData();
+      tasks = this.getEmptyTaskData();
     }
 
     return (
-      <DialChart data={tasks} slices={getEmptyTaskData()}>
+      <DialChart data={tasks} slices={this.getEmptyTaskData()}>
         {this.getDialChartChildren(total)}
       </DialChart>
     );

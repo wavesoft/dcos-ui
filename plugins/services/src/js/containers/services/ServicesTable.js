@@ -538,4 +538,4 @@ ServicesTable.propTypes = {
   services: PropTypes.array
 };
 
-module.exports = injectIntl(injectIntl)(ServicesTable);
+module.exports = injectIntl(ServicesTable);

@@ -1,4 +1,4 @@
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import React, { PropTypes } from "react";
 import PureRender from "react-addons-pure-render-mixin";
 
@@ -9,6 +9,7 @@ import AppLockedMessage from "./AppLockedMessage";
 import Pod from "../../structs/Pod";
 import Service from "../../structs/Service";
 import ServiceTree from "../../structs/ServiceTree";
+import IntlContext from "./IntlContext";
 
 class ServiceScaleFormModal extends React.Component {
   constructor() {
@@ -117,7 +118,9 @@ class ServiceScaleFormModal extends React.Component {
 
     return (
       <ModalHeading>
-        <FormattedMessage id="XXXX" defaultMessage={`Scale `} />{headerText}
+        <IntlContext intl={this.props.intl}>
+          <FormattedMessage id="XXXX" defaultMessage={`Scale `} />{headerText}
+        </IntlContext>
       </ModalHeading>
     );
   }
@@ -171,8 +174,10 @@ class ServiceScaleFormModal extends React.Component {
         onChange={clearError}
         open={open}
       >
-        {this.getBodyText()}
-        {this.getErrorMessage()}
+        <IntlContext intl={this.props.intl}>
+          {this.getBodyText()}
+          {this.getErrorMessage()}
+        </IntlContext>
       </FormModal>
     );
   }
@@ -190,4 +195,4 @@ ServiceScaleFormModal.propTypes = {
   ]).isRequired
 };
 
-module.exports = ServiceScaleFormModal;
+module.exports = injectIntl(ServiceScaleFormModal);

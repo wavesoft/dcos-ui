@@ -1,4 +1,4 @@
-import { injectIntl } from "react-intl"; /* eslint-disable no-unused-vars */
+/* eslint-disable no-unused-vars */
 import React, { PropTypes } from "react";
 /* eslint-enable no-unused-vars */
 import { IndexRoute, Route, Redirect } from "react-router";
@@ -68,10 +68,7 @@ const RouteFactory = {
             hideHeaderNavigation: true,
             isTab: true,
             path: "details",
-            title: this.props.intl.formatMessage({
-              id: "XXXX",
-              defaultMessage: "Details"
-            }),
+            title: "Details",
             type: Route
           },
           {
@@ -79,10 +76,7 @@ const RouteFactory = {
             component: TaskFilesTab,
             isTab: true,
             path: "files",
-            title: this.props.intl.formatMessage({
-              id: "XXXX",
-              defaultMessage: "Files"
-            }),
+            title: "Files",
             type: Route,
             children: [
               {
@@ -104,10 +98,7 @@ const RouteFactory = {
             hideHeaderNavigation: true,
             isTab: true,
             path: "logs",
-            title: this.props.intl.formatMessage({
-              id: "XXXX",
-              defaultMessage: "Logs"
-            }),
+            title: "Logs",
             type: Route,
             children: [
               {
@@ -150,4 +141,4 @@ const RouteFactory = {
   }
 };
 
-module.exports = injectIntl(RouteFactory);
+module.exports = RouteFactory;

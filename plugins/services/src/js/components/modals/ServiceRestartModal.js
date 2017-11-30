@@ -1,4 +1,4 @@
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import { Confirm } from "reactjs-components";
 import React, { PropTypes } from "react";
 import PureRender from "react-addons-pure-render-mixin";
@@ -9,6 +9,7 @@ import AppLockedMessage from "./AppLockedMessage";
 import Pod from "../../structs/Pod";
 import Service from "../../structs/Service";
 import ServiceTree from "../../structs/ServiceTree";
+import IntlContext from "./IntlContext";
 
 class ServiceRestartModal extends React.Component {
   constructor() {
@@ -100,11 +101,13 @@ class ServiceRestartModal extends React.Component {
 
     return (
       <ModalHeading>
-        <FormattedMessage
-          id="XXXX"
-          defaultMessage={`
+        <IntlContext intl={this.props.intl}>
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
         Restart `}
-        />{serviceLabel}
+          />{serviceLabel}
+        </IntlContext>
       </ModalHeading>
     );
   }
@@ -127,28 +130,30 @@ class ServiceRestartModal extends React.Component {
           restartService(service, this.shouldForceUpdate())}
         showHeader={true}
       >
-        <p>
-          <FormattedMessage
-            id="XXXX"
-            defaultMessage={`
+        <IntlContext intl={this.props.intl}>
+          <p>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
           Restarting the
           `}
-          />{" "}
-          <strong>{serviceName}</strong>
-          {" "}
-          {serviceLabel.toLowerCase()}
-          {" "}
-          will remove all currently running instances of the
-          {" "}
-          {serviceLabel.toLowerCase()}
-          {" "}<FormattedMessage
-            id="XXXX"
-            defaultMessage={`
+            />{" "}
+            <strong>{serviceName}</strong>
+            {" "}
+            {serviceLabel.toLowerCase()}
+            {" "}
+            will remove all currently running instances of the
+            {" "}
+            {serviceLabel.toLowerCase()}
+            {" "}<FormattedMessage
+              id="XXXX"
+              defaultMessage={`
           and then attempt to create new instances identical to those removed.
         `}
-          />
-        </p>
-        {this.getErrorMessage()}
+            />
+          </p>
+          {this.getErrorMessage()}
+        </IntlContext>
       </Confirm>
     );
   }
@@ -166,4 +171,4 @@ ServiceRestartModal.propTypes = {
   ]).isRequired
 };
 
-module.exports = ServiceRestartModal;
+module.exports = injectIntl(ServiceRestartModal);

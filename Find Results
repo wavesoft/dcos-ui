@@ -15,7 +15,7 @@ Searching 648 files for "formatMessage\(" (regex)
    68        matches: /^\/nodes/
 
 /Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/pages/NodesPage.js:
-   11  
+   11
    12  NodesPage.routeConfig = {
    13:   label: formatMessage({ id: "XXXX", defaultMessage: "Nodes" }),
    14    icon: <Icon id="servers-inverse" size="small" family="product" />,
@@ -199,7 +199,7 @@ Searching 648 files for "formatMessage\(" (regex)
   156            id: ServiceActionLabels.open
   157          }),
   ...
-  161  
+  161
   162      actions.push({
   163:       label: formatMessage({ id: "XXXX", defaultMessage: "Edit" }),
   164        onItemSelect: this.onActionsItemSelection.bind(this, EDIT)
@@ -250,7 +250,7 @@ Searching 648 files for "formatMessage\(" (regex)
   183            id: ServiceActionLabels.open
   184          }),
   ...
-  188  
+  188
   189      actions.push({
   190:       label: formatMessage({ id: "XXXX", defaultMessage: "Edit" }),
   191        onItemSelect: this.onActionsItemSelection.bind(this, EDIT)
@@ -301,7 +301,7 @@ Searching 648 files for "formatMessage\(" (regex)
   253        });
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/services/ServicesContainer.js:
-  608  
+  608
   609  ServicesContainer.routeConfig = {
   610:   label: formatMessage({ id: "XXXX", defaultMessage: "Services" }),
   611    icon: <Icon id="services" size="small" family="product" />,
@@ -842,14 +842,14 @@ Searching 648 files for "formatMessage\(" (regex)
    62        "dcos-acs-info-cookie=" +
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/CatalogPage.js:
-   11  
+   11
    12  CatalogPage.routeConfig = {
    13:   label: formatMessage({ id: "XXXX", defaultMessage: "Catalog" }),
    14    icon: <Icon id="packages-inverse" size="small" family="product" />,
    15    matches: /^\/catalog/
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/ComponentsPage.js:
-   11  
+   11
    12  ComponentsPage.routeConfig = {
    13:   label: formatMessage({ id: "XXXX", defaultMessage: "Components" }),
    14    icon: <Icon id="components-inverse" size="small" family="product" />,
@@ -863,35 +863,35 @@ Searching 648 files for "formatMessage\(" (regex)
    66        matches: /^\/dashboard/
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/JobsPage.js:
-   17  
+   17
    18  JobsPage.routeConfig = {
    19:   label: formatMessage({ id: "XXXX", defaultMessage: "Jobs" }),
    20    icon: <Icon id="jobs-inverse" size="small" family="product" />,
    21    matches: /^\/jobs/
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/NetworkPage.js:
-   72  
+   72
    73  NetworkPage.routeConfig = {
    74:   label: formatMessage({ id: "XXXX", defaultMessage: "Networking" }),
    75    icon: <Icon id="network-inverse" size="small" family="product" />,
    76    matches: /^\/networking/
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/OrganizationPage.js:
-   11  
+   11
    12  OrganizationPage.routeConfig = {
    13:   label: formatMessage({ id: "XXXX", defaultMessage: "Organization" }),
    14    icon: <Icon id="users-inverse" size="small" family="product" />,
    15    matches: /^\/organization/
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/SettingsPage.js:
-   11  
+   11
    12  SettingsPage.routeConfig = {
    13:   label: formatMessage({ id: "XXXX", defaultMessage: "Settings" }),
    14    icon: <Icon id="gear-inverse" size="small" family="product" />,
    15    matches: /^\/settings/
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/SystemOverviewPage.js:
-   11  
+   11
    12  SystemOverviewPage.routeConfig = {
    13:   label: formatMessage({ id: "XXXX", defaultMessage: "Overview" }),
    14    icon: <Icon id="cluster-inverse" size="small" family="product" />,
@@ -925,12 +925,12 @@ Searching 648 files for "formatMessage\(" (regex)
   294          value: this.mapLicenses(cosmosPackage.getLicenses())
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/jobs/JobDetailPage.js:
-  331  
+  331
   332      actions.push({
   333:       label: formatMessage({ id: "XXXX", defaultMessage: "Edit" }),
   334        onItemSelect: this.handleEditButtonClick
   335      });
-  336  
+  336
   337      actions.push({
   338:       label: formatMessage({ id: "XXXX", defaultMessage: "Run Now" }),
   339        onItemSelect: this.handleRunNowButtonClick
@@ -983,7 +983,7 @@ Searching 648 files for "formatMessage\(" (regex)
    36        }
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/network/VirtualNetworksTab.js:
-  172  
+  172
   173  VirtualNetworksTabContent.routeConfig = {
   174:   label: formatMessage({ id: "XXXX", defaultMessage: "Networks" }),
   175    matches: /^\/networking\/networks/
@@ -1024,7 +1024,7 @@ Searching 648 files for "formatMessage\(" (regex)
   189            id: "XXXX",
   190            defaultMessage: "View Cluster Configuration"
   ...
-  363  
+  363
   364  OverviewDetailTab.routeConfig = {
   365:   label: formatMessage({ id: "XXXX", defaultMessage: "Overview" }),
   366    matches: /^\/overview\/details/
@@ -1037,21 +1037,21 @@ Searching 648 files for "formatMessage\(" (regex)
   151                id: "XXXX",
   152                defaultMessage: "Add Repository"
   ...
-  162  
+  162
   163  RepositoriesTab.routeConfig = {
   164:   label: formatMessage({ id: "XXXX", defaultMessage: "Package Repositories" }),
   165    matches: /^\/settings\/repositories/
   166  };
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/system/UnitsHealthTab.js:
-  232  
+  232
   233  UnitsHealthTab.routeConfig = {
   234:   label: formatMessage({ id: "XXXX", defaultMessage: "Components" }),
   235    matches: /^\/components\/overview/
   236  };
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/system/UsersPage.js:
-  121  
+  121
   122  UsersPage.routeConfig = {
   123:   label: formatMessage({ id: "XXXX", defaultMessage: "Users" }),
   124    matches: /^\/organization\/users/
@@ -1096,7 +1096,7 @@ Searching 648 files for "formatMessage\(" (regex)
   103              children: [
 
 /Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/Docker.js:
-    4  
+    4
     5  const General = {
     6:   title: formatMessage({ id: "XXXX", defaultMessage: "Docker Container" }),
     7:   description: formatMessage({
@@ -1111,7 +1111,7 @@ Searching 648 files for "formatMessage\(" (regex)
    17          defaultMessage: "Name of your Docker image"
 
 /Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/General.js:
-    9  
+    9
    10  const General = {
    11:   title: formatMessage({ id: "XXXX", defaultMessage: "General" }),
    12:   description: formatMessage({
@@ -1171,7 +1171,7 @@ Searching 648 files for "formatMessage\(" (regex)
    30            }
 
 /Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/Schedule.js:
-   11  
+   11
    12  const Schedule = {
    13:   title: formatMessage({ id: "XXXX", defaultMessage: "Schedule" }),
    14:   description: formatMessage({
@@ -1256,7 +1256,7 @@ Searching 648 files for "intl" (regex)
 /Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/pages/NodesPage.js:
     1: import { formatMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/pages/nodes/NodeDetailPage.js:
     1: import { FormattedMessage, formatMessage } from "react-intl";
@@ -1286,22 +1286,22 @@ Searching 648 files for "intl" (regex)
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/ConfigurationMapBooleanValue.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/ConfigurationMapDurationValue.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/ConfigurationMapMultilineValue.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/ConfigurationMapSizeValue.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/ConfigurationMapTable.js:
     1: import { FormattedMessage } from "react-intl";
@@ -1311,7 +1311,7 @@ Searching 648 files for "intl" (regex)
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/ConfigurationMapValueWithDefault.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/DeclinedOffersTable.js:
     1: import { FormattedMessage } from "react-intl";
@@ -1327,7 +1327,7 @@ Searching 648 files for "intl" (regex)
   505      const deployments = DCOSStore.deploymentsList.getItems();
   506:     const { intl, isOpen, onClose } = this.props;
   507      const loading = !DCOSStore.serviceDataReceived;
-  508  
+  508
   ...
   524      const heading = (
   525        <ModalHeading>
@@ -1336,9 +1336,9 @@ Searching 648 files for "intl" (regex)
   528              id: "SERVICES.DEPLOYMENT_MODAL_HEADING"
   ...
   551  }
-  552  
+  552
   553: module.exports = injectIntl(DeploymentsModal);
-  554  
+  554
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/DeploymentStatusIndicator.js:
     1: import { FormattedMessage } from "react-intl";
@@ -1348,7 +1348,7 @@ Searching 648 files for "intl" (regex)
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/EmptyLogScreen.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React, { PropTypes } from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/FilterByService.js:
     1: import { FormattedMessage } from "react-intl";
@@ -1363,7 +1363,7 @@ Searching 648 files for "intl" (regex)
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/MarathonTaskDetailsList.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/MesosLogContainer.js:
     1: import { FormattedMessage } from "react-intl";
@@ -1393,22 +1393,22 @@ Searching 648 files for "intl" (regex)
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/dsl/FuzzyTextDSLSection.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React, { PropTypes } from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/dsl/ServiceHealthDSLSection.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React, { PropTypes } from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/dsl/ServiceOtherDSLSection.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React, { PropTypes } from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/dsl/ServiceStatusDSLSection.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React, { PropTypes } from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/modals/AppLockedMessage.js:
     1  import {
@@ -1452,11 +1452,11 @@ Searching 648 files for "intl" (regex)
     2  import { Confirm, Modal } from "reactjs-components";
     3  import { routerShape } from "react-router";
     .
-  148  
+  148
   149    getDestroyFrameworkModal() {
   150:     const { open, service, intl } = this.props;
   151      const packageName = service.getPackageName();
-  152  
+  152
   ...
   163        >
   164          <p>
@@ -1485,9 +1485,9 @@ Searching 648 files for "intl" (regex)
   310    onClose: PropTypes.func.isRequired,
   ...
   318  };
-  319  
+  319
   320: module.exports = injectIntl(ServiceDestroyModal);
-  321  
+  321
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/components/modals/ServiceGroupFormModal.js:
     1: import { FormattedMessage } from "react-intl";
@@ -1517,7 +1517,7 @@ Searching 648 files for "intl" (regex)
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/constants/DeclinedOffersHelpText.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/constants/HealthBarStates.js:
     1: import { formatMessage } from "react-intl";
@@ -1567,14 +1567,14 @@ Searching 648 files for "intl" (regex)
   184          }),
   ...
   322  };
-  323  
+  323
   324: module.exports = injectIntl(ServiceDetail);
-  325  
+  325
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/services/EmptyServiceTree.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React, { PropTypes } from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/services/ServicesContainer.js:
     1: import { formatMessage } from "react-intl";
@@ -1629,9 +1629,9 @@ Searching 648 files for "intl" (regex)
   315            })}
   ...
   539  };
-  540  
+  540
   541: module.exports = injectIntl(ServicesTable);
-  542  
+  542
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/services/ServiceTreeView.js:
     1: import { FormattedMessage, formatMessage } from "react-intl";
@@ -1656,12 +1656,12 @@ Searching 648 files for "intl" (regex)
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/pages/task-details/ServiceTaskDetailPage.js:
     1: import { formatMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/pages/task-details/TaskDetailsTab.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/pages/task-details/TaskFileViewer.js:
     1: import { FormattedMessage } from "react-intl";
@@ -1676,52 +1676,52 @@ Searching 648 files for "intl" (regex)
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodContainerArtifactsConfigSection.js:
     1: import { FormattedMessage, formatMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodContainerConfigSection.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodContainersConfigSection.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodEnvironmentVariablesConfigSection.js:
     1: import { FormattedMessage, formatMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodGeneralConfigSection.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodHealthChecksConfigSection.js:
     1: import { FormattedMessage, formatMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodLabelsConfigSection.js:
     1: import { FormattedMessage, formatMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodNetworkConfigSection.js:
     1: import { FormattedMessage, formatMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodPlacementConstraintsConfigSection.js:
     1: import { FormattedMessage, formatMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/PodStorageConfigSection.js:
     1: import { FormattedMessage, formatMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceEnvironmentVariablesConfigSection.js:
     1: import { formatMessage } from "react-intl";
@@ -1751,7 +1751,7 @@ Searching 648 files for "intl" (regex)
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServicePlacementConstraintsConfigSection.js:
     1: import { FormattedMessage, formatMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/service-configuration/ServiceStorageConfigSection.js:
     1: import { formatMessage } from "react-intl";
@@ -1779,18 +1779,18 @@ Searching 648 files for "intl" (regex)
    97          );
    ..
   136    }
-  137  
+  137
   138:   if (!global.Intl) {
   139:     require.ensure(["intl", "intl/locale-data/jsonp/en.js"], function(require) {
   140:       require("intl");
   141:       require("intl/locale-data/jsonp/en.js");
-  142  
+  142
   143        startApplication();
 
 /Users/matappelman/coding/dcos-ui/src/js/components/AccessDeniedPage.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/src/js/components/CollapsibleErrorMessage.js:
     1: import { FormattedMessage } from "react-intl";
@@ -1805,12 +1805,12 @@ Searching 648 files for "intl" (regex)
 /Users/matappelman/coding/dcos-ui/src/js/components/CosmosErrorMessage.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/src/js/components/CreateServiceModalCatalogPanelOption.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/src/js/components/DSLFormWithExpressionUpdates.js:
     1: import { FormattedMessage } from "react-intl";
@@ -1825,7 +1825,7 @@ Searching 648 files for "intl" (regex)
 /Users/matappelman/coding/dcos-ui/src/js/components/ErrorsAlert.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/src/js/components/FilterHeadline.js:
     1: import { FormattedMessage } from "react-intl";
@@ -1875,7 +1875,7 @@ Searching 648 files for "intl" (regex)
 /Users/matappelman/coding/dcos-ui/src/js/components/charts/HostTimeSeriesChart.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/src/js/components/charts/TasksChart.js:
     1: import { FormattedMessage, formatMessage } from "react-intl";
@@ -1895,7 +1895,7 @@ Searching 648 files for "intl" (regex)
 /Users/matappelman/coding/dcos-ui/src/js/components/modals/ErrorModal.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/src/js/components/modals/InstallPackageModal.js:
     1: import { FormattedMessage } from "react-intl";
@@ -1930,17 +1930,17 @@ Searching 648 files for "intl" (regex)
 /Users/matappelman/coding/dcos-ui/src/js/events/AuthActions.js:
     1: import { formatMessage } from "react-intl";
     2  import { RequestUtil } from "mesosphere-shared-reactjs";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/CatalogPage.js:
     1: import { formatMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/ComponentsPage.js:
     1: import { formatMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/DashboardPage.js:
     1: import { FormattedMessage, formatMessage } from "react-intl";
@@ -1965,17 +1965,17 @@ Searching 648 files for "intl" (regex)
 /Users/matappelman/coding/dcos-ui/src/js/pages/OrganizationPage.js:
     1: import { formatMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/SettingsPage.js:
     1: import { formatMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/SystemOverviewPage.js:
     1: import { formatMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/catalog/PackageDetailTab.js:
     1: import { FormattedMessage, formatMessage } from "react-intl";
@@ -1990,7 +1990,7 @@ Searching 648 files for "intl" (regex)
 /Users/matappelman/coding/dcos-ui/src/js/pages/jobs/JobConfiguration.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/jobs/JobDetailPage.js:
     1: import { FormattedMessage, formatMessage } from "react-intl";
@@ -2020,7 +2020,7 @@ Searching 648 files for "intl" (regex)
 /Users/matappelman/coding/dcos-ui/src/js/pages/network/virtual-network-detail/VirtualNetworkDetailsTab.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/network/virtual-network-detail/VirtualNetworkTaskPage.js:
     1: import { FormattedMessage, formatMessage } from "react-intl";
@@ -2097,7 +2097,7 @@ Searching 648 files for "intl" (regex)
 /Users/matappelman/coding/dcos-ui/src/js/structs/Batch.js:
     1: import { FormattedMessage } from "react-intl";
     2  import TransactionTypes from "../constants/TransactionTypes";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/src/js/structs/DSLExpressionPart.js:
     1: import { FormattedMessage } from "react-intl";
@@ -2122,7 +2122,7 @@ Searching 648 files for "intl" (regex)
 /Users/matappelman/coding/dcos-ui/src/js/utils/TemplateUtil.js:
     1: import { FormattedMessage } from "react-intl";
     2  import React from "react";
-    3  
+    3
 
 /Users/matappelman/coding/dcos-ui/src/js/utils/VirtualNetworkUtil.js:
     1: import { FormattedMessage } from "react-intl";
@@ -2253,7 +2253,7 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
    68        matches: /^\/nodes/
 
 /Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/pages/NodesPage.js:
-   11  
+   11
    12  NodesPage.routeConfig = {
    13:   label: formatMessage({ id: "XXXX", defaultMessage: "Nodes" }),
    14    icon: <Icon id="servers-inverse" size="small" family="product" />,
@@ -2403,7 +2403,7 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
    23  };
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/pod-detail/PodDetail.js:
-  161  
+  161
   162      actions.push({
   163:       label: formatMessage({ id: "XXXX", defaultMessage: "Edit" }),
   164        onItemSelect: this.onActionsItemSelection.bind(this, EDIT)
@@ -2448,7 +2448,7 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
   219        }
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/service-detail/ServiceDetail.js:
-  188  
+  188
   189      actions.push({
   190:       label: formatMessage({ id: "XXXX", defaultMessage: "Edit" }),
   191        onItemSelect: this.onActionsItemSelection.bind(this, EDIT)
@@ -2499,7 +2499,7 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
   253        });
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/services/ServicesContainer.js:
-  608  
+  608
   609  ServicesContainer.routeConfig = {
   610:   label: formatMessage({ id: "XXXX", defaultMessage: "Services" }),
   611    icon: <Icon id="services" size="small" family="product" />,
@@ -2997,14 +2997,14 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
    62        "dcos-acs-info-cookie=" +
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/CatalogPage.js:
-   11  
+   11
    12  CatalogPage.routeConfig = {
    13:   label: formatMessage({ id: "XXXX", defaultMessage: "Catalog" }),
    14    icon: <Icon id="packages-inverse" size="small" family="product" />,
    15    matches: /^\/catalog/
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/ComponentsPage.js:
-   11  
+   11
    12  ComponentsPage.routeConfig = {
    13:   label: formatMessage({ id: "XXXX", defaultMessage: "Components" }),
    14    icon: <Icon id="components-inverse" size="small" family="product" />,
@@ -3018,35 +3018,35 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
    66        matches: /^\/dashboard/
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/JobsPage.js:
-   17  
+   17
    18  JobsPage.routeConfig = {
    19:   label: formatMessage({ id: "XXXX", defaultMessage: "Jobs" }),
    20    icon: <Icon id="jobs-inverse" size="small" family="product" />,
    21    matches: /^\/jobs/
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/NetworkPage.js:
-   72  
+   72
    73  NetworkPage.routeConfig = {
    74:   label: formatMessage({ id: "XXXX", defaultMessage: "Networking" }),
    75    icon: <Icon id="network-inverse" size="small" family="product" />,
    76    matches: /^\/networking/
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/OrganizationPage.js:
-   11  
+   11
    12  OrganizationPage.routeConfig = {
    13:   label: formatMessage({ id: "XXXX", defaultMessage: "Organization" }),
    14    icon: <Icon id="users-inverse" size="small" family="product" />,
    15    matches: /^\/organization/
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/SettingsPage.js:
-   11  
+   11
    12  SettingsPage.routeConfig = {
    13:   label: formatMessage({ id: "XXXX", defaultMessage: "Settings" }),
    14    icon: <Icon id="gear-inverse" size="small" family="product" />,
    15    matches: /^\/settings/
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/SystemOverviewPage.js:
-   11  
+   11
    12  SystemOverviewPage.routeConfig = {
    13:   label: formatMessage({ id: "XXXX", defaultMessage: "Overview" }),
    14    icon: <Icon id="cluster-inverse" size="small" family="product" />,
@@ -3080,12 +3080,12 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
   294          value: this.mapLicenses(cosmosPackage.getLicenses())
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/jobs/JobDetailPage.js:
-  331  
+  331
   332      actions.push({
   333:       label: formatMessage({ id: "XXXX", defaultMessage: "Edit" }),
   334        onItemSelect: this.handleEditButtonClick
   335      });
-  336  
+  336
   337      actions.push({
   338:       label: formatMessage({ id: "XXXX", defaultMessage: "Run Now" }),
   339        onItemSelect: this.handleRunNowButtonClick
@@ -3138,7 +3138,7 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
    36        }
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/network/VirtualNetworksTab.js:
-  172  
+  172
   173  VirtualNetworksTabContent.routeConfig = {
   174:   label: formatMessage({ id: "XXXX", defaultMessage: "Networks" }),
   175    matches: /^\/networking\/networks/
@@ -3179,7 +3179,7 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
   189            id: "XXXX",
   190            defaultMessage: "View Cluster Configuration"
   ...
-  363  
+  363
   364  OverviewDetailTab.routeConfig = {
   365:   label: formatMessage({ id: "XXXX", defaultMessage: "Overview" }),
   366    matches: /^\/overview\/details/
@@ -3192,21 +3192,21 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
   151                id: "XXXX",
   152                defaultMessage: "Add Repository"
   ...
-  162  
+  162
   163  RepositoriesTab.routeConfig = {
   164:   label: formatMessage({ id: "XXXX", defaultMessage: "Package Repositories" }),
   165    matches: /^\/settings\/repositories/
   166  };
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/system/UnitsHealthTab.js:
-  232  
+  232
   233  UnitsHealthTab.routeConfig = {
   234:   label: formatMessage({ id: "XXXX", defaultMessage: "Components" }),
   235    matches: /^\/components\/overview/
   236  };
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/system/UsersPage.js:
-  121  
+  121
   122  UsersPage.routeConfig = {
   123:   label: formatMessage({ id: "XXXX", defaultMessage: "Users" }),
   124    matches: /^\/organization\/users/
@@ -3251,7 +3251,7 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
   103              children: [
 
 /Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/Docker.js:
-    4  
+    4
     5  const General = {
     6:   title: formatMessage({ id: "XXXX", defaultMessage: "Docker Container" }),
     7:   description: formatMessage({
@@ -3266,7 +3266,7 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
    17          defaultMessage: "Name of your Docker image"
 
 /Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/General.js:
-    9  
+    9
    10  const General = {
    11:   title: formatMessage({ id: "XXXX", defaultMessage: "General" }),
    12:   description: formatMessage({
@@ -3326,7 +3326,7 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
    30            }
 
 /Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/Schedule.js:
-   11  
+   11
    12  const Schedule = {
    13:   title: formatMessage({ id: "XXXX", defaultMessage: "Schedule" }),
    14:   description: formatMessage({
@@ -3403,7 +3403,7 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
    68        matches: /^\/nodes/
 
 /Users/matappelman/coding/dcos-ui/plugins/nodes/src/js/pages/NodesPage.js:
-   11  
+   11
    12  NodesPage.routeConfig = {
    13:   label: formatMessage({ id: "XXXX", defaultMessage: "Nodes" }),
    14    icon: <Icon id="servers-inverse" size="small" family="product" />,
@@ -3553,7 +3553,7 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
    23  };
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/pod-detail/PodDetail.js:
-  161  
+  161
   162      actions.push({
   163:       label: formatMessage({ id: "XXXX", defaultMessage: "Edit" }),
   164        onItemSelect: this.onActionsItemSelection.bind(this, EDIT)
@@ -3598,7 +3598,7 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
   219        }
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/service-detail/ServiceDetail.js:
-  188  
+  188
   189      actions.push({
   190:       label: formatMessage({ id: "XXXX", defaultMessage: "Edit" }),
   191        onItemSelect: this.onActionsItemSelection.bind(this, EDIT)
@@ -3649,7 +3649,7 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
   253        });
 
 /Users/matappelman/coding/dcos-ui/plugins/services/src/js/containers/services/ServicesContainer.js:
-  608  
+  608
   609  ServicesContainer.routeConfig = {
   610:   label: formatMessage({ id: "XXXX", defaultMessage: "Services" }),
   611    icon: <Icon id="services" size="small" family="product" />,
@@ -4147,14 +4147,14 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
    62        "dcos-acs-info-cookie=" +
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/CatalogPage.js:
-   11  
+   11
    12  CatalogPage.routeConfig = {
    13:   label: formatMessage({ id: "XXXX", defaultMessage: "Catalog" }),
    14    icon: <Icon id="packages-inverse" size="small" family="product" />,
    15    matches: /^\/catalog/
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/ComponentsPage.js:
-   11  
+   11
    12  ComponentsPage.routeConfig = {
    13:   label: formatMessage({ id: "XXXX", defaultMessage: "Components" }),
    14    icon: <Icon id="components-inverse" size="small" family="product" />,
@@ -4168,35 +4168,35 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
    66        matches: /^\/dashboard/
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/JobsPage.js:
-   17  
+   17
    18  JobsPage.routeConfig = {
    19:   label: formatMessage({ id: "XXXX", defaultMessage: "Jobs" }),
    20    icon: <Icon id="jobs-inverse" size="small" family="product" />,
    21    matches: /^\/jobs/
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/NetworkPage.js:
-   72  
+   72
    73  NetworkPage.routeConfig = {
    74:   label: formatMessage({ id: "XXXX", defaultMessage: "Networking" }),
    75    icon: <Icon id="network-inverse" size="small" family="product" />,
    76    matches: /^\/networking/
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/OrganizationPage.js:
-   11  
+   11
    12  OrganizationPage.routeConfig = {
    13:   label: formatMessage({ id: "XXXX", defaultMessage: "Organization" }),
    14    icon: <Icon id="users-inverse" size="small" family="product" />,
    15    matches: /^\/organization/
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/SettingsPage.js:
-   11  
+   11
    12  SettingsPage.routeConfig = {
    13:   label: formatMessage({ id: "XXXX", defaultMessage: "Settings" }),
    14    icon: <Icon id="gear-inverse" size="small" family="product" />,
    15    matches: /^\/settings/
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/SystemOverviewPage.js:
-   11  
+   11
    12  SystemOverviewPage.routeConfig = {
    13:   label: formatMessage({ id: "XXXX", defaultMessage: "Overview" }),
    14    icon: <Icon id="cluster-inverse" size="small" family="product" />,
@@ -4230,12 +4230,12 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
   294          value: this.mapLicenses(cosmosPackage.getLicenses())
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/jobs/JobDetailPage.js:
-  331  
+  331
   332      actions.push({
   333:       label: formatMessage({ id: "XXXX", defaultMessage: "Edit" }),
   334        onItemSelect: this.handleEditButtonClick
   335      });
-  336  
+  336
   337      actions.push({
   338:       label: formatMessage({ id: "XXXX", defaultMessage: "Run Now" }),
   339        onItemSelect: this.handleRunNowButtonClick
@@ -4288,7 +4288,7 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
    36        }
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/network/VirtualNetworksTab.js:
-  172  
+  172
   173  VirtualNetworksTabContent.routeConfig = {
   174:   label: formatMessage({ id: "XXXX", defaultMessage: "Networks" }),
   175    matches: /^\/networking\/networks/
@@ -4329,7 +4329,7 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
   189            id: "XXXX",
   190            defaultMessage: "View Cluster Configuration"
   ...
-  363  
+  363
   364  OverviewDetailTab.routeConfig = {
   365:   label: formatMessage({ id: "XXXX", defaultMessage: "Overview" }),
   366    matches: /^\/overview\/details/
@@ -4342,21 +4342,21 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
   151                id: "XXXX",
   152                defaultMessage: "Add Repository"
   ...
-  162  
+  162
   163  RepositoriesTab.routeConfig = {
   164:   label: formatMessage({ id: "XXXX", defaultMessage: "Package Repositories" }),
   165    matches: /^\/settings\/repositories/
   166  };
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/system/UnitsHealthTab.js:
-  232  
+  232
   233  UnitsHealthTab.routeConfig = {
   234:   label: formatMessage({ id: "XXXX", defaultMessage: "Components" }),
   235    matches: /^\/components\/overview/
   236  };
 
 /Users/matappelman/coding/dcos-ui/src/js/pages/system/UsersPage.js:
-  121  
+  121
   122  UsersPage.routeConfig = {
   123:   label: formatMessage({ id: "XXXX", defaultMessage: "Users" }),
   124    matches: /^\/organization\/users/
@@ -4401,7 +4401,7 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
   103              children: [
 
 /Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/Docker.js:
-    4  
+    4
     5  const General = {
     6:   title: formatMessage({ id: "XXXX", defaultMessage: "Docker Container" }),
     7:   description: formatMessage({
@@ -4416,7 +4416,7 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
    17          defaultMessage: "Name of your Docker image"
 
 /Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/General.js:
-    9  
+    9
    10  const General = {
    11:   title: formatMessage({ id: "XXXX", defaultMessage: "General" }),
    12:   description: formatMessage({
@@ -4476,7 +4476,7 @@ Searching 648 files for "(?<!intl.)formatMessage\(" (regex)
    30            }
 
 /Users/matappelman/coding/dcos-ui/src/js/schemas/job-schema/Schedule.js:
-   11  
+   11
    12  const Schedule = {
    13:   title: formatMessage({ id: "XXXX", defaultMessage: "Schedule" }),
    14:   description: formatMessage({

@@ -1,4 +1,3 @@
-import { injectIntl } from "react-intl";
 import { Redirect, Route, IndexRoute } from "react-router";
 /* eslint-disable no-unused-vars */
 import React from "react";
@@ -91,36 +90,24 @@ const serviceRoutes = [
           {
             type: Route,
             path: "configuration",
-            title: this.props.intl.formatMessage({
-              id: "XXXX",
-              defaultMessage: "Configuration"
-            }),
+            title: "Configuration",
             component: HighOrderServiceConfiguration
           },
           {
             type: Route,
             path: "debug",
-            title: this.props.intl.formatMessage({
-              id: "XXXX",
-              defaultMessage: "Debug"
-            }),
+            title: "Debug",
             component: HighOrderServiceDebug
           },
           {
             type: Route,
             path: "volumes",
-            title: this.props.intl.formatMessage({
-              id: "XXXX",
-              defaultMessage: "Volumes"
-            }),
+            title: "Volumes",
             component: VolumeTable
           },
           {
             type: Route,
-            title: this.props.intl.formatMessage({
-              id: "XXXX",
-              defaultMessage: "Instances"
-            }),
+            title: "Instances",
             path: "tasks",
             component: HighOrderServiceInstances
           },
@@ -131,10 +118,7 @@ const serviceRoutes = [
           },
           {
             type: Route,
-            title: this.props.intl.formatMessage({
-              id: "XXXX",
-              defaultMessage: "Instances"
-            }),
+            title: "Instances",
             path: "tasks/:taskID",
             component: ServiceTaskDetailPage,
             hideHeaderNavigation: true,
@@ -145,20 +129,14 @@ const serviceRoutes = [
                 hideHeaderNavigation: true,
                 isTab: true,
                 path: "details",
-                title: this.props.intl.formatMessage({
-                  id: "XXXX",
-                  defaultMessage: "Details"
-                })
+                title: "Details"
               },
               {
                 hideHeaderNavigation: true,
                 component: TaskFilesTab,
                 isTab: true,
                 path: "files",
-                title: this.props.intl.formatMessage({
-                  id: "XXXX",
-                  defaultMessage: "Files"
-                }),
+                title: "Files",
                 type: Route,
                 children: [
                   {
@@ -180,10 +158,7 @@ const serviceRoutes = [
                 hideHeaderNavigation: true,
                 isTab: true,
                 path: "logs",
-                title: this.props.intl.formatMessage({
-                  id: "XXXX",
-                  defaultMessage: "Logs"
-                }),
+                title: "Logs",
                 type: Route,
                 children: [
                   {
@@ -197,10 +172,7 @@ const serviceRoutes = [
                 hideHeaderNavigation: true,
                 isTab: true,
                 path: "volumes",
-                title: this.props.intl.formatMessage({
-                  id: "XXXX",
-                  defaultMessage: "Volumes"
-                }),
+                title: "Volumes",
                 type: Route
               },
               {
@@ -217,4 +189,4 @@ const serviceRoutes = [
   }
 ];
 
-module.exports = injectIntl(serviceRoutes);
+module.exports = serviceRoutes;

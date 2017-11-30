@@ -62,14 +62,6 @@ var NodesOverview = React.createClass({
   mixins: [InternalStorageMixin, QueryParamsMixin, StoreMixin],
 
   statics: {
-    routeConfig: {
-      label: this.props.intl.formatMessage({
-        id: "XXXX",
-        defaultMessage: "Nodes"
-      }),
-      icon: <Icon family="product" id="servers-inverse" />,
-      matches: /^\/nodes/
-    },
     // Static life cycle method from react router, that will be called
     // 'when a handler is about to render', i.e. on route change:
     // https://github.com/rackt/react-router/
@@ -336,4 +328,11 @@ var NodesOverview = React.createClass({
   }
 });
 
-module.exports = injectIntl(NodesOverview);
+const comp = injectIntl(NodesOverview);
+comp.routeConfig = {
+  label: "Nodes",
+  icon: <Icon family="product" id="servers-inverse" />,
+  matches: /^\/nodes/
+};
+
+module.exports = comp;

@@ -1,4 +1,4 @@
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import { Confirm } from "reactjs-components";
 import React, { PropTypes } from "react";
 import PureRender from "react-addons-pure-render-mixin";
@@ -11,6 +11,7 @@ import ModalHeading from "#SRC/js/components/modals/ModalHeading";
 import AppLockedMessage from "./AppLockedMessage";
 import Service from "../../structs/Service";
 import ServiceTree from "../../structs/ServiceTree";
+import IntlContext from "./IntlContext";
 
 const METHODS_TO_BIND = ["handleConfirmation", "handleInstancesFieldChange"];
 
@@ -138,12 +139,14 @@ class ServiceResumeModal extends React.Component {
 
     const heading = (
       <ModalHeading>
-        <FormattedMessage
-          id="XXXX"
-          defaultMessage={`
+        <IntlContext intl={this.props.intl}>
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
         Resume Service
       `}
-        />
+          />
+        </IntlContext>
       </ModalHeading>
     );
 
@@ -159,8 +162,10 @@ class ServiceResumeModal extends React.Component {
         rightButtonCallback={this.handleConfirmation}
         showHeader={true}
       >
-        {this.getModalContent()}
-        {this.getErrorMessage()}
+        <IntlContext intl={this.props.intl}>
+          {this.getModalContent()}
+          {this.getErrorMessage()}
+        </IntlContext>
       </Confirm>
     );
   }
@@ -178,4 +183,4 @@ ServiceResumeModal.propTypes = {
   ]).isRequired
 };
 
-module.exports = ServiceResumeModal;
+module.exports = injectIntl(ServiceResumeModal);

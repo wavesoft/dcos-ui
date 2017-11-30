@@ -13,54 +13,64 @@ import { getContainerNameWithIcon } from "../utils/ServiceConfigDisplayUtil";
 import ConfigurationMapValueWithDefault
   from "../components/ConfigurationMapValueWithDefault";
 
-const COMMON_COLUMNS = [
-  {
-    heading: this.props.intl.formatMessage({
-      id: "XXXX",
-      defaultMessage: "Grace Period"
-    }),
-    prop: "gracePeriod",
-    render(prop, row) {
-      return <ConfigurationMapDurationValue units="sec" value={row[prop]} />;
-    }
-  },
-  {
-    heading: this.props.intl.formatMessage({
-      id: "XXXX",
-      defaultMessage: "Interval"
-    }),
-    prop: "interval",
-    render(prop, row) {
-      return <ConfigurationMapDurationValue units="sec" value={row[prop]} />;
-    }
-  },
-  {
-    heading: this.props.intl.formatMessage({
-      id: "XXXX",
-      defaultMessage: "Timeout"
-    }),
-    prop: "timeout",
-    render(prop, row) {
-      return <ConfigurationMapDurationValue units="sec" value={row[prop]} />;
-    }
-  },
-  {
-    heading: this.props.intl.formatMessage({
-      id: "XXXX",
-      defaultMessage: "Max Failures"
-    }),
-    prop: "maxFailures"
-  },
-  {
-    heading: this.props.intl.formatMessage({
-      id: "XXXX",
-      defaultMessage: "Container"
-    }),
-    prop: "container"
-  }
-];
-
 class PodHealthChecksConfigSection extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.COMMON_COLUMNS = [
+      {
+        heading: props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Grace Period"
+        }),
+        prop: "gracePeriod",
+        render(prop, row) {
+          return (
+            <ConfigurationMapDurationValue units="sec" value={row[prop]} />
+          );
+        }
+      },
+      {
+        heading: props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Interval"
+        }),
+        prop: "interval",
+        render(prop, row) {
+          return (
+            <ConfigurationMapDurationValue units="sec" value={row[prop]} />
+          );
+        }
+      },
+      {
+        heading: props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Timeout"
+        }),
+        prop: "timeout",
+        render(prop, row) {
+          return (
+            <ConfigurationMapDurationValue units="sec" value={row[prop]} />
+          );
+        }
+      },
+      {
+        heading: props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Max Failures"
+        }),
+        prop: "maxFailures"
+      },
+      {
+        heading: props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: "Container"
+        }),
+        prop: "container"
+      }
+    ];
+  }
+
   getCommandColumns() {
     return [
       {
@@ -70,7 +80,7 @@ class PodHealthChecksConfigSection extends React.Component {
         }),
         prop: "command"
       }
-    ].concat(COMMON_COLUMNS);
+    ].concat(this.COMMON_COLUMNS);
   }
 
   getDefaultEndpointsColumns() {
@@ -108,7 +118,7 @@ class PodHealthChecksConfigSection extends React.Component {
         }),
         prop: "path"
       }
-    ].concat(COMMON_COLUMNS);
+    ].concat(this.COMMON_COLUMNS);
   }
 
   render() {

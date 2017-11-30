@@ -12,30 +12,6 @@ import {
 } from "../utils/ServiceConfigDisplayUtil";
 import ConfigurationMapTable from "../components/ConfigurationMapTable";
 
-const columns = [
-  {
-    heading: this.props.intl.formatMessage({
-      id: "XXXX",
-      defaultMessage: "Key"
-    }),
-    prop: "key"
-  },
-  {
-    heading: this.props.intl.formatMessage({
-      id: "XXXX",
-      defaultMessage: "Value"
-    }),
-    prop: "value"
-  },
-  {
-    heading: this.props.intl.formatMessage({
-      id: "XXXX",
-      defaultMessage: "Container"
-    }),
-    prop: "container"
-  }
-];
-
 const PodEnvironmentVariablesConfigSection = ({ appConfig, onEditClick }) => {
   const { environment = {}, containers = [] } = appConfig;
 
@@ -74,6 +50,30 @@ const PodEnvironmentVariablesConfigSection = ({ appConfig, onEditClick }) => {
   if (!combinedEnv.length) {
     return <noscript />;
   }
+
+  const columns = [
+    {
+      heading: this.props.intl.formatMessage({
+        id: "XXXX",
+        defaultMessage: "Key"
+      }),
+      prop: "key"
+    },
+    {
+      heading: this.props.intl.formatMessage({
+        id: "XXXX",
+        defaultMessage: "Value"
+      }),
+      prop: "value"
+    },
+    {
+      heading: this.props.intl.formatMessage({
+        id: "XXXX",
+        defaultMessage: "Container"
+      }),
+      prop: "container"
+    }
+  ];
 
   return (
     <div>

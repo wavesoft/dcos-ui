@@ -118,10 +118,10 @@ class UsersPage extends mixin(StoreMixin) {
 UsersPage.propTypes = {
   params: React.PropTypes.object
 };
-
-UsersPage.routeConfig = {
-  label: this.props.intl.formatMessage({ id: "XXXX", defaultMessage: "Users" }),
+const comp = injectIntl(UsersPage);
+comp.routeConfig = {
+  label: "Users",
   matches: /^\/organization\/users/
 };
 
-module.exports = injectIntl(UsersPage);
+module.exports = comp;

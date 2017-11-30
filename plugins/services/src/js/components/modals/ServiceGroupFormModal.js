@@ -1,10 +1,11 @@
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import React, { PropTypes } from "react";
 import PureRender from "react-addons-pure-render-mixin";
 
 import FormModal from "#SRC/js/components/FormModal";
 import ModalHeading from "#SRC/js/components/modals/ModalHeading";
 import ServiceValidatorUtil from "../../utils/ServiceValidatorUtil";
+import IntlContext from "./IntlContext";
 
 const METHODS_TO_BIND = ["handleNewGroupSubmit"];
 
@@ -90,7 +91,9 @@ class ServiceGroupFormModal extends React.Component {
         modalProps={{
           header: (
             <ModalHeading>
-              <FormattedMessage id="XXXX" defaultMessage={`Create Group`} />
+              <IntlContext intl={this.props.intl}>
+                <FormattedMessage id="XXXX" defaultMessage={`Create Group`} />
+              </IntlContext>
             </ModalHeading>
           ),
           showHeader: true
@@ -101,14 +104,16 @@ class ServiceGroupFormModal extends React.Component {
         open={open}
         definition={this.getNewGroupFormDefinition()}
       >
-        <p className="text-align-center flush-top">
-          <FormattedMessage
-            id="XXXX"
-            defaultMessage={`Enter a path for the new group under `}
-          />
-          <span className="emphasize">{parentGroupId}</span>
-        </p>
-        {this.getErrorMessage()}
+        <IntlContext intl={this.props.intl}>
+          <p className="text-align-center flush-top">
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`Enter a path for the new group under `}
+            />
+            <span className="emphasize">{parentGroupId}</span>
+          </p>
+          {this.getErrorMessage()}
+        </IntlContext>
       </FormModal>
     );
   }
@@ -123,4 +128,4 @@ ServiceGroupFormModal.propTypes = {
   onClose: PropTypes.func.isRequired
 };
 
-module.exports = ServiceGroupFormModal;
+module.exports = injectIntl(ServiceGroupFormModal);

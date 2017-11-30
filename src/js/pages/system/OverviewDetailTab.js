@@ -360,13 +360,10 @@ class OverviewDetailTab extends mixin(StoreMixin) {
     );
   }
 }
-
-OverviewDetailTab.routeConfig = {
-  label: this.props.intl.formatMessage({
-    id: "XXXX",
-    defaultMessage: "Overview"
-  }),
+const comp = injectIntl(OverviewDetailTab);
+comp.routeConfig = {
+  label: "Overview",
   matches: /^\/overview\/details/
 };
 
-module.exports = injectIntl(OverviewDetailTab);
+module.exports = comp;

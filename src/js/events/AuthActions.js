@@ -1,4 +1,3 @@
-import { injectIntl } from "react-intl";
 import { RequestUtil } from "mesosphere-shared-reactjs";
 
 import {
@@ -67,4 +66,4 @@ if (Config.useFixtures) {
   };
 }
 
-module.exports = injectIntl(AuthActions);
+module.exports = AuthActions;

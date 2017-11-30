@@ -1,4 +1,4 @@
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import classNames from "classnames";
 import deepEqual from "deep-equal";
 import React, { Component, PropTypes } from "react";
@@ -28,6 +28,7 @@ import Application from "../../structs/Application";
 import ApplicationSpec from "../../structs/ApplicationSpec";
 import PodSpec from "../../structs/PodSpec";
 import Service from "../../structs/Service";
+import IntlContext from "./IntlContext";
 
 import MarathonActions from "../../events/MarathonActions";
 import MarathonStore from "../../stores/MarathonStore";
@@ -457,6 +458,7 @@ class CreateServiceModal extends Component {
 
   handleServiceReview() {
     const errors = this.getFormErrors();
+
     if (errors.length === 0) {
       this.setState({
         apiErrors: [],
@@ -538,24 +540,26 @@ class CreateServiceModal extends Component {
     // NOTE: Always prioritize review screen check
     if (this.state.serviceReviewActive) {
       return (
-        <FullScreenModalHeader>
-          <FullScreenModalHeaderActions
-            actions={this.getSecondaryActions()}
-            type="secondary"
-          />
-          <FullScreenModalHeaderTitle>
-            <FormattedMessage
-              id="XXXX"
-              defaultMessage={`
+        <IntlContext intl={this.props.intl}>
+          <FullScreenModalHeader>
+            <FullScreenModalHeaderActions
+              actions={this.getSecondaryActions()}
+              type="secondary"
+            />
+            <FullScreenModalHeaderTitle>
+              <FormattedMessage
+                id="XXXX"
+                defaultMessage={`
             Review & Run Service
           `}
+              />
+            </FullScreenModalHeaderTitle>
+            <FullScreenModalHeaderActions
+              actions={this.getPrimaryActions()}
+              type="primary"
             />
-          </FullScreenModalHeaderTitle>
-          <FullScreenModalHeaderActions
-            actions={this.getPrimaryActions()}
-            type="primary"
-          />
-        </FullScreenModalHeader>
+          </FullScreenModalHeader>
+        </IntlContext>
       );
     }
 
@@ -569,19 +573,21 @@ class CreateServiceModal extends Component {
     }
 
     return (
-      <FullScreenModalHeader>
-        <FullScreenModalHeaderActions
-          actions={this.getSecondaryActions()}
-          type="secondary"
-        />
-        <FullScreenModalHeaderTitle>
-          {title}
-        </FullScreenModalHeaderTitle>
-        <FullScreenModalHeaderActions
-          actions={this.getPrimaryActions()}
-          type="primary"
-        />
-      </FullScreenModalHeader>
+      <IntlContext intl={this.props.intl}>
+        <FullScreenModalHeader>
+          <FullScreenModalHeaderActions
+            actions={this.getSecondaryActions()}
+            type="secondary"
+          />
+          <FullScreenModalHeaderTitle>
+            {title}
+          </FullScreenModalHeaderTitle>
+          <FullScreenModalHeaderActions
+            actions={this.getPrimaryActions()}
+            type="primary"
+          />
+        </FullScreenModalHeader>
+      </IntlContext>
     );
   }
 
@@ -895,7 +901,9 @@ class CreateServiceModal extends Component {
         open={isOpen}
         {...Util.omit(props, Object.keys(CreateServiceModal.propTypes))}
       >
-        {this.getModalContent()}
+        <IntlContext intl={this.props.intl}>
+          {this.getModalContent()}
+        </IntlContext>
         <Confirm
           closeByBackdropClick={true}
           header={<ModalHeading>Discard Changes?</ModalHeading>}
@@ -926,4 +934,4 @@ CreateServiceModal.propTypes = {
   location: PropTypes.object.isRequired
 };
 
-module.exports = CreateServiceModal;
+module.exports = injectIntl(CreateServiceModal);

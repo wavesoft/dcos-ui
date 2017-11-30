@@ -20,6 +20,7 @@ import {
   SCALE,
   SUSPEND
 } from "../../constants/ServiceActionItem";
+import IntlContext from "./IntlContext";
 
 const METHODS_TO_BIND = ["handleTextCopy"];
 
@@ -509,7 +510,9 @@ class ServiceActionDisabledModal extends React.Component {
         showFooter={true}
         footer={this.getFooter()}
       >
-        {message}
+        <IntlContext intl={this.props.intl}>
+          {message}
+        </IntlContext>
       </Modal>
     );
   }

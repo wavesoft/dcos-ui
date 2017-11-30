@@ -8,14 +8,11 @@ class CatalogPage extends React.Component {
     return this.props.children;
   }
 }
-
-CatalogPage.routeConfig = {
-  label: this.props.intl.formatMessage({
-    id: "XXXX",
-    defaultMessage: "Catalog"
-  }),
+const comp = injectIntl(CatalogPage);
+comp.routeConfig = {
+  label: "Catalog",
   icon: <Icon id="packages-inverse" size="small" family="product" />,
   matches: /^\/catalog/
 };
 
-module.exports = injectIntl(CatalogPage);
+module.exports = comp;

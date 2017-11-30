@@ -8,14 +8,11 @@ class SettingsPage extends React.Component {
     return this.props.children;
   }
 }
-
-SettingsPage.routeConfig = {
-  label: this.props.intl.formatMessage({
-    id: "XXXX",
-    defaultMessage: "Settings"
-  }),
+const comp = injectIntl(SettingsPage);
+comp.routeConfig = {
+  label: "Settings",
   icon: <Icon id="gear-inverse" size="small" family="product" />,
   matches: /^\/settings/
 };
 
-module.exports = injectIntl(SettingsPage);
+module.exports = comp;

@@ -605,14 +605,11 @@ ServicesContainer.propTypes = {
 ServicesContainer.contextTypes = {
   router: routerShape
 };
-
-ServicesContainer.routeConfig = {
-  label: this.props.intl.formatMessage({
-    id: "XXXX",
-    defaultMessage: "Services"
-  }),
+const comp = injectIntl(ServicesContainer);
+comp.routeConfig = {
+  label: "Services",
   icon: <Icon id="services" size="small" family="product" />,
   matches: /^\/services\/(detail|overview)/
 };
 
-module.exports = injectIntl(ServicesContainer);
+module.exports = comp;

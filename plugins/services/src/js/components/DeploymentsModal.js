@@ -550,4 +550,4 @@ class DeploymentsModal extends mixin(StoreMixin) {
   }
 }
 
-module.exports = injectIntl(injectIntl)(DeploymentsModal);
+module.exports = injectIntl(DeploymentsModal);

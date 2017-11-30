@@ -16,17 +16,6 @@ var ServicesPage = React.createClass({
 
   displayName: "ServicesPage",
 
-  statics: {
-    routeConfig: {
-      label: this.props.intl.formatMessage({
-        id: "XXXX",
-        defaultMessage: "Services"
-      }),
-      icon: <Icon id="services-inverse" size="small" family="product" />,
-      matches: /^\/services/
-    }
-  },
-
   getInitialState() {
     return {
       currentTab: "/services/overview"
@@ -81,4 +70,11 @@ var ServicesPage = React.createClass({
   }
 });
 
-module.exports = injectIntl(ServicesPage);
+const comp = injectIntl(ServicesPage);
+comp.routeConfig = {
+  label: "Services",
+  icon: <Icon id="services-inverse" size="small" family="product" />,
+  matches: /^\/services/
+};
+
+module.exports = comp;

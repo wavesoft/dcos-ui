@@ -1,4 +1,4 @@
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import { Confirm } from "reactjs-components";
 import React, { PropTypes } from "react";
 import PureRender from "react-addons-pure-render-mixin";
@@ -7,6 +7,7 @@ import ModalHeading from "#SRC/js/components/modals/ModalHeading";
 import StringUtil from "#SRC/js/utils/StringUtil";
 
 import AppLockedMessage from "./AppLockedMessage";
+import IntlContext from "./IntlContext";
 import Pod from "../../structs/Pod";
 
 const ACTION_DISPLAY_NAMES = {
@@ -91,13 +92,17 @@ class KillPodInstanceModal extends React.Component {
     return (
       <div className="text-align-center">
         <p>
+          <FormattedMessage id="XXXX" defaultMessage={`You are about to`} />
+          {" "}
+          {action.toLowerCase()}
+          {" "}
+          {instanceCountContent}
+          .
+          <br />
           <FormattedMessage
             id="XXXX"
-            defaultMessage={`
-          You are about to `}
-          />{action.toLowerCase()} {instanceCountContent}.
-          <br />
-          Are you sure you want to continue?
+            defaultMessage={`Are you sure you want to continue?`}
+          />
         </p>
         {this.getErrorMessage()}
       </div>
@@ -152,7 +157,9 @@ class KillPodInstanceModal extends React.Component {
         rightButtonCallback={killAction}
         showHeader={true}
       >
-        {this.getModalContents()}
+        <IntlContext intl={this.props.intl}>
+          {this.getModalContents()}
+        </IntlContext>
       </Confirm>
     );
   }
@@ -176,4 +183,4 @@ KillPodInstanceModal.propTypes = {
   selectedItems: PropTypes.array
 };
 
-module.exports = KillPodInstanceModal;
+module.exports = injectIntl(KillPodInstanceModal);

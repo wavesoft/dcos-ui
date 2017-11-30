@@ -1,4 +1,4 @@
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import { Confirm } from "reactjs-components";
 import React, { PropTypes } from "react";
 import PureRender from "react-addons-pure-render-mixin";
@@ -9,6 +9,7 @@ import AppLockedMessage from "./AppLockedMessage";
 import Pod from "../../structs/Pod";
 import Service from "../../structs/Service";
 import ServiceTree from "../../structs/ServiceTree";
+import IntlContext from "./IntlContext";
 
 class ServiceSuspendModal extends React.Component {
   constructor() {
@@ -100,11 +101,13 @@ class ServiceSuspendModal extends React.Component {
 
     return (
       <ModalHeading>
-        <FormattedMessage
-          id="XXXX"
-          defaultMessage={`
+        <IntlContext intl={this.props.intl}>
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`
         Suspend `}
-        />{serviceLabel}
+          />{serviceLabel}
+        </IntlContext>
       </ModalHeading>
     );
   }
@@ -125,28 +128,30 @@ class ServiceSuspendModal extends React.Component {
         rightButtonCallback={() => suspendItem(this.shouldForceUpdate())}
         showHeader={true}
       >
-        <p>
-          <FormattedMessage
-            id="XXXX"
-            defaultMessage={`
+        <IntlContext intl={this.props.intl}>
+          <p>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
           Suspending the
           `}
-          />{" "}
-          <strong>{serviceName}</strong>
-          {" "}
-          {serviceLabel.toLowerCase()}
-          {" "}
-          will remove all currently running instances of the
-          {" "}
-          {serviceLabel.toLowerCase()}.
-          {" "}
-          The {serviceLabel.toLowerCase()}<FormattedMessage
-            id="XXXX"
-            defaultMessage={` will not be deleted.
+            />{" "}
+            <strong>{serviceName}</strong>
+            {" "}
+            {serviceLabel.toLowerCase()}
+            {" "}
+            will remove all currently running instances of the
+            {" "}
+            {serviceLabel.toLowerCase()}.
+            {" "}
+            The {serviceLabel.toLowerCase()}<FormattedMessage
+              id="XXXX"
+              defaultMessage={` will not be deleted.
         `}
-          />
-        </p>
-        {this.getErrorMessage()}
+            />
+          </p>
+          {this.getErrorMessage()}
+        </IntlContext>
       </Confirm>
     );
   }
@@ -164,4 +169,4 @@ ServiceSuspendModal.propTypes = {
   ]).isRequired
 };
 
-module.exports = ServiceSuspendModal;
+module.exports = injectIntl(ServiceSuspendModal);

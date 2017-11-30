@@ -1,4 +1,3 @@
-import { injectIntl } from "react-intl";
 import { Redirect, IndexRoute, Route } from "react-router";
 /* eslint-disable no-unused-vars */
 import React from "react";
@@ -68,10 +67,7 @@ const jobsRoutes = [
                 component: TaskDetailsTab,
                 isTab: true,
                 path: "details",
-                title: this.props.intl.formatMessage({
-                  id: "XXXX",
-                  defaultMessage: "Details"
-                }),
+                title: "Details",
                 type: Route
               },
               {
@@ -79,10 +75,7 @@ const jobsRoutes = [
                 component: TaskFilesTab,
                 isTab: true,
                 path: "files",
-                title: this.props.intl.formatMessage({
-                  id: "XXXX",
-                  defaultMessage: "Files"
-                }),
+                title: "Files",
                 type: Route,
                 children: [
                   {
@@ -104,10 +97,7 @@ const jobsRoutes = [
                 hideHeaderNavigation: true,
                 isTab: true,
                 path: "logs",
-                title: this.props.intl.formatMessage({
-                  id: "XXXX",
-                  defaultMessage: "Logs"
-                }),
+                title: "Logs",
                 type: Route,
                 children: [
                   {
@@ -124,4 +114,4 @@ const jobsRoutes = [
   }
 ];
 
-module.exports = injectIntl(jobsRoutes);
+module.exports = jobsRoutes;

@@ -144,10 +144,7 @@ var Modals = React.createClass({
 
     if (this.state.showingCliModal) {
       Hooks.doAction("logFakePageView", {
-        title: this.props.intl.formatMessage({
-          id: "XXXX",
-          defaultMessage: "CLI instructions"
-        }),
+        title: "CLI instructions",
         path: "/v/cli-instructions",
         referrer: "https://mesosphere.com/"
       });

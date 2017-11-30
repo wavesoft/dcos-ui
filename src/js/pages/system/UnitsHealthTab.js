@@ -229,13 +229,10 @@ class UnitsHealthTab extends mixin(StoreMixin) {
     );
   }
 }
-
-UnitsHealthTab.routeConfig = {
-  label: this.props.intl.formatMessage({
-    id: "XXXX",
-    defaultMessage: "Components"
-  }),
+const comp = injectIntl(UnitsHealthTab);
+comp.routeConfig = {
+  label: "Components",
   matches: /^\/components\/overview/
 };
 
-module.exports = injectIntl(UnitsHealthTab);
+module.exports = comp;

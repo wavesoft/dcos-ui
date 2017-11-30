@@ -1,4 +1,4 @@
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import { Confirm } from "reactjs-components";
 import React, { PropTypes } from "react";
 import PureRender from "react-addons-pure-render-mixin";
@@ -6,6 +6,7 @@ import PureRender from "react-addons-pure-render-mixin";
 import ModalHeading from "#SRC/js/components/modals/ModalHeading";
 import StringUtil from "#SRC/js/utils/StringUtil";
 
+import IntlContext from "./IntlContext";
 import AppLockedMessage from "./AppLockedMessage";
 
 const ACTION_DISPLAY_NAMES = {
@@ -144,7 +145,9 @@ class KillTaskModal extends React.Component {
         rightButtonCallback={killTasksAction}
         showHeader={true}
       >
-        {this.getModalContents()}
+        <IntlContext intl={this.props.intl}>
+          {this.getModalContents()}
+        </IntlContext>
       </Confirm>
     );
   }
@@ -166,4 +169,4 @@ KillTaskModal.propTypes = {
   selectedItems: PropTypes.array
 };
 
-module.exports = KillTaskModal;
+module.exports = injectIntl(KillTaskModal);

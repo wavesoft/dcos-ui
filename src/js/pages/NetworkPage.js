@@ -70,17 +70,15 @@ NetworkPage.contextTypes = {
   router: routerShape
 };
 
-NetworkPage.routeConfig = {
-  label: this.props.intl.formatMessage({
-    id: "XXXX",
-    defaultMessage: "Networking"
-  }),
+NetworkPage.willTransitionTo = function() {
+  SidebarActions.close();
+};
+const comp = injectIntl(NetworkPage);
+
+comp.routeConfig = {
+  label: "Networking",
   icon: <Icon id="network-inverse" size="small" family="product" />,
   matches: /^\/networking/
 };
 
-NetworkPage.willTransitionTo = function() {
-  SidebarActions.close();
-};
-
-module.exports = injectIntl(NetworkPage);
+module.exports = comp;

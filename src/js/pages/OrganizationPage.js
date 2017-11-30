@@ -8,14 +8,11 @@ class OrganizationPage extends React.Component {
     return this.props.children;
   }
 }
-
-OrganizationPage.routeConfig = {
-  label: this.props.intl.formatMessage({
-    id: "XXXX",
-    defaultMessage: "Organization"
-  }),
+const comp = injectIntl(OrganizationPage);
+comp.routeConfig = {
+  label: "Organization",
   icon: <Icon id="users-inverse" size="small" family="product" />,
   matches: /^\/organization/
 };
 
-module.exports = injectIntl(OrganizationPage);
+module.exports = comp;

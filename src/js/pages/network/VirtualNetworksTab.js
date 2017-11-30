@@ -169,13 +169,10 @@ class VirtualNetworksTabContent extends mixin(StoreMixin) {
     );
   }
 }
-
-VirtualNetworksTabContent.routeConfig = {
-  label: this.props.intl.formatMessage({
-    id: "XXXX",
-    defaultMessage: "Networks"
-  }),
+const comp = injectIntl(VirtualNetworksTabContent);
+comp.routeConfig = {
+  label: "Networks",
   matches: /^\/networking\/networks/
 };
 
-module.exports = injectIntl(VirtualNetworksTabContent);
+module.exports = comp;

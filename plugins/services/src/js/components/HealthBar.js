@@ -1,4 +1,4 @@
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import classNames from "classnames";
 import React from "react";
 import { Tooltip } from "reactjs-components";
@@ -163,4 +163,4 @@ HealthBar.propTypes = {
   }).isRequired
 };
 
-module.exports = HealthBar;
+module.exports = injectIntl(HealthBar);

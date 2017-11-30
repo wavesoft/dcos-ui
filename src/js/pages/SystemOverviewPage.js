@@ -8,14 +8,11 @@ class SystemOverviewPage extends React.Component {
     return this.props.children;
   }
 }
-
-SystemOverviewPage.routeConfig = {
-  label: this.props.intl.formatMessage({
-    id: "XXXX",
-    defaultMessage: "Overview"
-  }),
+const comp = injectIntl(SystemOverviewPage);
+comp.routeConfig = {
+  label: "Overview",
   icon: <Icon id="cluster-inverse" size="small" family="product" />,
   matches: /^\/overview/
 };
 
-module.exports = injectIntl(SystemOverviewPage);
+module.exports = comp;

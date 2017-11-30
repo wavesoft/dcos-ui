@@ -159,13 +159,10 @@ class RepositoriesTab extends mixin(StoreMixin) {
     );
   }
 }
-
-RepositoriesTab.routeConfig = {
-  label: this.props.intl.formatMessage({
-    id: "XXXX",
-    defaultMessage: "Package Repositories"
-  }),
+const comp = injectIntl(RepositoriesTab);
+comp.routeConfig = {
+  label: "Package Repositories",
   matches: /^\/settings\/repositories/
 };
 
-module.exports = injectIntl(RepositoriesTab);
+module.exports = comp;

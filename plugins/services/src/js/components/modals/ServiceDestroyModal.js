@@ -1,4 +1,4 @@
-import { FormattedMessage, injectIntl } from "react-intl";
+import { FormattedMessage, injectIntl, intlShape } from "react-intl";
 import { Confirm, Modal } from "reactjs-components";
 import { routerShape } from "react-router";
 import PureRender from "react-addons-pure-render-mixin";
@@ -14,6 +14,7 @@ import Framework from "../../structs/Framework";
 import Pod from "../../structs/Pod";
 import Service from "../../structs/Service";
 import ServiceTree from "../../structs/ServiceTree";
+import IntlContext from "./IntlContext";
 
 // This needs to be at least equal to @modal-animation-duration
 const REDIRECT_DELAY = 300;
@@ -161,39 +162,37 @@ class ServiceDestroyModal extends React.Component {
         showFooter={true}
         subHeader={this.getSubHeader()}
       >
-        <p>
-          {intl.formatMessage({
-            id: "SERVICE_ACTIONS.DELETE_SERVICE_FRAMEWORK"
-          })}
-          <a
-            href="https://docs.mesosphere.com/service-docs/"
-            target="_blank"
-            title={intl.formatMessage({
-              id: "COMMON.DOCUMENTATION_TITLE"
-            })}
-          >
+        <IntlContext intl={this.props.intl}>
+          <p>
             {intl.formatMessage({
-              id: "COMMON.DOCUMENTATION"
+              id: "SERVICE_ACTIONS.DELETE_SERVICE_FRAMEWORK"
             })}
-          </a>
-          {intl.formatMessage({
-            id: "SERVICE_ACTIONS.DELETE_SERVICE_FRAMEWORK_2"
-          })}
-        </p>
-        <div className="flush-top snippet-wrapper">
-          <ClickToSelect>
-            <pre className="prettyprint flush-bottom">
-              <FormattedMessage
-                id="XXXX"
-                defaultMessage={`
-              dcos package uninstall
-              `}
-              />{" "}
-              {packageName} --app-id={service.getId()}
-            </pre>
-          </ClickToSelect>
-        </div>
-        {this.getErrorMessage()}
+            <a
+              href="https://docs.mesosphere.com/service-docs/"
+              target="_blank"
+              title={intl.formatMessage({
+                id: "COMMON.DOCUMENTATION_TITLE"
+              })}
+            >
+              {intl.formatMessage({
+                id: "COMMON.DOCUMENTATION"
+              })}
+            </a>
+            {intl.formatMessage({
+              id: "SERVICE_ACTIONS.DELETE_SERVICE_FRAMEWORK_2"
+            })}
+          </p>
+          <div className="flush-top snippet-wrapper">
+            <ClickToSelect>
+              <pre className="prettyprint flush-bottom">
+                dcos package uninstall
+                {" "}
+                {packageName} --app-id={service.getId()}
+              </pre>
+            </ClickToSelect>
+          </div>
+          {this.getErrorMessage()}
+        </IntlContext>
       </Modal>
     );
   }
@@ -217,36 +216,38 @@ class ServiceDestroyModal extends React.Component {
         rightButtonCallback={this.handleRightButtonClick}
         showHeader={true}
       >
-        <p>
-          <FormattedMessage
-            id="XXXX"
-            defaultMessage={`
+        <IntlContext intl={this.props.intl}>
+          <p>
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`
           This action
           `}
-          />{" "}
-          <strong>
-            <FormattedMessage id="XXXX" defaultMessage={`CANNOT`} />
-          </strong>
-          {" "}
-          be undone. This will permanently delete the
-          {" "}
-          <strong>{serviceName}</strong>
-          {" "}
-          {serviceLabel.toLowerCase()}.
-          Type ("
-          <strong>{serviceName}</strong>
-          ") below to confirm you want to delete the
-          {" "}
-          {serviceLabel.toLowerCase()}.
-        </p>
-        <input
-          className="form-control filter-input-text"
-          onChange={this.handleChangeInputFieldDestroy}
-          type="text"
-          value={this.state.serviceNameConfirmationValue}
-          autoFocus
-        />
-        {this.getErrorMessage()}
+            />{" "}
+            <strong>
+              <FormattedMessage id="XXXX" defaultMessage={`CANNOT`} />
+            </strong>
+            {" "}
+            be undone. This will permanently delete the
+            {" "}
+            <strong>{serviceName}</strong>
+            {" "}
+            {serviceLabel.toLowerCase()}.
+            Type ("
+            <strong>{serviceName}</strong>
+            ") below to confirm you want to delete the
+            {" "}
+            {serviceLabel.toLowerCase()}.
+          </p>
+          <input
+            className="form-control filter-input-text"
+            onChange={this.handleChangeInputFieldDestroy}
+            type="text"
+            value={this.state.serviceNameConfirmationValue}
+            autoFocus
+          />
+          {this.getErrorMessage()}
+        </IntlContext>
       </Confirm>
     );
   }
@@ -317,4 +318,4 @@ ServiceDestroyModal.propTypes = {
   ]).isRequired
 };
 
-module.exports = injectIntl(injectIntl)(ServiceDestroyModal);
+module.exports = injectIntl(ServiceDestroyModal);

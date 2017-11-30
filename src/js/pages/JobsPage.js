@@ -15,14 +15,14 @@ JobsPage.contextTypes = {
   router: routerShape
 };
 
-JobsPage.routeConfig = {
-  label: this.props.intl.formatMessage({ id: "XXXX", defaultMessage: "Jobs" }),
+JobsPage.willTransitionTo = function() {
+  SidebarActions.close();
+};
+const comp = injectIntl(JobsPage);
+comp.routeConfig = {
+  label: "Jobs",
   icon: <Icon id="jobs-inverse" size="small" family="product" />,
   matches: /^\/jobs/
 };
 
-JobsPage.willTransitionTo = function() {
-  SidebarActions.close();
-};
-
-module.exports = injectIntl(JobsPage);
+module.exports = comp;

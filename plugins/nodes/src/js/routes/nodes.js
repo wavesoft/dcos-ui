@@ -1,4 +1,3 @@
-import { injectIntl } from "react-intl";
 import { IndexRoute, Route, Redirect } from "react-router";
 /* eslint-disable no-unused-vars */
 import React from "react";
@@ -64,10 +63,7 @@ const nodesRoutes = {
       children: [
         {
           type: Route,
-          title: this.props.intl.formatMessage({
-            id: "XXXX",
-            defaultMessage: "Tasks"
-          }),
+          title: "Tasks",
           path: "tasks",
           component: NodeDetailTaskTab
         },
@@ -79,19 +75,13 @@ const nodesRoutes = {
         {
           type: Route,
           path: "health",
-          title: this.props.intl.formatMessage({
-            id: "XXXX",
-            defaultMessage: "Health"
-          }),
+          title: "Health",
           component: NodeDetailHealthTab
         },
         {
           type: Route,
           path: "details",
-          title: this.props.intl.formatMessage({
-            id: "XXXX",
-            defaultMessage: "Details"
-          }),
+          title: "Details",
           component: NodeDetailTab
         }
       ]
@@ -106,10 +96,7 @@ const nodesRoutes = {
           type: Route,
           component: TaskDetailsTab,
           hideHeaderNavigation: true,
-          title: this.props.intl.formatMessage({
-            id: "XXXX",
-            defaultMessage: "Details"
-          }),
+          title: "Details",
           path: "details",
           isTab: true
         },
@@ -118,10 +105,7 @@ const nodesRoutes = {
           component: TaskFilesTab,
           isTab: true,
           path: "files",
-          title: this.props.intl.formatMessage({
-            id: "XXXX",
-            defaultMessage: "Files"
-          }),
+          title: "Files",
           type: Route,
           children: [
             {
@@ -143,10 +127,7 @@ const nodesRoutes = {
           hideHeaderNavigation: true,
           isTab: true,
           path: "logs",
-          title: this.props.intl.formatMessage({
-            id: "XXXX",
-            defaultMessage: "Logs"
-          }),
+          title: "Logs",
           type: Route,
           children: [
             {
@@ -160,10 +141,7 @@ const nodesRoutes = {
           hideHeaderNavigation: true,
           isTab: true,
           path: "volumes",
-          title: this.props.intl.formatMessage({
-            id: "XXXX",
-            defaultMessage: "Volumes"
-          }),
+          title: "Volumes",
           type: Route
         }
       ]
@@ -185,4 +163,4 @@ const nodesRoutes = {
   ]
 };
 
-module.exports = injectIntl(nodesRoutes);
+module.exports = nodesRoutes;

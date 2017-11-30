@@ -60,15 +60,6 @@ var DashboardPage = React.createClass({
   mixins: [InternalStorageMixin, StoreMixin],
 
   statics: {
-    routeConfig: {
-      label: this.props.intl.formatMessage({
-        id: "XXXX",
-        defaultMessage: "Dashboard"
-      }),
-      icon: <Icon id="graph-inverse" size="small" family="product" />,
-      matches: /^\/dashboard/
-    },
-
     // Static life cycle method from react router, that will be called
     // 'when a handler is about to render', i.e. on route change:
     // https://github.com/rackt/react-router/
@@ -285,5 +276,11 @@ var DashboardPage = React.createClass({
     );
   }
 });
+const comp = injectIntl(DashboardPage);
+comp.routeConfig = {
+  label: "Dashboard",
+  icon: <Icon id="graph-inverse" size="small" family="product" />,
+  matches: /^\/dashboard/
+};
 
-module.exports = injectIntl(DashboardPage);
+module.exports = comp;
