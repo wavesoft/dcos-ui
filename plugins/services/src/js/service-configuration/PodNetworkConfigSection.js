@@ -32,24 +32,27 @@ class PodNetworkConfigSection extends React.Component {
   getColumns() {
     return [
       {
-        heading: "Name",
+        heading: formatMessage({ id: "XXXX", defaultMessage: "Name" }),
         prop: "name"
       },
       {
-        heading: "Protocol",
+        heading: formatMessage({ id: "XXXX", defaultMessage: "Protocol" }),
         prop: "protocol"
       },
       {
-        heading: "Port",
+        heading: formatMessage({ id: "XXXX", defaultMessage: "Port" }),
         prop: "port"
       },
       {
-        heading: "Load Balanced Address",
+        heading: formatMessage({
+          id: "XXXX",
+          defaultMessage: "Load Balanced Address"
+        }),
         prop: "lbAddress",
         placeholder: <em>Not Enabled</em>
       },
       {
-        heading: "Container",
+        heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
         prop: "container"
       }
     ];

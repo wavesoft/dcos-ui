@@ -198,7 +198,10 @@ class PackageDetailTab extends mixin(StoreMixin) {
         <div>
           <p>CLI Only Package</p>
           <p>
-            {"This package can only be installed using the CLI. See the "}
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`This package can only be installed using the CLI. See the `}
+            />
             <a
               href={MetadataStore.buildDocsURI(
                 "/usage/managing-services/install/#installing-a-service-using-the-cli"

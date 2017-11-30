@@ -14,32 +14,32 @@ import ConfigurationMapValueWithDefault
 
 const COMMON_COLUMNS = [
   {
-    heading: "Grace Period",
+    heading: formatMessage({ id: "XXXX", defaultMessage: "Grace Period" }),
     prop: "gracePeriod",
     render(prop, row) {
       return <ConfigurationMapDurationValue units="sec" value={row[prop]} />;
     }
   },
   {
-    heading: "Interval",
+    heading: formatMessage({ id: "XXXX", defaultMessage: "Interval" }),
     prop: "interval",
     render(prop, row) {
       return <ConfigurationMapDurationValue units="sec" value={row[prop]} />;
     }
   },
   {
-    heading: "Timeout",
+    heading: formatMessage({ id: "XXXX", defaultMessage: "Timeout" }),
     prop: "timeout",
     render(prop, row) {
       return <ConfigurationMapDurationValue units="sec" value={row[prop]} />;
     }
   },
   {
-    heading: "Max Failures",
+    heading: formatMessage({ id: "XXXX", defaultMessage: "Max Failures" }),
     prop: "maxFailures"
   },
   {
-    heading: "Container",
+    heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
     prop: "container"
   }
 ];
@@ -48,7 +48,7 @@ class PodHealthChecksConfigSection extends React.Component {
   getCommandColumns() {
     return [
       {
-        heading: "Command",
+        heading: formatMessage({ id: "XXXX", defaultMessage: "Command" }),
         prop: "command"
       }
     ].concat(COMMON_COLUMNS);
@@ -69,15 +69,18 @@ class PodHealthChecksConfigSection extends React.Component {
   getEndpointsColumns() {
     return [
       {
-        heading: "Service Endpoint",
+        heading: formatMessage({
+          id: "XXXX",
+          defaultMessage: "Service Endpoint"
+        }),
         prop: "endpoint"
       },
       {
-        heading: "Proto",
+        heading: formatMessage({ id: "XXXX", defaultMessage: "Proto" }),
         prop: "protocol"
       },
       {
-        heading: "Path",
+        heading: formatMessage({ id: "XXXX", defaultMessage: "Path" }),
         prop: "path"
       }
     ].concat(COMMON_COLUMNS);

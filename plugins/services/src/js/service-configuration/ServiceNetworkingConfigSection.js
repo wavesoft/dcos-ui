@@ -42,7 +42,7 @@ class ServiceNetworkingConfigSection extends ServiceConfigBaseSectionDisplay {
       tabViewID: "networking",
       values: [
         {
-          heading: "Network",
+          heading: formatMessage({ id: "XXXX", defaultMessage: "Network" }),
           headingLevel: 1
         },
         {

@@ -111,7 +111,10 @@ class LoginPage extends mixin(StoreMixin) {
             Unable to login to your DC/OS cluster. Clusters must be connected to the internet.
           </p>
           <p className="flush-bottom text-align-center">
-            {"Please contact your system administrator or see the "}
+            <FormattedMessage
+              id="XXXX"
+              defaultMessage={`Please contact your system administrator or see the `}
+            />
             <a
               href={MetadataStore.buildDocsURI("/administration/installing/")}
               target="_blank"

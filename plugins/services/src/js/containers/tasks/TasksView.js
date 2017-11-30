@@ -255,7 +255,7 @@ class TasksView extends mixin(SaveStateMixin) {
           inverseStyle={inverseStyle}
           isFiltering={filterByStatus !== "all" || searchString !== ""}
           onReset={this.resetFilter}
-          name={"task"}
+          name={<FormattedMessage id="XXXX" defaultMessage={`task`} />}
           totalLength={tasks.length}
         />
         <FilterBar rightAlignLastNChildren={rightAlignLastNChildren}>

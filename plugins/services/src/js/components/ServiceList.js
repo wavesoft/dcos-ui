@@ -3,7 +3,7 @@ import deepEqual from "deep-equal";
 import { List, Tooltip } from "reactjs-components";
 import React from "react";
 import { Link, routerShape } from "react-router";
-
+import { FormattedMessage } from "react-intl";
 import Loader from "#SRC/js/components/Loader";
 
 import HealthLabels from "../constants/HealthLabels";
@@ -118,9 +118,12 @@ const ServiceList = React.createClass({
       <div>
         <h3 className="flush-top text-align-center">No Services Running</h3>
         <p className="flush text-align-center">
-          {"Click the "}
+          <FormattedMessage id="XXXX" defaultMessage={`Click the `} />
           <Link to="/services">Services tab</Link>
-          {" to install services."}
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={` to install services.`}
+          />
         </p>
       </div>
     );

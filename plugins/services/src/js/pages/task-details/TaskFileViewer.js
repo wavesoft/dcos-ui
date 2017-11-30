@@ -191,7 +191,13 @@ class TaskFileViewer extends React.Component {
 
     return [
       this.getSelectionComponent(selectedLogFile),
-      <Tooltip key="tooltip" anchor="end" content={"Download log file"}>
+      <Tooltip
+        key="tooltip"
+        anchor="end"
+        content={
+          <FormattedMessage id="XXXX" defaultMessage={`Download log file`} />
+        }
+      >
         <a
           className="button button-stroke"
           disabled={!filePath}

@@ -61,7 +61,7 @@ const Schedule = {
       title: "Time Zone",
       description: (
         <span>
-          {"Enter time zone in "}
+          <FormattedMessage id="XXXX" defaultMessage={`Enter time zone in `} />
           <a
             href="http://www.timezoneconverter.com/cgi-bin/zonehelp"
             target="_blank"

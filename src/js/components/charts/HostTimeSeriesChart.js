@@ -71,7 +71,9 @@ var HostTimeSeriesChart = React.createClass({
         <TimeSeriesLabel
           colorIndex={4}
           currentValue={props.currentValue}
-          subHeading={"Connected Nodes"}
+          subHeading={
+            <FormattedMessage id="XXXX" defaultMessage={`Connected Nodes`} />
+          }
           y="slavesCount"
         />
         {this.getChart(props)}

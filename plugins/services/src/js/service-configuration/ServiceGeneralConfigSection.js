@@ -68,7 +68,7 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
       tabViewID: "services",
       values: [
         {
-          heading: "General",
+          heading: formatMessage({ id: "XXXX", defaultMessage: "General" }),
           headingLevel: 1
         },
         {
@@ -231,7 +231,10 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         },
         {
           key: "fetch",
-          heading: "Container Artifacts",
+          heading: formatMessage({
+            id: "XXXX",
+            defaultMessage: "Container Artifacts"
+          }),
           headingLevel: 3
         },
         {

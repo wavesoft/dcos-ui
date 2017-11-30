@@ -13,15 +13,15 @@ import ConfigurationMapTable from "../components/ConfigurationMapTable";
 
 const columns = [
   {
-    heading: "Key",
+    heading: formatMessage({ id: "XXXX", defaultMessage: "Key" }),
     prop: "key"
   },
   {
-    heading: "Value",
+    heading: formatMessage({ id: "XXXX", defaultMessage: "Value" }),
     prop: "value"
   },
   {
-    heading: "Container",
+    heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
     prop: "container"
   }
 ];

@@ -97,7 +97,10 @@ class ServiceGroupFormModal extends React.Component {
         definition={this.getNewGroupFormDefinition()}
       >
         <p className="text-align-center flush-top">
-          {"Enter a path for the new group under "}
+          <FormattedMessage
+            id="XXXX"
+            defaultMessage={`Enter a path for the new group under `}
+          />
           <span className="emphasize">{parentGroupId}</span>
         </p>
         {this.getErrorMessage()}

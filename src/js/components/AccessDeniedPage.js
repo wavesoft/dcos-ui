@@ -42,9 +42,15 @@ module.exports = class AccessDeniedPage extends React.Component {
             <AlertPanel>
               <AlertPanelHeader>Access denied</AlertPanelHeader>
               <p className="tall">
-                {"You do not have access to this service. Please contact your "}
+                <FormattedMessage
+                  id="XXXX"
+                  defaultMessage={`You do not have access to this service. Please contact your `}
+                />
                 {Config.productName}
-                {" administrator or see "}
+                <FormattedMessage
+                  id="XXXX"
+                  defaultMessage={` administrator or see `}
+                />
                 <a
                   href={MetadataStore.buildDocsURI(
                     "/administration/id-and-access-mgt/"

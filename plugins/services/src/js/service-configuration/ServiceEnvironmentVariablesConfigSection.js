@@ -32,7 +32,10 @@ class ServiceEnvironmentVariablesConfigSection
       values: [
         {
           key: "env",
-          heading: "Environment Variables",
+          heading: formatMessage({
+            id: "XXXX",
+            defaultMessage: "Environment Variables"
+          }),
           headingLevel: 1
         },
         {

@@ -18,19 +18,19 @@ class PodStorageConfigSection extends React.Component {
   getColumns() {
     return [
       {
-        heading: "Volume",
+        heading: formatMessage({ id: "XXXX", defaultMessage: "Volume" }),
         prop: "volume"
       },
       {
-        heading: "Type",
+        heading: formatMessage({ id: "XXXX", defaultMessage: "Type" }),
         prop: "type"
       },
       {
-        heading: "Size",
+        heading: formatMessage({ id: "XXXX", defaultMessage: "Size" }),
         prop: "size"
       },
       {
-        heading: "Read Only",
+        heading: formatMessage({ id: "XXXX", defaultMessage: "Read Only" }),
         prop: "readOnly",
         render(prop, row) {
           if (row[prop]) {
@@ -41,15 +41,18 @@ class PodStorageConfigSection extends React.Component {
         }
       },
       {
-        heading: "Container Mount Path",
+        heading: formatMessage({
+          id: "XXXX",
+          defaultMessage: "Container Mount Path"
+        }),
         prop: "mountPath"
       },
       {
-        heading: "Host Path",
+        heading: formatMessage({ id: "XXXX", defaultMessage: "Host Path" }),
         prop: "hostPath"
       },
       {
-        heading: "Container",
+        heading: formatMessage({ id: "XXXX", defaultMessage: "Container" }),
         prop: "container"
       }
     ];

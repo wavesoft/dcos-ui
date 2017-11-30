@@ -13,15 +13,15 @@ class PodPlacementConstraintsConfigSection extends React.Component {
   getColumns() {
     return [
       {
-        heading: "Field Name",
+        heading: formatMessage({ id: "XXXX", defaultMessage: "Field Name" }),
         prop: "fieldName"
       },
       {
-        heading: "Operator",
+        heading: formatMessage({ id: "XXXX", defaultMessage: "Operator" }),
         prop: "operator"
       },
       {
-        heading: "Value",
+        heading: formatMessage({ id: "XXXX", defaultMessage: "Value" }),
         prop: "value"
       }
     ];

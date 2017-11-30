@@ -86,9 +86,12 @@ class CosmosErrorMessage extends React.Component {
     return (
       <span>
         <strong>{`${message}. `}</strong><br />
-        {"You can go to the "}
+        <FormattedMessage id="XXXX" defaultMessage={`You can go to the `} />
         <a href="/#/settings/repositories/">Repositories Settings</a>
-        {" page to change installed repositories."}
+        <FormattedMessage
+          id="XXXX"
+          defaultMessage={` page to change installed repositories.`}
+        />
       </span>
     );
   }
