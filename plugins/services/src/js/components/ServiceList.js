@@ -4,7 +4,6 @@ import deepEqual from "deep-equal";
 import { List, Tooltip } from "reactjs-components";
 import React from "react";
 import { Link, routerShape } from "react-router";
-import { FormattedMessage } from "react-intl";
 import Loader from "#SRC/js/components/Loader";
 
 import HealthLabels from "../constants/HealthLabels";

@@ -1,8 +1,6 @@
-import { FormattedMessage } from "react-intl";
-import { formatMessage } from "react-intl";
+import { FormattedMessage, formatMessage, injectIntl } from "react-intl";
 import classNames from "classnames";
 import { Dropdown, Table, Tooltip } from "reactjs-components";
-import { injectIntl } from "react-intl";
 import { Link, routerShape } from "react-router";
 import React, { PropTypes } from "react";
 import { Hooks } from "PluginSDK";

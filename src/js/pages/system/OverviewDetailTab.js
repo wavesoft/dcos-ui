@@ -1,5 +1,4 @@
-import { FormattedMessage } from "react-intl";
-import { formatMessage } from "react-intl";
+import { FormattedMessage, formatMessage } from "react-intl";
 import mixin from "reactjs-mixin";
 import { Link } from "react-router";
 import { MountService } from "foundation-ui";
@@ -7,7 +6,6 @@ import { MountService } from "foundation-ui";
 import React from "react";
 /* eslint-enable no-unused-vars */
 import { StoreMixin } from "mesosphere-shared-reactjs";
-import { FormattedMessage } from "react-intl";
 import moment from "moment";
 
 import Breadcrumb from "../../components/Breadcrumb";

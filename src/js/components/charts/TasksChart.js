@@ -1,5 +1,4 @@
-import { FormattedMessage } from "react-intl";
-import { formatMessage } from "react-intl";
+import { FormattedMessage, formatMessage } from "react-intl";
 import classNames from "classnames";
 import deepEqual from "deep-equal";
 import React from "react";

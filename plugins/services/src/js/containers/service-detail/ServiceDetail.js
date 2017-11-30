@@ -1,5 +1,4 @@
-import { formatMessage } from "react-intl";
-import { injectIntl } from "react-intl";
+import { formatMessage, injectIntl } from "react-intl";
 import mixin from "reactjs-mixin";
 import React, { PropTypes } from "react";
 import { routerShape } from "react-router";

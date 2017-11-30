@@ -1,9 +1,7 @@
-import { FormattedMessage } from "react-intl";
-import { formatMessage } from "react-intl";
+import { FormattedMessage, formatMessage, injectIntl } from "react-intl";
 import classNames from "classnames";
 import { Confirm, Dropdown, Modal } from "reactjs-components";
 import { hashHistory } from "react-router";
-import { injectIntl } from "react-intl";
 import mixin from "reactjs-mixin";
 /* eslint-disable no-unused-vars */
 import React from "react";

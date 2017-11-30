@@ -1,10 +1,8 @@
-import { FormattedMessage } from "react-intl";
-import { formatMessage } from "react-intl";
+import { FormattedMessage, formatMessage, injectIntl } from "react-intl";
 import { Confirm, Modal } from "reactjs-components";
 import { routerShape } from "react-router";
 import PureRender from "react-addons-pure-render-mixin";
 import React, { PropTypes } from "react";
-import { injectIntl, intlShape } from "react-intl";
 
 import ModalHeading from "#SRC/js/components/modals/ModalHeading";
 import StringUtil from "#SRC/js/utils/StringUtil";
