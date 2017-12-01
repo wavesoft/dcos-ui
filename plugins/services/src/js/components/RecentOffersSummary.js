@@ -147,7 +147,7 @@ function getResourceTooltipContent(resource, data) {
       {explanatoryText}
       {" "}
       <a href={docsURI} target="_blank">
-        <FormattedMessage id="XXXX" defaultMessage={`Learn more`} />
+        <FormattedMessage id="H1QWoh27JZz" defaultMessage={`Learn more`} />
       </a>
       .
     </span>
@@ -180,11 +180,11 @@ function RecentOffersSummary({ data }) {
       <div className="funnel-graph-key">
         <div className="funnel-graph-key-item">
           <span className="funnel-graph-key-dot funnel-graph-key-dot-matched dot" />
-          <FormattedMessage id="XXXX" defaultMessage={`Matched`} />
+          <FormattedMessage id="r14Zs2nm1Zz" defaultMessage={`Matched`} />
         </div>
         <div className="funnel-graph-key-item">
           <span className="funnel-graph-key-dot funnel-graph-key-dot-declined dot" />
-          <FormattedMessage id="XXXX" defaultMessage={`Declined`} />
+          <FormattedMessage id="BkHZohn7Jbz" defaultMessage={`Declined`} />
         </div>
       </div>
     </div>

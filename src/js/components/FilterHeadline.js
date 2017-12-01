@@ -62,7 +62,7 @@ class FilterHeadline extends React.Component {
     return (
       <ul className={listClassSet}>
         <li className={filteredClassSet}>
-          <FormattedMessage id="XXXX" defaultMessage={`Showing`} />
+          <FormattedMessage id="HktQ6nX1Wf" defaultMessage={`Showing`} />
           {currentLength}
           {" "}
           of

@@ -197,7 +197,7 @@ class ServiceDetail extends mixin(TabsMixin) {
 
     actions.push({
       label: this.props.intl.formatMessage({
-        id: "XXXX",
+        id: "BJ5MT23mkZf",
         defaultMessage: "Edit"
       }),
       onItemSelect: this.onActionsItemSelection.bind(this, EDIT)
@@ -206,7 +206,7 @@ class ServiceDetail extends mixin(TabsMixin) {
     if (instanceCount > 0 && !isSDK) {
       actions.push({
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "rJofphn7yWz",
           defaultMessage: "Restart"
         }),
         onItemSelect: this.onActionsItemSelection.bind(this, RESTART)
@@ -215,7 +215,7 @@ class ServiceDetail extends mixin(TabsMixin) {
     if (!service.getLabels().MARATHON_SINGLE_INSTANCE_APP) {
       actions.push({
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "SknGan2Q1Zz",
           defaultMessage: "Scale"
         }),
         onItemSelect: this.onActionsItemSelection.bind(this, SCALE)
@@ -225,7 +225,7 @@ class ServiceDetail extends mixin(TabsMixin) {
     if (instanceCount > 0 && !isSDK) {
       actions.push({
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "HJpf6n3mkWM",
           defaultMessage: "Suspend"
         }),
         onItemSelect: this.onActionsItemSelection.bind(this, SUSPEND)
@@ -235,7 +235,7 @@ class ServiceDetail extends mixin(TabsMixin) {
     if (instanceCount === 0 && !isSDK) {
       actions.push({
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "By0G6hnmybG",
           defaultMessage: "Resume"
         }),
         onItemSelect: this.onActionsItemSelection.bind(this, RESUME)

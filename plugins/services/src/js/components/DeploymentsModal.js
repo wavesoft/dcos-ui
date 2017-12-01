@@ -366,13 +366,13 @@ class DeploymentsModal extends mixin(StoreMixin) {
       <AlertPanel>
         <AlertPanelHeader>
           <FormattedMessage
-            id="XXXX"
+            id="S1tjh37JWf"
             defaultMessage={`No active deployments`}
           />
         </AlertPanelHeader>
         <p className="flush">
           <FormattedMessage
-            id="XXXX"
+            id="Hy9s337y-f"
             defaultMessage={`Active deployments will be shown here.`}
           />
         </p>
@@ -394,7 +394,7 @@ class DeploymentsModal extends mixin(StoreMixin) {
     const heading = (
       <IntlContext intl={this.props.intl}>
         <ModalHeading>
-          <FormattedMessage id="XXXX" defaultMessage={`Are you sure?`} />
+          <FormattedMessage id="H1jj22mJ-G" defaultMessage={`Are you sure?`} />
         </ModalHeading>
       </IntlContext>
     );
@@ -523,7 +523,7 @@ class DeploymentsModal extends mixin(StoreMixin) {
       <IntlContext intl={this.props.intl}>
         <div className="text-align-center">
           <button className="button" onClick={onClose}>
-            <FormattedMessage id="XXXX" defaultMessage={`Close`} />
+            <FormattedMessage id="Hy3s3nX1-z" defaultMessage={`Close`} />
           </button>
         </div>
       </IntlContext>

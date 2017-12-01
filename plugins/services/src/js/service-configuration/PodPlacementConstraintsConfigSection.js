@@ -15,21 +15,21 @@ class PodPlacementConstraintsConfigSection extends React.Component {
     return [
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "rJoMeT3QkbG",
           defaultMessage: "Field Name"
         }),
         prop: "fieldName"
       },
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "ry2Mgp3myZz",
           defaultMessage: "Operator"
         }),
         prop: "operator"
       },
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "Sy6GxT2Q1Zf",
           defaultMessage: "Value"
         }),
         prop: "value"
@@ -47,7 +47,10 @@ class PodPlacementConstraintsConfigSection extends React.Component {
       if (PlacementConstraintsUtil.requiresEmptyValue(operator)) {
         value = (
           <em>
-            <FormattedMessage id="XXXX" defaultMessage={`Not Applicable`} />
+            <FormattedMessage
+              id="SyFze6nmkWz"
+              defaultMessage={`Not Applicable`}
+            />
           </em>
         );
       }
@@ -69,7 +72,7 @@ class PodPlacementConstraintsConfigSection extends React.Component {
       <div>
         <ConfigurationMapHeading level={3}>
           <FormattedMessage
-            id="XXXX"
+            id="H1cfephQJZG"
             defaultMessage={`Placement Constraints`}
           />
         </ConfigurationMapHeading>

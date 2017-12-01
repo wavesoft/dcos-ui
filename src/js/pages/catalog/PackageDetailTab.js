@@ -29,7 +29,7 @@ const PackageDetailBreadcrumbs = ({ cosmosPackage, intl }) => {
     <Breadcrumb key={0} title="Catalog">
       <BreadcrumbTextContent>
         <Link to="/catalog/packages">
-          <FormattedMessage id="XXXX" defaultMessage={`Catalog`} />
+          <FormattedMessage id="HkE863QkZz" defaultMessage={`Catalog`} />
         </Link>
       </BreadcrumbTextContent>
     </Breadcrumb>,
@@ -200,11 +200,14 @@ class PackageDetailTab extends mixin(StoreMixin) {
       return (
         <div>
           <p>
-            <FormattedMessage id="XXXX" defaultMessage={`CLI Only Package`} />
+            <FormattedMessage
+              id="H1SIp37ybf"
+              defaultMessage={`CLI Only Package`}
+            />
           </p>
           <p>
             <FormattedMessage
-              id="XXXX"
+              id="Sy88anmJbf"
               defaultMessage={`This package can only be installed using the CLI. See the`}
             />
             <a
@@ -262,7 +265,7 @@ class PackageDetailTab extends mixin(StoreMixin) {
     const definition = [
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "Sk_8a3mkWG",
           defaultMessage: "Description"
         }),
         value: description &&
@@ -279,21 +282,21 @@ class PackageDetailTab extends mixin(StoreMixin) {
       },
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "SyFIThQJ-f",
           defaultMessage: "Information"
         }),
         type: "subItems",
         value: [
           {
             label: this.props.intl.formatMessage({
-              id: "XXXX",
+              id: "HJ9IphmkWG",
               defaultMessage: "SCM"
             }),
             value: cosmosPackage.getSCM()
           },
           {
             label: this.props.intl.formatMessage({
-              id: "XXXX",
+              id: "rkiUThmJ-G",
               defaultMessage: "Maintainer"
             }),
             value: cosmosPackage.getMaintainer()
@@ -302,7 +305,7 @@ class PackageDetailTab extends mixin(StoreMixin) {
       },
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "Bkh862XJ-z",
           defaultMessage: "Licenses"
         }),
         type: "subItems",
@@ -341,7 +344,7 @@ class PackageDetailTab extends mixin(StoreMixin) {
                 {this.getInstallButtons(cosmosPackage)}
                 <small>
                   <FormattedMessage
-                    id="XXXX"
+                    id="B1PI6n7kZz"
                     defaultMessage={`By deploying you agree to the`}
                   />
                   {" "}

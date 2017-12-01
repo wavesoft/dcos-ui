@@ -88,17 +88,17 @@ class CosmosErrorMessage extends React.Component {
       <span>
         <strong>{`${message}. `}</strong><br />
         {this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "ryM7p27yZM",
           defaultMessage: "You can go to the "
         })}
         <a href="/#/settings/repositories/">
           {this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "rk7m637kWG",
             defaultMessage: "Repositories Settings"
           })}
         </a>
         {this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "Hk4mTn7k-z",
           defaultMessage: " page to change installed repositories."
         })}
       </span>

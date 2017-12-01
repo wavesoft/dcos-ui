@@ -10,7 +10,7 @@ import { FilterNode } from "./DSLASTNodes";
  * AST nodes (without any position information) that are used as comparision
  * targets for selecting the correct nodes from the parsed AST nodes.
  *
- * @example <caption><FormattedMessage id="XXXX" defaultMessage={`How to use DSLExpressionPart`}/></caption>
+ * @example <caption><FormattedMessage id="BklKa37yZM" defaultMessage={`How to use DSLExpressionPart`}/></caption>
  *
  * const EXPRESSION_PARTS = {
  *

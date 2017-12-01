@@ -34,38 +34,40 @@ class PodNetworkConfigSection extends React.Component {
     return [
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "S1NzxphXybf",
           defaultMessage: "Name"
         }),
         prop: "name"
       },
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "S1rMg6hXkbz",
           defaultMessage: "Protocol"
         }),
         prop: "protocol"
       },
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "ryIfga2X1Wz",
           defaultMessage: "Port"
         }),
         prop: "port"
       },
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "r1wGxa3m1bz",
           defaultMessage: "Load Balanced Address"
         }),
         prop: "lbAddress",
         placeholder: (
-          <em><FormattedMessage id="XXXX" defaultMessage={`Not Enabled`} /></em>
+          <em>
+            <FormattedMessage id="BJefeTnQ1Wz" defaultMessage={`Not Enabled`} />
+          </em>
         )
       },
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "SydGxT2mkbf",
           defaultMessage: "Container"
         }),
         prop: "container"
@@ -112,14 +114,17 @@ class PodNetworkConfigSection extends React.Component {
     return (
       <div>
         <ConfigurationMapHeading level={1}>
-          <FormattedMessage id="XXXX" defaultMessage={`Network`} />
+          <FormattedMessage id="SJWMxa27kZf" defaultMessage={`Network`} />
         </ConfigurationMapHeading>
         <ConfigurationMapSection key="pod-general-section">
 
           {/* General section */}
           <ConfigurationMapRow>
             <ConfigurationMapLabel>
-              <FormattedMessage id="XXXX" defaultMessage={`Network Type`} />
+              <FormattedMessage
+                id="B1zfganm1-G"
+                defaultMessage={`Network Type`}
+              />
             </ConfigurationMapLabel>
             <ConfigurationMapValueWithDefault
               value={getNetworkTypes(appConfig.networks)}
@@ -132,7 +137,10 @@ class PodNetworkConfigSection extends React.Component {
 
           {/* Service endpoints */}
           <ConfigurationMapHeading level={3}>
-            <FormattedMessage id="XXXX" defaultMessage={`Service Endpoints`} />
+            <FormattedMessage
+              id="ByQGean71bM"
+              defaultMessage={`Service Endpoints`}
+            />
           </ConfigurationMapHeading>
           <ConfigurationMapTable
             columnDefaults={{ hideIfEmpty: true }}

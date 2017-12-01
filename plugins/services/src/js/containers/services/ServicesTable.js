@@ -420,13 +420,13 @@ class ServicesTable extends React.Component {
         helpText: (
           <span>
             {this.props.intl.formatMessage({
-              id: "XXXX",
+              id: "ByI7ThhXJ-M",
               defaultMessage: "At-a-glance overview of the global application or group state. "
             })}
 
             <a href={Links.statusHelpLink} target="_blank">
               {this.props.intl.formatMessage({
-                id: "XXXX",
+                id: "S1PXTnhmyWz",
                 defaultMessage: "Read more"
               })}
             </a>.

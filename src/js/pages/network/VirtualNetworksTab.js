@@ -24,7 +24,7 @@ const NetworksBreadcrumbs = () => {
     <Breadcrumb key={0} title="Networks">
       <BreadcrumbTextContent>
         <Link to="/networking/networks">
-          <FormattedMessage id="XXXX" defaultMessage={`Networks`} />
+          <FormattedMessage id="BJn-86hQyWG" defaultMessage={`Networks`} />
         </Link>
       </BreadcrumbTextContent>
     </Breadcrumb>
@@ -89,7 +89,7 @@ class VirtualNetworksTabContent extends mixin(StoreMixin) {
       <AlertPanel>
         <AlertPanelHeader>
           <FormattedMessage
-            id="XXXX"
+            id="rJTb8Th71Wz"
             defaultMessage={`No virtual networks detected`}
           />
         </AlertPanelHeader>

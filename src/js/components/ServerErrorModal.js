@@ -74,7 +74,7 @@ class ServerErrorModal extends mixin(StoreMixin) {
       <IntlContext intl={this.props.intl}>
         <div className="button-collection text-align-center flush-bottom">
           <div className="button" onClick={this.handleModalClose}>
-            <FormattedMessage id="XXXX" defaultMessage={`Close`} />
+            <FormattedMessage id="B1-xmahXk-f" defaultMessage={`Close`} />
           </div>
         </div>
       </IntlContext>
@@ -109,7 +109,7 @@ class ServerErrorModal extends mixin(StoreMixin) {
       <IntlContext intl={this.props.intl}>
         <ModalHeading level={5}>
           <FormattedMessage
-            id="XXXX"
+            id="Hyfem6n7kZM"
             defaultMessage={`An error has occurred`}
           />
         </ModalHeading>

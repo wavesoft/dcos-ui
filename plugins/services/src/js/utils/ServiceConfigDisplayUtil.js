@@ -43,13 +43,15 @@ const ServiceConfigDisplayUtil = {
     if (!isDisabled && (value == null || value === "")) {
       return (
         <em>
-          <FormattedMessage id="XXXX" defaultMessage={`Not Configured`} />
+          <FormattedMessage id="BkMT3X1Wz" defaultMessage={`Not Configured`} />
         </em>
       );
     }
     if (isDisabled && (value == null || value === "")) {
       return (
-        <em><FormattedMessage id="XXXX" defaultMessage={`Not Supported`} /></em>
+        <em>
+          <FormattedMessage id="S1xMT27yZG" defaultMessage={`Not Supported`} />
+        </em>
       );
     }
 

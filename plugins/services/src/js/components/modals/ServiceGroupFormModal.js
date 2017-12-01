@@ -92,7 +92,10 @@ class ServiceGroupFormModal extends React.Component {
           header: (
             <ModalHeading>
               <IntlContext intl={this.props.intl}>
-                <FormattedMessage id="XXXX" defaultMessage={`Create Group`} />
+                <FormattedMessage
+                  id="r1WphnQ1bz"
+                  defaultMessage={`Create Group`}
+                />
               </IntlContext>
             </ModalHeading>
           ),
@@ -107,7 +110,7 @@ class ServiceGroupFormModal extends React.Component {
         <IntlContext intl={this.props.intl}>
           <p className="text-align-center flush-top">
             <FormattedMessage
-              id="XXXX"
+              id="r1M6337Jbf"
               defaultMessage={`Enter a path for the new group under`}
             />
             <span className="emphasize">{parentGroupId}</span>

@@ -30,7 +30,10 @@ function renderDuration(prop, row) {
     <ConfigurationMapDurationValue
       defaultValue={
         <em>
-          <FormattedMessage id="XXXX" defaultMessage={`Not Configured`} />
+          <FormattedMessage
+            id="ryDx-a2Xybf"
+            defaultMessage={`Not Configured`}
+          />
         </em>
       }
       units="sec"

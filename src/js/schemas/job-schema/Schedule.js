@@ -9,23 +9,23 @@ import ValidatorUtil from "../../utils/ValidatorUtil";
 const Schedule = intl => {
   return {
     title: intl.formatMessage({
-      id: "XXXX",
+      id: "r1-xwTnmJbM",
       defaultMessage: "Schedule"
     }),
     description: intl.formatMessage({
-      id: "XXXX",
+      id: "B1GgPT2mJZz",
       defaultMessage: "Set time and date for the job to run"
     }),
     type: "object",
     properties: {
       runOnSchedule: {
         label: intl.formatMessage({
-          id: "XXXX",
+          id: "Hy7xwanQyZz",
           defaultMessage: "Run on a schedule"
         }),
         showLabel: true,
         title: intl.formatMessage({
-          id: "XXXX",
+          id: "rkNlDTn7JZf",
           defaultMessage: "Run on a schedule"
         }),
         type: "boolean",
@@ -37,13 +37,13 @@ const Schedule = intl => {
       },
       cron: {
         title: intl.formatMessage({
-          id: "XXXX",
+          id: "H1HePa2QyZz",
           defaultMessage: "CRON Schedule"
         }),
         helpBlock: (
           <span>
             {intl.formatMessage({
-              id: "XXXX",
+              id: "HkUlwp3QJZf",
               defaultMessage: "Use cron format to set your schedule, e.g "
             })}
             /&gt;<i>0 0 20 * *</i>{". "}
@@ -79,13 +79,13 @@ const Schedule = intl => {
       },
       timezone: {
         title: intl.formatMessage({
-          id: "XXXX",
+          id: "BkwxDah7k-z",
           defaultMessage: "Time Zone"
         }),
         description: (
           <span>
             {intl.formatMessage({
-              id: "XXXX",
+              id: "ry_ew6nXkZz",
               defaultMessage: "Enter time zone in "
             })}
             <a
@@ -105,11 +105,11 @@ const Schedule = intl => {
       },
       startingDeadlineSeconds: {
         title: intl.formatMessage({
-          id: "XXXX",
+          id: "HJtgwphX1Wz",
           defaultMessage: "Starting Deadline"
         }),
         description: intl.formatMessage({
-          id: "XXXX",
+          id: "S1clPpn7kbf",
           defaultMessage: "Time in seconds to start the job if it misses "
         }) +
           "scheduled time for any reason. Missed jobs executions will be " +
@@ -142,12 +142,12 @@ const Schedule = intl => {
       },
       enabled: {
         label: intl.formatMessage({
-          id: "XXXX",
+          id: "rJilDp3Qy-G",
           defaultMessage: "Enabled"
         }),
         showLabel: true,
         title: intl.formatMessage({
-          id: "XXXX",
+          id: "BJhgDpnX1WM",
           defaultMessage: "Enabled"
         }),
         type: "boolean",

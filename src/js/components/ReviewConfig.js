@@ -69,7 +69,7 @@ class ReviewConfig extends React.Component {
             >
               <Icon id="download" size="mini" />
               <FormattedMessage
-                id="XXXX"
+                id="rJgeQpnXJbf"
                 defaultMessage={`Download config.json`}
               />
             </a>

@@ -12,7 +12,7 @@ function EmptyLogScreen({ logName }) {
       </h3>
       <p className="text-align-center flush-bottom">
         <FormattedMessage
-          id="XXXX"
+          id="Sk6s3h71bf"
           defaultMessage={`Please try again later.`}
         />
       </p>

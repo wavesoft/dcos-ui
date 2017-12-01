@@ -18,14 +18,14 @@ class PodContainerArtifactsConfigSection extends React.Component {
     return [
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "ryelThXkbz",
           defaultMessage: "Artifact URI"
         }),
         prop: "uri"
       },
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "rkbeTnXyWf",
           defaultMessage: "Executable"
         }),
         prop: "executable",
@@ -40,7 +40,7 @@ class PodContainerArtifactsConfigSection extends React.Component {
       },
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "ByGeT2QyZz",
           defaultMessage: "Extract"
         }),
         prop: "extract",
@@ -55,7 +55,7 @@ class PodContainerArtifactsConfigSection extends React.Component {
       },
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "S1Qxa27y-G",
           defaultMessage: "Cache"
         }),
         prop: "cache",
@@ -70,7 +70,7 @@ class PodContainerArtifactsConfigSection extends React.Component {
       },
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "rJElT3XJbG",
           defaultMessage: "Destination Path"
         }),
         prop: "destPath"
@@ -92,7 +92,10 @@ class PodContainerArtifactsConfigSection extends React.Component {
     return (
       <div>
         <ConfigurationMapHeading level={3}>
-          <FormattedMessage id="XXXX" defaultMessage={`Container Artifacts`} />
+          <FormattedMessage
+            id="r1e63X1bG"
+            defaultMessage={`Container Artifacts`}
+          />
         </ConfigurationMapHeading>
         <ConfigurationMapTable
           columnDefaults={{ hideIfEmpty: true }}

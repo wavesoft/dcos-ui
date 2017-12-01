@@ -218,9 +218,10 @@ class ServiceDestroyModal extends React.Component {
       >
         <IntlContext intl={this.props.intl}>
           <p>
-            <FormattedMessage id="XXXX" defaultMessage={`This action`} />{" "}
+            <FormattedMessage id="Bk6337JWM" defaultMessage={`This action`} />
+            {" "}
             <strong>
-              <FormattedMessage id="XXXX" defaultMessage={`CANNOT`} />
+              <FormattedMessage id="B1xTh27y-f" defaultMessage={`CANNOT`} />
             </strong>
             {" "}
             be undone. This will permanently delete the

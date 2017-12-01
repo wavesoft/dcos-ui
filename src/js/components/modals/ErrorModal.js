@@ -26,7 +26,7 @@ var ErrorModal = React.createClass({
       <IntlContext intl={this.props.intl}>
         <ModalHeading>
           <FormattedMessage
-            id="XXXX"
+            id="BkST3m1-z"
             defaultMessage={`Looks Like Something is Wrong`}
           />
         </ModalHeading>

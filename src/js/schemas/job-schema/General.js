@@ -10,11 +10,11 @@ import JobResources from "../../constants/JobResources";
 const General = intl => {
   return {
     title: intl.formatMessage({
-      id: "XXXX",
+      id: "BJQDa37JZf",
       defaultMessage: "General"
     }),
     description: intl.formatMessage({
-      id: "XXXX",
+      id: "S1EDahmk-G",
       defaultMessage: "Configure your job settings"
     }),
     type: "object",
@@ -22,11 +22,11 @@ const General = intl => {
       id: {
         focused: true,
         title: intl.formatMessage({
-          id: "XXXX",
+          id: "SySPa37kZf",
           defaultMessage: "ID"
         }),
         description: intl.formatMessage({
-          id: "XXXX",
+          id: "BkID6h7kZG",
           defaultMessage: "The job ID"
         }),
         type: "string",
@@ -48,11 +48,11 @@ const General = intl => {
       },
       description: {
         title: intl.formatMessage({
-          id: "XXXX",
+          id: "rkPD63QJZf",
           defaultMessage: "Description"
         }),
         description: intl.formatMessage({
-          id: "XXXX",
+          id: "B1Ovp3XkZG",
           defaultMessage: "Job description"
         }),
         type: "string",
@@ -65,12 +65,12 @@ const General = intl => {
         properties: {
           cpus: {
             title: intl.formatMessage({
-              id: "XXXX",
+              id: "rJYDanQkbz",
               defaultMessage: "CPUs"
             }),
             default: JobResources.DEFAULT_CPUS,
             description: intl.formatMessage({
-              id: "XXXX",
+              id: "ry9vTnXk-M",
               defaultMessage: "The amount of CPUs the job requires"
             }),
             type: "number",
@@ -141,11 +141,11 @@ const General = intl => {
       },
       cmd: {
         title: intl.formatMessage({
-          id: "XXXX",
+          id: "HJjDa2Xy-f",
           defaultMessage: "Command"
         }),
         description: intl.formatMessage({
-          id: "XXXX",
+          id: "Bk2P62QJZf",
           defaultMessage: "The command executed by the service"
         }),
         type: "string",

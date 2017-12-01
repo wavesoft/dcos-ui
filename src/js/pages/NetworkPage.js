@@ -19,7 +19,7 @@ const NetworkingBreadcrumbs = () => {
     <Breadcrumb key={0} title="Networks">
       <BreadcrumbTextContent>
         <Link to="/networking">
-          <FormattedMessage id="XXXX" defaultMessage={`Networks`} />
+          <FormattedMessage id="SkgIp271WG" defaultMessage={`Networks`} />
         </Link>
       </BreadcrumbTextContent>
     </Breadcrumb>

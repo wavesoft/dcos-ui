@@ -2,7 +2,7 @@ const Labels = intl => {
   return {
     type: "object",
     title: intl.formatMessage({
-      id: "XXXX",
+      id: "HkaDT3Q1bG",
       defaultMessage: "Labels"
     }),
     description: "Attach metadata to jobs to expose additional information to other jobs.",
@@ -11,7 +11,7 @@ const Labels = intl => {
         type: "array",
         duplicable: true,
         addLabel: intl.formatMessage({
-          id: "XXXX",
+          id: "SkCwTn71Wf",
           defaultMessage: "Add Label"
         }),
         getter(job) {
@@ -28,14 +28,14 @@ const Labels = intl => {
           properties: {
             key: {
               title: intl.formatMessage({
-                id: "XXXX",
+                id: "BJJxDpn7kZG",
                 defaultMessage: "Label Name"
               }),
               type: "string"
             },
             value: {
               title: intl.formatMessage({
-                id: "XXXX",
+                id: "SyxlPphQ1-G",
                 defaultMessage: "Label Value"
               }),
               type: "string"

@@ -208,7 +208,7 @@ class TasksView extends mixin(SaveStateMixin) {
           <button className={restartButtonClasses} onClick={handleRestartClick}>
             <Icon id="repeat" size="mini" />
             <span>
-              <FormattedMessage id="XXXX" defaultMessage={`Restart`} />
+              <FormattedMessage id="ryA32X1Wz" defaultMessage={`Restart`} />
             </span>
           </button>
         </Tooltip>
@@ -221,7 +221,9 @@ class TasksView extends mixin(SaveStateMixin) {
         >
           <button className={stopButtonClasses} onClick={handleStopClick}>
             <Icon id="circle-close" size="mini" />
-            <span><FormattedMessage id="XXXX" defaultMessage={`Stop`} /></span>
+            <span>
+              <FormattedMessage id="HyxR22XJZG" defaultMessage={`Stop`} />
+            </span>
           </button>
         </Tooltip>
       </div>
@@ -258,7 +260,7 @@ class TasksView extends mixin(SaveStateMixin) {
           inverseStyle={inverseStyle}
           isFiltering={filterByStatus !== "all" || searchString !== ""}
           onReset={this.resetFilter}
-          name={<FormattedMessage id="XXXX" defaultMessage={`task`} />}
+          name={<FormattedMessage id="ry-Rn37kbM" defaultMessage={`task`} />}
           totalLength={tasks.length}
         />
         <FilterBar rightAlignLastNChildren={rightAlignLastNChildren}>

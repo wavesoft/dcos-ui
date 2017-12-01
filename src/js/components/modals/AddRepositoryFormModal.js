@@ -153,7 +153,10 @@ class AddRepositoryFormModal extends mixin(StoreMixin) {
           header: (
             <ModalHeading>
               <IntlContext intl={this.props.intl}>
-                <FormattedMessage id="XXXX" defaultMessage={`Add Repository`} />
+                <FormattedMessage
+                  id="B17Na3mkbM"
+                  defaultMessage={`Add Repository`}
+                />
               </IntlContext>
             </ModalHeading>
           ),

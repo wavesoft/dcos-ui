@@ -357,11 +357,11 @@ class CreateServiceModalForm extends Component {
             hideTopLevelErrors={!showAllErrors}
           />
           <h2 className="flush-top short-bottom">
-            <FormattedMessage id="XXXX" defaultMessage={`Container`} />
+            <FormattedMessage id="BkbghnnmkWf" defaultMessage={`Container`} />
           </h2>
           <p>
             <FormattedMessage
-              id="XXXX"
+              id="BJzen2nXkWf"
               defaultMessage={`Configure your container below. Enter a container image or command you want to run.`}
             />
           </p>
@@ -376,7 +376,10 @@ class CreateServiceModalForm extends Component {
 
           <AdvancedSection>
             <AdvancedSectionLabel>
-              <FormattedMessage id="XXXX" defaultMessage={`More Settings`} />
+              <FormattedMessage
+                id="Skmx2nnQ1-f"
+                defaultMessage={`More Settings`}
+              />
             </AdvancedSectionLabel>
             <AdvancedSectionContent>
               <MultiContainerFormAdvancedSection
@@ -438,7 +441,7 @@ class CreateServiceModalForm extends Component {
           id: "networking",
           key: "multinetworking",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "ByNx333mybz",
             defaultMessage: "Networking"
           })
         },
@@ -446,7 +449,7 @@ class CreateServiceModalForm extends Component {
           id: "volumes",
           key: "multivolumes",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "r1Blnhn71WG",
             defaultMessage: "Volumes"
           })
         },
@@ -454,7 +457,7 @@ class CreateServiceModalForm extends Component {
           id: "healthChecks",
           key: "multihealthChecks",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "Hk8gn32QJZG",
             defaultMessage: "Health Checks"
           })
         },
@@ -462,7 +465,7 @@ class CreateServiceModalForm extends Component {
           id: "environment",
           key: "multienvironment",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "H1Pl332QkZf",
             defaultMessage: "Environment"
           })
         }
@@ -473,7 +476,7 @@ class CreateServiceModalForm extends Component {
           id: "networking",
           key: "networking",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "SJdlh2nQk-f",
             defaultMessage: "Networking"
           })
         },
@@ -481,7 +484,7 @@ class CreateServiceModalForm extends Component {
           id: "volumes",
           key: "volumes",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "ByYxh23Xy-z",
             defaultMessage: "Volumes"
           })
         },
@@ -489,7 +492,7 @@ class CreateServiceModalForm extends Component {
           id: "healthChecks",
           key: "healthChecks",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "Bk5gh2nmyZz",
             defaultMessage: "Health Checks"
           })
         },
@@ -497,7 +500,7 @@ class CreateServiceModalForm extends Component {
           id: "environment",
           key: "environment",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "BJse22nQ1-G",
             defaultMessage: "Environment"
           })
         }

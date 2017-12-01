@@ -122,7 +122,7 @@ class SidebarHeader extends mixin(StoreMixin) {
         html: (
           <label>
             {this.props.intl.formatMessage({
-              id: "XXXX",
+              id: "S1Vx763mJWM",
               defaultMessage: "Support"
             })}
           </label>

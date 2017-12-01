@@ -34,7 +34,9 @@ class ConfigurationMapBooleanValue extends React.Component {
 
 ConfigurationMapBooleanValue.defaultProps = {
   defaultValue: (
-    <em><FormattedMessage id="XXXX" defaultMessage={`Not Configured`} /></em>
+    <em>
+      <FormattedMessage id="HkxjnhmJ-G" defaultMessage={`Not Configured`} />
+    </em>
   ),
   options: {
     truthy: "Enabled",

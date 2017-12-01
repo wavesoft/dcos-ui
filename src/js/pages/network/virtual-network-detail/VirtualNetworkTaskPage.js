@@ -22,7 +22,7 @@ const NetworksDetailTaskBreadcrumbs = ({
     <Breadcrumb key={0} title="Networks">
       <BreadcrumbTextContent>
         <Link to="/networking/networks">
-          <FormattedMessage id="XXXX" defaultMessage={`Networks`} />
+          <FormattedMessage id="rJQf86nmkbM" defaultMessage={`Networks`} />
         </Link>
       </BreadcrumbTextContent>
     </Breadcrumb>
@@ -83,21 +83,21 @@ class VirtualNetworkTaskPage extends React.Component {
     const tabs = [
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "SkVG8pn7yZM",
           defaultMessage: "Details"
         }),
         routePath: routePrefix + "/details"
       },
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "HJrzLT3mkZM",
           defaultMessage: "Files"
         }),
         routePath: routePrefix + "/files"
       },
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "HkUMLahXkbz",
           defaultMessage: "Logs"
         }),
         routePath: routePrefix + "/logs"

@@ -20,7 +20,7 @@ const NetworksDetailBreadcrumbs = ({ overlayID, overlay }) => {
     <Breadcrumb key={0} title="Networks">
       <BreadcrumbTextContent>
         <Link to="/networking/networks">
-          <FormattedMessage id="XXXX" defaultMessage={`Networks`} />
+          <FormattedMessage id="BJ0bIT3QJbf" defaultMessage={`Networks`} />
         </Link>
       </BreadcrumbTextContent>
     </Breadcrumb>
@@ -153,7 +153,7 @@ class VirtualNetworkDetail extends mixin(StoreMixin, TabsMixin) {
     const tabs = [
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "r1kfIThm1-M",
           defaultMessage: "Tasks"
         }),
         callback: () => {
@@ -166,7 +166,7 @@ class VirtualNetworkDetail extends mixin(StoreMixin, TabsMixin) {
       },
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "SyezL6n7kZM",
           defaultMessage: "Details"
         }),
         callback: () => {

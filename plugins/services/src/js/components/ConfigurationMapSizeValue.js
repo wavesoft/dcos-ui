@@ -40,7 +40,9 @@ class ConfigurationMapSizeValue extends React.Component {
 ConfigurationMapSizeValue.defaultProps = {
   decimals: 2,
   defaultValue: (
-    <em><FormattedMessage id="XXXX" defaultMessage={`Not Configured`} /></em>
+    <em>
+      <FormattedMessage id="ry7jhnQ1ZM" defaultMessage={`Not Configured`} />
+    </em>
   ),
   multiplier: 1024,
   scale: 1024 * 1024,

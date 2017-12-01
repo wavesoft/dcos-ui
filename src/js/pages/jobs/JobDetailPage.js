@@ -183,7 +183,7 @@ class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
       <div>
         <h2 className="text-danger text-align-center flush-top">
           {StringUtil.capitalize(UserActions.DELETE)}
-          <FormattedMessage id="XXXX" defaultMessage={`Job`} />
+          <FormattedMessage id="S1Ae8a37kWz" defaultMessage={`Job`} />
         </h2>
         <p>{message}</p>
       </div>
@@ -282,7 +282,7 @@ class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
               size="mini"
             />
             <span>
-              <FormattedMessage id="XXXX" defaultMessage={`Scheduled`} />
+              <FormattedMessage id="B11-UTnQyZz" defaultMessage={`Scheduled`} />
               {StringUtil.lowercase(scheduleText)}
             </span>
           </p>
@@ -340,7 +340,7 @@ class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
 
     actions.push({
       label: this.props.intl.formatMessage({
-        id: "XXXX",
+        id: "rkgbU62Qy-M",
         defaultMessage: "Edit"
       }),
       onItemSelect: this.handleEditButtonClick
@@ -348,7 +348,7 @@ class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
 
     actions.push({
       label: this.props.intl.formatMessage({
-        id: "XXXX",
+        id: "Sy-Z8ahXJZG",
         defaultMessage: "Run Now"
       }),
       onItemSelect: this.handleRunNowButtonClick
@@ -357,7 +357,7 @@ class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
     if (schedule != null && schedule.enabled) {
       actions.push({
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "BJGZ8phQyWz",
           defaultMessage: "Disable Schedule"
         }),
         onItemSelect: this.handleDisableScheduleButtonClick
@@ -367,7 +367,7 @@ class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
     if (schedule != null && !schedule.enabled) {
       actions.push({
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "S1mZL6nQkWM",
           defaultMessage: "Enable Schedule"
         }),
         onItemSelect: this.handleEnableScheduleButtonClick
@@ -389,7 +389,7 @@ class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
     return [
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "SkEWI6371Wf",
           defaultMessage: "Run History"
         }),
         callback: () => {
@@ -399,7 +399,7 @@ class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
       },
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "SJr-8a3XybM",
           defaultMessage: "Configuration"
         }),
         callback: () => {

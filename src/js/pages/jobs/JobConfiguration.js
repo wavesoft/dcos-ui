@@ -25,11 +25,11 @@ class JobConfiguration extends React.Component {
     return (
       <ConfigurationMapSection>
         <ConfigurationMapHeading>
-          <FormattedMessage id="XXXX" defaultMessage={`General`} />
+          <FormattedMessage id="HJZgU63mk-z" defaultMessage={`General`} />
         </ConfigurationMapHeading>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`ID`} />
+            <FormattedMessage id="BkzlUa3X1Zf" defaultMessage={`ID`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {job.getId()}
@@ -37,7 +37,7 @@ class JobConfiguration extends React.Component {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`Description`} />
+            <FormattedMessage id="SJXxLT2X1bz" defaultMessage={`Description`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {job.getDescription()}
@@ -45,7 +45,7 @@ class JobConfiguration extends React.Component {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`CPUs`} />
+            <FormattedMessage id="r1NeLp27yWG" defaultMessage={`CPUs`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {job.getCpus()}
@@ -69,7 +69,7 @@ class JobConfiguration extends React.Component {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`Command`} />
+            <FormattedMessage id="SJSx8627y-z" defaultMessage={`Command`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             <pre className="flush transparent wrap">
@@ -90,11 +90,11 @@ class JobConfiguration extends React.Component {
     return (
       <ConfigurationMapSection>
         <ConfigurationMapHeading>
-          <FormattedMessage id="XXXX" defaultMessage={`Schedule`} />
+          <FormattedMessage id="SJUgIT3Xybf" defaultMessage={`Schedule`} />
         </ConfigurationMapHeading>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`ID`} />
+            <FormattedMessage id="SJDe863mkZG" defaultMessage={`ID`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {schedule.id}
@@ -102,7 +102,7 @@ class JobConfiguration extends React.Component {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`Enabled`} />
+            <FormattedMessage id="Hkde8anXkWz" defaultMessage={`Enabled`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {schedule.enabled}
@@ -110,7 +110,10 @@ class JobConfiguration extends React.Component {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`CRON Schedule`} />
+            <FormattedMessage
+              id="HyKlU6nX1-M"
+              defaultMessage={`CRON Schedule`}
+            />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {schedule.cron}
@@ -118,7 +121,7 @@ class JobConfiguration extends React.Component {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`Time Zone`} />
+            <FormattedMessage id="B1cxIa27yWf" defaultMessage={`Time Zone`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {schedule.timezone}
@@ -126,7 +129,10 @@ class JobConfiguration extends React.Component {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`Starting Deadline`} />
+            <FormattedMessage
+              id="BkoeIah71-G"
+              defaultMessage={`Starting Deadline`}
+            />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {schedule.startingDeadlineSeconds}
@@ -145,11 +151,14 @@ class JobConfiguration extends React.Component {
     return (
       <ConfigurationMapSection>
         <ConfigurationMapHeading>
-          <FormattedMessage id="XXXX" defaultMessage={`Docker Container`} />
+          <FormattedMessage
+            id="Bkng8a3X1Wz"
+            defaultMessage={`Docker Container`}
+          />
         </ConfigurationMapHeading>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`Image`} />
+            <FormattedMessage id="rkTlIa271WG" defaultMessage={`Image`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {docker.image}

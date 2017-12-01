@@ -45,7 +45,7 @@ const DashboardBreadcrumbs = () => {
     <Breadcrumb key={0} title="Dashboard">
       <BreadcrumbTextContent>
         <Link to="/dashboard">
-          <FormattedMessage id="XXXX" defaultMessage={`Dashboard`} />
+          <FormattedMessage id="SkLT3mkZz" defaultMessage={`Dashboard`} />
         </Link>
       </BreadcrumbTextContent>
     </Breadcrumb>

@@ -9,7 +9,7 @@ const ServiceItemNotFound = function({ message }) {
   const footer = (
     <div className="button-collection flush-bottom">
       <Link to="/services" className="button button-stroke">
-        <FormattedMessage id="XXXX" defaultMessage={`View Services`} />
+        <FormattedMessage id="r1Pbin37J-z" defaultMessage={`View Services`} />
       </Link>
     </div>
   );
@@ -17,7 +17,10 @@ const ServiceItemNotFound = function({ message }) {
   return (
     <AlertPanel>
       <AlertPanelHeader>
-        <FormattedMessage id="XXXX" defaultMessage={`Service not found`} />
+        <FormattedMessage
+          id="BkOZi33XJbG"
+          defaultMessage={`Service not found`}
+        />
       </AlertPanelHeader>
       <p className="tall">
         {message}

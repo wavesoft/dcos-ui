@@ -90,14 +90,14 @@ var Modals = React.createClass({
       modalErrorMsg: (
         <p className="text-align-center flush-bottom">
           <FormattedMessage
-            id="XXXX"
+            id="B1nXT27yZf"
             defaultMessage={`We are unable to retrieve the version`}
           />
           {" "}
           {Config.productName}
           {" "}
           <FormattedMessage
-            id="XXXX"
+            id="r1pmpnQkWf"
             defaultMessage={`versions. Please try again.`}
           />
         </p>

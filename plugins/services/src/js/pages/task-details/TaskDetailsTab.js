@@ -29,7 +29,7 @@ class TaskDetailsTab extends React.Component {
       <ConfigurationMapSection>
         <ConfigurationMapHeading>
           <FormattedMessage
-            id="XXXX"
+            id="r1cA3nmkbM"
             defaultMessage={`Container Configuration`}
           />
         </ConfigurationMapHeading>
@@ -82,7 +82,7 @@ class TaskDetailsTab extends React.Component {
       serviceRow = (
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`Service`} />
+            <FormattedMessage id="ryo0h3X1bG" defaultMessage={`Service`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {service.name} ({service.id})
@@ -95,7 +95,7 @@ class TaskDetailsTab extends React.Component {
       nodeRow = (
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`Node`} />
+            <FormattedMessage id="rJ303nQ1WG" defaultMessage={`Node`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {node.getHostName()} ({node.getID()})
@@ -108,7 +108,7 @@ class TaskDetailsTab extends React.Component {
       sandBoxRow = (
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`Sandbox Path`} />
+            <FormattedMessage id="Hk6CnnmyWz" defaultMessage={`Sandbox Path`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {sandBoxPath}
@@ -120,11 +120,11 @@ class TaskDetailsTab extends React.Component {
     return (
       <ConfigurationMapSection>
         <ConfigurationMapHeading>
-          <FormattedMessage id="XXXX" defaultMessage={`Configuration`} />
+          <FormattedMessage id="BJRR327yWM" defaultMessage={`Configuration`} />
         </ConfigurationMapHeading>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`Task ID`} />
+            <FormattedMessage id="By1l0337yWf" defaultMessage={`Task ID`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {mesosTask.id}
@@ -135,7 +135,7 @@ class TaskDetailsTab extends React.Component {
         {sandBoxRow}
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`Endpoints`} />
+            <FormattedMessage id="BJxeRn3XyWM" defaultMessage={`Endpoints`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             <TaskEndpointsList task={mesosTask} node={node} />
@@ -171,7 +171,7 @@ class TaskDetailsTab extends React.Component {
     return (
       <ConfigurationMapSection>
         <ConfigurationMapHeading>
-          <FormattedMessage id="XXXX" defaultMessage={`Labels`} />
+          <FormattedMessage id="H1WeAhhQ1Zz" defaultMessage={`Labels`} />
         </ConfigurationMapHeading>
         {labelRows}
       </ConfigurationMapSection>

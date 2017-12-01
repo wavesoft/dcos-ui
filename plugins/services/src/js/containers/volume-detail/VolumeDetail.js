@@ -70,7 +70,10 @@ class VolumeDetail extends React.Component {
           <ConfigurationMapSection>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
-                <FormattedMessage id="XXXX" defaultMessage={`Container Path`} />
+                <FormattedMessage
+                  id="BkzAhn7JZM"
+                  defaultMessage={`Container Path`}
+                />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {volume.getContainerPath()}
@@ -78,7 +81,7 @@ class VolumeDetail extends React.Component {
             </ConfigurationMapRow>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
-                <FormattedMessage id="XXXX" defaultMessage={`Mode`} />
+                <FormattedMessage id="BkmR2hQybM" defaultMessage={`Mode`} />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {volume.getMode()}
@@ -94,7 +97,10 @@ class VolumeDetail extends React.Component {
             </ConfigurationMapRow>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
-                <FormattedMessage id="XXXX" defaultMessage={`Application`} />
+                <FormattedMessage
+                  id="H14C3n71WG"
+                  defaultMessage={`Application`}
+                />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {serviceID}
@@ -102,7 +108,7 @@ class VolumeDetail extends React.Component {
             </ConfigurationMapRow>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
-                <FormattedMessage id="XXXX" defaultMessage={`Task ID`} />
+                <FormattedMessage id="B1H03nQJ-f" defaultMessage={`Task ID`} />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {volume.getTaskID()}
@@ -110,7 +116,7 @@ class VolumeDetail extends React.Component {
             </ConfigurationMapRow>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
-                <FormattedMessage id="XXXX" defaultMessage={`Host`} />
+                <FormattedMessage id="Hk802nmJ-G" defaultMessage={`Host`} />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {volume.getHost()}

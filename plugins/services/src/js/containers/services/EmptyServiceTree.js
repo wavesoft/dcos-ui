@@ -8,10 +8,10 @@ const EmptyServiceTree = function({ onCreateGroup, onCreateService }) {
   const footer = (
     <div className="button-collection flush-bottom">
       <button className="button button-stroke" onClick={onCreateGroup}>
-        <FormattedMessage id="XXXX" defaultMessage={`Create Group`} />
+        <FormattedMessage id="SJyQah271bG" defaultMessage={`Create Group`} />
       </button>
       <button className="button button-success" onClick={onCreateService}>
-        <FormattedMessage id="XXXX" defaultMessage={`Run a Service`} />
+        <FormattedMessage id="SJeQ63nQkWf" defaultMessage={`Run a Service`} />
       </button>
     </div>
   );
@@ -19,11 +19,14 @@ const EmptyServiceTree = function({ onCreateGroup, onCreateService }) {
   return (
     <AlertPanel>
       <AlertPanelHeader>
-        <FormattedMessage id="XXXX" defaultMessage={`No running services`} />
+        <FormattedMessage
+          id="BkWXahn71Wz"
+          defaultMessage={`No running services`}
+        />
       </AlertPanelHeader>
       <p className="tall">
         <FormattedMessage
-          id="XXXX"
+          id="S1zXT22QJ-z"
           defaultMessage={`Run a new service or create a new group to help organize your services.`}
         />
       </p>

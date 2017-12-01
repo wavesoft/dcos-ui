@@ -56,7 +56,10 @@ class ServiceTreeView extends React.Component {
     if (filterExpression.defined) {
       return (
         <h5 className="muted">
-          <FormattedMessage id="XXXX" defaultMessage={`Search Results`} />
+          <FormattedMessage
+            id="SyQ7ann71Wz"
+            defaultMessage={`Search Results`}
+          />
         </h5>
       );
     }
@@ -106,7 +109,7 @@ class ServiceTreeView extends React.Component {
             {
               onItemSelect: modalHandlers.createGroup,
               label: this.props.intl.formatMessage({
-                id: "XXXX",
+                id: "SJV7anh7kWG",
                 defaultMessage: "Create Group"
               })
             }
@@ -114,7 +117,7 @@ class ServiceTreeView extends React.Component {
           addButton={{
             onItemSelect: createService,
             label: this.props.intl.formatMessage({
-              id: "XXXX",
+              id: "BkHQp33XyWz",
               defaultMessage: "Run a Service"
             })
           }}

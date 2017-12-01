@@ -92,7 +92,10 @@ class KillPodInstanceModal extends React.Component {
     return (
       <div className="text-align-center">
         <p>
-          <FormattedMessage id="XXXX" defaultMessage={`You are about to`} />
+          <FormattedMessage
+            id="HJRg2nn7kWG"
+            defaultMessage={`You are about to`}
+          />
           {" "}
           {action.toLowerCase()}
           {" "}
@@ -100,7 +103,7 @@ class KillPodInstanceModal extends React.Component {
           .
           <br />
           <FormattedMessage
-            id="XXXX"
+            id="B1J-32nm1-f"
             defaultMessage={`Are you sure you want to continue?`}
           />
         </p>

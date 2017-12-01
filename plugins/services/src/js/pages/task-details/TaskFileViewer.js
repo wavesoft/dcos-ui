@@ -196,7 +196,10 @@ class TaskFileViewer extends React.Component {
         key="tooltip"
         anchor="end"
         content={
-          <FormattedMessage id="XXXX" defaultMessage={`Download log file`} />
+          <FormattedMessage
+            id="r1zxRnhX1Wz"
+            defaultMessage={`Download log file`}
+          />
         }
       >
         <a

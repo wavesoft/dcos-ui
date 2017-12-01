@@ -27,7 +27,9 @@ class ConfigurationMapMultilineValue extends React.Component {
 
 ConfigurationMapMultilineValue.defaultProps = {
   defaultValue: (
-    <em><FormattedMessage id="XXXX" defaultMessage={`Not Configured`} /></em>
+    <em>
+      <FormattedMessage id="Hyzon2myWM" defaultMessage={`Not Configured`} />
+    </em>
   ),
   value: ""
 };

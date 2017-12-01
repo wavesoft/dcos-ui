@@ -96,11 +96,14 @@ class ComponentList extends React.Component {
     return (
       <div>
         <h3 className="flush-top text-align-center">
-          <FormattedMessage id="XXXX" defaultMessage={`Components Not Found`} />
+          <FormattedMessage
+            id="Bkg762Xy-M"
+            defaultMessage={`Components Not Found`}
+          />
         </h3>
         <p className="flush text-align-center">
           <FormattedMessage
-            id="XXXX"
+            id="Byb7p3Qk-M"
             defaultMessage={`An error has occurred.`}
           />
         </p>

@@ -14,35 +14,35 @@ class HealthBar extends React.Component {
       tasksUnknown: {
         className: "unknown",
         label: props.intl.formatMessage({
-          id: "XXXX",
+          id: "Hkkgi2nmJWG",
           defaultMessage: "Unknown"
         })
       },
       tasksHealthy: {
         className: "healthy",
         label: props.intl.formatMessage({
-          id: "XXXX",
+          id: "HkleonhQyWf",
           defaultMessage: "Healthy"
         })
       },
       tasksOverCapacity: {
         className: "over-capacity",
         label: props.intl.formatMessage({
-          id: "XXXX",
+          id: "B1besn37k-f",
           defaultMessage: "Over Capacity"
         })
       },
       tasksUnhealthy: {
         className: "unhealthy",
         label: props.intl.formatMessage({
-          id: "XXXX",
+          id: "SyGgin2Qk-M",
           defaultMessage: "Unhealthy"
         })
       },
       tasksStaged: {
         className: "staged",
         label: props.intl.formatMessage({
-          id: "XXXX",
+          id: "Hy7gsnnXkbM",
           defaultMessage: "Staged"
         })
       }
@@ -83,7 +83,7 @@ class HealthBar extends React.Component {
             {` ${taskCount} ${this.HealthBarStates[task].label} ${taskNoun} `}
             <span className="health-bar-tooltip-instances-total">
               {this.props.intl.formatMessage({
-                id: "XXXX",
+                id: "S1EgsnnX1bz",
                 defaultMessage: "of"
               })}
               {instancesCount}

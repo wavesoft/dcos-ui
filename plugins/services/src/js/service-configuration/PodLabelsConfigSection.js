@@ -17,21 +17,21 @@ class PodLabelsConfigSection extends React.Component {
     return [
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "S1aZlp3Q1ZM",
           defaultMessage: "Key"
         }),
         prop: "key"
       },
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "Hk0Wx63m1-f",
           defaultMessage: "Value"
         }),
         prop: "value"
       },
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "Sk1feahmybf",
           defaultMessage: "Container"
         }),
         prop: "container"
@@ -82,7 +82,7 @@ class PodLabelsConfigSection extends React.Component {
     return (
       <div>
         <ConfigurationMapHeading level={1}>
-          <FormattedMessage id="XXXX" defaultMessage={`Labels`} />
+          <FormattedMessage id="Hy3Wla3Xy-f" defaultMessage={`Labels`} />
         </ConfigurationMapHeading>
         <ConfigurationMapSection key="pod-general-section">
           <ConfigurationMapTable

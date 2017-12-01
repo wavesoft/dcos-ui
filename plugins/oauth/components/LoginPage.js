@@ -113,7 +113,7 @@ class LoginPage extends mixin(StoreMixin) {
           </p>
           <p className="flush-bottom text-align-center">
             <FormattedMessage
-              id="XXXX"
+              id="rJi3hXkZz"
               defaultMessage={`Please contact your system administrator or see the`}
             />
             <a

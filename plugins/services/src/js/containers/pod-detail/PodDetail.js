@@ -170,7 +170,7 @@ class PodDetail extends mixin(TabsMixin) {
 
     actions.push({
       label: this.props.intl.formatMessage({
-        id: "XXXX",
+        id: "HyplThn7k-z",
         defaultMessage: "Edit"
       }),
       onItemSelect: this.onActionsItemSelection.bind(this, EDIT)
@@ -179,7 +179,7 @@ class PodDetail extends mixin(TabsMixin) {
     if (instanceCount > 0) {
       actions.push({
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "ryRgThnmyZz",
           defaultMessage: "Restart"
         }),
         onItemSelect: this.onActionsItemSelection.bind(this, RESTART)
@@ -188,7 +188,7 @@ class PodDetail extends mixin(TabsMixin) {
     if (!pod.getLabels().MARATHON_SINGLE_INSTANCE_APP) {
       actions.push({
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "H11W633XkbM",
           defaultMessage: "Scale"
         }),
         onItemSelect: this.onActionsItemSelection.bind(this, SCALE)
@@ -198,7 +198,7 @@ class PodDetail extends mixin(TabsMixin) {
     if (instanceCount > 0) {
       actions.push({
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "SJgbp23Q1Zz",
           defaultMessage: "Suspend"
         }),
         onItemSelect: this.onActionsItemSelection.bind(this, SUSPEND)
@@ -208,7 +208,7 @@ class PodDetail extends mixin(TabsMixin) {
     if (instanceCount === 0) {
       actions.push({
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "H1W-p33QkWM",
           defaultMessage: "Resume"
         }),
         onItemSelect: this.onActionsItemSelection.bind(this, RESUME)
@@ -231,21 +231,21 @@ class PodDetail extends mixin(TabsMixin) {
     return [
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "HkGZT3h7JWG",
           defaultMessage: "Instances"
         }),
         routePath: `${routePrefix}/tasks`
       },
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "By7-phhXJ-z",
           defaultMessage: "Configuration"
         }),
         routePath: `${routePrefix}/configuration`
       },
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "SkN-a22QJ-M",
           defaultMessage: "Debug"
         }),
         routePath: `${routePrefix}/debug`

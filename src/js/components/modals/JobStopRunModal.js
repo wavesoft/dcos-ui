@@ -79,7 +79,7 @@ class JobStopRunModal extends mixin(StoreMixin) {
       <IntlContext intl={this.props.intl}>
         <span key="confirmText">
           <FormattedMessage
-            id="XXXX"
+            id="S1SSTnmJ-G"
             defaultMessage={`You are about to stop`}
           />
           {bodyText}

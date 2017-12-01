@@ -24,21 +24,21 @@ class JobTaskDetailPage extends React.Component {
     const tabs = [
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "BJ8-Up2m1Wz",
           defaultMessage: "Details"
         }),
         routePath: routePrefix + "/details"
       },
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "SyvZ8anQkWz",
           defaultMessage: "Files"
         }),
         routePath: routePrefix + "/files"
       },
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "HJOZ8anXkbM",
           defaultMessage: "Logs"
         }),
         routePath: routePrefix + "/logs"

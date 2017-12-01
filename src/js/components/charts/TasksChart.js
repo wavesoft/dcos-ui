@@ -20,14 +20,14 @@ var TasksChart = React.createClass({
     this.TASK_INFO = {
       TASK_RUNNING: {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "rybNT371-G",
           defaultMessage: "Tasks running"
         }),
         colorIndex: 4
       },
       TASK_STAGING: {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "r1MET27J-f",
           defaultMessage: "Tasks staging"
         }),
         colorIndex: 1
@@ -132,7 +132,7 @@ var TasksChart = React.createClass({
       <div className="description">
         <span className="unit unit-primary">{total}</span>
         <span className="unit-label h4 flush text-muted">
-          <FormattedMessage id="XXXX" defaultMessage={`Total Tasks`} />
+          <FormattedMessage id="rJeVpnmkWG" defaultMessage={`Total Tasks`} />
         </span>
       </div>
     );

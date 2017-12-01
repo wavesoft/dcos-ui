@@ -409,7 +409,7 @@ class JobFormModal extends mixin(StoreMixin) {
       <IntlContext intl={this.props.intl}>
         <div className="button-collection flush-bottom">
           <button className="button" onClick={this.handleCancel}>
-            <FormattedMessage id="XXXX" defaultMessage={`Cancel`} />
+            <FormattedMessage id="r1VHanXyZf" defaultMessage={`Cancel`} />
           </button>
           <button className="button button-success" onClick={this.handleSubmit}>
             {submitLabel}

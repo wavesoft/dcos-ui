@@ -18,21 +18,21 @@ class ServiceTaskDetailPage extends React.Component {
     const tabs = [
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "ByvC3n7k-G",
           defaultMessage: "Details"
         }),
         routePath: routePrefix + "/details"
       },
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "SJuCn3mkWM",
           defaultMessage: "Files"
         }),
         routePath: routePrefix + "/files"
       },
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "SJKRnh71bf",
           defaultMessage: "Logs"
         }),
         routePath: routePrefix + "/logs"

@@ -70,7 +70,7 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
       values: [
         {
           heading: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "Ske-an7y-M",
             defaultMessage: "General"
           }),
           headingLevel: 1
@@ -78,21 +78,21 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         {
           key: "id",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "BJZbah71ZG",
             defaultMessage: "Service ID"
           })
         },
         {
           key: "instances",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "ByGWp2Xy-G",
             defaultMessage: "Instances"
           })
         },
         {
           key: "container.type",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "SJmWahmJbM",
             defaultMessage: "Container Runtime"
           }),
           transformValue(runtime) {
@@ -102,14 +102,14 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         {
           key: "cpus",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "Sy4-6nm1WM",
             defaultMessage: "CPU"
           })
         },
         {
           key: "mem",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "rySZa2mkbM",
             defaultMessage: "Memory"
           }),
           transformValue(value) {
@@ -123,7 +123,7 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         {
           key: "disk",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "SJ8Z63mk-f",
             defaultMessage: "Disk"
           }),
           transformValue(value) {
@@ -137,49 +137,49 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         {
           key: "gpus",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "BywZp2my-f",
             defaultMessage: "GPU"
           })
         },
         {
           key: "backoffSeconds",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "Sk_bT37yZM",
             defaultMessage: "Backoff Seconds"
           })
         },
         {
           key: "backoffFactor",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "SJFWpn7yZf",
             defaultMessage: "Backoff Factor"
           })
         },
         {
           key: "maxLaunchDelaySeconds",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "HJqb6hQy-M",
             defaultMessage: "Backoff Max Launch Delay"
           })
         },
         {
           key: "minHealthOpacity",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "B1ib6hmJ-G",
             defaultMessage: "Upgrade Min Health Capacity"
           })
         },
         {
           key: "maxOverCapacity",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "Hy2ZThX1-G",
             defaultMessage: "Upgrade Max Overcapacity"
           })
         },
         {
           key: "container.docker.image",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "BkaZp3QyWz",
             defaultMessage: "Container Image"
           }),
           transformValue(value, appConfig) {
@@ -212,7 +212,7 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         {
           key: "container.docker.forcePullImage",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "r10Wa3XkWM",
             defaultMessage: "Force Pull on Launch"
           }),
           transformValue(value, appConfig) {
@@ -232,7 +232,7 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         {
           key: "cmd",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "HyJlWa271-f",
             defaultMessage: "Command"
           }),
           type: "pre"
@@ -240,7 +240,7 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         {
           key: "acceptedResourceRoles",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "r1lxWpnmJZz",
             defaultMessage: "Resource Roles"
           }),
           transformValue(value = []) {
@@ -250,7 +250,7 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         {
           key: "dependencies",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "BkbxZ6h7J-z",
             defaultMessage: "Dependencies"
           }),
           transformValue(value = []) {
@@ -260,21 +260,21 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         {
           key: "executor",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "BkfgWT3Q1Zz",
             defaultMessage: "Executor"
           })
         },
         {
           key: "user",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "rJmxbanQkWf",
             defaultMessage: "User"
           })
         },
         {
           key: "args",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "ByVgZ637ybM",
             defaultMessage: "Args"
           }),
           transformValue(value = []) {
@@ -292,14 +292,14 @@ class ServiceGeneralConfigSection extends ServiceConfigBaseSectionDisplay {
         {
           key: "version",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "ByHlZT2m1-z",
             defaultMessage: "Version"
           })
         },
         {
           key: "fetch",
           heading: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "HJLxWph7JZz",
             defaultMessage: "Container Artifacts"
           }),
           headingLevel: 3

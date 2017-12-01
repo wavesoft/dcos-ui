@@ -39,7 +39,7 @@ const SystemOverviewBreadcrumbs = () => {
     <Breadcrumb key={0} title="Cluster">
       <BreadcrumbTextContent>
         <Link to="/overview">
-          <FormattedMessage id="XXXX" defaultMessage={`Overview`} />
+          <FormattedMessage id="S1tGUTnXy-z" defaultMessage={`Overview`} />
         </Link>
       </BreadcrumbTextContent>
     </Breadcrumb>
@@ -125,7 +125,7 @@ class OverviewDetailTab extends mixin(StoreMixin) {
         <ConfigurationMapRow key="version">
           <ConfigurationMapLabel>
             {Config.productName}
-            <FormattedMessage id="XXXX" defaultMessage={`Version`} />
+            <FormattedMessage id="BJczL6nmkWM" defaultMessage={`Version`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {productVersion}
@@ -134,7 +134,7 @@ class OverviewDetailTab extends mixin(StoreMixin) {
         <ConfigurationMapRow key="ccid">
           <ConfigurationMapLabel>
             <FormattedMessage
-              id="XXXX"
+              id="ryjf8ahm1bf"
               defaultMessage={`Cryptographic Cluster ID`}
             />
           </ConfigurationMapLabel>
@@ -144,7 +144,7 @@ class OverviewDetailTab extends mixin(StoreMixin) {
         </ConfigurationMapRow>
         <ConfigurationMapRow key="publicIP">
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`Public IP`} />
+            <FormattedMessage id="BynfUT3mk-M" defaultMessage={`Public IP`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {publicIP}
@@ -176,7 +176,7 @@ class OverviewDetailTab extends mixin(StoreMixin) {
     return [
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "H1JmIT2QkbM",
           defaultMessage: "View Cluster Configuration"
         }),
         onItemSelect: this.handleClusterConfigModalOpen
@@ -323,7 +323,7 @@ class OverviewDetailTab extends mixin(StoreMixin) {
         <div className="container">
           <ConfigurationMap>
             <ConfigurationMapHeading className="flush-top">
-              <FormattedMessage id="XXXX" defaultMessage={`Cluster`} />
+              <FormattedMessage id="rypfIThQJWf" defaultMessage={`Cluster`} />
               <FormattedMessage id="COMMON.DETAILS" />
             </ConfigurationMapHeading>
             <ConfigurationMapHeading level={2}>
@@ -331,7 +331,7 @@ class OverviewDetailTab extends mixin(StoreMixin) {
             </ConfigurationMapHeading>
             {this.getClusterDetails()}
             <ConfigurationMapHeading level={2}>
-              <FormattedMessage id="XXXX" defaultMessage={`Mesos`} />
+              <FormattedMessage id="SyAGLa2XkWM" defaultMessage={`Mesos`} />
               <FormattedMessage id="COMMON.DETAILS" />
             </ConfigurationMapHeading>
             {this.getMesosDetails()}

@@ -19,7 +19,7 @@ class VirtualNetworkDetailsTab extends React.Component {
           <ConfigurationMapSection>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
-                <FormattedMessage id="XXXX" defaultMessage={`Name`} />
+                <FormattedMessage id="HkWfI6hXkZG" defaultMessage={`Name`} />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {overlay.getName()}
@@ -27,7 +27,10 @@ class VirtualNetworkDetailsTab extends React.Component {
             </ConfigurationMapRow>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
-                <FormattedMessage id="XXXX" defaultMessage={`IP Subnet`} />
+                <FormattedMessage
+                  id="BJGM8an7JWM"
+                  defaultMessage={`IP Subnet`}
+                />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {overlay.getSubnet()}

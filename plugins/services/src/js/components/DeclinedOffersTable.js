@@ -134,7 +134,7 @@ class DeclinedOffersTable extends React.Component {
         <div>
           <div>
             <strong>
-              <FormattedMessage id="XXXX" defaultMessage={`Requested`} />
+              <FormattedMessage id="HyDo2371ZG" defaultMessage={`Requested`} />
             </strong>
             {": "}
             {requestedResource}
@@ -142,7 +142,7 @@ class DeclinedOffersTable extends React.Component {
           </div>
           <div>
             <strong>
-              <FormattedMessage id="XXXX" defaultMessage={`Received`} />
+              <FormattedMessage id="SJ_j32myZz" defaultMessage={`Received`} />
             </strong>
             {": "}
             <span className={receivedResourceClasses}>{receivedResource}</span>

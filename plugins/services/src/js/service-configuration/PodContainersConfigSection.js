@@ -27,7 +27,7 @@ const PodContainersConfigSection = ({ appConfig, onEditClick }) => {
     return (
       <div>
         <ConfigurationMapHeading level={2}>
-          <FormattedMessage id="XXXX" defaultMessage={`Containers`} />
+          <FormattedMessage id="Skpla371bf" defaultMessage={`Containers`} />
         </ConfigurationMapHeading>
         <Alert>
           No containers specified! Please specify at least one container when
@@ -40,7 +40,7 @@ const PodContainersConfigSection = ({ appConfig, onEditClick }) => {
   return (
     <div>
       <ConfigurationMapHeading level={2}>
-        <FormattedMessage id="XXXX" defaultMessage={`Containers`} />
+        <FormattedMessage id="B1RlanQkbf" defaultMessage={`Containers`} />
       </ConfigurationMapHeading>
       {renderContainers(appConfig, onEditClick)}
     </div>

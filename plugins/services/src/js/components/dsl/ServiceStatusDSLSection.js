@@ -35,7 +35,9 @@ class ServiceStatusDSLSection extends React.Component {
         parts={EXPRESSION_PARTS}
       >
 
-        <label><FormattedMessage id="XXXX" defaultMessage={`Status`} /></label>
+        <label>
+          <FormattedMessage id="Hyvh2hmkbM" defaultMessage={`Status`} />
+        </label>
         <div className="row">
           <div className="column-6">
             <FormGroup>
@@ -46,7 +48,7 @@ class ServiceStatusDSLSection extends React.Component {
                   name="is_running"
                   type="checkbox"
                 />
-                <FormattedMessage id="XXXX" defaultMessage={`Running`} />
+                <FormattedMessage id="r1_2hhmyWf" defaultMessage={`Running`} />
               </FieldLabel>
               <FieldLabel>
                 <FieldInput
@@ -55,7 +57,10 @@ class ServiceStatusDSLSection extends React.Component {
                   name="is_deploying"
                   type="checkbox"
                 />
-                <FormattedMessage id="XXXX" defaultMessage={`Deploying`} />
+                <FormattedMessage
+                  id="SJKh2nmJWM"
+                  defaultMessage={`Deploying`}
+                />
               </FieldLabel>
               <FieldLabel>
                 <FieldInput
@@ -64,7 +69,10 @@ class ServiceStatusDSLSection extends React.Component {
                   name="is_suspended"
                   type="checkbox"
                 />
-                <FormattedMessage id="XXXX" defaultMessage={`Suspended`} />
+                <FormattedMessage
+                  id="rk5333QyWz"
+                  defaultMessage={`Suspended`}
+                />
               </FieldLabel>
             </FormGroup>
           </div>
@@ -77,7 +85,7 @@ class ServiceStatusDSLSection extends React.Component {
                   name="is_delayed"
                   type="checkbox"
                 />
-                <FormattedMessage id="XXXX" defaultMessage={`Delayed`} />
+                <FormattedMessage id="Bko32nmJZM" defaultMessage={`Delayed`} />
               </FieldLabel>
               <FieldLabel>
                 <FieldInput
@@ -86,7 +94,7 @@ class ServiceStatusDSLSection extends React.Component {
                   name="is_waiting"
                   type="checkbox"
                 />
-                <FormattedMessage id="XXXX" defaultMessage={`Waiting`} />
+                <FormattedMessage id="ry2n3hQJWM" defaultMessage={`Waiting`} />
               </FieldLabel>
             </FormGroup>
           </div>

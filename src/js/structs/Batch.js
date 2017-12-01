@@ -11,7 +11,7 @@ import TransactionTypes from "../constants/TransactionTypes";
  * items from it. Also not a `Log`, because it can be confused with the
  * logging utilities.
  *
- * @example <caption><FormattedMessage id="XXXX" defaultMessage={`Using Batch`}/></caption>
+ * @example <caption><FormattedMessage id="rJK6n7kbM" defaultMessage={`Using Batch`}/></caption>
  * class Component extends React.Component() {
  *   constructor() {
  *     super(...arguments);

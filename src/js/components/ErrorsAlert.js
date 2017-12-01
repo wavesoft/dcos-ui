@@ -42,7 +42,7 @@ const ErrorsAlert = function(props) {
     <Alert>
       <strong>
         <FormattedMessage
-          id="XXXX"
+          id="SyOQphQ1bz"
           defaultMessage={`There is an error with your configuration`}
         />
       </strong>

@@ -91,7 +91,10 @@ class KillTaskModal extends React.Component {
     return (
       <div className="text-align-center">
         <p>
-          <FormattedMessage id="XXXX" defaultMessage={`You are about to`} />
+          <FormattedMessage
+            id="SyxW23hQkWz"
+            defaultMessage={`You are about to`}
+          />
           {action.toLowerCase()}
           {" "}
           {taskCountContent}

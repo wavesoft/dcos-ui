@@ -21,7 +21,7 @@ const AppLockedMessage = function({ service }) {
     <h4 className="text-align-center text-danger flush-top">
       {itemType}
       {" "}<FormattedMessage
-        id="XXXX"
+        id="HJT232Qy-z"
         defaultMessage={`is currently locked by one or more deployments. Press the button
       again to forcefully change and deploy the new configuration.`}
       />

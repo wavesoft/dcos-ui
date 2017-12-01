@@ -14,21 +14,21 @@ class ServicePlacementConstraintsConfigSection extends React.Component {
     return [
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "BJJWW6hXJ-G",
           defaultMessage: "Field Name"
         }),
         prop: "fieldName"
       },
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "H1eWZa3Qybz",
           defaultMessage: "Operator"
         }),
         prop: "operator"
       },
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "rkZ-ZT3XkbG",
           defaultMessage: "Value"
         }),
         prop: "value"
@@ -43,7 +43,10 @@ class ServicePlacementConstraintsConfigSection extends React.Component {
       if (PlacementConstraintsUtil.requiresEmptyValue(operator)) {
         value = (
           <em>
-            <FormattedMessage id="XXXX" defaultMessage={`Not Applicable`} />
+            <FormattedMessage
+              id="rJpeZanXJ-G"
+              defaultMessage={`Not Applicable`}
+            />
           </em>
         );
       }
@@ -66,7 +69,7 @@ class ServicePlacementConstraintsConfigSection extends React.Component {
       <div>
         <ConfigurationMapHeading level={3}>
           <FormattedMessage
-            id="XXXX"
+            id="Sy0lWphm1Zz"
             defaultMessage={`Placement Constraints`}
           />
         </ConfigurationMapHeading>

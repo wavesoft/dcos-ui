@@ -41,7 +41,9 @@ function getContainerResourceSummary(resource, { containers = [] }) {
 
   if (!summary.value) {
     return (
-      <em><FormattedMessage id="XXXX" defaultMessage={`Not Supported`} /></em>
+      <em>
+        <FormattedMessage id="H1mge62Q1-M" defaultMessage={`Not Supported`} />
+      </em>
     );
   }
 
@@ -100,12 +102,12 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
   return (
     <div>
       <ConfigurationMapHeading level={1}>
-        <FormattedMessage id="XXXX" defaultMessage={`General`} />
+        <FormattedMessage id="SyVglT37ybz" defaultMessage={`General`} />
       </ConfigurationMapHeading>
       <ConfigurationMapSection key="pod-general-section">
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`Service ID`} />
+            <FormattedMessage id="ByHlea3mJWz" defaultMessage={`Service ID`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue value={appConfig.id} />
           <ConfigurationMapEditAction
@@ -115,7 +117,7 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`Instances`} />
+            <FormattedMessage id="ByIxla3X1-z" defaultMessage={`Instances`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValueWithDefault value={fields.instances} />
           <ConfigurationMapEditAction
@@ -125,7 +127,7 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`CPU`} />
+            <FormattedMessage id="ryDxlp3XkWG" defaultMessage={`CPU`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {getContainerResourceSummary("cpus", appConfig)}
@@ -137,7 +139,7 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`Memory`} />
+            <FormattedMessage id="SydeeT2Xkbf" defaultMessage={`Memory`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {getContainerResourceSummary("mem", appConfig)}
@@ -149,7 +151,7 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`Disk`} />
+            <FormattedMessage id="SyFgxp2QyWM" defaultMessage={`Disk`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {getContainerResourceSummary("disk", appConfig)}
@@ -161,7 +163,7 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`GPU`} />
+            <FormattedMessage id="HkcxeTnm1-M" defaultMessage={`GPU`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {getContainerResourceSummary("gpu", appConfig)}
@@ -174,7 +176,7 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
         {Boolean(fields.backoff) &&
           <ConfigurationMapRow>
             <ConfigurationMapLabel>
-              <FormattedMessage id="XXXX" defaultMessage={`Backoff`} />
+              <FormattedMessage id="rkjglp3myWM" defaultMessage={`Backoff`} />
             </ConfigurationMapLabel>
             <DurationValue units="sec" value={fields.backoff} />
             <ConfigurationMapEditAction
@@ -185,7 +187,10 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
         {Boolean(fields.backoffFactor) &&
           <ConfigurationMapRow>
             <ConfigurationMapLabel>
-              <FormattedMessage id="XXXX" defaultMessage={`Backoff Factor`} />
+              <FormattedMessage
+                id="Hk3lgp2XJbM"
+                defaultMessage={`Backoff Factor`}
+              />
             </ConfigurationMapLabel>
             <ConfigurationMapValue value={fields.backoffFactor} />
             <ConfigurationMapEditAction
@@ -197,7 +202,7 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
           <ConfigurationMapRow>
             <ConfigurationMapLabel>
               <FormattedMessage
-                id="XXXX"
+                id="SyaxlT3XkWM"
                 defaultMessage={`Backoff Max Launch Delay`}
               />
             </ConfigurationMapLabel>
@@ -211,7 +216,7 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
           <ConfigurationMapRow>
             <ConfigurationMapLabel>
               <FormattedMessage
-                id="XXXX"
+                id="HJAgxa2m1-M"
                 defaultMessage={`Upgrade Min Health Capacity`}
               />
             </ConfigurationMapLabel>
@@ -225,7 +230,7 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
           <ConfigurationMapRow>
             <ConfigurationMapLabel>
               <FormattedMessage
-                id="XXXX"
+                id="BJJ-xa2QkbM"
                 defaultMessage={`Upgrade Max Overcapacity`}
               />
             </ConfigurationMapLabel>

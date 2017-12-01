@@ -20,7 +20,7 @@ class PodHealthChecksConfigSection extends React.Component {
     this.COMMON_COLUMNS = [
       {
         heading: props.intl.formatMessage({
-          id: "XXXX",
+          id: "ryQbx62mkbf",
           defaultMessage: "Grace Period"
         }),
         prop: "gracePeriod",
@@ -32,7 +32,7 @@ class PodHealthChecksConfigSection extends React.Component {
       },
       {
         heading: props.intl.formatMessage({
-          id: "XXXX",
+          id: "ry4Zl62QJ-z",
           defaultMessage: "Interval"
         }),
         prop: "interval",
@@ -44,7 +44,7 @@ class PodHealthChecksConfigSection extends React.Component {
       },
       {
         heading: props.intl.formatMessage({
-          id: "XXXX",
+          id: "Skrbg6hmJWz",
           defaultMessage: "Timeout"
         }),
         prop: "timeout",
@@ -56,14 +56,14 @@ class PodHealthChecksConfigSection extends React.Component {
       },
       {
         heading: props.intl.formatMessage({
-          id: "XXXX",
+          id: "By8Zg63X1Wz",
           defaultMessage: "Max Failures"
         }),
         prop: "maxFailures"
       },
       {
         heading: props.intl.formatMessage({
-          id: "XXXX",
+          id: "r1wWgp37yWM",
           defaultMessage: "Container"
         }),
         prop: "container"
@@ -75,7 +75,7 @@ class PodHealthChecksConfigSection extends React.Component {
     return [
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "S1OZxpnXyZf",
           defaultMessage: "Command"
         }),
         prop: "command"
@@ -99,21 +99,21 @@ class PodHealthChecksConfigSection extends React.Component {
     return [
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "S1K-lp37kWM",
           defaultMessage: "Service Endpoint"
         }),
         prop: "endpoint"
       },
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "Sk9bg62QJZz",
           defaultMessage: "Proto"
         }),
         prop: "protocol"
       },
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "HJsWl627kWz",
           defaultMessage: "Path"
         }),
         prop: "path"
@@ -174,14 +174,14 @@ class PodHealthChecksConfigSection extends React.Component {
     return (
       <div>
         <ConfigurationMapHeading level={1}>
-          <FormattedMessage id="XXXX" defaultMessage={`Health Checks`} />
+          <FormattedMessage id="H1gWxa3QJWz" defaultMessage={`Health Checks`} />
         </ConfigurationMapHeading>
 
         {healthChecks.endpoints.length !== 0 &&
           <div>
             <ConfigurationMapHeading level={2}>
               <FormattedMessage
-                id="XXXX"
+                id="Hy-bx63myWM"
                 defaultMessage={`Service Endpoint Health Checks`}
               />
             </ConfigurationMapHeading>
@@ -200,7 +200,7 @@ class PodHealthChecksConfigSection extends React.Component {
           <div>
             <ConfigurationMapHeading level={2}>
               <FormattedMessage
-                id="XXXX"
+                id="rkfZe63XJWz"
                 defaultMessage={`Command Health Checks`}
               />
             </ConfigurationMapHeading>

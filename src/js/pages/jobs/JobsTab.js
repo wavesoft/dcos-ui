@@ -163,7 +163,7 @@ class JobsTab extends mixin(StoreMixin) {
         <Page.Header
           addButton={{
             label: this.props.intl.formatMessage({
-              id: "XXXX",
+              id: "Hkob8ahXy-M",
               defaultMessage: "Create a job"
             }),
             onItemSelect: this.handleOpenJobFormModal
@@ -223,11 +223,14 @@ class JobsTab extends mixin(StoreMixin) {
         />
         <AlertPanel>
           <AlertPanelHeader>
-            <FormattedMessage id="XXXX" defaultMessage={`No active jobs`} />
+            <FormattedMessage
+              id="HkFbU62mybz"
+              defaultMessage={`No active jobs`}
+            />
           </AlertPanelHeader>
           <p className="tall">
             <FormattedMessage
-              id="XXXX"
+              id="rkcbIpnQk-f"
               defaultMessage={`Create both one-off or scheduled jobs to perform tasks at a predefined interval.`}
             />
           </p>

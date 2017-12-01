@@ -141,7 +141,9 @@ class HealthTab extends React.Component {
         <FilterHeadline
           currentLength={visibleData.length}
           isFiltering={healthFilter !== "all" || searchString !== ""}
-          name={<FormattedMessage id="XXXX" defaultMessage={`Health Check`} />}
+          name={
+            <FormattedMessage id="ry9nnQ1-M" defaultMessage={`Health Check`} />
+          }
           onReset={this.resetFilter}
           totalLength={units.getItems().length}
         />

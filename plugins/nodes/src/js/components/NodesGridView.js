@@ -98,7 +98,9 @@ var NodesGridView = React.createClass({
       items.push(
         <li key="other">
           <span className={classNameOther} />
-          <span><FormattedMessage id="XXXX" defaultMessage={`Other`} /></span>
+          <span>
+            <FormattedMessage id="B1Zqn3QJWG" defaultMessage={`Other`} />
+          </span>
         </li>
       );
     }
@@ -130,7 +132,7 @@ var NodesGridView = React.createClass({
                   name: "showServices",
                   checked: props.showServices,
                   label: this.props.intl.formatMessage({
-                    id: "XXXX",
+                    id: "H1Mq32mkZz",
                     defaultMessage: "Show Services by Share"
                   }),
                   value: props.showServices

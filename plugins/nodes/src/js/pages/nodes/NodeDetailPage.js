@@ -134,7 +134,10 @@ class NodeDetailPage extends mixin(TabsMixin, StoreMixin) {
         <Page.Header breadcrumbs={<NodeBreadcrumbs />} />
         <div className="pod text-align-center">
           <h3 className="flush-top text-align-center">
-            <FormattedMessage id="XXXX" defaultMessage={`Error finding node`} />
+            <FormattedMessage
+              id="SJIq32Xy-f"
+              defaultMessage={`Error finding node`}
+            />
           </h3>
           <p className="flush">
             {`Did not find a node by the id "${nodeID}"`}
@@ -180,7 +183,7 @@ class NodeDetailPage extends mixin(TabsMixin, StoreMixin) {
     const tabs = [
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "Skv9hnQ1bM",
           defaultMessage: "Tasks"
         }),
         callback: () => {
@@ -190,7 +193,7 @@ class NodeDetailPage extends mixin(TabsMixin, StoreMixin) {
       },
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "HJd532XJZM",
           defaultMessage: "Health"
         }),
         callback: () => {
@@ -200,7 +203,7 @@ class NodeDetailPage extends mixin(TabsMixin, StoreMixin) {
       },
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "HkKc2nXJWM",
           defaultMessage: "Details"
         }),
         callback: () => {

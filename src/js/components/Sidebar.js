@@ -298,7 +298,8 @@ var Sidebar = React.createClass({
 
     return (
       <span className="version-number">
-        <FormattedMessage id="XXXX" defaultMessage={`v.`} />{data.version}
+        <FormattedMessage id="BkXemT3XkWz" defaultMessage={`v.`} />
+        {data.version}
       </span>
     );
   },

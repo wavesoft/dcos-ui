@@ -20,28 +20,28 @@ class PodStorageConfigSection extends React.Component {
     return [
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "SJymla37kWG",
           defaultMessage: "Volume"
         }),
         prop: "volume"
       },
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "rkeXean7kWf",
           defaultMessage: "Type"
         }),
         prop: "type"
       },
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "ry-7x62QJbG",
           defaultMessage: "Size"
         }),
         prop: "size"
       },
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "rJGXea3mybM",
           defaultMessage: "Read Only"
         }),
         prop: "readOnly",
@@ -55,21 +55,21 @@ class PodStorageConfigSection extends React.Component {
       },
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "S1Q7ga2mJ-f",
           defaultMessage: "Container Mount Path"
         }),
         prop: "mountPath"
       },
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "SyNmgpnXy-M",
           defaultMessage: "Host Path"
         }),
         prop: "hostPath"
       },
       {
         heading: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "SJHQxp2XkWG",
           defaultMessage: "Container"
         }),
         prop: "container"
@@ -134,7 +134,7 @@ class PodStorageConfigSection extends React.Component {
     return (
       <div>
         <ConfigurationMapHeading level={1}>
-          <FormattedMessage id="XXXX" defaultMessage={`Storage`} />
+          <FormattedMessage id="Bk0zl63Xybf" defaultMessage={`Storage`} />
         </ConfigurationMapHeading>
         <ConfigurationMapSection key="pod-general-section">
           <ConfigurationMapTable

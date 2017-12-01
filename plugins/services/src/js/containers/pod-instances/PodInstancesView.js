@@ -64,7 +64,9 @@ class PodInstancesView extends React.Component {
       <div className="button-collection flush-bottom">
         <div className="button button-link" onClick={this.handleKillClick}>
           <Icon id="repeat" size="mini" />
-          <span><FormattedMessage id="XXXX" defaultMessage={`Restart`} /></span>
+          <span>
+            <FormattedMessage id="ryHWph2XkWG" defaultMessage={`Restart`} />
+          </span>
         </div>
       </div>
     );

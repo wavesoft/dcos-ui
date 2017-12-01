@@ -6,21 +6,21 @@ const ResourcesUtil = intl => {
   const DefaultResourceTypes = {
     cpus: {
       label: intl.formatMessage({
-        id: "XXXX",
+        id: "HyxsT371ZG",
         defaultMessage: "CPU"
       }),
       colorID: 0
     },
     mem: {
       label: intl.formatMessage({
-        id: "XXXX",
+        id: "ryZip2XybG",
         defaultMessage: "Memory"
       }),
       colorID: 6
     },
     disk: {
       label: intl.formatMessage({
-        id: "XXXX",
+        id: "rJfoTn7ybz",
         defaultMessage: "Disk"
       }),
       colorID: 3

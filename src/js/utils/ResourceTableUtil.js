@@ -101,7 +101,7 @@ const ResourceTableUtil = {
       <span>
         {model[prop]}
         <span className="visible-mini-inline">
-          <FormattedMessage id="XXXX" defaultMessage={`tasks`} />
+          <FormattedMessage id="SysThQyZG" defaultMessage={`tasks`} />
         </span>
       </span>
     );

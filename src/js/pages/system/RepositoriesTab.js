@@ -23,7 +23,10 @@ const RepositoriesBreadcrumbs = addButton => {
     <Breadcrumb key={-1} title="Repositories">
       <BreadcrumbTextContent>
         <Link to="/settings/repositories">
-          <FormattedMessage id="XXXX" defaultMessage={`Package Repositories`} />
+          <FormattedMessage
+            id="SkgQLa3Xy-M"
+            defaultMessage={`Package Repositories`}
+          />
         </Link>
       </BreadcrumbTextContent>
     </Breadcrumb>
@@ -148,7 +151,7 @@ class RepositoriesTab extends mixin(StoreMixin) {
           addButton={{
             onItemSelect: this.handleOpenAddRepository,
             label: this.props.intl.formatMessage({
-              id: "XXXX",
+              id: "rJZQLpnXk-G",
               defaultMessage: "Add Repository"
             })
           }}

@@ -54,21 +54,21 @@ const PodEnvironmentVariablesConfigSection = ({ appConfig, onEditClick }) => {
   const columns = [
     {
       heading: this.props.intl.formatMessage({
-        id: "XXXX",
+        id: "S1exxa2Xkbf",
         defaultMessage: "Key"
       }),
       prop: "key"
     },
     {
       heading: this.props.intl.formatMessage({
-        id: "XXXX",
+        id: "BJblxp371-G",
         defaultMessage: "Value"
       }),
       prop: "value"
     },
     {
       heading: this.props.intl.formatMessage({
-        id: "XXXX",
+        id: "HyzleTnXJWf",
         defaultMessage: "Container"
       }),
       prop: "container"
@@ -78,7 +78,10 @@ const PodEnvironmentVariablesConfigSection = ({ appConfig, onEditClick }) => {
   return (
     <div>
       <ConfigurationMapHeading level={1}>
-        <FormattedMessage id="XXXX" defaultMessage={`Environment Variables`} />
+        <FormattedMessage
+          id="SJ1gxa3mJbz"
+          defaultMessage={`Environment Variables`}
+        />
       </ConfigurationMapHeading>
       <ConfigurationMapSection key="pod-general-section">
         <ConfigurationMapTable

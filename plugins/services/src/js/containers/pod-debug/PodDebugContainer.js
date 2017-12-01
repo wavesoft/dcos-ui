@@ -51,7 +51,7 @@ class PodDebugTabView extends React.Component {
     return (
       <div>
         <ConfigurationMapHeading level={2}>
-          <FormattedMessage id="XXXX" defaultMessage={`Details`} />
+          <FormattedMessage id="rJWe6227yZG" defaultMessage={`Details`} />
         </ConfigurationMapHeading>
         <DeclinedOffersTable
           offers={queue.declinedOffers.offers}
@@ -68,7 +68,10 @@ class PodDebugTabView extends React.Component {
       return (
         <ConfigurationMapSection>
           <ConfigurationMapHeading>
-            <FormattedMessage id="XXXX" defaultMessage={`Last Terminations`} />
+            <FormattedMessage
+              id="SJGxTh37k-M"
+              defaultMessage={`Last Terminations`}
+            />
           </ConfigurationMapHeading>
           <p>(No data)</p>
         </ConfigurationMapSection>
@@ -89,7 +92,11 @@ class PodDebugTabView extends React.Component {
       } else {
         headline = (
           <ConfigurationMapHeading level={2}>
-            <FormattedMessage id="XXXX" defaultMessage={`Terminated at`} />{" "}
+            <FormattedMessage
+              id="HJmla22my-f"
+              defaultMessage={`Terminated at`}
+            />
+            {" "}
             {terminatedAt.toString()}
             {" "}
             (
@@ -105,7 +112,10 @@ class PodDebugTabView extends React.Component {
           <ConfigurationMapSection>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
-                <FormattedMessage id="XXXX" defaultMessage={`Instance ID`} />
+                <FormattedMessage
+                  id="SJNxan37JZG"
+                  defaultMessage={`Instance ID`}
+                />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {item.getId()}
@@ -113,7 +123,7 @@ class PodDebugTabView extends React.Component {
             </ConfigurationMapRow>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
-                <FormattedMessage id="XXXX" defaultMessage={`Message`} />
+                <FormattedMessage id="ByBgahhQkWM" defaultMessage={`Message`} />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {item.getMessage()}
@@ -121,7 +131,10 @@ class PodDebugTabView extends React.Component {
             </ConfigurationMapRow>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
-                <FormattedMessage id="XXXX" defaultMessage={`Started At`} />
+                <FormattedMessage
+                  id="rJLeTn3Qkbz"
+                  defaultMessage={`Started At`}
+                />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {startedAt.toString()} (<TimeAgo time={startedAt} />)
@@ -131,7 +144,7 @@ class PodDebugTabView extends React.Component {
         </ConfigurationMapSection>,
         <ConfigurationMapSection key={`container-${index}`}>
           <ConfigurationMapHeading level={3}>
-            <FormattedMessage id="XXXX" defaultMessage={`Containers`} />
+            <FormattedMessage id="ByPeT2hQkWG" defaultMessage={`Containers`} />
           </ConfigurationMapHeading>
           <PodContainerTerminationTable containers={item.getContainers()} />
         </ConfigurationMapSection>
@@ -153,11 +166,14 @@ class PodDebugTabView extends React.Component {
     return (
       <ConfigurationMapSection>
         <ConfigurationMapHeading>
-          <FormattedMessage id="XXXX" defaultMessage={`Last Changes`} />
+          <FormattedMessage id="SJug6n2mybG" defaultMessage={`Last Changes`} />
         </ConfigurationMapHeading>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`Configuration`} />
+            <FormattedMessage
+              id="BkYxp23XJWf"
+              defaultMessage={`Configuration`}
+            />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {lastUpdated.toString()} (<TimeAgo time={lastUpdated} />)
@@ -184,7 +200,7 @@ class PodDebugTabView extends React.Component {
       mainContent = (
         <div>
           <ConfigurationMapHeading level={2}>
-            <FormattedMessage id="XXXX" defaultMessage={`Summary`} />
+            <FormattedMessage id="Sy5ea2hQkZz" defaultMessage={`Summary`} />
           </ConfigurationMapHeading>
           <RecentOffersSummary data={summary} />
         </div>
@@ -201,7 +217,7 @@ class PodDebugTabView extends React.Component {
       >
         <ConfigurationMapHeading>
           <FormattedMessage
-            id="XXXX"
+            id="SJieT2h7J-G"
             defaultMessage={`Recent Resource Offers`}
           />
           {offerCount}
@@ -236,7 +252,7 @@ class PodDebugTabView extends React.Component {
         {DateUtil.getDuration(timeWaiting, null)}{". "}
         <a className="clickable" onClick={this.handleJumpToRecentOffersClick}>
           <FormattedMessage
-            id="XXXX"
+            id="rkhga32XJWG"
             defaultMessage={`See recent resource offers`}
           />
         </a>.

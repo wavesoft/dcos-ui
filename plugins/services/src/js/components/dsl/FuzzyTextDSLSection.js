@@ -65,7 +65,7 @@ class FuzzyTextDSLSection extends React.Component {
 
         <FormGroup>
           <FieldLabel>
-            <FormattedMessage id="XXXX" defaultMessage={`Has the words`} />
+            <FormattedMessage id="Syhh3Q1Wz" defaultMessage={`Has the words`} />
           </FieldLabel>
           <FieldInput
             disabled={!enabled}

@@ -44,7 +44,7 @@ class ServiceNetworkingConfigSection extends ServiceConfigBaseSectionDisplay {
       values: [
         {
           heading: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "Hk5xZp2mJWz",
             defaultMessage: "Network"
           }),
           headingLevel: 1
@@ -52,14 +52,14 @@ class ServiceNetworkingConfigSection extends ServiceConfigBaseSectionDisplay {
         {
           key: "networks.0.mode",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "B1iebTnQ1ZM",
             defaultMessage: "Network Mode"
           })
         },
         {
           key: "networks.0.name",
           label: this.props.intl.formatMessage({
-            id: "XXXX",
+            id: "HkheWT2XJ-M",
             defaultMessage: "Network Name"
           })
         },
@@ -148,7 +148,7 @@ class ServiceNetworkingConfigSection extends ServiceConfigBaseSectionDisplay {
                   return (
                     <em>
                       <FormattedMessage
-                        id="XXXX"
+                        id="rktxWahX1bM"
                         defaultMessage={`Not Enabled`}
                       />
                     </em>

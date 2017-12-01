@@ -73,7 +73,10 @@ var HostTimeSeriesChart = React.createClass({
           colorIndex={4}
           currentValue={props.currentValue}
           subHeading={
-            <FormattedMessage id="XXXX" defaultMessage={`Connected Nodes`} />
+            <FormattedMessage
+              id="SJEThX1ZM"
+              defaultMessage={`Connected Nodes`}
+            />
           }
           y="slavesCount"
         />
