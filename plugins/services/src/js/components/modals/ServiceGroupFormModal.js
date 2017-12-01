@@ -108,7 +108,7 @@ class ServiceGroupFormModal extends React.Component {
           <p className="text-align-center flush-top">
             <FormattedMessage
               id="XXXX"
-              defaultMessage={`Enter a path for the new group under `}
+              defaultMessage={`Enter a path for the new group under`}
             />
             <span className="emphasize">{parentGroupId}</span>
           </p>

@@ -132,12 +132,7 @@ class PodNetworkConfigSection extends React.Component {
 
           {/* Service endpoints */}
           <ConfigurationMapHeading level={3}>
-            <FormattedMessage
-              id="XXXX"
-              defaultMessage={`
-            Service Endpoints
-          `}
-            />
+            <FormattedMessage id="XXXX" defaultMessage={`Service Endpoints`} />
           </ConfigurationMapHeading>
           <ConfigurationMapTable
             columnDefaults={{ hideIfEmpty: true }}

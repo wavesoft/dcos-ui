@@ -24,12 +24,7 @@ class CreateServicePickerCatalogOption extends React.Component {
       >
         <CreateServiceModalServicePickerOptionImage src={packageServiceImage} />
         <CreateServiceModalServicePickerOptionContent>
-          <FormattedMessage
-            id="XXXX"
-            defaultMessage={`
-          Install a Package
-        `}
-          />
+          <FormattedMessage id="XXXX" defaultMessage={`Install a Package`} />
         </CreateServiceModalServicePickerOptionContent>
       </CreateServiceModalServicePickerOption>
     );

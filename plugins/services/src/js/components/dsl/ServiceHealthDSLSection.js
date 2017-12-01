@@ -44,12 +44,7 @@ class ServiceHealthDSLSection extends React.Component {
                   name="is_healthy"
                   type="checkbox"
                 />
-                <FormattedMessage
-                  id="XXXX"
-                  defaultMessage={`
-                Healthy
-              `}
-                />
+                <FormattedMessage id="XXXX" defaultMessage={`Healthy`} />
               </FieldLabel>
               <FieldLabel>
                 <FieldInput
@@ -71,12 +66,7 @@ class ServiceHealthDSLSection extends React.Component {
                   name="is_unhealthy"
                   type="checkbox"
                 />
-                <FormattedMessage
-                  id="XXXX"
-                  defaultMessage={`
-                Unhealthy
-              `}
-                />
+                <FormattedMessage id="XXXX" defaultMessage={`Unhealthy`} />
               </FieldLabel>
             </FormGroup>
           </div>

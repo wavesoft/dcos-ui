@@ -227,12 +227,7 @@ class InstallPackageModal
       <div>
         <div className="modal-body">
           <CosmosErrorHeader>
-            <FormattedMessage
-              id="XXXX"
-              defaultMessage={`
-            An Error Occurred
-          `}
-            />
+            <FormattedMessage id="XXXX" defaultMessage={`An Error Occurred`} />
           </CosmosErrorHeader>
           <CosmosErrorMessage error={installError} flushBottom={true} />
         </div>
@@ -356,12 +351,7 @@ class InstallPackageModal
       <div className="modal-footer">
         <div className="button-collection flush-bottom">
           <button className="button" onClick={this.handleModalClose}>
-            <FormattedMessage
-              id="XXXX"
-              defaultMessage={`
-            Cancel
-          `}
-            />
+            <FormattedMessage id="XXXX" defaultMessage={`Cancel`} />
           </button>
           <button
             disabled={pendingRequest || hasFormErrors}
@@ -397,12 +387,7 @@ class InstallPackageModal
         <div className="modal-footer">
           <div className="button-collection flush-bottom">
             <button className="button" onClick={this.handleModalClose}>
-              <FormattedMessage
-                id="XXXX"
-                defaultMessage={`
-              Cancel
-            `}
-              />
+              <FormattedMessage id="XXXX" defaultMessage={`Cancel`} />
             </button>
             <div className="button-collection flush">
               <button

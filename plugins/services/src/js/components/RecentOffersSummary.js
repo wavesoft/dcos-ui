@@ -180,21 +180,11 @@ function RecentOffersSummary({ data }) {
       <div className="funnel-graph-key">
         <div className="funnel-graph-key-item">
           <span className="funnel-graph-key-dot funnel-graph-key-dot-matched dot" />
-          <FormattedMessage
-            id="XXXX"
-            defaultMessage={`
-          Matched
-        `}
-          />
+          <FormattedMessage id="XXXX" defaultMessage={`Matched`} />
         </div>
         <div className="funnel-graph-key-item">
           <span className="funnel-graph-key-dot funnel-graph-key-dot-declined dot" />
-          <FormattedMessage
-            id="XXXX"
-            defaultMessage={`
-          Declined
-        `}
-          />
+          <FormattedMessage id="XXXX" defaultMessage={`Declined`} />
         </div>
       </div>
     </div>

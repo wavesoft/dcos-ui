@@ -44,12 +44,7 @@ class ServiceOtherDSLSection extends React.Component {
                   name="is_package"
                   type="checkbox"
                 />
-                <FormattedMessage
-                  id="XXXX"
-                  defaultMessage={`
-                Catalog
-              `}
-                />
+                <FormattedMessage id="XXXX" defaultMessage={`Catalog`} />
               </FieldLabel>
             </FormGroup>
             <FormGroup>
@@ -60,12 +55,7 @@ class ServiceOtherDSLSection extends React.Component {
                   name="is_pod"
                   type="checkbox"
                 />
-                <FormattedMessage
-                  id="XXXX"
-                  defaultMessage={`
-                Pod
-              `}
-                />
+                <FormattedMessage id="XXXX" defaultMessage={`Pod`} />
               </FieldLabel>
             </FormGroup>
           </div>
@@ -78,12 +68,7 @@ class ServiceOtherDSLSection extends React.Component {
                   name="has_volumes"
                   type="checkbox"
                 />
-                <FormattedMessage
-                  id="XXXX"
-                  defaultMessage={`
-                Volumes
-              `}
-                />
+                <FormattedMessage id="XXXX" defaultMessage={`Volumes`} />
               </FieldLabel>
             </FormGroup>
           </div>

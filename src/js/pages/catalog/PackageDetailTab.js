@@ -205,7 +205,7 @@ class PackageDetailTab extends mixin(StoreMixin) {
           <p>
             <FormattedMessage
               id="XXXX"
-              defaultMessage={`This package can only be installed using the CLI. See the `}
+              defaultMessage={`This package can only be installed using the CLI. See the`}
             />
             <a
               href={MetadataStore.buildDocsURI(
@@ -342,9 +342,9 @@ class PackageDetailTab extends mixin(StoreMixin) {
                 <small>
                   <FormattedMessage
                     id="XXXX"
-                    defaultMessage={`
-                  By deploying you agree to the `}
-                  />{" "}
+                    defaultMessage={`By deploying you agree to the`}
+                  />
+                  {" "}
                   <a
                     href={this.getTermsConditionUrl()}
                     target="_blank"

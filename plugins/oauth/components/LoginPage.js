@@ -114,7 +114,7 @@ class LoginPage extends mixin(StoreMixin) {
           <p className="flush-bottom text-align-center">
             <FormattedMessage
               id="XXXX"
-              defaultMessage={`Please contact your system administrator or see the `}
+              defaultMessage={`Please contact your system administrator or see the`}
             />
             <a
               href={MetadataStore.buildDocsURI("/administration/installing/")}

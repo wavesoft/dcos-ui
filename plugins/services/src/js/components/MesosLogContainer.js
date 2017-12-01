@@ -208,9 +208,7 @@ class MesosLogContainer extends mixin(StoreMixin) {
         <h3 className="text-align-center flush-top">
           <FormattedMessage
             id="XXXX"
-            defaultMessage={`
-          This directory does not contain any logs.
-        `}
+            defaultMessage={`This directory does not contain any logs.`}
           />
         </h3>
       </div>

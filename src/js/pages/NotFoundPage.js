@@ -30,10 +30,9 @@ var NotFoundPage = React.createClass({
           <p>
             <FormattedMessage
               id="XXXX"
-              defaultMessage={`
-            The page you requested cannot be found. Check the address you provided, or head back to the
-            `}
-            />{" "}
+              defaultMessage={`The page you requested cannot be found. Check the address you provided, or head back to the`}
+            />
+            {" "}
             <Link to="/dashboard">
               <FormattedMessage id="XXXX" defaultMessage={`Dashboard`} />
             </Link>

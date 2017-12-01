@@ -218,12 +218,7 @@ class ServiceDestroyModal extends React.Component {
       >
         <IntlContext intl={this.props.intl}>
           <p>
-            <FormattedMessage
-              id="XXXX"
-              defaultMessage={`
-          This action
-          `}
-            />{" "}
+            <FormattedMessage id="XXXX" defaultMessage={`This action`} />{" "}
             <strong>
               <FormattedMessage id="XXXX" defaultMessage={`CANNOT`} />
             </strong>

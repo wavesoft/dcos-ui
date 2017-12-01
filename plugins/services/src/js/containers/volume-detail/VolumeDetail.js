@@ -70,12 +70,7 @@ class VolumeDetail extends React.Component {
           <ConfigurationMapSection>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
-                <FormattedMessage
-                  id="XXXX"
-                  defaultMessage={`
-                Container Path
-              `}
-                />
+                <FormattedMessage id="XXXX" defaultMessage={`Container Path`} />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {volume.getContainerPath()}
@@ -83,12 +78,7 @@ class VolumeDetail extends React.Component {
             </ConfigurationMapRow>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
-                <FormattedMessage
-                  id="XXXX"
-                  defaultMessage={`
-                Mode
-              `}
-                />
+                <FormattedMessage id="XXXX" defaultMessage={`Mode`} />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {volume.getMode()}
@@ -104,12 +94,7 @@ class VolumeDetail extends React.Component {
             </ConfigurationMapRow>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
-                <FormattedMessage
-                  id="XXXX"
-                  defaultMessage={`
-                Application
-              `}
-                />
+                <FormattedMessage id="XXXX" defaultMessage={`Application`} />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {serviceID}
@@ -117,12 +102,7 @@ class VolumeDetail extends React.Component {
             </ConfigurationMapRow>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
-                <FormattedMessage
-                  id="XXXX"
-                  defaultMessage={`
-                Task ID
-              `}
-                />
+                <FormattedMessage id="XXXX" defaultMessage={`Task ID`} />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {volume.getTaskID()}
@@ -130,12 +110,7 @@ class VolumeDetail extends React.Component {
             </ConfigurationMapRow>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
-                <FormattedMessage
-                  id="XXXX"
-                  defaultMessage={`
-                Host
-              `}
-                />
+                <FormattedMessage id="XXXX" defaultMessage={`Host`} />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {volume.getHost()}

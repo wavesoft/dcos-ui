@@ -193,9 +193,7 @@ class PackagesTab extends mixin(StoreMixin) {
       <p className="tall flush-top">
         <FormattedMessage
           id="XXXX"
-          defaultMessage={`
-        Community packages are unverified and unreviewed content from the community.
-      `}
+          defaultMessage={`Community packages are unverified and unreviewed content from the community.`}
         />
       </p>
     );

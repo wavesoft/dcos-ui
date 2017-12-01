@@ -22,10 +22,8 @@ const AppLockedMessage = function({ service }) {
       {itemType}
       {" "}<FormattedMessage
         id="XXXX"
-        defaultMessage={`
-      is currently locked by one or more deployments. Press the button
-      again to forcefully change and deploy the new configuration.
-    `}
+        defaultMessage={`is currently locked by one or more deployments. Press the button
+      again to forcefully change and deploy the new configuration.`}
       />
     </h4>
   );

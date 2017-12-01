@@ -120,14 +120,11 @@ const ServiceList = React.createClass({
           <FormattedMessage id="XXXX" defaultMessage={`No Services Running`} />
         </h3>
         <p className="flush text-align-center">
-          <FormattedMessage id="XXXX" defaultMessage={`Click the `} />
+          <FormattedMessage id="XXXX" defaultMessage={`Click the`} />
           <Link to="/services">
             <FormattedMessage id="XXXX" defaultMessage={`Services tab`} />
           </Link>
-          <FormattedMessage
-            id="XXXX"
-            defaultMessage={` to install services.`}
-          />
+          <FormattedMessage id="XXXX" defaultMessage={`to install services.`} />
         </p>
       </div>
     );

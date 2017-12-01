@@ -228,9 +228,7 @@ class JobsTab extends mixin(StoreMixin) {
           <p className="tall">
             <FormattedMessage
               id="XXXX"
-              defaultMessage={`
-            Create both one-off or scheduled jobs to perform tasks at a predefined interval.
-          `}
+              defaultMessage={`Create both one-off or scheduled jobs to perform tasks at a predefined interval.`}
             />
           </p>
           {this.getAlertPanelFooter()}

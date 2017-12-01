@@ -182,11 +182,8 @@ class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
     const content = (
       <div>
         <h2 className="text-danger text-align-center flush-top">
-          {StringUtil.capitalize(UserActions.DELETE)}<FormattedMessage
-            id="XXXX"
-            defaultMessage={` Job
-        `}
-          />
+          {StringUtil.capitalize(UserActions.DELETE)}
+          <FormattedMessage id="XXXX" defaultMessage={`Job`} />
         </h2>
         <p>{message}</p>
       </div>
@@ -285,7 +282,7 @@ class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
               size="mini"
             />
             <span>
-              <FormattedMessage id="XXXX" defaultMessage={`Scheduled `} />
+              <FormattedMessage id="XXXX" defaultMessage={`Scheduled`} />
               {StringUtil.lowercase(scheduleText)}
             </span>
           </p>

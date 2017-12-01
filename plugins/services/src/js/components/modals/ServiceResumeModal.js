@@ -140,12 +140,7 @@ class ServiceResumeModal extends React.Component {
     const heading = (
       <IntlContext intl={this.props.intl}>
         <ModalHeading>
-          <FormattedMessage
-            id="XXXX"
-            defaultMessage={`
-        Resume Service
-      `}
-          />
+          <FormattedMessage id="XXXX" defaultMessage={`Resume Service`} />
         </ModalHeading>
       </IntlContext>
     );

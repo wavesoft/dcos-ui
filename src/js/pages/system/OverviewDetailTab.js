@@ -124,11 +124,8 @@ class OverviewDetailTab extends mixin(StoreMixin) {
       <ConfigurationMapSection>
         <ConfigurationMapRow key="version">
           <ConfigurationMapLabel>
-            {Config.productName}<FormattedMessage
-              id="XXXX"
-              defaultMessage={` Version
-          `}
-            />
+            {Config.productName}
+            <FormattedMessage id="XXXX" defaultMessage={`Version`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {productVersion}
@@ -138,9 +135,7 @@ class OverviewDetailTab extends mixin(StoreMixin) {
           <ConfigurationMapLabel>
             <FormattedMessage
               id="XXXX"
-              defaultMessage={`
-            Cryptographic Cluster ID
-          `}
+              defaultMessage={`Cryptographic Cluster ID`}
             />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
@@ -149,12 +144,7 @@ class OverviewDetailTab extends mixin(StoreMixin) {
         </ConfigurationMapRow>
         <ConfigurationMapRow key="publicIP">
           <ConfigurationMapLabel>
-            <FormattedMessage
-              id="XXXX"
-              defaultMessage={`
-            Public IP
-          `}
-            />
+            <FormattedMessage id="XXXX" defaultMessage={`Public IP`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {publicIP}
@@ -333,22 +323,16 @@ class OverviewDetailTab extends mixin(StoreMixin) {
         <div className="container">
           <ConfigurationMap>
             <ConfigurationMapHeading className="flush-top">
-              <FormattedMessage
-                id="XXXX"
-                defaultMessage={`
-              Cluster `}
-              /><FormattedMessage id="COMMON.DETAILS" />
+              <FormattedMessage id="XXXX" defaultMessage={`Cluster`} />
+              <FormattedMessage id="COMMON.DETAILS" />
             </ConfigurationMapHeading>
             <ConfigurationMapHeading level={2}>
               <FormattedMessage id="COMMON.GENERAL" />
             </ConfigurationMapHeading>
             {this.getClusterDetails()}
             <ConfigurationMapHeading level={2}>
-              <FormattedMessage
-                id="XXXX"
-                defaultMessage={`
-              Mesos `}
-              /><FormattedMessage id="COMMON.DETAILS" />
+              <FormattedMessage id="XXXX" defaultMessage={`Mesos`} />
+              <FormattedMessage id="COMMON.DETAILS" />
             </ConfigurationMapHeading>
             {this.getMesosDetails()}
             {marathonDetails}

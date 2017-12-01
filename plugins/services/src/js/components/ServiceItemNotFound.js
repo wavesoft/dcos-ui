@@ -9,12 +9,7 @@ const ServiceItemNotFound = function({ message }) {
   const footer = (
     <div className="button-collection flush-bottom">
       <Link to="/services" className="button button-stroke">
-        <FormattedMessage
-          id="XXXX"
-          defaultMessage={`
-        View Services
-      `}
-        />
+        <FormattedMessage id="XXXX" defaultMessage={`View Services`} />
       </Link>
     </div>
   );

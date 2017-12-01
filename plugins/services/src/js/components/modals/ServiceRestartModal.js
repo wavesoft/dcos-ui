@@ -102,11 +102,8 @@ class ServiceRestartModal extends React.Component {
     return (
       <IntlContext intl={this.props.intl}>
         <ModalHeading>
-          <FormattedMessage
-            id="XXXX"
-            defaultMessage={`
-        Restart `}
-          />{serviceLabel}
+          <FormattedMessage id="XXXX" defaultMessage={`Restart`} />
+          {serviceLabel}
         </ModalHeading>
       </IntlContext>
     );
@@ -132,12 +129,8 @@ class ServiceRestartModal extends React.Component {
       >
         <IntlContext intl={this.props.intl}>
           <p>
-            <FormattedMessage
-              id="XXXX"
-              defaultMessage={`
-          Restarting the
-          `}
-            />{" "}
+            <FormattedMessage id="XXXX" defaultMessage={`Restarting the`} />
+            {" "}
             <strong>{serviceName}</strong>
             {" "}
             {serviceLabel.toLowerCase()}
@@ -145,11 +138,10 @@ class ServiceRestartModal extends React.Component {
             will remove all currently running instances of the
             {" "}
             {serviceLabel.toLowerCase()}
-            {" "}<FormattedMessage
+            {" "}
+            <FormattedMessage
               id="XXXX"
-              defaultMessage={`
-          and then attempt to create new instances identical to those removed.
-        `}
+              defaultMessage={`and then attempt to create new instances identical to those removed.`}
             />
           </p>
           {this.getErrorMessage()}

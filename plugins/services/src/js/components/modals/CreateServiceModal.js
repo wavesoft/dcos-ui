@@ -549,9 +549,7 @@ class CreateServiceModal extends Component {
             <FullScreenModalHeaderTitle>
               <FormattedMessage
                 id="XXXX"
-                defaultMessage={`
-            Review & Run Service
-          `}
+                defaultMessage={`Review & Run Service`}
               />
             </FullScreenModalHeaderTitle>
             <FullScreenModalHeaderActions

@@ -27,9 +27,7 @@ var ErrorModal = React.createClass({
         <ModalHeading>
           <FormattedMessage
             id="XXXX"
-            defaultMessage={`
-        Looks Like Something is Wrong
-      `}
+            defaultMessage={`Looks Like Something is Wrong`}
           />
         </ModalHeading>
       </IntlContext>

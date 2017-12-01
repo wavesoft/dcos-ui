@@ -20,18 +20,16 @@ const VirtualNetworkUtil = {
         <p className="flush">
           <FormattedMessage
             id="XXXX"
-            defaultMessage={`
-          Could not find the requested virtual network. Go to
-          `}
-          />{" "}
+            defaultMessage={`Could not find the requested virtual network. Go to`}
+          />
+          {" "}
           <Link to="/networking/networks">
             <FormattedMessage id="XXXX" defaultMessage={`Networks`} />
           </Link>
-          {" "}<FormattedMessage
+          {" "}
+          <FormattedMessage
             id="XXXX"
-            defaultMessage={`
-          overview to see all virtual networks.
-        `}
+            defaultMessage={`overview to see all virtual networks.`}
           />
         </p>
       </AlertPanel>

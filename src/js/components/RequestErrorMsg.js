@@ -7,12 +7,7 @@ import Config from "../config/Config";
 function getDefaultMessage() {
   const slackLink = (
     <a href={Config.slackChannel} target="_blank">
-      <FormattedMessage
-        id="XXXX"
-        defaultMessage={`
-      Slack channel
-    `}
-      />
+      <FormattedMessage id="XXXX" defaultMessage={`Slack channel`} />
     </a>
   );
   const supportLink = (
@@ -25,10 +20,9 @@ function getDefaultMessage() {
     <p className="text-align-center flush-bottom">
       <FormattedMessage
         id="XXXX"
-        defaultMessage={`
-      You can also join us on our
-      `}
-      />{" "}
+        defaultMessage={`You can also join us on our`}
+      />
+      {" "}
       {slackLink}
       {" "}
       or send us an email at

@@ -70,9 +70,7 @@ class PodPlacementConstraintsConfigSection extends React.Component {
         <ConfigurationMapHeading level={3}>
           <FormattedMessage
             id="XXXX"
-            defaultMessage={`
-          Placement Constraints
-        `}
+            defaultMessage={`Placement Constraints`}
           />
         </ConfigurationMapHeading>
         <ConfigurationMapSection>

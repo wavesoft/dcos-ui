@@ -102,11 +102,8 @@ class ServiceSuspendModal extends React.Component {
     return (
       <IntlContext intl={this.props.intl}>
         <ModalHeading>
-          <FormattedMessage
-            id="XXXX"
-            defaultMessage={`
-        Suspend `}
-          />{serviceLabel}
+          <FormattedMessage id="XXXX" defaultMessage={`Suspend`} />
+          {serviceLabel}
         </ModalHeading>
       </IntlContext>
     );
@@ -130,12 +127,8 @@ class ServiceSuspendModal extends React.Component {
       >
         <IntlContext intl={this.props.intl}>
           <p>
-            <FormattedMessage
-              id="XXXX"
-              defaultMessage={`
-          Suspending the
-          `}
-            />{" "}
+            <FormattedMessage id="XXXX" defaultMessage={`Suspending the`} />
+            {" "}
             <strong>{serviceName}</strong>
             {" "}
             {serviceLabel.toLowerCase()}
@@ -144,10 +137,12 @@ class ServiceSuspendModal extends React.Component {
             {" "}
             {serviceLabel.toLowerCase()}.
             {" "}
-            The {serviceLabel.toLowerCase()}<FormattedMessage
+            The
+            {" "}
+            {serviceLabel.toLowerCase()}
+            <FormattedMessage
               id="XXXX"
-              defaultMessage={` will not be deleted.
-        `}
+              defaultMessage={`will not be deleted.`}
             />
           </p>
           {this.getErrorMessage()}

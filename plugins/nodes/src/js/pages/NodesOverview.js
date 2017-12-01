@@ -228,20 +228,10 @@ var NodesOverview = React.createClass({
     return (
       <div className="button-group flush-bottom">
         <Link className={listClassSet} onClick={resetFilter} to="/nodes">
-          <FormattedMessage
-            id="XXXX"
-            defaultMessage={`
-          List
-        `}
-          />
+          <FormattedMessage id="XXXX" defaultMessage={`List`} />
         </Link>
         <Link className={gridClassSet} onClick={resetFilter} to="/nodes/grid">
-          <FormattedMessage
-            id="XXXX"
-            defaultMessage={`
-          Grid
-        `}
-          />
+          <FormattedMessage id="XXXX" defaultMessage={`Grid`} />
         </Link>
       </div>
     );

@@ -24,12 +24,7 @@ function SingleContainerOption({ columnClasses, onOptionSelect }) {
     >
       <CreateServiceModalServicePickerOptionImage src={defaultServiceImage} />
       <CreateServiceModalServicePickerOptionContent>
-        <FormattedMessage
-          id="XXXX"
-          defaultMessage={`
-        Single Container
-      `}
-        />
+        <FormattedMessage id="XXXX" defaultMessage={`Single Container`} />
       </CreateServiceModalServicePickerOptionContent>
     </CreateServiceModalServicePickerOption>
   );
@@ -57,12 +52,7 @@ function JSONOption({ columnClasses, onOptionSelect }) {
     >
       <CreateServiceModalServicePickerOptionImage src={jsonServiceImage} />
       <CreateServiceModalServicePickerOptionContent>
-        <FormattedMessage
-          id="XXXX"
-          defaultMessage={`
-        JSON Configuration
-      `}
-        />
+        <FormattedMessage id="XXXX" defaultMessage={`JSON Configuration`} />
       </CreateServiceModalServicePickerOptionContent>
     </CreateServiceModalServicePickerOption>
   );

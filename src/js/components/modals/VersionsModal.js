@@ -29,11 +29,8 @@ var VersionsModal = React.createClass({
     const header = (
       <ModalHeading>
         <IntlContext intl={this.props.intl}>
-          {Config.productName}<FormattedMessage
-            id="XXXX"
-            defaultMessage={` Info
-      `}
-          />
+          {Config.productName}
+          <FormattedMessage id="XXXX" defaultMessage={`Info`} />
         </IntlContext>
       </ModalHeading>
     );

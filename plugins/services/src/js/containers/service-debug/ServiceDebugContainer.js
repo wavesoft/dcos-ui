@@ -51,12 +51,7 @@ class ServiceDebugContainer extends React.Component {
     return (
       <div>
         <ConfigurationMapHeading level={2}>
-          <FormattedMessage
-            id="XXXX"
-            defaultMessage={`
-          Details
-        `}
-          />
+          <FormattedMessage id="XXXX" defaultMessage={`Details`} />
         </ConfigurationMapHeading>
         <DeclinedOffersTable
           offers={queue.declinedOffers.offers}
@@ -93,12 +88,7 @@ class ServiceDebugContainer extends React.Component {
       <ConfigurationMapSection>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage
-              id="XXXX"
-              defaultMessage={`
-            Task ID
-          `}
-            />
+            <FormattedMessage id="XXXX" defaultMessage={`Task ID`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {this.getValueText(taskId)}
@@ -106,12 +96,7 @@ class ServiceDebugContainer extends React.Component {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage
-              id="XXXX"
-              defaultMessage={`
-            State
-          `}
-            />
+            <FormattedMessage id="XXXX" defaultMessage={`State`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {this.getValueText(state)}
@@ -119,12 +104,7 @@ class ServiceDebugContainer extends React.Component {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage
-              id="XXXX"
-              defaultMessage={`
-            Message
-          `}
-            />
+            <FormattedMessage id="XXXX" defaultMessage={`Message`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {this.getValueText(message)}
@@ -132,12 +112,7 @@ class ServiceDebugContainer extends React.Component {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage
-              id="XXXX"
-              defaultMessage={`
-            Host
-          `}
-            />
+            <FormattedMessage id="XXXX" defaultMessage={`Host`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {this.getValueText(host)}
@@ -145,12 +120,7 @@ class ServiceDebugContainer extends React.Component {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage
-              id="XXXX"
-              defaultMessage={`
-            Timestamp
-          `}
-            />
+            <FormattedMessage id="XXXX" defaultMessage={`Timestamp`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {timestamp} (<TimeAgo time={new Date(timestamp)} />)
@@ -158,12 +128,7 @@ class ServiceDebugContainer extends React.Component {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage
-              id="XXXX"
-              defaultMessage={`
-            Version
-          `}
-            />
+            <FormattedMessage id="XXXX" defaultMessage={`Version`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {version} (<TimeAgo time={new Date(version)} />)
@@ -200,12 +165,7 @@ class ServiceDebugContainer extends React.Component {
       <ConfigurationMapSection>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage
-              id="XXXX"
-              defaultMessage={`
-            Scale or Restart
-          `}
-            />
+            <FormattedMessage id="XXXX" defaultMessage={`Scale or Restart`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {lastScaling}
@@ -213,12 +173,7 @@ class ServiceDebugContainer extends React.Component {
         </ConfigurationMapRow>
         <ConfigurationMapRow>
           <ConfigurationMapLabel>
-            <FormattedMessage
-              id="XXXX"
-              defaultMessage={`
-            Configuration
-          `}
-            />
+            <FormattedMessage id="XXXX" defaultMessage={`Configuration`} />
           </ConfigurationMapLabel>
           <ConfigurationMapValue>
             {`${lastConfigChangeAt} `}
@@ -239,12 +194,7 @@ class ServiceDebugContainer extends React.Component {
     return (
       <div>
         <ConfigurationMapHeading level={2}>
-          <FormattedMessage
-            id="XXXX"
-            defaultMessage={`
-          Summary
-        `}
-          />
+          <FormattedMessage id="XXXX" defaultMessage={`Summary`} />
         </ConfigurationMapHeading>
         <RecentOffersSummary data={service.getQueue().declinedOffers.summary} />
       </div>
@@ -303,9 +253,9 @@ class ServiceDebugContainer extends React.Component {
         <ConfigurationMapHeading>
           <FormattedMessage
             id="XXXX"
-            defaultMessage={`
-          Recent Resource Offers`}
-          />{offerCount}
+            defaultMessage={`Recent Resource Offers`}
+          />
+          {offerCount}
         </ConfigurationMapHeading>
         <p>{introText}</p>
         {mainContent}
@@ -371,9 +321,7 @@ class ServiceDebugContainer extends React.Component {
         <a className="clickable" onClick={this.handleJumpToRecentOffersClick}>
           <FormattedMessage
             id="XXXX"
-            defaultMessage={`
-          See recent resource offers
-        `}
+            defaultMessage={`See recent resource offers`}
           />
         </a>.
       </Alert>
@@ -424,12 +372,7 @@ class ServiceDebugContainer extends React.Component {
         <ConfigurationMap>
           <ConfigurationMapSection>
             <ConfigurationMapHeading>
-              <FormattedMessage
-                id="XXXX"
-                defaultMessage={`
-              Last Changes
-            `}
-              />
+              <FormattedMessage id="XXXX" defaultMessage={`Last Changes`} />
             </ConfigurationMapHeading>
             {this.getLastVersionChange()}
           </ConfigurationMapSection>
@@ -437,21 +380,14 @@ class ServiceDebugContainer extends React.Component {
             <ConfigurationMapHeading>
               <FormattedMessage
                 id="XXXX"
-                defaultMessage={`
-              Last Task Failure
-            `}
+                defaultMessage={`Last Task Failure`}
               />
             </ConfigurationMapHeading>
             {this.getLastTaskFailureInfo()}
           </ConfigurationMapSection>
           <ConfigurationMapSection>
             <ConfigurationMapHeading>
-              <FormattedMessage
-                id="XXXX"
-                defaultMessage={`
-              Task Statistics
-            `}
-              />
+              <FormattedMessage id="XXXX" defaultMessage={`Task Statistics`} />
             </ConfigurationMapHeading>
             {this.getTaskStats()}
           </ConfigurationMapSection>

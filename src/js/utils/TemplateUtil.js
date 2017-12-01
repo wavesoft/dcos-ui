@@ -52,7 +52,7 @@ const TemplateUtil = {
    * @param {React.Children} children
    * @param {React.Component} T
    *
-   * @return {React.Component}<FormattedMessage id="XXXX" defaultMessage={` a single child of type `}/><T>.
+   * @return {React.Component}<FormattedMessage id="XXXX" defaultMessage={`a single child of type`}/><T>.
    */
   getChildOfType(children, T) {
     return React.Children.toArray(children).find(child => child.type === T);

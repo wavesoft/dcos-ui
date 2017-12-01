@@ -62,11 +62,14 @@ class FilterHeadline extends React.Component {
     return (
       <ul className={listClassSet}>
         <li className={filteredClassSet}>
-          <FormattedMessage
-            id="XXXX"
-            defaultMessage={`
-          Showing `}
-          />{currentLength} of {totalLength} {name}
+          <FormattedMessage id="XXXX" defaultMessage={`Showing`} />
+          {currentLength}
+          {" "}
+          of
+          {" "}
+          {totalLength}
+          {" "}
+          {name}
         </li>
         <li className={anchorClassSet} onClick={this.handleReset}>
           <a className="small flush">

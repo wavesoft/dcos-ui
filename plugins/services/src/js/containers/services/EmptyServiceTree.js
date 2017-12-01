@@ -8,20 +8,10 @@ const EmptyServiceTree = function({ onCreateGroup, onCreateService }) {
   const footer = (
     <div className="button-collection flush-bottom">
       <button className="button button-stroke" onClick={onCreateGroup}>
-        <FormattedMessage
-          id="XXXX"
-          defaultMessage={`
-        Create Group
-      `}
-        />
+        <FormattedMessage id="XXXX" defaultMessage={`Create Group`} />
       </button>
       <button className="button button-success" onClick={onCreateService}>
-        <FormattedMessage
-          id="XXXX"
-          defaultMessage={`
-        Run a Service
-      `}
-        />
+        <FormattedMessage id="XXXX" defaultMessage={`Run a Service`} />
       </button>
     </div>
   );
@@ -34,9 +24,7 @@ const EmptyServiceTree = function({ onCreateGroup, onCreateService }) {
       <p className="tall">
         <FormattedMessage
           id="XXXX"
-          defaultMessage={`
-        Run a new service or create a new group to help organize your services.
-      `}
+          defaultMessage={`Run a new service or create a new group to help organize your services.`}
         />
       </p>
       {footer}

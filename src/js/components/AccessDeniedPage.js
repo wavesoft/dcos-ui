@@ -47,12 +47,12 @@ module.exports = class AccessDeniedPage extends React.Component {
               <p className="tall">
                 <FormattedMessage
                   id="XXXX"
-                  defaultMessage={`You do not have access to this service. Please contact your `}
+                  defaultMessage={`You do not have access to this service. Please contact your`}
                 />
                 {Config.productName}
                 <FormattedMessage
                   id="XXXX"
-                  defaultMessage={` administrator or see `}
+                  defaultMessage={`administrator or see`}
                 />
                 <a
                   href={MetadataStore.buildDocsURI(
@@ -61,10 +61,10 @@ module.exports = class AccessDeniedPage extends React.Component {
                   target="_blank"
                 >
                   security documentation
-                </a><FormattedMessage
+                </a>
+                <FormattedMessage
                   id="XXXX"
-                  defaultMessage={` for more information.
-              `}
+                  defaultMessage={`for more information.`}
                 />
               </p>
               {this.getFooter()}

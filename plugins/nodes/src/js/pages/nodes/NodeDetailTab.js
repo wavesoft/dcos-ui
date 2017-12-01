@@ -33,12 +33,7 @@ class NodeDetailTab extends React.Component {
           <ConfigurationMapSection>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
-                <FormattedMessage
-                  id="XXXX"
-                  defaultMessage={`
-                ID
-              `}
-                />
+                <FormattedMessage id="XXXX" defaultMessage={`ID`} />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {node.id}
@@ -46,12 +41,7 @@ class NodeDetailTab extends React.Component {
             </ConfigurationMapRow>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
-                <FormattedMessage
-                  id="XXXX"
-                  defaultMessage={`
-                Active
-              `}
-                />
+                <FormattedMessage id="XXXX" defaultMessage={`Active`} />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {StringUtil.capitalize(node.active.toString().toLowerCase())}
@@ -59,12 +49,7 @@ class NodeDetailTab extends React.Component {
             </ConfigurationMapRow>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
-                <FormattedMessage
-                  id="XXXX"
-                  defaultMessage={`
-                Registered
-              `}
-                />
+                <FormattedMessage id="XXXX" defaultMessage={`Registered`} />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {DateUtil.msToDateStr(node.registered_time.toFixed(3) * 1000)}
@@ -72,12 +57,7 @@ class NodeDetailTab extends React.Component {
             </ConfigurationMapRow>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
-                <FormattedMessage
-                  id="XXXX"
-                  defaultMessage={`
-                Master Version
-              `}
-                />
+                <FormattedMessage id="XXXX" defaultMessage={`Master Version`} />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {MesosStateStore.get("lastMesosState").version}
@@ -87,21 +67,11 @@ class NodeDetailTab extends React.Component {
           <HashMapDisplay hash={node.attributes} headline="Attributes" />
           <ConfigurationMapSection>
             <ConfigurationMapHeading>
-              <FormattedMessage
-                id="XXXX"
-                defaultMessage={`
-              Resources
-            `}
-              />
+              <FormattedMessage id="XXXX" defaultMessage={`Resources`} />
             </ConfigurationMapHeading>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
-                <FormattedMessage
-                  id="XXXX"
-                  defaultMessage={`
-                Disk
-              `}
-                />
+                <FormattedMessage id="XXXX" defaultMessage={`Disk`} />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {Units.formatResource("disk", resources.disk)}
@@ -109,12 +79,7 @@ class NodeDetailTab extends React.Component {
             </ConfigurationMapRow>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
-                <FormattedMessage
-                  id="XXXX"
-                  defaultMessage={`
-                Mem
-              `}
-                />
+                <FormattedMessage id="XXXX" defaultMessage={`Mem`} />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {Units.formatResource("mem", resources.mem)}
@@ -122,12 +87,7 @@ class NodeDetailTab extends React.Component {
             </ConfigurationMapRow>
             <ConfigurationMapRow>
               <ConfigurationMapLabel>
-                <FormattedMessage
-                  id="XXXX"
-                  defaultMessage={`
-                CPUs
-              `}
-                />
+                <FormattedMessage id="XXXX" defaultMessage={`CPUs`} />
               </ConfigurationMapLabel>
               <ConfigurationMapValue>
                 {Units.formatResource("cpus", resources.cpus)}

@@ -102,9 +102,7 @@ class CreateServiceJsonOnly extends React.Component {
           <FieldHelp>
             <FormattedMessage
               id="XXXX"
-              defaultMessage={`
-            Use this text area to customize your configuration via JSON.
-          `}
+              defaultMessage={`Use this text area to customize your configuration via JSON.`}
             />
           </FieldHelp>
         </div>

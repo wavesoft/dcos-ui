@@ -198,9 +198,7 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
             <ConfigurationMapLabel>
               <FormattedMessage
                 id="XXXX"
-                defaultMessage={`
-              Backoff Max Launch Delay
-            `}
+                defaultMessage={`Backoff Max Launch Delay`}
               />
             </ConfigurationMapLabel>
             <DurationValue units="sec" value={fields.maxLaunchDelay} />
@@ -214,9 +212,7 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
             <ConfigurationMapLabel>
               <FormattedMessage
                 id="XXXX"
-                defaultMessage={`
-              Upgrade Min Health Capacity
-            `}
+                defaultMessage={`Upgrade Min Health Capacity`}
               />
             </ConfigurationMapLabel>
             <ConfigurationMapValue value={fields.minimumHealthCapacity} />
@@ -230,9 +226,7 @@ const PodGeneralConfigSection = ({ appConfig, onEditClick }) => {
             <ConfigurationMapLabel>
               <FormattedMessage
                 id="XXXX"
-                defaultMessage={`
-              Upgrade Max Overcapacity
-            `}
+                defaultMessage={`Upgrade Max Overcapacity`}
               />
             </ConfigurationMapLabel>
             <ConfigurationMapValue value={fields.maximumOverCapacity} />

@@ -80,9 +80,10 @@ class JobStopRunModal extends mixin(StoreMixin) {
         <span key="confirmText">
           <FormattedMessage
             id="XXXX"
-            defaultMessage={`
-        You are about to stop `}
-          />{bodyText}.
+            defaultMessage={`You are about to stop`}
+          />
+          {bodyText}
+          .
         </span>
       </IntlContext>
     );
