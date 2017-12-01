@@ -3,14 +3,14 @@ var fs = require("fs");
 var googleTranslate = require("google-translate")(
   "AIzaSyAp36PF3Zg1ZUcLBRoOXmlcs9k0cX0bvOU"
 );
-var english = require("./en-US.json");
+var english = require("./new.json");
 var chinese = {};
 var error = null;
 
 function write() {
   var json = JSON.stringify(chinese, undefined, 2);
   console.log(json);
-  fs.writeFile(path.join(__dirname, "zh-CH.json"), json);
+  fs.writeFile(path.join(__dirname, "new-zh-CH.json"), json);
 }
 
 function checkDone() {
