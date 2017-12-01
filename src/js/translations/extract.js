@@ -3,15 +3,20 @@ var fs = require("fs");
 var prettier = require("prettier");
 var shortid = require("shortid");
 var stringsById = {};
-var re = /id\="XXXX"\s+defaultMessage=\{`([^`]+)`\}/g;
+var jsxRe = /id\="XXXX"\s+defaultMessage=\{`([^`]+)`\}/g;
+var funcRe = /id\:\s*"XXXX",\s*defaultMessage\:\s*"(.+)"/g;
 
 function getReplaceJSX(id, message) {
   return 'id="' + id + '" defaultMessage={`' + message + "`}";
 }
 
+function getReplaceFunc(id, message) {
+  return 'id:"' + id + '", defaultMessage:"' + message + '"';
+}
+
 function replaceJSX(content) {
   var match;
-  while ((match = re.exec(content)) !== null) {
+  while ((match = jsxRe.exec(content)) !== null) {
     var message = match[1];
     var id = shortid.generate();
 
@@ -23,8 +28,23 @@ function replaceJSX(content) {
   return content;
 }
 
+function replaceFunc(content) {
+  var match;
+  while ((match = funcRe.exec(content)) !== null) {
+    var message = match[1];
+    var id = shortid.generate();
+
+    stringsById[id] = message;
+    // Replace Func
+    content = content.replace(match[0], getReplaceFunc(id, message));
+  }
+
+  return content;
+}
+
 function findAndReplace(content) {
   content = replaceJSX(content);
+  content = replaceFunc(content);
 
   return content;
 }
@@ -34,7 +54,7 @@ function extract(filename) {
 
   content = findAndReplace(content);
   content = prettier.format(content);
-  console.log(content);
+
   fs.writeFileSync(filename, content, "utf8");
 }
 
@@ -60,11 +80,27 @@ function findFilesInDir(startPath, filter) {
   return results;
 }
 
-var root_dir = path.join(__dirname, "..", "..", "..");
+function writeExtractions() {
+  var json = JSON.stringify(stringsById, undefined, 2);
+  console.log(json);
+  fs.writeFile(path.join(__dirname, "new.json"), json);
+}
 
-var files = findFilesInDir(root_dir, ".js");
+var root_dir = path.join(__dirname, "..", "..", "..");
+var plugins = path.join(root_dir, "plugins");
+var src = path.join(root_dir, "src");
+var external_plugins = path.join(root_dir, "..", "dcos-ui-plugins-private");
+
+// var filename = path.join(__dirname, "..", "schemas/job-schema/Schedule.js");
+// extract(filename);
+
+var files = [].concat(
+  findFilesInDir(plugins, ".js"),
+  findFilesInDir(src, ".js"),
+  findFilesInDir(external_plugins, ".js")
+);
+
 for (filename in files) {
   extract(filename);
 }
-
-console.log(JSON.stringify(stringsById, undefined, 2));
+writeExtractions();
