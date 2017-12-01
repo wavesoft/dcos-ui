@@ -21,7 +21,7 @@ import Page from "../../components/Page";
 import RequestErrorMsg from "../../components/RequestErrorMsg";
 import StringUtil from "../../utils/StringUtil";
 
-const PackageDetailBreadcrumbs = ({ cosmosPackage }) => {
+const PackageDetailBreadcrumbs = ({ cosmosPackage, intl }) => {
   const name = cosmosPackage.getName();
   const version = cosmosPackage.getVersion();
 
@@ -314,7 +314,10 @@ class PackageDetailTab extends mixin(StoreMixin) {
       <Page>
         <Page.Header
           breadcrumbs={
-            <PackageDetailBreadcrumbs cosmosPackage={cosmosPackage} />
+            <PackageDetailBreadcrumbs
+              cosmosPackage={cosmosPackage}
+              intl={this.props.intl}
+            />
           }
         />
         <div className="container">

@@ -25,6 +25,7 @@ import TimeAgo from "../../components/TimeAgo";
 import TaskStates
   from "../../../../plugins/services/src/js/constants/TaskStates";
 import UserActions from "../../constants/UserActions";
+import IntlContext from "../../components/IntlContext";
 
 const METHODS_TO_BIND = [
   "closeDialog",
@@ -187,7 +188,6 @@ class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
 
     return (
       <Confirm
-        children={content}
         disabled={disabledDialog === DIALOGS.DESTROY}
         open={jobActionDialog === DIALOGS.DESTROY}
         onClose={this.closeDialog}
@@ -199,7 +199,11 @@ class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
           this,
           stopCurrentJobRuns
         )}
-      />
+      >
+        <IntlContext intl={this.props.intl}>
+          {content}
+        </IntlContext>
+      </Confirm>
     );
   }
 
@@ -265,19 +269,21 @@ class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
 
     if (scheduleText != null) {
       nodes.push(
-        <p className="text-overflow flush" key="schedule-text">
-          <Icon
-            className="icon-margin-right"
-            key="schedule-icon"
-            color="grey"
-            id="repeat"
-            size="mini"
-          />
-          <span>
-            <FormattedMessage id="XXXX" defaultMessage={`Scheduled `} />
-            {StringUtil.lowercase(scheduleText)}
-          </span>
-        </p>
+        <IntlContext intl={this.props.intl}>
+          <p className="text-overflow flush" key="schedule-text">
+            <Icon
+              className="icon-margin-right"
+              key="schedule-icon"
+              color="grey"
+              id="repeat"
+              size="mini"
+            />
+            <span>
+              <FormattedMessage id="XXXX" defaultMessage={`Scheduled `} />
+              {StringUtil.lowercase(scheduleText)}
+            </span>
+          </p>
+        </IntlContext>
       );
     }
 

@@ -1,3 +1,4 @@
+import { injectIntl } from "react-intl";
 import React from "react";
 
 import FormUtil from "../utils/FormUtil";
@@ -162,4 +163,4 @@ JobForm.propTypes = {
   schema: React.PropTypes.object
 };
 
-module.exports = JobForm;
+module.exports = injectIntl(JobForm);

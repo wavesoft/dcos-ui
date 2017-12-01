@@ -9,6 +9,7 @@ import EventTypes from "../constants/EventTypes";
 import InternalStorageMixin from "../mixins/InternalStorageMixin";
 import SidebarStore from "../stores/SidebarStore";
 import VersionsModal from "./modals/VersionsModal";
+import IntlContext from "./IntlContext";
 
 var Modals = React.createClass({
   displayName: "Modals",
@@ -188,11 +189,13 @@ var Modals = React.createClass({
     var showCliModal = this.state.showingCliModal;
 
     return (
-      <div>
-        {this.getCliInstallModal(showCliModal)}
-        {this.getVersionsModal(this.state.showingVersionsModal)}
-        {this.getErrorModal(this.state.showErrorModal)}
-      </div>
+      <IntlContext intl={this.props.intl}>
+        <div>
+          {this.getCliInstallModal(showCliModal)}
+          {this.getVersionsModal(this.state.showingVersionsModal)}
+          {this.getErrorModal(this.state.showErrorModal)}
+        </div>
+      </IntlContext>
     );
   }
 });

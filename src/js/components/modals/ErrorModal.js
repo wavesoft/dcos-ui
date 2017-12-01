@@ -4,6 +4,7 @@ import React from "react";
 import { Modal } from "reactjs-components";
 
 import ModalHeading from "../modals/ModalHeading";
+import IntlContext from "../IntlContext";
 
 var ErrorModal = React.createClass({
   displayName: "ErrorModal",
@@ -18,17 +19,20 @@ var ErrorModal = React.createClass({
   },
 
   render() {
+    if (!this.props.errorMsg) {
+      return null;
+    }
     const header = (
-      <ModalHeading>
-        <IntlContext intl={this.props.intl}>
+      <IntlContext intl={this.props.intl}>
+        <ModalHeading>
           <FormattedMessage
             id="XXXX"
             defaultMessage={`
         Looks Like Something is Wrong
       `}
           />
-        </IntlContext>
-      </ModalHeading>
+        </ModalHeading>
+      </IntlContext>
     );
 
     return (
