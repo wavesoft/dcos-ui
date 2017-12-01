@@ -530,14 +530,10 @@ class DeploymentsModal extends mixin(StoreMixin) {
     );
     const heading = (
       <ModalHeading>
-        {intl.formatMessage(
-          {
-            id: "SERVICES.DEPLOYMENT_MODAL_HEADING"
-          },
-          {
-            deploymentsCount: deployments.length
-          }
-        )}
+        {deployments.length}{" "}
+        {intl.formatMessage({
+          id: "SERVICES.DEPLOYMENT_MODAL_HEADING"
+        })}
       </ModalHeading>
     );
 

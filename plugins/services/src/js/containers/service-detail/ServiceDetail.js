@@ -258,21 +258,21 @@ class ServiceDetail extends mixin(TabsMixin) {
     const tabs = [
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "Instances",
           defaultMessage: "Instances"
         }),
         routePath: `${routePrefix}/tasks`
       },
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "Configuration",
           defaultMessage: "Configuration"
         }),
         routePath: `${routePrefix}/configuration`
       },
       {
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "Debug",
           defaultMessage: "Debug"
         }),
         routePath: `${routePrefix}/debug`
@@ -282,7 +282,7 @@ class ServiceDetail extends mixin(TabsMixin) {
     if (this.hasVolumes()) {
       tabs.push({
         label: this.props.intl.formatMessage({
-          id: "XXXX",
+          id: "Volumes",
           defaultMessage: "Volumes"
         }),
         routePath: `${routePrefix}/volumes`

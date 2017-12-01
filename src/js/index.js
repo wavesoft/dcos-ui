@@ -22,7 +22,7 @@ import RequestErrorMsg from "./components/RequestErrorMsg";
 import RouterUtil from "./utils/RouterUtil";
 
 // Translations
-import enUS from "./translations/en-US.json";
+import enUS from "./translations/zh-CN.json";
 
 const domElement = global.document.getElementById("application");
 const navigatorLanguage = "en-US";
