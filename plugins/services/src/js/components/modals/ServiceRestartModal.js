@@ -100,15 +100,15 @@ class ServiceRestartModal extends React.Component {
     const serviceLabel = this.getServiceLabel();
 
     return (
-      <ModalHeading>
-        <IntlContext intl={this.props.intl}>
+      <IntlContext intl={this.props.intl}>
+        <ModalHeading>
           <FormattedMessage
             id="XXXX"
             defaultMessage={`
         Restart `}
           />{serviceLabel}
-        </IntlContext>
-      </ModalHeading>
+        </ModalHeading>
+      </IntlContext>
     );
   }
 

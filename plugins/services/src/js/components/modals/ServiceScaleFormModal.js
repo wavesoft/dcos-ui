@@ -117,11 +117,11 @@ class ServiceScaleFormModal extends React.Component {
     }
 
     return (
-      <ModalHeading>
-        <IntlContext intl={this.props.intl}>
+      <IntlContext intl={this.props.intl}>
+        <ModalHeading>
           <FormattedMessage id="XXXX" defaultMessage={`Scale `} />{headerText}
-        </IntlContext>
-      </ModalHeading>
+        </ModalHeading>
+      </IntlContext>
     );
   }
 

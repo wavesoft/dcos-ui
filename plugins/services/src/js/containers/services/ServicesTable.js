@@ -1,4 +1,4 @@
-import { FormattedMessage, injectIntl } from "react-intl";
+import { injectIntl } from "react-intl";
 import classNames from "classnames";
 import { Dropdown, Table, Tooltip } from "reactjs-components";
 import { Link, routerShape } from "react-router";
@@ -419,17 +419,16 @@ class ServicesTable extends React.Component {
         prop: "status",
         helpText: (
           <span>
-            <FormattedMessage
-              id="XXXX"
-              defaultMessage={`At-a-glance overview of the global application or group state. `}
-            />
+            {this.props.intl.formatMessage({
+              id: "XXXX",
+              defaultMessage: "At-a-glance overview of the global application or group state. "
+            })}
+
             <a href={Links.statusHelpLink} target="_blank">
-              <FormattedMessage
-                id="XXXX"
-                defaultMessage={`
-              Read more
-            `}
-              />
+              {this.props.intl.formatMessage({
+                id: "XXXX",
+                defaultMessage: "Read more"
+              })}
             </a>.
           </span>
         ),

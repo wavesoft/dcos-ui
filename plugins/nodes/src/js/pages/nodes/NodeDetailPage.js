@@ -18,7 +18,7 @@ import NodeBreadcrumbs from "../../components/NodeBreadcrumbs";
 import NodeHealthStore from "../../stores/NodeHealthStore";
 
 class NodeDetailPage extends mixin(TabsMixin, StoreMixin) {
-  constructor() {
+  constructor(props) {
     super(...arguments);
 
     this.store_listeners = [
@@ -32,9 +32,18 @@ class NodeDetailPage extends mixin(TabsMixin, StoreMixin) {
     ];
 
     this.tabs_tabs = {
-      "/nodes/:nodeID/tasks": "Tasks",
-      "/nodes/:nodeID/health": "Health",
-      "/nodes/:nodeID/details": "Details"
+      "/nodes/:nodeID/tasks": props.intl.formatMessage({
+        id: "Tasks",
+        defaultMessage: "Tasks"
+      }),
+      "/nodes/:nodeID/health": props.intl.formatMessage({
+        id: "Health",
+        defaultMessage: "Health"
+      }),
+      "/nodes/:nodeID/details": props.intl.formatMessage({
+        id: "Details",
+        defaultMessage: "Details"
+      })
     };
 
     this.state = {

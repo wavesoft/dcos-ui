@@ -138,16 +138,16 @@ class ServiceResumeModal extends React.Component {
     const { isPending, onClose, open } = this.props;
 
     const heading = (
-      <ModalHeading>
-        <IntlContext intl={this.props.intl}>
+      <IntlContext intl={this.props.intl}>
+        <ModalHeading>
           <FormattedMessage
             id="XXXX"
             defaultMessage={`
         Resume Service
       `}
           />
-        </IntlContext>
-      </ModalHeading>
+        </ModalHeading>
+      </IntlContext>
     );
 
     return (

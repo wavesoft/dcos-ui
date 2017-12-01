@@ -114,14 +114,12 @@ class UserFormModal extends mixin(StoreMixin) {
     return Hooks.applyFilter(
       "userFormModalHeader",
       <ModalHeading>
-        <IntlContext intl={this.props.intl}>
-          <FormattedMessage
-            id="XXXX"
-            defaultMessage={`
+        <FormattedMessage
+          id="XXXX"
+          defaultMessage={`
         Add User to Cluster
       `}
-          />
-        </IntlContext>
+        />
       </ModalHeading>
     );
   }
@@ -129,11 +127,9 @@ class UserFormModal extends mixin(StoreMixin) {
   getFooter() {
     return Hooks.applyFilter(
       "userFormModalFooter",
-      <IntlContext intl={this.props.intl}>
-        <p className="flush-bottom text-align-center">
-          <strong>Important:</strong> {TELEMETRY_NOTIFICATION}
-        </p>
-      </IntlContext>
+      <p className="flush-bottom text-align-center">
+        <strong>Important:</strong> {TELEMETRY_NOTIFICATION}
+      </p>
     );
   }
 
@@ -144,13 +140,17 @@ class UserFormModal extends mixin(StoreMixin) {
         definition={this.getNewUserFormDefinition()}
         disabled={this.state.disableNewUser}
         modalProps={{
-          header: this.getHeader(),
+          header: (
+            <IntlContext intl={this.props.intl}>{this.getHeader()}</IntlContext>
+          ),
           showHeader: true
         }}
         onClose={this.props.onClose}
         onSubmit={this.handleNewUserSubmit}
         open={this.props.open}
-        contentFooter={this.getFooter()}
+        contentFooter={
+          <IntlContext intl={this.props.intl}>{this.getFooter()}</IntlContext>
+        }
       />
     );
   }

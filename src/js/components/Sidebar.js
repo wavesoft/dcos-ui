@@ -143,7 +143,10 @@ var Sidebar = React.createClass({
       if (group.category !== "root") {
         heading = (
           <h6 className="sidebar-section-header">
-            {group.category}
+            <FormattedMessage
+              id={group.category}
+              defaultMessage={group.category}
+            />
           </h6>
         );
       }
@@ -201,7 +204,7 @@ var Sidebar = React.createClass({
               isChildActive
             )}
           >
-            {linkElement}
+            <FormattedMessage id={linkElement} defaultMessage={linkElement} />
           </PrimarySidebarLink>
         );
       }
@@ -262,7 +265,11 @@ var Sidebar = React.createClass({
 
         let linkElement = currentChild.link;
         if (typeof linkElement === "string") {
-          linkElement = <Link to={currentChild.path}>{linkElement}</Link>;
+          linkElement = (
+            <Link to={currentChild.path}>
+              <FormattedMessage id={linkElement} defaultMessage={linkElement} />
+            </Link>
+          );
         }
 
         children.push(

@@ -1,4 +1,4 @@
-import { FormattedMessage } from "react-intl";
+import { injectIntl } from "react-intl";
 import mixin from "reactjs-mixin";
 import { MountService } from "foundation-ui";
 import React from "react";
@@ -121,7 +121,10 @@ class SidebarHeader extends mixin(StoreMixin) {
         className: "dropdown-menu-section-header",
         html: (
           <label>
-            <FormattedMessage id="XXXX" defaultMessage={`Support`} />
+            {this.props.intl.formatMessage({
+              id: "XXXX",
+              defaultMessage: "Support"
+            })}
           </label>
         ),
         id: "header-support",
@@ -163,4 +166,4 @@ SidebarHeader.contextTypes = {
   router: routerShape
 };
 
-module.exports = SidebarHeader;
+module.exports = injectIntl(SidebarHeader);

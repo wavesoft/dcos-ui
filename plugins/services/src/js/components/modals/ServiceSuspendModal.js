@@ -100,15 +100,15 @@ class ServiceSuspendModal extends React.Component {
     const serviceLabel = this.getServiceLabel();
 
     return (
-      <ModalHeading>
-        <IntlContext intl={this.props.intl}>
+      <IntlContext intl={this.props.intl}>
+        <ModalHeading>
           <FormattedMessage
             id="XXXX"
             defaultMessage={`
         Suspend `}
           />{serviceLabel}
-        </IntlContext>
-      </ModalHeading>
+        </ModalHeading>
+      </IntlContext>
     );
   }
 

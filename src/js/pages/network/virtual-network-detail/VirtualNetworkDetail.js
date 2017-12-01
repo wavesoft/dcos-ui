@@ -54,7 +54,7 @@ const METHODS_TO_BIND = [
 ];
 
 class VirtualNetworkDetail extends mixin(StoreMixin, TabsMixin) {
-  constructor() {
+  constructor(props) {
     super(...arguments);
 
     this.state = {
@@ -64,8 +64,14 @@ class VirtualNetworkDetail extends mixin(StoreMixin, TabsMixin) {
 
     // Virtual Network Detail Tabs
     this.tabs_tabs = {
-      "/networking/networks/:overlayName": "Tasks",
-      "/networking/networks/:overlayName/details": "Details"
+      "/networking/networks/:overlayName": props.intl.formatMessage({
+        id: "Tasks",
+        defaultMessage: "Tasks"
+      }),
+      "/networking/networks/:overlayName/details": props.intl.formatMessage({
+        id: "Details",
+        defaultMessage: "Details"
+      })
     };
 
     this.store_listeners = [

@@ -1,4 +1,3 @@
-import { FormattedMessage } from "react-intl";
 /* eslint-disable no-unused-vars */
 import React from "react";
 /* eslint-enable no-unused-vars */
@@ -43,11 +42,11 @@ const Schedule = intl => {
         }),
         helpBlock: (
           <span>
-            <FormattedMessage
-              id="XXXX"
-              defaultMessage={`
-          Use cron format to set your schedule, e.g. `}
-            /><i>0 0 20 * *</i>{". "}
+            {intl.formatMessage({
+              id: "XXXX",
+              defaultMessage: "Use cron format to set your schedule, e.g "
+            })}
+            /&gt;<i>0 0 20 * *</i>{". "}
             <a
               href={MetadataStore.buildDocsURI("/usage/jobs/getting-started")}
               target="_blank"
@@ -85,10 +84,10 @@ const Schedule = intl => {
         }),
         description: (
           <span>
-            <FormattedMessage
-              id="XXXX"
-              defaultMessage={`Enter time zone in `}
-            />
+            {intl.formatMessage({
+              id: "XXXX",
+              defaultMessage: "Enter time zone in "
+            })}
             <a
               href="http://www.timezoneconverter.com/cgi-bin/zonehelp"
               target="_blank"

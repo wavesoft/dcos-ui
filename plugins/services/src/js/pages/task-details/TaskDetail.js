@@ -1,3 +1,4 @@
+import { injectIntl } from "react-intl";
 import mixin from "reactjs-mixin";
 /* eslint-disable no-unused-vars */
 import React from "react";
@@ -84,7 +85,7 @@ class TaskDetail extends mixin(InternalStorageMixin, TabsMixin, StoreMixin) {
   componentWillMount() {
     super.componentWillMount(...arguments);
 
-    const { routes } = this.props;
+    const { routes, intl } = this.props;
 
     // TODO: DCOS-7871 Refactor the TabsMixin to generalize this solution:
     const topRouteIndex = routes.findIndex(function({ component }) {
@@ -105,8 +106,8 @@ class TaskDetail extends mixin(InternalStorageMixin, TabsMixin, StoreMixin) {
           if (path) {
             key = `${parentPath}/${path}`;
           }
-
-          tabs[key] = title || path;
+          const val = title || path;
+          tabs[key] = intl.formatMessage({ id: val, defaultMessage: val });
 
           return tabs;
         }, this.tabs_tabs);
@@ -371,4 +372,4 @@ TaskDetail.propTypes = {
   routes: React.PropTypes.array
 };
 
-module.exports = TaskDetail;
+module.exports = injectIntl(TaskDetail);

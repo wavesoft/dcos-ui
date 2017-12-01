@@ -392,11 +392,11 @@ class DeploymentsModal extends mixin(StoreMixin) {
     } = this.state;
 
     const heading = (
-      <ModalHeading>
-        <IntlContext intl={this.props.intl}>
+      <IntlContext intl={this.props.intl}>
+        <ModalHeading>
           <FormattedMessage id="XXXX" defaultMessage={`Are you sure?`} />
-        </IntlContext>
-      </ModalHeading>
+        </ModalHeading>
+      </IntlContext>
     );
 
     if (deploymentToRollback != null) {
@@ -554,7 +554,7 @@ class DeploymentsModal extends mixin(StoreMixin) {
         <IntlContext intl={this.props.intl}>
           {content}
         </IntlContext>
-        }
+
       </Modal>
     );
   }

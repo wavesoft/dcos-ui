@@ -1,4 +1,4 @@
-import { FormattedMessage, injectIntl } from "react-intl";
+import { injectIntl } from "react-intl";
 import classNames from "classnames";
 import React from "react";
 import { Tooltip } from "reactjs-components";
@@ -82,11 +82,11 @@ class HealthBar extends React.Component {
             <span className={classSet} />
             {` ${taskCount} ${this.HealthBarStates[task].label} ${taskNoun} `}
             <span className="health-bar-tooltip-instances-total">
-              <FormattedMessage
-                id="XXXX"
-                defaultMessage={`
-              of `}
-              />{instancesCount}
+              {this.props.intl.formatMessage({
+                id: "XXXX",
+                defaultMessage: "of"
+              })}
+              {instancesCount}
             </span>
             {` (${percentage}%)`}
           </div>

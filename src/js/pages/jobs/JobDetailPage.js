@@ -46,7 +46,7 @@ const DIALOGS = {
 };
 
 class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
-  constructor() {
+  constructor(props) {
     super(...arguments);
 
     this.store_listeners = [
@@ -67,8 +67,14 @@ class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
     ];
 
     this.tabs_tabs = {
-      runHistory: "Run History",
-      configuration: "Configuration"
+      runHistory: props.intl.formatMessage({
+        id: "Run-History",
+        defaultMessage: "Run History"
+      }),
+      configuration: props.intl.formatMessage({
+        id: "Configuration",
+        defaultMessage: "Configuration"
+      })
     };
 
     this.state = {

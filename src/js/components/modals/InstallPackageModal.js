@@ -561,6 +561,10 @@ class InstallPackageModal
       "multiple-form-modal modal-form": isAdvanced
     });
 
+    if (props.cosmosPackage.isCLIOnly()) {
+      return null;
+    }
+
     return (
       <Modal
         backdropClass={backdropClasses}
