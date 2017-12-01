@@ -100,7 +100,7 @@ var files = [].concat(
   findFilesInDir(external_plugins, ".js")
 );
 
-for (filename in files) {
-  extract(filename);
+for (index in files) {
+  extract(files[index]);
 }
 writeExtractions();
