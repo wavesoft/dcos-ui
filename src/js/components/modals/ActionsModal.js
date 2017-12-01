@@ -260,7 +260,9 @@ class ActionsModal extends mixin(StoreMixin) {
         useGemini={false}
         {...props}
       >
-        {this.getActionsModalContents()}
+        <IntlContext intl={this.props.intl}>
+          {this.getActionsModalContents()}
+        </IntlContext>
       </Confirm>
     );
   }
