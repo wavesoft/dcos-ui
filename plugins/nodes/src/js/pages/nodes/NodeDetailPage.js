@@ -32,18 +32,9 @@ class NodeDetailPage extends mixin(TabsMixin, StoreMixin) {
     ];
 
     this.tabs_tabs = {
-      "/nodes/:nodeID/tasks": props.intl.formatMessage({
-        id: "Tasks",
-        defaultMessage: "Tasks"
-      }),
-      "/nodes/:nodeID/health": props.intl.formatMessage({
-        id: "Health",
-        defaultMessage: "Health"
-      }),
-      "/nodes/:nodeID/details": props.intl.formatMessage({
-        id: "Details",
-        defaultMessage: "Details"
-      })
+      "/nodes/:nodeID/tasks": "Tasks",
+      "/nodes/:nodeID/health": "Health",
+      "/nodes/:nodeID/details": "Details"
     };
 
     this.state = {

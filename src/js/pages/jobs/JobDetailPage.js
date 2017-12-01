@@ -67,14 +67,8 @@ class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
     ];
 
     this.tabs_tabs = {
-      runHistory: props.intl.formatMessage({
-        id: "Run-History",
-        defaultMessage: "Run History"
-      }),
-      configuration: props.intl.formatMessage({
-        id: "Configuration",
-        defaultMessage: "Configuration"
-      })
+      runHistory: "Run History",
+      configuration: "Configuration"
     };
 
     this.state = {

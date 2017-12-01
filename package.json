@@ -20,10 +20,7 @@
     "node": "4.4.x",
     "npm": "3.9.x"
   },
-  "browserslist": [
-    "last 2 versions",
-    "ie 11"
-  ],
+  "browserslist": ["last 2 versions", "ie 11"],
   "config": {
     "port": 4200,
     "externalplugins": ""
@@ -39,7 +36,6 @@
     "dcos-dygraphs": "1.1.0-beta.3",
     "deep-equal": "1.0.1",
     "flux": "2.1.1",
-    "google-translate": "^2.0.5",
     "intl": "1.2.5",
     "less-color-lighten": "0.0.1",
     "lodash.throttle": "4.1.1",
@@ -63,7 +59,6 @@
     "reactjs-components": "0.16.0-beta.23",
     "reactjs-mixin": "0.0.2",
     "redux": "3.3.1",
-    "shortid": "^2.2.8",
     "tv4": "1.2.7"
   },
   "devDependencies": {

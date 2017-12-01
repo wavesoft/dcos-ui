@@ -6,7 +6,7 @@ class IntlContext extends React.Component {
     return { intl: this.props.intl };
   }
   render() {
-    return <div>{this.props.children}</div>;
+    return this.props.children;
   }
 }
 IntlContext.childContextTypes = {

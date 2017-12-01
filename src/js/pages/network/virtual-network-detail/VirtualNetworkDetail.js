@@ -64,14 +64,8 @@ class VirtualNetworkDetail extends mixin(StoreMixin, TabsMixin) {
 
     // Virtual Network Detail Tabs
     this.tabs_tabs = {
-      "/networking/networks/:overlayName": props.intl.formatMessage({
-        id: "Tasks",
-        defaultMessage: "Tasks"
-      }),
-      "/networking/networks/:overlayName/details": props.intl.formatMessage({
-        id: "Details",
-        defaultMessage: "Details"
-      })
+      "/networking/networks/:overlayName": "Tasks",
+      "/networking/networks/:overlayName/details": "Details"
     };
 
     this.store_listeners = [

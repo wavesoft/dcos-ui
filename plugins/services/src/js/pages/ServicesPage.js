@@ -27,10 +27,7 @@ var ServicesPage = React.createClass({
       { name: "notification", events: ["change"], suppressUpdate: false }
     ];
     this.tabs_tabs = {
-      "/services/overview": this.props.intl.formatMessage({
-        id: "Services",
-        defaultMessage: "Services"
-      })
+      "/services/overview": "Services"
     };
     this.updateCurrentTab();
   },

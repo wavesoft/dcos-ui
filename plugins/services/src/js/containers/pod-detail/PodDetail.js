@@ -40,18 +40,9 @@ class PodDetail extends mixin(TabsMixin) {
     super(...arguments);
 
     this.tabs_tabs = {
-      "/services/overview/:id/tasks": props.intl.formatMessage({
-        id: "Instances",
-        defaultMessage: "Instances"
-      }),
-      "/services/overview/:id/configuration": props.intl.formatMessage({
-        id: "Configuration",
-        defaultMessage: "Configuration"
-      }),
-      "/services/overview/:id/debug": props.intl.formatMessage({
-        id: "Debug",
-        defaultMessage: "Debug"
-      })
+      "/services/overview/:id/tasks": "Instances",
+      "/services/overview/:id/configuration": "Configuration",
+      "/services/overview/:id/debug": "Debug"
     };
 
     this.state = {

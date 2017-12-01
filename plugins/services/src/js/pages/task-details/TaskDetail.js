@@ -107,7 +107,7 @@ class TaskDetail extends mixin(InternalStorageMixin, TabsMixin, StoreMixin) {
             key = `${parentPath}/${path}`;
           }
           const val = title || path;
-          tabs[key] = intl.formatMessage({ id: val, defaultMessage: val });
+          tabs[key] = val;
 
           return tabs;
         }, this.tabs_tabs);

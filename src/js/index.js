@@ -22,10 +22,11 @@ import RequestErrorMsg from "./components/RequestErrorMsg";
 import RouterUtil from "./utils/RouterUtil";
 
 // Translations
-import enUS from "./translations/zh-CN.json";
+import enUS from "./translations/en-US.json";
+import zhCN from "./translations/zh-CN.json";
 
 const domElement = global.document.getElementById("application");
-const navigatorLanguage = "en-US";
+const navigatorLanguage = "en";
 
 // TODO: Implement loader that can concat many sprites into a single one
 // We opt to load the sprite after the Javscript files are parsed because it
@@ -90,7 +91,7 @@ RequestUtil.json = function(options = {}) {
 
         renderAppToDOM(
           <Provider store={PluginSDK.Store}>
-            <IntlProvider locale={navigatorLanguage} messages={enUS}>
+            <IntlProvider locale={navigatorLanguage} messages={zhCN}>
               <Router history={hashHistory} routes={routes} />
             </IntlProvider>
           </Provider>
@@ -136,9 +137,11 @@ RequestUtil.json = function(options = {}) {
   }
 
   if (!global.Intl) {
-    require.ensure(["intl", "intl/locale-data/jsonp/en.js"], function(require) {
+    require.ensure(["intl", "intl/locale-data/jsonp/en-US.js"], function(
+      require
+    ) {
       require("intl");
-      require("intl/locale-data/jsonp/en.js");
+      require("intl/locale-data/jsonp/en-US.js");
 
       startApplication();
     });

@@ -312,7 +312,7 @@ class PackageDetailTab extends mixin(StoreMixin) {
         value: this.mapLicenses(cosmosPackage.getLicenses())
       }
     ];
-
+    console.log("called");
     return (
       <Page>
         <Page.Header
