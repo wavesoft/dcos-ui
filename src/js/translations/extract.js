@@ -53,9 +53,10 @@ function extract(filename) {
   var content = fs.readFileSync(filename, "utf8");
 
   content = findAndReplace(content);
-  content = prettier.format(content);
-
-  fs.writeFileSync(filename, content, "utf8");
+  try {
+    content = prettier.format(content);
+    fs.writeFileSync(filename, content, "utf8");
+  } catch (err) {}
 }
 
 function findFilesInDir(startPath, filter) {
