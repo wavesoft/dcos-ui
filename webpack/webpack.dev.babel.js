@@ -48,7 +48,7 @@ if (environment === "development") {
     `webpack-dev-server/client?http://localhost:${PORT}`,
     "webpack/hot/only-dev-server"
   );
-  devtool = "#cheap-eval-source-map";
+  devtool = "#eval";
 } else if (environment === "testing") {
   // Cypress constantly saves fixture files, which causes webpack to detect
   // a filechange and rebuild the application. The problem with this is that
