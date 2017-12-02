@@ -10,7 +10,7 @@ import webpackConfig from "./webpack.config.babel";
 
 // Defaults to value in package.json.
 // Can override with npm config set port 80
-const PORT = parseInt(process.env.npm_package_config_port, 10);
+const PORT = 80;
 const environment = process.env.NODE_ENV;
 let devtool = null;
 const devServer = {
