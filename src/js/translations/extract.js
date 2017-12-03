@@ -4,7 +4,7 @@ var prettier = require("prettier");
 var shortid = require("shortid");
 var stringsById = {};
 var jsxRe = /id\="XXXX"\s+defaultMessage=\{`([^`]+)`\}/g;
-var funcRe = /id\:\s*"XXXX",\s*defaultMessage\:\s*"(.+)"/g;
+var funcRe = /id\:\s*"XXXX",\s*defaultMessage\:\s*`(.+)`/g;
 
 function getReplaceJSX(id, message) {
   return 'id="' + id + '" defaultMessage={`' + message + "`}";
@@ -50,13 +50,18 @@ function findAndReplace(content) {
 }
 
 function extract(filename) {
+  if (filename.indexOf(".json") > -1 || filename.indexOf("node_modules") > -1) {
+    return;
+  }
   var content = fs.readFileSync(filename, "utf8");
+  var newContent = findAndReplace(content);
 
-  content = findAndReplace(content);
-  try {
-    content = prettier.format(content);
-    fs.writeFileSync(filename, content, "utf8");
-  } catch (err) {}
+  if (newContent !== content) {
+    try {
+      newContent = prettier.format(newContent);
+      fs.writeFileSync(filename, newContent, "utf8");
+    } catch (err) {}
+  }
 }
 
 function findFilesInDir(startPath, filter) {

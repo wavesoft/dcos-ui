@@ -163,8 +163,8 @@ class ServiceResumeModal extends React.Component {
         onClose={onClose}
         leftButtonCallback={onClose}
         rightButtonText={this.props.intl.formatMessage({
-          id: "XXXX",
-          defaultMessage: `Resume Service`
+          id: "HyKdwoaWZz",
+          defaultMessage: "Resume Service"
         })}
         rightButtonClassName="button button-primary"
         rightButtonCallback={this.handleConfirmation}

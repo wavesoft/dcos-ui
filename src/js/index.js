@@ -26,7 +26,6 @@ import enUS from "./translations/en-US.json";
 import zhCN from "./translations/zh-CN.json";
 
 const domElement = global.document.getElementById("application");
-const navigatorLanguage = "en";
 
 // TODO: Implement loader that can concat many sprites into a single one
 // We opt to load the sprite after the Javscript files are parsed because it
@@ -89,9 +88,19 @@ RequestUtil.json = function(options = {}) {
         const routes = RouterUtil.buildRoutes(appRoutes.getRoutes());
         NavigationServiceUtil.registerRoutesInNavigation(routes[0].childRoutes);
 
+        let messages = enUS;
+
+        if (
+          global.window.confirm(
+            `The default language is English. Would you like to select Chinese? \n\nNote: canceling will continue with english selection.`
+          )
+        ) {
+          messages = zhCN;
+        }
+
         renderAppToDOM(
           <Provider store={PluginSDK.Store}>
-            <IntlProvider locale={navigatorLanguage} messages={zhCN}>
+            <IntlProvider locale="en" messages={messages}>
               <Router history={hashHistory} routes={routes} />
             </IntlProvider>
           </Provider>

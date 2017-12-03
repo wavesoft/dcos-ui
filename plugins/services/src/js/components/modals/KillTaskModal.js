@@ -146,8 +146,8 @@ class KillTaskModal extends React.Component {
         open={open}
         onClose={onClose}
         leftButtonText={this.props.intl.formatMessage({
-          id: "XXXX",
-          defaultMessage: `Close`
+          id: "B1r_PspWbf",
+          defaultMessage: "Close"
         })}
         leftButtonCallback={onClose}
         rightButtonText={buttonText}

@@ -73,16 +73,16 @@ class ServiceGroupFormModal extends React.Component {
     const buttonDefinition = [
       {
         text: this.props.intl.formatMessage({
-          id: "XXXX",
-          defaultMessage: `Cancel`
+          id: "S1P_Poa-Zf",
+          defaultMessage: "Cancel"
         }),
         className: "button button-medium",
         isClose: true
       },
       {
         text: this.props.intl.formatMessage({
-          id: "XXXX",
-          defaultMessage: `Create Group`
+          id: "HJO_Di6WWG",
+          defaultMessage: "Create Group"
         }),
         className: "button button-success button-medium",
         isSubmit: true

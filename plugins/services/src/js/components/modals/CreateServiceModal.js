@@ -907,21 +907,21 @@ class CreateServiceModal extends Component {
           header={
             <ModalHeading>
               {this.props.intl.formatMessage({
-                id: "XXXX",
-                defaultMessage: `Discard Changes?`
+                id: "HJW_Ds6Wbz",
+                defaultMessage: "Discard Changes?"
               })}
             </ModalHeading>
           }
           open={this.state.isConfirmOpen}
           onClose={this.handleCloseConfirmModal}
           leftButtonText={this.props.intl.formatMessage({
-            id: "XXXX",
-            defaultMessage: `Cancel`
+            id: "BJfODsTWbf",
+            defaultMessage: "Cancel"
           })}
           leftButtonCallback={this.handleCloseConfirmModal}
           rightButtonText={this.props.intl.formatMessage({
-            id: "XXXX",
-            defaultMessage: `Discard`
+            id: "BJmdvipZ-z",
+            defaultMessage: "Discard"
           })}
           rightButtonClassName="button button-danger"
           rightButtonCallback={this.handleConfirmGoBack}

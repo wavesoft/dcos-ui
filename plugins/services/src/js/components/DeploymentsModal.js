@@ -408,14 +408,14 @@ class DeploymentsModal extends mixin(StoreMixin) {
           onClose={this.handleRollbackCancel}
           leftButtonCallback={this.handleRollbackCancel}
           leftButtonText={this.props.intl.formatMessage({
-            id: "XXXX",
-            defaultMessage: `Cancel`
+            id: "SkdDiaW-G",
+            defaultMessage: "Cancel"
           })}
           rightButtonClassName="button button-danger"
           rightButtonCallback={this.handleRollbackConfirm}
           rightButtonText={this.props.intl.formatMessage({
-            id: "XXXX",
-            defaultMessage: `Continue Rollback`
+            id: "S1lOPopb-M",
+            defaultMessage: "Continue Rollback"
           })}
           showHeader={true}
         >

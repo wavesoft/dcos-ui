@@ -115,16 +115,16 @@ class AddRepositoryFormModal extends mixin(StoreMixin) {
     return [
       {
         text: this.props.intl.formatMessage({
-          id: "XXXX",
-          defaultMessage: `Close`
+          id: "B1h_wjpZ-z",
+          defaultMessage: "Close"
         }),
         className: "button button-medium",
         isClose: true
       },
       {
         text: this.props.intl.formatMessage({
-          id: "XXXX",
-          defaultMessage: `Add`
+          id: "SJaOwjT-Zz",
+          defaultMessage: "Add"
         }),
         className: "button button-success button-medium",
         isSubmit: true

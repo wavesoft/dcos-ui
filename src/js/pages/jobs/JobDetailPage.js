@@ -189,8 +189,8 @@ class JobDetailPage extends mixin(StoreMixin, TabsMixin) {
         open={jobActionDialog === DIALOGS.DESTROY}
         onClose={this.closeDialog}
         leftButtonText={this.props.intl.formatMessage({
-          id: "XXXX",
-          defaultMessage: `Cancel`
+          id: "BJbtvi6--z",
+          defaultMessage: "Cancel"
         })}
         leftButtonCallback={this.closeDialog}
         rightButtonText={actionButtonLabel}
