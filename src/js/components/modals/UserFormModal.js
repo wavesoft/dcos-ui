@@ -73,12 +73,18 @@ class UserFormModal extends mixin(StoreMixin) {
   getButtonDefinition() {
     return Hooks.applyFilter("userFormModalButtonDefinition", [
       {
-        text: "Cancel",
+        text: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: `Cancel`
+        }),
         className: "button button-medium",
         isClose: true
       },
       {
-        text: "Add User",
+        text: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: `Add User`
+        }),
         className: "button button-success button-medium",
         isSubmit: true
       }

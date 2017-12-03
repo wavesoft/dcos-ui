@@ -114,12 +114,18 @@ class AddRepositoryFormModal extends mixin(StoreMixin) {
   getButtonDefinition() {
     return [
       {
-        text: "Close",
+        text: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: `Close`
+        }),
         className: "button button-medium",
         isClose: true
       },
       {
-        text: "Add",
+        text: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: `Add`
+        }),
         className: "button button-success button-medium",
         isSubmit: true
       }

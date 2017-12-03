@@ -154,12 +154,18 @@ class FormModal extends React.Component {
 FormModal.defaultProps = {
   buttonDefinition: [
     {
-      text: "Cancel",
+      text: this.props.intl.formatMessage({
+        id: "XXXX",
+        defaultMessage: `Cancel`
+      }),
       className: "button button-medium",
       isClose: true
     },
     {
-      text: "Create",
+      text: this.props.intl.formatMessage({
+        id: "XXXX",
+        defaultMessage: `Create`
+      }),
       className: "button button-success button-medium",
       isSubmit: true
     }

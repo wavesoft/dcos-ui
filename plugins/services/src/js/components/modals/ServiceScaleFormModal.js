@@ -146,12 +146,18 @@ class ServiceScaleFormModal extends React.Component {
 
     const buttonDefinition = [
       {
-        text: "Cancel",
+        text: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: `Cancel`
+        }),
         className: "button button-medium",
         isClose: true
       },
       {
-        text: "Scale Service",
+        text: this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: `Scale Service`
+        }),
         className: "button button-primary button-medium",
         isSubmit: true
       }
