@@ -914,9 +914,15 @@ class CreateServiceModal extends Component {
           }
           open={this.state.isConfirmOpen}
           onClose={this.handleCloseConfirmModal}
-          leftButtonText="Cancel"
+          leftButtonText={this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: `Cancel`
+          })}
           leftButtonCallback={this.handleCloseConfirmModal}
-          rightButtonText="Discard"
+          rightButtonText={this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: `Discard`
+          })}
           rightButtonClassName="button button-danger"
           rightButtonCallback={this.handleConfirmGoBack}
           showHeader={true}

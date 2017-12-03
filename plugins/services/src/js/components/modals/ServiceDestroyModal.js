@@ -209,7 +209,10 @@ class ServiceDestroyModal extends React.Component {
         header={this.getModalHeading()}
         open={open}
         onClose={this.handleModalClose}
-        leftButtonText="Cancel"
+        leftButtonText={this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: `Cancel`
+        })}
         leftButtonCallback={this.handleModalClose}
         rightButtonText={itemText}
         rightButtonClassName="button button-danger"

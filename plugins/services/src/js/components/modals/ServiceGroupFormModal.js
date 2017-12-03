@@ -115,8 +115,8 @@ class ServiceGroupFormModal extends React.Component {
             />
             <span className="emphasize">{parentGroupId}</span>
           </p>
-          {this.getErrorMessage()}
         </IntlContext>
+        {this.getErrorMessage()}
       </FormModal>
     );
   }

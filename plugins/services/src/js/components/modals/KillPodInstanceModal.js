@@ -153,7 +153,10 @@ class KillPodInstanceModal extends React.Component {
         header={header}
         open={open}
         onClose={onClose}
-        leftButtonText="Close"
+        leftButtonText={this.props.intl.formatMessage({
+          id: "XXXX",
+          defaultMessage: `Close`
+        })}
         leftButtonCallback={onClose}
         rightButtonText={buttonText}
         rightButtonClassName="button button-danger"
