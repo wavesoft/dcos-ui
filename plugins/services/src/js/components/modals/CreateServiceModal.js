@@ -904,7 +904,14 @@ class CreateServiceModal extends Component {
         </IntlContext>
         <Confirm
           closeByBackdropClick={true}
-          header={<ModalHeading>Discard Changes?</ModalHeading>}
+          header={
+            <ModalHeading>
+              {this.props.intl.formatMessage({
+                id: "XXXX",
+                defaultMessage: `Discard Changes?`
+              })}
+            </ModalHeading>
+          }
           open={this.state.isConfirmOpen}
           onClose={this.handleCloseConfirmModal}
           leftButtonText="Cancel"
@@ -915,7 +922,12 @@ class CreateServiceModal extends Component {
           showHeader={true}
         >
           <p>
+            {this.props.intl.formatMessage({
+              id: "XXXX",
+              defaultMessage: `
             Are you sure you want to leave this page? Any data you entered will be lost.
+          `
+            })}
           </p>
         </Confirm>
       </FullScreenModal>

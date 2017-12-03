@@ -1,3 +1,4 @@
+import { FormattedMessage, injectIntl } from "react-intl";
 import classNames from "classnames";
 import { Confirm, Table } from "reactjs-components";
 import mixin from "reactjs-mixin";
@@ -7,6 +8,7 @@ import React from "react";
 import { StoreMixin } from "mesosphere-shared-reactjs";
 
 import CollapsingString from "./CollapsingString";
+import IntlContext from "./IntlContext";
 import Config from "../config/Config";
 import CosmosPackagesStore from "../stores/CosmosPackagesStore";
 import List from "../structs/List";
@@ -208,9 +210,16 @@ class RepositoriesTable extends mixin(StoreMixin) {
   render() {
     const { props, state } = this;
     const heading = (
-      <ModalHeading>
-        Are you sure?
-      </ModalHeading>
+      <IntlContext intl={this.props.intl}>
+        <ModalHeading>
+          {this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: `
+          Are you sure?
+        `
+          })}
+        </ModalHeading>
+      </IntlContext>
     );
 
     return (
@@ -234,7 +243,9 @@ class RepositoriesTable extends mixin(StoreMixin) {
           rightButtonText={`${StringUtil.capitalize(UserActions.DELETE)} Repository`}
           showHeader={true}
         >
-          {this.getRemoveModalContent()}
+          <IntlContext intl={this.props.intl}>
+            {this.getRemoveModalContent()}
+          </IntlContext>
         </Confirm>
       </div>
     );
@@ -249,4 +260,4 @@ RepositoriesTable.propTypes = {
   repositories: React.PropTypes.object.isRequired
 };
 
-module.exports = RepositoriesTable;
+module.exports = injectIntl(RepositoriesTable);

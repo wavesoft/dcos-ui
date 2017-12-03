@@ -99,8 +99,12 @@ class KillTaskModal extends React.Component {
           {" "}
           {taskCountContent}
           .
-          <br />
+          <br />{this.props.intl.formatMessage({
+            id: "XXXX",
+            defaultMessage: `
           Are you sure you want to continue?
+        `
+          })}
         </p>
         {this.getErrorMessage()}
       </div>
