@@ -10,7 +10,7 @@ import webpackConfig from "./webpack.config.babel";
 
 // Defaults to value in package.json.
 // Can override with npm config set port 80
-const PORT = 80;
+const PORT = parseInt(process.env.npm_package_config_port, 10);
 const environment = process.env.NODE_ENV;
 let devtool = null;
 const devServer = {
@@ -48,7 +48,7 @@ if (environment === "development") {
     `webpack-dev-server/client?http://localhost:${PORT}`,
     "webpack/hot/only-dev-server"
   );
-  devtool = "#eval";
+  devtool = "#cheap-eval-source-map";
 } else if (environment === "testing") {
   // Cypress constantly saves fixture files, which causes webpack to detect
   // a filechange and rebuild the application. The problem with this is that
