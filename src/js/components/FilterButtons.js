@@ -41,7 +41,7 @@ class FilterButtons extends React.Component {
     const filterCount = this.getCount(itemList);
 
     return filters.map(filter => {
-      const classSet = classNames("button button-outline", {
+      const classSet = classNames("button", {
         "button-inverse": inverseStyle,
         active: filter.toLowerCase() === selectedFilter.toLowerCase()
       });

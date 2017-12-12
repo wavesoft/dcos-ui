@@ -97,7 +97,7 @@ class TaskFileViewer extends React.Component {
       const name = item.getName();
 
       const classes = classNames({
-        "button button-outline": true,
+        button: true,
         active: name === selectedName
       });
 

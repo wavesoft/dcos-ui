@@ -144,7 +144,7 @@ class CliInstallModal extends React.Component {
 
     return Object.keys(osTypes).map((name, index) => {
       const classSet = classNames({
-        "button button-outline": true,
+        button: true,
         active: name === selectedOS
       });
 

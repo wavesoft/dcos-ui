@@ -69,7 +69,7 @@ const ResourceBarChart = React.createClass({
     const resourceLabels = ResourcesUtil.getResourceLabels();
 
     return ResourcesUtil.getDefaultResources().map(resource => {
-      const classSet = classNames("button button-outline", {
+      const classSet = classNames("button", {
         active: selectedResource === resource
       });
 
