@@ -24,6 +24,7 @@ class VolumeTable extends React.Component {
         id: volume.getId(),
         host: volume.getHost(),
         type: volume.getType(),
+        profile: volume.getProfile(),
         path: volume.getContainerPath(),
         size: volume.getSize(),
         status: volume.getStatus()
@@ -61,6 +62,7 @@ class VolumeTable extends React.Component {
       id: "ID",
       host: "Host",
       type: "Type",
+      profile: "Profile",
       path: "Path",
       size: "Size",
       status: "Status"
@@ -93,6 +95,12 @@ class VolumeTable extends React.Component {
         className: this.getColumnClassName,
         heading: this.getColumnHeading,
         prop: "type",
+        sortable: true
+      },
+      {
+        className: this.getColumnClassName,
+        heading: this.getColumnHeading,
+        prop: "profile",
         sortable: true
       },
       {
