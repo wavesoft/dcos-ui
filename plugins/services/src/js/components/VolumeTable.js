@@ -26,7 +26,6 @@ class VolumeTable extends React.Component {
         type: volume.getType(),
         path: volume.getContainerPath(),
         size: volume.getSize(),
-        mode: volume.getMode(),
         status: volume.getStatus()
       };
     });
@@ -40,7 +39,6 @@ class VolumeTable extends React.Component {
         <col style={{ width: "10%" }} />
         <col style={{ width: "10%" }} />
         <col style={{ width: "10%" }} />
-        <col style={{ width: "5%" }} />
         <col style={{ width: "10%" }} />
       </colgroup>
     );
@@ -65,7 +63,6 @@ class VolumeTable extends React.Component {
       type: "Type",
       path: "Path",
       size: "Size",
-      mode: "Mode",
       status: "Status"
     };
 
@@ -108,12 +105,6 @@ class VolumeTable extends React.Component {
         className: this.getColumnClassName,
         heading: this.getColumnHeading,
         prop: "size",
-        sortable: true
-      },
-      {
-        className: this.getColumnClassName,
-        heading: this.getColumnHeading,
-        prop: "mode",
         sortable: true
       },
       {
