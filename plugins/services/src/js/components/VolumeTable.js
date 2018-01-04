@@ -61,8 +61,8 @@ class VolumeTable extends React.Component {
     const headingStrings = {
       id: "ID",
       host: "Host",
-      type: "Type",
-      profile: "Profile",
+      type: "Volume Type",
+      profile: "Volume Profile",
       path: "Path",
       size: "Size",
       status: "Status"
