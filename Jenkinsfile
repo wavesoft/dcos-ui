@@ -61,7 +61,7 @@ pipeline {
     stage('Upload Build') {
       when {
         // branch: "master"
-        branch "danielmschmidt/upload-artifacts-of-build-to-s3"
+        branch "danielmschmidt/upload-artifacts-of-build-to-s3-2"
       }
 
       steps {
