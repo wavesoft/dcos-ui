@@ -56,6 +56,18 @@ export default class PlacementConstraintsSchemaField extends Component {
     let json;
     try {
       json = JSON.parse(formData);
+
+      debugger;
+
+      // Check for single dimension array placements
+      if (Util.isString(json[0])) {
+        debugger;
+        // todo...flag as a warning and surface on the form
+        this.props.onWarning("some message");
+
+        // pad to the format we want
+        json = [json];
+      }
     } catch (error) {
       return this.state.batch || new Batch();
     }

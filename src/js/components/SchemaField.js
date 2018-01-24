@@ -275,7 +275,7 @@ class SchemaField extends Component {
   }
 
   getFieldContent(errorMessage, autofocus) {
-    const { schema, required, name } = this.props;
+    const { schema, required, name, onWarning } = this.props;
     const RADIO_SELECT_THRESHOLD = 4;
 
     if (schema.media) {
@@ -288,6 +288,7 @@ class SchemaField extends Component {
           autofocus={autofocus}
           fieldProps={this.props}
           label={this.getFieldHeading(required, name, schema.description)}
+          onWarning={onWarning}
         >
           {this.renderTextInput(errorMessage, autofocus, this.props)}
         </MountService.Mount>

@@ -55,6 +55,10 @@ class DeployFrameworkConfiguration extends mixin(StoreMixin) {
     const packageDetails = CosmosPackagesStore.getPackageDetails();
     const schema = packageDetails.getConfig();
     const formData = getDefaultFormState(schema, undefined, schema.definitions);
+
+    // for testing
+    formData.service.placement_constraint = "['hostname', 'MAX_PER', '1']";
+
     this.setState({ packageDetails, formData });
   }
 

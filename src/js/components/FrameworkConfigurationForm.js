@@ -159,6 +159,14 @@ class FrameworkConfigurationForm extends Component {
       return;
     }
 
+    // todo..maybe don't show as an actual error, but just convert their inproper single array to double? (see if the slack thread cares)
+    // if (schema.media && (schema.media.type === "application/x-region-zone-constraints+json" || schema.media.type === "application/x-zone-constraints+json")) {
+    //   if (Util.isString(JSON.parse(formData)[0])) {
+    //     errors.addError("Cannot be a single array");
+    //     debugger;
+    //   }
+    // }
+
     if (isRequired && formData === "") {
       let message = `Expecting a ${schema.type} here`;
       if (schema.default) {
@@ -232,6 +240,10 @@ class FrameworkConfigurationForm extends Component {
       .map(({ message, ...rest }) => {
         return { message: StringUtil.capitalize(message), ...rest };
       });
+  }
+
+  onWarning(warning) {
+    console.log(warning);
   }
 
   render() {
@@ -311,6 +323,7 @@ class FrameworkConfigurationForm extends Component {
                       validate={this.validate}
                       showErrorList={false}
                       transformErrors={this.transformErrors}
+                      onWarning={this.onWarning}
                     >
                       <div />
                     </SchemaForm>
