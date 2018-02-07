@@ -1,0 +1,43 @@
+#!/bin/bash
+set -ex
+
+BRANCH_NAME=${BRANCH_NAME:-'master'}
+
+PKG_BRANCH=$(echo ${BRANCH_NAME} | sed -E 's/([^/]*)$|./\1/g')
+
+DCOSPATH="__dcos"
+REPO="https://github.com/mesosphere/dcos.git"
+DCOS_BRANCH_NAME="dcos-ui/latest-${PKG_BRANCH}"
+
+
+# clone dcos branch
+git clone -b $DCOS_BRANCH_NAME $REPO $DCOSPATH
+
+# cd to dcos repo
+cd $DCOSPATH
+
+# fetching master
+git fetch
+
+# throw away all changes
+#git reset --hard origin/${BRANCH_NAME}
+git reset --hard origin/master
+
+# copy new buildinfo.json
+cp -f ../buildinfo.json packages/dcos-ui/buildinfo.json
+
+# add changes
+git add .
+
+# configure git
+git config --global user.email "$GIT_USER@users.noreply.github.com";
+git config --global user.name "Jenkins OSS Release Builder";
+
+# create commit
+# TODO: better message
+git commit -m "LATEST BUILD"
+
+# push
+git push
+
+# here we could create a PR against DC/OS with `hub` or something
