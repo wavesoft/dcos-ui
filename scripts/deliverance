@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# wip
+
+COMMIT_SHA=$(git rev-list -n 1 $1)
+
+# download name
+RELEASE_NAME="master-${COMMIT_SHA}.tar.gz"
+DOWNLOAD_URL="https://downloads.mesosphere.io/dcos-ui/${RELEASE_NAME}"
+
+# download from S3 and take checksum
+curl $DOWNLOAD_URL | tar <something>
