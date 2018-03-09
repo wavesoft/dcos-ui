@@ -119,9 +119,8 @@ pipeline {
 
     stage('Release New Version') {
       when {
-        expression {
-          branch "master" || branch "release/*" || branch "jgieseke/add-release-to-jenkinsfile-nopr" || params.CREATE_VERSION == true
-        }
+        branch "jgieseke/add-release-to-jenkinsfile-nopr"
+        params.CREATE_VERSION == true
       }
 
       steps {
@@ -139,9 +138,7 @@ pipeline {
 
     stage('Release Latest') {
       when {
-        expression {
-          branch "master" || branch "release/*" || branch "jgieseke/add-release-to-jenkinsfile-nopr"
-        }
+        branch "jgieseke/add-release-to-jenkinsfile-nopr"
       }
 
       steps {
