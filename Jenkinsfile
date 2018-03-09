@@ -120,7 +120,7 @@ pipeline {
     stage('Release New Version') {
       when {
         expression {
-          return branch "master" || branch "release/*" || branch "jgieseke/add-release-to-jenkinsfile-nopr" || params.CREATE_VERSION == true
+          branch "master" || branch "release/*" || branch "jgieseke/add-release-to-jenkinsfile-nopr" || params.CREATE_VERSION == true
         }
       }
 
@@ -140,7 +140,7 @@ pipeline {
     stage('Release Latest') {
       when {
         expression {
-          return branch "master" || branch "release/*" || branch "jgieseke/add-release-to-jenkinsfile-nopr"
+          branch "master" || branch "release/*" || branch "jgieseke/add-release-to-jenkinsfile-nopr"
         }
       }
 
