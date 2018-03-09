@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-echo 'create release (standard-version?)'
+echo 'TODO: create release (standard-version?)'
+
 echo 'create tar'
+tar czf 'release.tar.gz' 'dist'
+
 echo 'upload as release'
-echo 'create bump PR'
+../scripts/ci/upload-build
+
+echo 'TODO: create bump PR'
