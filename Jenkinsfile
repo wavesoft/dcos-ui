@@ -120,7 +120,7 @@ pipeline {
     stage('Release New Version') {
       when {
         branch "jgieseke/add-release-to-jenkinsfile-nopr"
-        params.CREATE_VERSION == true
+        expression { params.CREATE_VERSION == true }
       }
 
       steps {
