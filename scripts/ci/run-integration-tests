@@ -45,7 +45,7 @@ function runTestFile {
 }
 
 echo "starting http-server proxy used by cypress"
-./node_modules/.bin/http-server -p 4200 dist&
+http-server -p 4200 dist&
 SERVER_PID=$!
 
 
