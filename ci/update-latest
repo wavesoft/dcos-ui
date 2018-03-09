@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo 'create tar'
+echo 'upload as latest'
+echo 'update latest pr'

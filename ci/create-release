@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo 'create release (standard-version?)'
+echo 'create tar'
+echo 'upload as release'
+echo 'create bump PR'
