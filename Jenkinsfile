@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 @Library('sec_ci_libs@v2-latest') _
-def master_branches = ["master", ] as String[]
+def master_branches = ["master", "jgieseke/add-release-to-jenkinsfile-nopr"] as String[]
 
 pipeline {
   agent {
