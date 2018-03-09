@@ -11,7 +11,7 @@ pipeline {
   }
 
   parameters {
-    booleanParam(defaultValue: false, description: 'Create new DC/OS UI release?', name: 'CREATE_RELEASE')
+    booleanParam(defaultValue: false, description: 'Release new DC/OS UI version?', name: 'CREATE_VERSION')
   }
 
   environment {
@@ -107,7 +107,6 @@ pipeline {
             }
           }
         }
-
       }
 
       post {
@@ -118,9 +117,11 @@ pipeline {
       }
     }
 
-    stage('Create Release') {
+    stage('Release New Version') {
       when {
-        expression { params.CREATE_RELEASE == true }
+        branch "master"
+        branch "release/*"
+        expression { params.CREATE_VERSION == true }
       }
 
       steps {
@@ -136,7 +137,7 @@ pipeline {
       }
     }
 
-    stage('Update Latest Build') {
+    stage('Release Latest') {
       when {
         branch "master"
         branch "release/*"
