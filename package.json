@@ -125,6 +125,7 @@
     "node": "8.9.4",
     "node-libs-browser": "1.0.0",
     "npm": "5.7.1",
+    "npm-merge-driver": "2.3.5",
     "postcss": "5.0.21",
     "postcss-loader": "0.8.2",
     "prettier": "1.2.2",
