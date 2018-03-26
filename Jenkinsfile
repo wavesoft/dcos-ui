@@ -179,7 +179,7 @@ pipeline {
       }
 
       steps {
-        build job: "frontend/dcos-ui-ee-release/${env.BRANCH_NAME}", parameters: [[$class: 'StringParameterValue', name: 'BRANCH_NAME', value: env.BRANCH_NAME]]
+        build job: "frontend/dcos-ui-ee-pipeline/${env.BRANCH_NAME}", parameters: [[$class: 'StringParameterValue', name: 'BRANCH_NAME', value: env.BRANCH_NAME]]
       }
     }
   }
