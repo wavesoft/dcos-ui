@@ -4,7 +4,7 @@
 
 // these dcos-ui branches are used as a whitelist by the security library
 // if a build is triggered from these branches, it is considered safe
-def master_branches = ["master", ] as String[]
+def master_branches = ["master", "jgieseke/dcos-22183-add-git-url-reporting"] as String[]
 
 // these dcos channels are used as a whitelist to create releases "against"
 // this pipeline can be triggered from different jobs providing other
