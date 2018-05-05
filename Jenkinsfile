@@ -2,7 +2,15 @@
 
 @Library("sec_ci_libs@v2-latest") _
 
+// these dcos-ui branches are used as a whitelist by the security library
+// if a build is triggered from these branches, it is considered safe
 def master_branches = ["master", ] as String[]
+
+// these dcos channels are used as a whitelist to create releases "against"
+// this pipeline can be triggered from different jobs providing other
+// channels to run system tests against, if so, we do not want to create
+// releases
+def release_channels = ["testing/master"] as String[]
 
 pipeline {
   agent {
@@ -11,10 +19,16 @@ pipeline {
     }
   }
 
+  parameters {
+    string(name: 'DCOS_CHANNEL', defaultValue: 'testing/master', description: 'Which DC/OS channel (PR or branch) should the cluster be built with?')
+    string(name: 'REPORT_TO_GIT', defaultValue: '', description: 'Additional git commit sha to report to.')
+  }
+
   environment {
     JENKINS_VERSION = "yes"
     NODE_PATH = "node_modules"
-    INSTALLER_URL= "https://downloads.dcos.io/dcos/testing/master/dcos_generate_config.sh"
+    INSTALLER_URL_BASE="https://downloads.dcos.io/dcos"
+    INSTALLER_URL_FILENAME="dcos_generate_config.sh"
   }
 
   options {
@@ -61,7 +75,7 @@ pipeline {
                   secretKeyVariable: "AWS_SECRET_ACCESS_KEY"
                 ]
               ]) {
-              sh "dcos-system-test-driver -j1 -v ./system-tests/driver-config/jenkins.sh"
+              sh "INSTALLER_URL='${env.INSTALLER_URL_BASE}/${params.DCOS_CHANNEL}/${env.INSTALLER_URL_FILENAME}' dcos-system-test-driver -j1 -v ./system-tests/driver-config/jenkins.sh"
             }
           }
 
@@ -82,8 +96,9 @@ pipeline {
     // - dcos-ui/1.12/dcos-ui-latest
     stage("Release Latest") {
       when {
-        expression {
-          master_branches.contains(BRANCH_NAME)
+        allOf {
+          expression { master_branches.contains(BRANCH_NAME) }
+          expression { release_channels.contains(params.DCOS_CHANNEL) }
         }
       }
 
