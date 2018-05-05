@@ -20,8 +20,8 @@ pipeline {
   }
 
   parameters {
-    string(name: 'DCOS_CHANNEL', defaultValue: 'testing/master', description: 'Which DC/OS channel (PR or branch) should the cluster be built with?')
-    string(name: 'REPORT_TO_GIT', defaultValue: '', description: 'Additional git commit sha to report to.')
+    string(name: 'DCOS_CHANNEL', defaultValue: 'testing/master', description: 'Which DC/OS channel (PR or branch) should the cluster be built with? Example: testing/pull/1234')
+    string(name: 'REPORT_TO_GIT_URL', defaultValue: '', description: 'Additional git commit API URL to report to. Example: https://api.github.com/repos/dcos/dcos/statuses/d123459157e1c46993136c80517bad2a72335891')
   }
 
   environment {
@@ -45,6 +45,10 @@ pipeline {
 
     stage("Build") {
       steps {
+        withCredentials([usernamePassword(credentialsId:'a7ac7f84-64ea-4483-8e66-bb204484e58f', passwordVariable:'GIT_PASSWORD', usernameVariable: 'GIT_USER')]) {
+          sh "[ -n \"${params.REPORT_TO_GIT_URL}\" ] && python3 ./scripts/ci/github_status.py \"$JOB_NAME/${params.DCOS_CHANNEL}\" \"$BUILD_URL\" \"${params.REPORT_TO_GIT_URL}\" \"PENDING\""
+        }
+
         sh "npm --unsafe-perm install"
         sh "npm run build"
         sh "tar czf release.tar.gz dist"
@@ -136,6 +140,11 @@ pipeline {
   }
 
   post {
+    always {
+      withCredentials([usernamePassword(credentialsId:'a7ac7f84-64ea-4483-8e66-bb204484e58f', passwordVariable:'GIT_PASSWORD', usernameVariable: 'GIT_USER')]) {
+          sh "[ -n \"${params.REPORT_TO_GIT_URL}\" ] && python3 ./scripts/ci/github_status.py \"$JOB_NAME/${params.DCOS_CHANNEL}\" \"$BUILD_URL\" \"${params.REPORT_TO_GIT_URL}\" \"$currentBuild.result\""
+      }
+    }
     failure {
       withCredentials([
         string(credentialsId: "8b793652-f26a-422f-a9ba-0d1e47eb9d89", variable: "SLACK_TOKEN")
