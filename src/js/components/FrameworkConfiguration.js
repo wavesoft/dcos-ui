@@ -255,6 +255,7 @@ class FrameworkConfiguration extends Component {
           {defaultConfigWarningMessage}
           <FrameworkConfigurationReviewScreen
             frameworkData={formData}
+            title={"Configuration"}
             onEditClick={this.handleEditConfigurationButtonClick}
           />
         </div>
