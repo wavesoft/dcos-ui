@@ -1,5 +1,6 @@
 import { makeExecutableSchema, IResolvers } from "graphql-tools";
 import { Observable } from "rxjs";
+import { runJob } from "../../../../../src/js/events/MetronomeClient";
 
 export interface Query {
   jobs: JobConnection | null;
@@ -269,6 +270,9 @@ type Query {
     sortDirection: SortDirection
   ): Job
 }
+type Mutation {
+  runJob(id: String!): JobRun!
+}
 `;
 
 // Pass implementation of MetronomeClient to the resolvers for easier testability
@@ -283,6 +287,15 @@ export const resolvers = (): IResolvers => ({
     },
     job(_obj = {}, _args: GeneralArgs, _context = {}): Observable<Job | null> {
       return Observable.of(null);
+    }
+  },
+  Mutation: {
+    runJob(
+      _obj = {},
+      _args: GeneralArgs,
+      _context = {}
+    ): Observable<Job | null> {
+      return runJob(_args.id);
     }
   }
 });
