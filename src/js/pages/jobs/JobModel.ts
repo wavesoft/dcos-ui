@@ -36,9 +36,69 @@ interface IJobResponse {
   };
 }
 
+interface IJobDetailResponse {
+  id: string;
+  description: string;
+  labels: object;
+  run: {
+    cpus: number;
+    mem: number;
+    disk: number;
+    cmd: string;
+    env: {};
+    placement: {
+      constraints: any[];
+    };
+    artifacts: any[];
+    maxLaunchDelay: number;
+    volumes: any[];
+    restart: {
+      policy: string;
+    };
+    docker: {
+      secrets: object;
+      forcePullImage: boolean;
+      image: string;
+    };
+  };
+  schedules: any[];
+  activeRuns: any[];
+  history: IJobHistory;
+}
+
+interface IJobHistoryRun {
+  id: string;
+  createdAt: string;
+  finishedAt: string;
+}
+
+interface IJobHistory {
+  successCount: number;
+  failureCount: number;
+  lastSuccessAt: string;
+  lastFailureAt: null;
+  successfulFinishedRuns: IJobHistoryRun[];
+  failedFinishedRuns: IJobHistoryRun[];
+}
+
+interface IJobRun {
+  id: string;
+  finishedAt: number;
+  createdAt: number;
+  status: string;
+  runTime: number;
+  children: any[];
+}
+
 interface IJobsArg {
   filter?: string;
-  sortBy?: "id" | "status" | "lastRun";
+  sortBy?: string;
+  sortDirection?: "ASC" | "DESC";
+}
+
+interface IJobDetailArgs {
+  id: string;
+  sortBy?: string;
   sortDirection?: "ASC" | "DESC";
 }
 
@@ -63,7 +123,7 @@ export const typeDefs = `
     cpus: Float!
     mem: Int!
     disk: Float!
-    command: String!
+    cmd: String!
     schedule: JobSchedule!
     docker: JobDocker!
     labels: [JobLabel]!
@@ -73,7 +133,7 @@ export const typeDefs = `
   type JobRun {
     id: ID!
     finishedAt: Int!
-    startedAt: Int!
+    createdAt: Int!
     status: JobStatus!
     runTime: Int!
     children: [JobRunTask]!
@@ -97,6 +157,7 @@ export const typeDefs = `
 
   type JobDocker {
     image: String!
+    forcePullImage: Boolean!
   }
 
   type JobLabel {
@@ -207,9 +268,11 @@ function response2Job(response: IJobResponse) {
 
 export const resolvers = ({
   fetchJobs,
+  fetchJobDetail,
   pollingInterval
 }: {
   fetchJobs: () => Observable<IJobResponse[]>;
+  fetchJobDetail: (jobId: string) => Observable<IJobDetailResponse>;
   pollingInterval: number;
 }) => ({
   MetronomeItem: {
@@ -288,8 +351,66 @@ export const resolvers = ({
           };
         });
     },
-    metronomeItem(_obj = {}, _args = {}, _context = {}) {
-      return Observable.of({});
+    metronomeItem(_obj = {}, { id }: IJobDetailArgs, _context = {}) {
+      const pollingInterval$ = Observable.interval(pollingInterval);
+      const responses$ = pollingInterval$.switchMap(() => fetchJobDetail(id));
+
+      function historyToRuns(
+        { successfulFinishedRuns, failedFinishedRuns }: IJobHistory,
+        activeRuns: IJobHistoryRun[]
+      ): IJobRun[] {
+        return [
+          ...successfulFinishedRuns.map(successfulFinishedRun => ({
+            ...successfulFinishedRun,
+            status: "SUCCESS"
+          })),
+          ...failedFinishedRuns.map(failedFinishedRun => ({
+            ...failedFinishedRun,
+            status: "FAILED"
+          })),
+          ...activeRuns.map(activeRun => ({
+            ...activeRun,
+            status: "NOT_AVAILABLE"
+          }))
+        ].map(run => {
+          const finishedAt = new Date(run.finishedAt).getTime();
+          const createdAt = new Date(run.createdAt).getTime();
+
+          return {
+            id: run.id,
+            finishedAt,
+            createdAt,
+            status: run.status,
+            runTime: finishedAt - createdAt,
+            children: []
+          };
+        });
+      }
+
+      return responses$.map(
+        ({
+          id,
+          description,
+          labels,
+          history,
+          activeRuns,
+          run: { cpus, cmd, mem, disk, docker = {} }
+        }) => {
+          return {
+            id,
+            name: id,
+            description,
+            cpus,
+            cmd,
+            mem,
+            disk,
+            labels,
+            docker,
+            runs: historyToRuns(history, activeRuns),
+            schedule: null // TODO: fill me
+          };
+        }
+      );
     }
   }
 });
