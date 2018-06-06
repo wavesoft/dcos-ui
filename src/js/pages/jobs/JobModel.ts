@@ -56,6 +56,54 @@ export const typeDefs = `
 		lastRun: JobRunSummary!
 	}
 
+  type JobDetail {
+    id: ID!
+		name: String!
+		description: String!
+    cpus: Float!
+    mem: Int!
+    disk: Float!
+    command: String!
+    schedule: JobSchedule!
+    docker: JobDocker!
+    labels: [JobLabel]!
+    runs: [JobRun]!
+  }
+
+  type JobRun {
+    id: ID!
+    finishedAt: Int!
+    startedAt: Int!
+    status: JobStatus!
+    runTime: Int!
+    children: [JobRunTask]!
+  }
+
+  type JobRunTask {
+    taskId: ID!
+    status: JobRunStatus!
+    startedAt: Int!
+    finishedAt: Int!
+    runTime: Int!
+  }
+
+  type JobSchedule {
+    id: ID!
+    enabled: Boolean!
+    cron: String!
+    timezone: String!
+    startingDeadlineSeconds: Int!
+  }
+
+  type JobDocker {
+    image: String!
+  }
+
+  type JobLabel {
+    key: String!
+    value: String!
+  }
+
 	enum JobRunStatus {
 		NOT_AVAILABLE
 		SUCCESS
