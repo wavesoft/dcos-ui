@@ -2,20 +2,94 @@ import { request } from "@dcos/http-service";
 // TODO: remove this disable with https://jira.mesosphere.com/browse/DCOS_OSS-3579
 // tslint:disable-next-line:no-submodule-imports
 import { Observable } from "rxjs/Observable";
-
 import Config from "../config/Config";
 
 // Add interface information: https://jira.mesosphere.com/browse/DCOS-37725
-interface IJobData {
+export interface IJobResponse {
   id: string;
+  labels?: object;
+  run: {
+    cpus: number;
+    mem: number;
+    disk: number;
+    cmd: string;
+    env: object;
+    placement: {
+      constraints: any[];
+    };
+    artifacts: any[];
+  };
+  schedules: ISchedule[];
+  historySummary: {
+    failureCount: number;
+    lastFailureAt: string | null;
+    lastSuccessAt: string | null;
+    successCount: number;
+  };
 }
-interface IJobResponse {
+
+export interface IJobDetailResponse {
   id: string;
+  description: string;
+  labels: object;
+  run: {
+    cpus: number;
+    mem: number;
+    disk: number;
+    cmd: string;
+    env: {};
+    placement: {
+      constraints: any[];
+    };
+    artifacts: any[];
+    maxLaunchDelay: number;
+    volumes: any[];
+    restart: {
+      policy: string;
+    };
+    docker?: {
+      secrets: object;
+      forcePullImage: boolean;
+      image: string;
+    };
+    secrets: object;
+  };
+  schedules: any[];
+  activeRuns: any[];
+  history: IJobHistory;
 }
-interface IScheduleData {
+export interface ISchedule {
+  concurrencyPolicy: string;
+  cron: string;
+  enabled: boolean;
+  id: string;
+  nextRunAt: string;
+  startingDeadlineSeconds: number;
+  timezone: string;
+}
+
+export interface IJobHistory {
+  successCount: number;
+  failureCount: number;
+  lastSuccessAt: string;
+  lastFailureAt: null;
+  successfulFinishedRuns: IJobHistoryRun[];
+  failedFinishedRuns: IJobHistoryRun[];
+}
+
+export interface IJobHistoryRun {
+  id: string;
+  createdAt: string;
+  finishedAt: string;
+}
+
+export interface IJobData {
   id: string;
 }
 
+export interface IScheduleData {
+  id: string;
+}
 const defaultHeaders = {
   "Content-Type": "application/json; charset=utf-8"
 };
@@ -37,7 +111,7 @@ export function fetchJobs(): Observable<IJobResponse[]> {
   );
 }
 
-export function fetchJobDetail(jobID: string): Observable<IJobResponse> {
+export function fetchJobDetail(jobID: string): Observable<IJobDetailResponse> {
   return request(
     `${
       Config.metronomeAPI
@@ -58,10 +132,7 @@ export function deleteJob(
   );
 }
 
-export function updateJob(
-  jobID: string,
-  data: IJobData
-): Observable<IJobResponse> {
+export function updateJob(jobID: string, data: IJobData): Observable<any> {
   return request(
     `${
       Config.metronomeAPI

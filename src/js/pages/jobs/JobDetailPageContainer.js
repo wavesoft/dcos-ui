@@ -4,12 +4,16 @@ import React from "react";
 /* eslint-enable no-unused-vars */
 import { routerShape } from "react-router";
 import mixin from "reactjs-mixin";
+import gql from "graphql-tag";
+import { graphqlObservable } from "data-service";
+
 import Loader from "../../components/Loader";
 import Page from "../../components/Page";
 import RequestErrorMsg from "../../components/RequestErrorMsg";
 import JobsBreadcrumbs from "../../components/breadcrumbs/JobsBreadcrumbs";
 import MetronomeStore from "../../stores/MetronomeStore";
 import JobDetailPage from "./JobDetailPage";
+import schema from "./JobModel";
 
 export const DIALOGS = {
   EDIT: "edit",
@@ -33,6 +37,21 @@ const ErrorScreen = function({ jobTree }) {
     </Page>
   );
 };
+
+const getInput$ = id =>
+  graphqlObservable(
+    gql`
+query {
+  metronomeItem(id: "${id}") {
+    id
+    name
+  }
+}
+`,
+    schema,
+    {}
+  );
+
 export class JobDetailPageContainer extends mixin(StoreMixin) {
   constructor() {
     super(...arguments);
@@ -54,13 +73,20 @@ export class JobDetailPageContainer extends mixin(StoreMixin) {
       }
     ];
 
+    const subscription = getInput$(this.props.params.id).subscribe({
+      onNext(evt) {
+        console.log("data layer: ", evt);
+      }
+    });
+
     this.state = {
       errorMsg: null,
       errorCount: 0,
       isJobFormModalOpen: false,
       isLoading: true,
       disabledDialog: null,
-      jobActionDialog: null
+      jobActionDialog: null,
+      subscription
     };
 
     [
@@ -103,6 +129,7 @@ export class JobDetailPageContainer extends mixin(StoreMixin) {
   componentWillUnmount() {
     super.componentWillUnmount(...arguments);
     MetronomeStore.stopJobDetailMonitor(this.props.params.id);
+    this.state.subscription.unsubscribe();
   }
 
   handleRunNowButtonClick() {

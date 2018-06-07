@@ -1,85 +1,16 @@
 import { makeExecutableSchema } from "graphql-tools";
 import { Observable } from "rxjs";
+import {
+  fetchJobs,
+  fetchJobDetail,
+  IJobResponse,
+  IJobDetailResponse,
+  IJobHistory,
+  IJobHistoryRun
+} from "../../events/MetronomeClient";
+import Config from "../../config/Config";
 import JobStates from "../../constants/JobStates";
 import JobStatus from "../../constants/JobStatus";
-
-interface ISchedule {
-  concurrencyPolicy: string;
-  cron: string;
-  enabled: boolean;
-  id: string;
-  nextRunAt: string;
-  startingDeadlineSeconds: number;
-  timezone: string;
-}
-
-interface IJobResponse {
-  id: string;
-  labels?: object;
-  run: {
-    cpus: number;
-    mem: number;
-    disk: number;
-    cmd: string;
-    env: object;
-    placement: {
-      constraints: any[];
-    };
-    artifacts: any[];
-  };
-  schedules: ISchedule[];
-  historySummary: {
-    failureCount: number;
-    lastFailureAt: string;
-    lastSuccessAt: string;
-    successCount: number;
-  };
-}
-
-interface IJobDetailResponse {
-  id: string;
-  description: string;
-  labels: object;
-  run: {
-    cpus: number;
-    mem: number;
-    disk: number;
-    cmd: string;
-    env: {};
-    placement: {
-      constraints: any[];
-    };
-    artifacts: any[];
-    maxLaunchDelay: number;
-    volumes: any[];
-    restart: {
-      policy: string;
-    };
-    docker?: {
-      secrets: object;
-      forcePullImage: boolean;
-      image: string;
-    };
-  };
-  schedules: any[];
-  activeRuns: any[];
-  history: IJobHistory;
-}
-
-interface IJobHistoryRun {
-  id: string;
-  createdAt: string;
-  finishedAt: string;
-}
-
-interface IJobHistory {
-  successCount: number;
-  failureCount: number;
-  lastSuccessAt: string;
-  lastFailureAt: null;
-  successfulFinishedRuns: IJobHistoryRun[];
-  failedFinishedRuns: IJobHistoryRun[];
-}
 
 interface IJobRun {
   id: string;
@@ -419,5 +350,9 @@ export const resolvers = ({
 
 export const defaultSchema = makeExecutableSchema({
   typeDefs,
-  resolvers: {} // TODO: fill with real interval and API
+  resolvers: resolvers({
+    fetchJobDetail,
+    fetchJobs,
+    pollingInterval: Config.getRefreshRate()
+  })
 });
