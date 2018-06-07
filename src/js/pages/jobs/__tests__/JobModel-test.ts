@@ -1,109 +1,123 @@
+import { Observable } from "rxjs";
 // TODO: remove this disable with https://jira.mesosphere.com/browse/DCOS_OSS-3579
 // tslint:disable-next-line:no-submodule-imports
-import { Observable } from "rxjs";
 import { marbles } from "rxjs-marbles/jest";
 import { resolvers } from "../JobModel";
 
-describe.skip("JobData", () => {
-  const defaultJob = {
-    id: "foo.bar.Ponies",
-    labels: {},
-    run: {
-      cpus: 0.01,
-      mem: 128,
-      disk: 0,
-      cmd: "sleep 19999",
-      env: {},
-      placement: { constraints: [] },
-      artifacts: [],
-      maxLaunchDelay: 3600,
-      volumes: [],
-      restart: { policy: "NEVER" },
-      secrets: {}
+const defaultJobDetailData = {
+  id: "testid",
+  description: "test description",
+  labels: {},
+  run: {
+    cpus: 0.01,
+    mem: 128,
+    disk: 0,
+    cmd: "sleep 10",
+    env: {},
+    placement: {
+      constraints: []
     },
-    schedules: [
+    artifacts: [],
+    maxLaunchDelay: 3600,
+    volumes: [],
+    restart: {
+      policy: "NEVER"
+    },
+    secrets: {}
+  },
+  schedules: [],
+  activeRuns: [],
+  history: {
+    successCount: 3,
+    failureCount: 0,
+    lastSuccessAt: "2018-06-06T10:49:44.471+0000",
+    lastFailureAt: null,
+    successfulFinishedRuns: [
       {
-        concurrencyPolicy: "ALLOW",
-        cron: "12 * * * *",
-        enabled: false,
-        id: "default",
-        nextRunAt: "2018-06-04T11:12:00.000+0000",
-        startingDeadlineSeconds: 900,
-        timezone: "UTC"
+        id: "20180606104932xsDzH",
+        createdAt: "2018-06-06T10:49:32.336+0000",
+        finishedAt: "2018-06-06T10:49:44.471+0000"
+      },
+      {
+        id: "20180606104545rjSRE",
+        createdAt: "2018-06-06T10:45:45.890+0000",
+        finishedAt: "2018-06-06T10:45:57.236+0000"
+      },
+      {
+        id: "20180606100732E88WQ",
+        createdAt: "2018-06-06T10:07:32.972+0000",
+        finishedAt: "2018-06-06T10:07:44.265+0000"
       }
     ],
-    historySummary: {
-      failureCount: 1,
-      lastFailureAt: "2017-06-01T10:33:51.875+0000",
-      lastSuccessAt: "2018-06-01T10:33:51.875+0000",
-      successCount: 1
-    }
-  };
-  const defaultJobData = [defaultJob];
+    failedFinishedRuns: [
+      {
+        createdAt: "2018-06-06T09:31:46.254+0000",
+        finishedAt: "2018-06-06T09:31:47.760+0000",
+        id: "20180606093146gr5Pi"
+      }
+    ]
+  }
+};
 
+const defaultJob = {
+  id: "foo.bar.Ponies",
+  labels: {},
+  run: {
+    cpus: 0.01,
+    mem: 128,
+    disk: 0,
+    cmd: "sleep 19999",
+    env: {},
+    placement: { constraints: [] },
+    artifacts: [],
+    maxLaunchDelay: 3600,
+    volumes: [],
+    restart: { policy: "NEVER" },
+    secrets: {}
+  },
+  schedules: [
+    {
+      concurrencyPolicy: "ALLOW",
+      cron: "12 * * * *",
+      enabled: false,
+      id: "default",
+      nextRunAt: "2018-06-04T11:12:00.000+0000",
+      startingDeadlineSeconds: 900,
+      timezone: "UTC"
+    }
+  ],
+  historySummary: {
+    failureCount: 1,
+    lastFailureAt: "2017-06-01T10:33:51.875+0000",
+    lastSuccessAt: "2018-06-01T10:33:51.875+0000",
+    successCount: 1
+  }
+};
+const defaultJobsData = [defaultJob];
+
+const defaultFetchJobs = () => Observable.of(defaultJobsData);
+const defaultFetchJobDetail = () => Observable.of(defaultJobDetailData);
+
+describe.skip("JobData", () => {
   it(
     "polls the MetronomeActions.fetchJobs endpoint",
     marbles(m => {
       m.bind();
-      const fetchJobs = () => m.cold("--x|", { x: defaultJobData });
+      const fetchJobs = () => m.cold("--x|", { x: defaultJobsData });
       const result$ = resolvers({
         fetchJobs,
+        fetchJobDetail: defaultFetchJobDetail,
         pollingInterval: m.time("--|")
-      }).Query.metronomeItems({}, {});
+      }).Query.metronomeItems({});
       const expected$ = m.cold("----x-x-(x|)", {
-        x: defaultJobData
+        x: 0 // we are only interested in the timing, not in the data at this point
       });
 
-      m.expect(result$.take(3)).toBeObservable(expected$);
+      m.expect(result$.map(_ => 0).take(3)).toBeObservable(expected$);
     })
   );
 
   it("does not have two requests open at the same time");
-
-  describe.skip("types", () => {
-    describe("Jobs", () => {
-      it(
-        "has job attributes",
-        marbles(m => {
-          m.bind();
-
-          const fetchJobs = () => Observable.of(defaultJobData);
-
-          const result$ = resolvers({
-            fetchJobs,
-            pollingInterval: m.time("--|")
-          }).Query.metronomeItems({}, {});
-
-          const expected$ = m.cold("--(x|)", {
-            x: {
-              id: "foo.bar.Ponies",
-              name: "Ponies",
-              schedules: [
-                {
-                  concurrencyPolicy: "ALLOW",
-                  cron: "12 * * * *",
-                  enabled: false,
-                  id: "default",
-                  nextRunAt: "2018-06-04T11:12:00.000+0000",
-                  startingDeadlineSeconds: 900,
-                  timezone: "UTC"
-                }
-              ],
-              status: "COMPLETED",
-              lastRun: {
-                status: "Success",
-                lastSuccessAt: "2018-06-01T10:33:51.875+0000",
-                lastFailureAt: "2017-06-01T10:33:51.875+0000"
-              },
-              namespace: true // TODO: define namespace interface
-            }
-          });
-
-          m.expect(result$.take(1)).toBeObservable(expected$);
-        })
-      );
-    });
-  });
 
   describe("order", () => {
     const cases = [
@@ -207,6 +221,7 @@ describe.skip("JobData", () => {
 
           const result$ = resolvers({
             fetchJobs,
+            fetchJobDetail: defaultFetchJobDetail,
             pollingInterval: m.time("--|")
           }).Query.metronomeItems({}, { sortBy, sortDirection });
 
@@ -214,7 +229,12 @@ describe.skip("JobData", () => {
             x: output
           });
           m.expect(
-            result$.take(1).map(result => result.map(item => item[sortBy]))
+            result$.take(1).map(result =>
+              result.items.map(item => {
+                // @ts-ignore: Controlled environemnt / test
+                return item[sortBy];
+              })
+            )
           ).toBeObservable(expected$);
         })
       );
@@ -254,6 +274,7 @@ describe.skip("JobData", () => {
 
           const result$ = resolvers({
             fetchJobs,
+            fetchJobDetail: defaultFetchJobDetail,
             pollingInterval: m.time("--|")
           }).Query.metronomeItems({}, { filter });
 
@@ -262,7 +283,7 @@ describe.skip("JobData", () => {
           });
 
           m.expect(
-            result$.take(1).map(result => result.map(item => item.id))
+            result$.take(1).map(result => result.items.map(item => item.id))
           ).toBeObservable(expected$);
         })
       );
@@ -271,69 +292,14 @@ describe.skip("JobData", () => {
 });
 
 describe("JobDetail", () => {
-  const defaultJobData = {
-    id: "testid",
-    description: "test description",
-    labels: {},
-    run: {
-      cpus: 0.01,
-      mem: 128,
-      disk: 0,
-      cmd: "sleep 10",
-      env: {},
-      placement: {
-        constraints: []
-      },
-      artifacts: [],
-      maxLaunchDelay: 3600,
-      volumes: [],
-      restart: {
-        policy: "NEVER"
-      },
-      secrets: {}
-    },
-    schedules: [],
-    activeRuns: [],
-    history: {
-      successCount: 3,
-      failureCount: 0,
-      lastSuccessAt: "2018-06-06T10:49:44.471+0000",
-      lastFailureAt: null,
-      successfulFinishedRuns: [
-        {
-          id: "20180606104932xsDzH",
-          createdAt: "2018-06-06T10:49:32.336+0000",
-          finishedAt: "2018-06-06T10:49:44.471+0000"
-        },
-        {
-          id: "20180606104545rjSRE",
-          createdAt: "2018-06-06T10:45:45.890+0000",
-          finishedAt: "2018-06-06T10:45:57.236+0000"
-        },
-        {
-          id: "20180606100732E88WQ",
-          createdAt: "2018-06-06T10:07:32.972+0000",
-          finishedAt: "2018-06-06T10:07:44.265+0000"
-        }
-      ],
-      failedFinishedRuns: [
-        {
-          createdAt: "2018-06-06T09:31:46.254+0000",
-          finishedAt: "2018-06-06T09:31:47.760+0000",
-          id: "20180606093146gr5Pi"
-        }
-      ]
-    }
-  };
   it(
     "polls metronome detail endpoint",
     marbles(m => {
       m.bind();
-      const fetchJobs = () => m.cold("-");
-      const fetchJobDetail = id =>
-        m.cold("--x|", { x: { ...defaultJobData, id } });
+      const fetchJobDetail = (id: string) =>
+        m.cold("--x|", { x: { ...defaultJobDetailData, id } });
       const result$ = resolvers({
-        fetchJobs,
+        fetchJobs: defaultFetchJobs,
         fetchJobDetail,
         pollingInterval: m.time("--|")
       }).Query.metronomeItem({}, { id: "foo" });
@@ -399,7 +365,7 @@ describe("JobDetail", () => {
       };
 
       const fetchJobs = () => m.cold("-");
-      const fetchJobDetail = id => m.cold("x|", { x: defaultJobData });
+      const fetchJobDetail = () => m.cold("x|", { x: defaultJobDetailData });
       const result$ = resolvers({
         fetchJobs,
         fetchJobDetail,

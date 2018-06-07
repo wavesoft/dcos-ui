@@ -55,7 +55,7 @@ interface IJobDetailResponse {
     restart: {
       policy: string;
     };
-    docker: {
+    docker?: {
       secrets: object;
       forcePullImage: boolean;
       image: string;
@@ -93,7 +93,7 @@ interface IJobRun {
 interface IJobsArg {
   filter?: string;
   sortBy?: string;
-  sortDirection?: "ASC" | "DESC";
+  sortDirection?: string;
 }
 
 interface IJobDetailArgs {
@@ -322,16 +322,18 @@ export const resolvers = ({
             }
 
             let result = 0;
+            const aWithStatus = a as IJobResponseWithStatus;
+            const bWithStatus = b as IJobResponseWithStatus;
 
             switch (sortBy) {
               case "id":
                 result = sortJobById(a, b);
                 break;
               case "status":
-                result = sortJobByStatus(a, b);
+                result = sortJobByStatus(aWithStatus, bWithStatus);
                 break;
               case "lastRun":
-                result = sortJobByLastRun(a, b);
+                result = sortJobByLastRun(aWithStatus, bWithStatus);
                 break;
             }
 
