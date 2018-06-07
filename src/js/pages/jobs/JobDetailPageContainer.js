@@ -54,11 +54,12 @@ query {
 
 const JobDetailPageMediator = componentFromStream($props => {
   const id$ = $props.map(props => props.params.id);
-
-  return id$
+  const jobs$ = id$
     .switchMap(getInput)
     .map(({ data: { metronomeItem } }) => metronomeItem)
-    .do(data => console.info("x:", data))
+    .do(data => console.info("x:", data));
+
+  return jobs$
     .combineLatest($props)
     .do(data => console.info("y:", data))
     .map(([job, props]) => ({ ...props, job }))
