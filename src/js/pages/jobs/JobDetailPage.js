@@ -87,21 +87,15 @@ class JobDetailPage extends mixin(TabsMixin) {
     return <ul className="menu-tabbed">{this.tabs_getUnroutedTabs()}</ul>;
   }
 
-  getPrettySchedule(job) {
-    const schedules = job.getSchedules();
-    if (schedules == null || schedules.length === 0) {
-      return null;
-    }
-
-    const schedule = schedules[0];
-    if (schedule.enabled) {
-      return prettycron.toString(schedule.cron);
-    }
-  }
+  // getPrettySchedule(job) {
+  //   if (job.schedule.enabled) {
+  //     return prettycron.toString(job.schedule.cron);
+  //   }
+  // }
 
   getSubTitle(job) {
     const nodes = [];
-    const scheduleText = this.getPrettySchedule(job);
+    const scheduleText = null; // TODO: this.getPrettySchedule(job);
     let longestRunningTask = null;
     const longestRunningActiveRun = job
       .getActiveRuns()
@@ -177,7 +171,6 @@ class JobDetailPage extends mixin(TabsMixin) {
 
   getActions() {
     const job = this.props.job;
-    const [schedule] = job.getSchedules();
 
     const actions = [];
 
@@ -191,19 +184,19 @@ class JobDetailPage extends mixin(TabsMixin) {
       onItemSelect: this.props.handleRunNowButtonClick
     });
 
-    if (schedule != null && schedule.enabled) {
-      actions.push({
-        label: "Disable Schedule",
-        onItemSelect: this.props.handleDisableScheduleButtonClick
-      });
-    }
+    // if (job.schedule != null && job.schedule.enabled) {
+    //   actions.push({
+    //     label: "Disable Schedule",
+    //     onItemSelect: this.props.handleDisableScheduleButtonClick
+    //   });
+    // }
 
-    if (schedule != null && !schedule.enabled) {
-      actions.push({
-        label: "Enable Schedule",
-        onItemSelect: this.props.handleEnableScheduleButtonClick
-      });
-    }
+    // if (job.schedule != null && !job.schedule.enabled) {
+    //   actions.push({
+    //     label: "Enable Schedule",
+    //     onItemSelect: this.props.handleEnableScheduleButtonClick
+    //   });
+    // }
 
     actions.push({
       className: "text-danger",
@@ -242,6 +235,7 @@ class JobDetailPage extends mixin(TabsMixin) {
     }
 
     const { job, jobTree } = this.props;
+    console.log("JDP", job);
 
     return (
       <Page>

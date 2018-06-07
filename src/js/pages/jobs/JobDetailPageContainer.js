@@ -5,7 +5,7 @@ import React from "react";
 import { routerShape } from "react-router";
 import mixin from "reactjs-mixin";
 import gql from "graphql-tag";
-import { graphqlObservable } from "data-service";
+import { graphqlObservable, componentFromStream } from "data-service";
 
 import Loader from "../../components/Loader";
 import Page from "../../components/Page";
@@ -38,7 +38,7 @@ const ErrorScreen = function({ jobTree }) {
   );
 };
 
-const getInput$ = id =>
+const getInput = id =>
   graphqlObservable(
     gql`
 query {
@@ -51,6 +51,25 @@ query {
     schema,
     {}
   );
+
+const JobDetailPageMediator = componentFromStream($props => {
+  const id$ = $props.map(props => props.params.id);
+
+  return id$
+    .switchMap(getInput)
+    .map(({ data: { metronomeItem } }) => metronomeItem)
+    .do(data => console.info("x:", data))
+    .combineLatest($props)
+    .do(data => console.info("y:", data))
+    .map(([job, props]) => ({ ...props, job }))
+    .do(data => console.info("mediator:", data))
+    .map(props => {
+      console.log(props);
+
+      return <JobDetailPageContainer {...props} />;
+    })
+    .retry(10);
+});
 
 export class JobDetailPageContainer extends mixin(StoreMixin) {
   constructor() {
@@ -72,21 +91,13 @@ export class JobDetailPageContainer extends mixin(StoreMixin) {
         suppressUpdate: false
       }
     ];
-
-    const subscription = getInput$(this.props.params.id).subscribe({
-      onNext(evt) {
-        console.log("data layer: ", evt);
-      }
-    });
-
     this.state = {
       errorMsg: null,
       errorCount: 0,
       isJobFormModalOpen: false,
       isLoading: true,
       disabledDialog: null,
-      jobActionDialog: null,
-      subscription
+      jobActionDialog: null
     };
 
     [
@@ -129,7 +140,6 @@ export class JobDetailPageContainer extends mixin(StoreMixin) {
   componentWillUnmount() {
     super.componentWillUnmount(...arguments);
     MetronomeStore.stopJobDetailMonitor(this.props.params.id);
-    this.state.subscription.unsubscribe();
   }
 
   handleRunNowButtonClick() {
@@ -186,7 +196,7 @@ export class JobDetailPageContainer extends mixin(StoreMixin) {
       return <LoadingScreen jobTree={jobTree} />;
     }
 
-    const job = MetronomeStore.getJob(this.props.params.id);
+    // const job = MetronomeStore.getJob(this.props.params.id);
     const props = {
       handleEditButtonClick: this.handleEditButtonClick,
       handleRunNowButtonClick: this.handleRunNowButtonClick,
@@ -195,12 +205,14 @@ export class JobDetailPageContainer extends mixin(StoreMixin) {
       handleDestroyButtonClick: this.handleDestroyButtonClick,
       handleAcceptDestroyDialog: this.handleAcceptDestroyDialog,
       closeDialog: this.closeDialog,
-      job,
       jobTree,
+      // job,
       errorMsg: this.state.errorMsg,
       disabledDialog: this.state.disabledDialog,
       jobActionDialog: this.state.jobActionDialog
     };
+
+    console.log("JDPC", this.props);
 
     return <JobDetailPage {...this.props} {...props} />;
   }
@@ -209,4 +221,4 @@ JobDetailPageContainer.contextTypes = {
   router: routerShape
 };
 
-export default JobDetailPageContainer;
+export default JobDetailPageMediator;

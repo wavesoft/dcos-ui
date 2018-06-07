@@ -348,7 +348,7 @@ export const resolvers = ({
   }
 });
 
-export const defaultSchema = makeExecutableSchema({
+export default makeExecutableSchema({
   typeDefs,
   resolvers: resolvers({
     fetchJobDetail,
