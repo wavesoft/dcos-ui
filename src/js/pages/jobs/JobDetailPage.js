@@ -87,15 +87,15 @@ class JobDetailPage extends mixin(TabsMixin) {
     return <ul className="menu-tabbed">{this.tabs_getUnroutedTabs()}</ul>;
   }
 
-  // getPrettySchedule(job) {
-  //   if (job.schedule.enabled) {
-  //     return prettycron.toString(job.schedule.cron);
-  //   }
-  // }
+  getPrettySchedule(job) {
+    if (job.schedule.enabled) {
+      return prettycron.toString(job.schedule.cron);
+    }
+  }
 
   getSubTitle(job) {
     const nodes = [];
-    const scheduleText = null; // TODO: this.getPrettySchedule(job);
+    const scheduleText = this.getPrettySchedule(job);
     let longestRunningTask = null;
     const longestRunningActiveRun = job
       .getActiveRuns()
@@ -234,8 +234,8 @@ class JobDetailPage extends mixin(TabsMixin) {
       return this.props.children;
     }
 
+    console.log("JDP", this.props);
     const { job, jobTree } = this.props;
-    console.log("JDP", job);
 
     return (
       <Page>

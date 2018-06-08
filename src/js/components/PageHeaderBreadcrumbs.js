@@ -17,6 +17,7 @@ class PageHeaderBreadcrumbs extends React.Component {
     const {
       props: { breadcrumbs, iconID, iconRoute }
     } = this;
+
     const breadcrumbCount = breadcrumbs.length;
     const sectionIcon = (
       <Breadcrumb key={-1} isIcon={true} title="Section Icon">

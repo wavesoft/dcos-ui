@@ -71,8 +71,8 @@ function getItemSchedule(item) {
 }
 
 function getBreadcrumb(item, details = true) {
-  const id = item.getId();
-  const name = item.getName();
+  const id = item.id;
+  const name = item.name;
   const link =
     item instanceof Job ? `/jobs/detail/${id}` : `/jobs/overview/${id}`;
 

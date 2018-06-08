@@ -42,23 +42,23 @@ export const typeDefs = `
 
 	type Job {
 		id: ID!
-		name: String!
+    name: String!
 		status: JobStatus!
 		lastRun: JobRunSummary!
 	}
 
   type JobDetail {
-    id: ID!
-		name: String!
 		description: String!
-    cpus: Float!
-    mem: Int!
-    disk: Float!
+		name: String!
     cmd: String!
-    schedule: JobSchedule!
+    cpus: Float!
+    disk: Float!
     docker: JobDocker!
+    id: ID!
     labels: [JobLabel]!
+    mem: Int!
     runs: [JobRun]!
+    schedule: JobSchedule!
   }
 
   type JobRun {
@@ -113,22 +113,10 @@ export const typeDefs = `
 		INITIAL
 	}
 
-	type Namespace {
-		id: ID!
-		name: String!
-		items: MetronomeItem
-	}
-
-	union MetronomeItem = Job | Namespace
-
-	type SearchCount {
-		all: Int!
-		filtered: Int!
-	}
-
-	type MetronomeResult {
-		count: SearchCount!
-		items: [MetronomeItem]!
+	type JobConnection {
+    filteredCount: Int!
+    totalCount: Int!
+		nodes: [Job]!
 	}
 
 	enum SortOption {
@@ -143,8 +131,8 @@ export const typeDefs = `
 	}
 
 	type Query {
-		metronomeItems(filter: String, sortBy: SortOption, sortDirection: SortDirection): MetronomeResult
-		metronomeItem(id: ID!, filter: String, sortBy: SortOption, sortDirection: SortDirection): MetronomeResult
+		jobs(filter: String, sortBy: SortOption, sortDirection: SortDirection): JobConnection
+		job(id: ID!, filter: String, sortBy: SortOption, sortDirection: SortDirection): Job
 	}
 `;
 
@@ -206,13 +194,8 @@ export const resolvers = ({
   fetchJobDetail: (jobId: string) => Observable<IJobDetailResponse>;
   pollingInterval: number;
 }) => ({
-  MetronomeItem: {
-    __resolverType(obj: IJobResponse, _args: IJobsArg = {}, _context = {}) {
-      return isNamespace(obj) ? "Namespace" : "Job";
-    }
-  },
   Query: {
-    metronomeItems(_obj = {}, args: IJobsArg = {}, _context = {}) {
+    jobs(_obj = {}, args: IJobsArg = {}, _context = {}) {
       const { sortBy = "id", sortDirection = "ASC", filter } = args;
       const pollingInterval$ = Observable.interval(pollingInterval);
       const responses$ = pollingInterval$.switchMap(fetchJobs);
@@ -284,8 +267,10 @@ export const resolvers = ({
           };
         });
     },
-    metronomeItem(_obj = {}, { id }: IJobDetailArgs, _context = {}) {
+    job(_obj = {}, { id }: IJobDetailArgs, _context = {}) {
+      console.log("JobModel");
       const pollingInterval$ = Observable.interval(pollingInterval);
+      // TODO: change to exhaust map
       const responses$ = pollingInterval$.switchMap(() => fetchJobDetail(id));
 
       function historyToRuns(

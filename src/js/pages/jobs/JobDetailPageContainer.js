@@ -53,23 +53,22 @@ query {
   );
 
 const JobDetailPageMediator = componentFromStream($props => {
-  const id$ = $props.map(props => props.params.id);
+  const id$ = $props.map(props => props.params.id).distinctUntilChanged();
   const jobs$ = id$
-    .switchMap(getInput)
-    .map(({ data: { metronomeItem } }) => metronomeItem)
-    .do(data => console.info("x:", data));
+    .switchMap(id => getInput(id).do(res => console.log("res", res)))
+    .map(({ data: { metronomeItem } }) => metronomeItem);
 
   return jobs$
     .combineLatest($props)
-    .do(data => console.info("y:", data))
     .map(([job, props]) => ({ ...props, job }))
     .do(data => console.info("mediator:", data))
     .map(props => {
-      console.log(props);
+      if (!props.job) {
+        return <LoadingScreen jobTree={null} />;
+      }
 
       return <JobDetailPageContainer {...props} />;
-    })
-    .retry(10);
+    });
 });
 
 export class JobDetailPageContainer extends mixin(StoreMixin) {

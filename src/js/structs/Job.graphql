@@ -1,0 +1,113 @@
+type Job {
+  activeRuns: JobRunConnection!
+  command: String!
+  cpus: Float!
+  description: String!
+  disk: Float!
+  docker: Docker
+  id: ID!
+  jobRuns: JobRunConnection!
+  json: String!
+  labels: [Label]!
+  lastRunsSummary: JobHistorySummary!
+  lastRunStatus: JobRunStatus!
+  mem: Int!
+  name: String!
+  schedules: ScheduleConnection!
+  scheduleStatus: Jobstatus!
+}
+
+type JobRunConnection {
+  longestRunningActiveRun: JobRun
+  nodes: [JobRun]!
+}
+
+type JobRun {
+  dateCreated: Int!
+  dateFinished: Int!
+  jobID: String!
+  status: JobRunStatus!
+  tasks: JobTaskConnection!
+}
+
+type JobTaskConnection {
+  longestRunningTask: JobTask!
+  nodes: [JobTask]!
+}
+
+type JobTask {
+  dateCompleted: Int!
+  dateStarted: Int!
+  status: JobTaskStatus!
+  taskId: String!
+}
+
+type JobHistorySummary {
+  failureCount: Int!
+  lastFailureAt: String
+  lastSuccessAt: String
+  successCount: Int!
+}
+
+type Docker {
+  forcePullImage: Boolean!
+  image: String!
+}
+
+type Label {
+  key: String!
+  value: String!
+}
+
+type JobRunStatus {
+  status: String
+  time: Int
+}
+
+type ScheduleConnection {
+  nodes: [Schedule]!
+}
+
+type Schedule {
+  cron: String!
+  enabled: Boolean!
+  id: ID!
+  startingDeadlineSeconds: Int!
+  timezone: String!
+}
+
+enum JobTaskStatus {
+  TASK_CREATED
+  TASK_DROPPED
+  TASK_ERROR
+  TASK_FAILED
+  TASK_FINISHED
+  TASK_GONE
+  TASK_GONE_BY_OPERATOR
+  TASK_KILLED
+  TASK_KILLING
+  TASK_LOST
+  TASK_RUNNING
+  TASK_STAGING
+  TASK_STARTED
+  TASK_STARTING
+  TASK_UNKNOWN
+  TASK_UNREACHABLE
+}
+
+enum JobRunStatus {
+  FAILED
+  NOT_AVAILABLE
+  SUCCESS
+}
+
+enum JobStatus {
+  ACTIVE
+  COMPLETED
+  FAILED
+  INITIAL
+  RUNNING
+  SCHEDULED
+  STARTING
+  UNSCHEDULED
+}

@@ -160,56 +160,53 @@ class JobRunHistoryTable extends React.Component {
 
   // TODO: DCOS-7766 Revisit this pre-rendering data transformation...
   getData(job) {
-    return [];
+    const jobRuns = job.getJobRuns();
 
-    // TODO: const jobRuns = job.getJobRuns();
-    // return jobRuns.getItems().map(function(jobRun) {
-    //   const children = jobRun
-    //     .getTasks()
-    //     .getItems()
-    //     .map(function(jobTask) {
-    //       const startedAt = jobTask.getDateStarted();
-    //       const finishedAt = jobTask.getDateCompleted();
-    //       const runTime = calculateRunTime(startedAt, finishedAt);
+    return jobRuns.getItems().map(function(jobRun) {
+      const children = jobRun
+        .getTasks()
+        .getItems()
+        .map(function(jobTask) {
+          const startedAt = jobTask.getDateStarted();
+          const finishedAt = jobTask.getDateCompleted();
+          const runTime = calculateRunTime(startedAt, finishedAt);
 
-    //       return {
-    //         taskID: jobTask.getTaskID(),
-    //         status: jobTask.getStatus(),
-    //         startedAt,
-    //         finishedAt,
-    //         runTime
-    //       };
-    //     });
+          return {
+            taskID: jobTask.getTaskID(),
+            status: jobTask.getStatus(),
+            startedAt,
+            finishedAt,
+            runTime
+          };
+        });
 
-    //   const startedAt = jobRun.getDateCreated();
-    //   const finishedAt = jobRun.getDateFinished();
-    //   const runTime = calculateRunTime(startedAt, finishedAt);
+      const startedAt = jobRun.getDateCreated();
+      const finishedAt = jobRun.getDateFinished();
+      const runTime = calculateRunTime(startedAt, finishedAt);
 
-    //   return {
-    //     finishedAt: jobRun.getDateFinished(),
-    //     id: jobRun.id,
-    //     jobID: jobRun.getJobID(),
-    //     startedAt: jobRun.getDateCreated(),
-    //     status: jobRun.getStatus(),
-    //     runTime,
-    //     children
-    //   };
-    // });
+      return {
+        finishedAt: jobRun.getDateFinished(),
+        id: jobRun.id,
+        jobID: jobRun.getJobID(),
+        startedAt: jobRun.getDateCreated(),
+        status: jobRun.getStatus(),
+        runTime,
+        children
+      };
+    });
   }
 
   getDisabledItemsMap(job) {
-    return {};
-    // TODO
-    // return job
-    //   .getJobRuns()
-    //   .getItems()
-    //   .reduce(function(memo, jobRun) {
-    //     const isDisabled =
-    //       ["ACTIVE", "INITIAL", "STARTING"].indexOf(jobRun.getStatus()) < 0;
-    //     memo[jobRun.get("id")] = isDisabled;
+    return job
+      .getJobRuns()
+      .getItems()
+      .reduce(function(memo, jobRun) {
+        const isDisabled =
+          ["ACTIVE", "INITIAL", "STARTING"].indexOf(jobRun.getStatus()) < 0;
+        memo[jobRun.get("id")] = isDisabled;
 
-    //     return memo;
-    //   }, {});
+        return memo;
+      }, {});
   }
 
   getStopButton(hasCheckedTasks) {
