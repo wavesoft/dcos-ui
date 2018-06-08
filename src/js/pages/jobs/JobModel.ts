@@ -33,107 +33,277 @@ interface IJobDetailArgs {
   sortDirection?: "ASC" | "DESC";
 }
 
+export interface JobsQueryArgs {
+  filter: string | null;
+  sortBy: SortOption | null;
+  sortDirection: SortDirection | null;
+}
+
+export interface JobQueryArgs {
+  id: string;
+  filter: string | null;
+  sortBy: SortOption | null;
+  sortDirection: SortDirection | null;
+}
+
+export type SortOption = "ID" | "STATUS" | "LAST_RUN";
+
+export type SortDirection = "ASC" | "DESC";
+
+export interface JobConnection {
+  filteredCount: number;
+  totalCount: number;
+  nodes: Job[];
+}
+
+export interface Job {
+  activeRuns: JobRunConnection;
+  command: string;
+  cpus: number;
+  description: string;
+  disk: number;
+  docker: Docker | null;
+  id: string;
+  jobRuns: JobRunConnection;
+  json: string;
+  labels: Label[];
+  lastRunsSummary: JobHistorySummary;
+  lastRunStatus: JobRunStatus;
+  mem: number;
+  name: string;
+  schedules: ScheduleConnection;
+  scheduleStatus: JobStatus;
+}
+
+export interface JobRunConnection {
+  longestRunningActiveRun: JobRun | null;
+  nodes: JobRun[];
+}
+
+export interface JobRun {
+  dateCreated: number;
+  dateFinished: number;
+  jobID: string;
+  status: JobRunStatus;
+  tasks: JobTaskConnection;
+}
+
+export type JobRunStatus = "FAILED" | "NOT_AVAILABLE" | "SUCCESS";
+
+export interface JobTaskConnection {
+  longestRunningTask: JobTask;
+  nodes: JobTask[];
+}
+
+export interface JobTask {
+  dateCompleted: number;
+  dateStarted: number;
+  status: JobTaskStatus;
+  taskId: string;
+}
+
+export type JobTaskStatus =
+  | "TASK_CREATED"
+  | "TASK_DROPPED"
+  | "TASK_ERROR"
+  | "TASK_FAILED"
+  | "TASK_FINISHED"
+  | "TASK_GONE"
+  | "TASK_GONE_BY_OPERATOR"
+  | "TASK_KILLED"
+  | "TASK_KILLING"
+  | "TASK_LOST"
+  | "TASK_RUNNING"
+  | "TASK_STAGING"
+  | "TASK_STARTED"
+  | "TASK_STARTING"
+  | "TASK_UNKNOWN"
+  | "TASK_UNREACHABLE";
+
+export interface Docker {
+  forcePullImage: boolean;
+  image: string;
+}
+
+export interface Label {
+  key: string;
+  value: string;
+}
+
+export interface JobHistorySummary {
+  failureCount: number;
+  lastFailureAt: string | null;
+  lastSuccessAt: string | null;
+  successCount: number;
+}
+
+export interface ScheduleConnection {
+  nodes: Schedule[];
+}
+
+export interface Schedule {
+  cron: string;
+  enabled: boolean;
+  id: string;
+  startingDeadlineSeconds: number;
+  timezone: string;
+}
+
+export type JobStatus =
+  | "ACTIVE"
+  | "COMPLETED"
+  | "FAILED"
+  | "INITIAL"
+  | "RUNNING"
+  | "SCHEDULED"
+  | "STARTING"
+  | "UNSCHEDULED";
+
 export const typeDefs = `
-	type JobRunSummary {
-		lastFailureAt: String
-		lastSuccessAt: String
-		status: JobRunStatus
-	}
+type Job {
+  activeRuns: JobRunConnection!
+  command: String!
+  cpus: Float!
+  description: String!
+  disk: Float!
+  docker: Docker
+  id: ID!
+  jobRuns: JobRunConnection!
+  json: String!
+  labels: [Label]!
+  lastRunsSummary: JobHistorySummary!
+  lastRunStatus: JobRunStatus!
+  mem: Int!
+  name: String!
+  schedules: ScheduleConnection!
+  scheduleStatus: JobStatus!
+}
 
-	type Job {
-		id: ID!
-    name: String!
-		status: JobStatus!
-		lastRun: JobRunSummary!
-	}
+type JobRunConnection {
+  longestRunningActiveRun: JobRun
+  nodes: [JobRun]!
+}
 
-  type JobDetail {
-		description: String!
-		name: String!
-    cmd: String!
-    cpus: Float!
-    disk: Float!
-    docker: JobDocker!
+type JobRun {
+  dateCreated: Int!
+  dateFinished: Int!
+  jobID: String!
+  status: JobRunStatus!
+  tasks: JobTaskConnection!
+}
+
+type JobTaskConnection {
+  longestRunningTask: JobTask!
+  nodes: [JobTask]!
+}
+
+type JobTask {
+  dateCompleted: Int!
+  dateStarted: Int!
+  status: JobTaskStatus!
+  taskId: String!
+}
+
+type JobHistorySummary {
+  failureCount: Int!
+  lastFailureAt: String
+  lastSuccessAt: String
+  successCount: Int!
+}
+
+type Docker {
+  forcePullImage: Boolean!
+  image: String!
+}
+
+type Label {
+  key: String!
+  value: String!
+}
+
+type JobRunStatus {
+  status: String
+  time: Int
+}
+
+type ScheduleConnection {
+  nodes: [Schedule]!
+}
+
+type Schedule {
+  cron: String!
+  enabled: Boolean!
+  id: ID!
+  startingDeadlineSeconds: Int!
+  timezone: String!
+}
+
+enum JobTaskStatus {
+  TASK_CREATED
+  TASK_DROPPED
+  TASK_ERROR
+  TASK_FAILED
+  TASK_FINISHED
+  TASK_GONE
+  TASK_GONE_BY_OPERATOR
+  TASK_KILLED
+  TASK_KILLING
+  TASK_LOST
+  TASK_RUNNING
+  TASK_STAGING
+  TASK_STARTED
+  TASK_STARTING
+  TASK_UNKNOWN
+  TASK_UNREACHABLE
+}
+
+enum JobRunStatus {
+  FAILED
+  NOT_AVAILABLE
+  SUCCESS
+}
+
+enum JobStatus {
+  ACTIVE
+  COMPLETED
+  FAILED
+  INITIAL
+  RUNNING
+  SCHEDULED
+  STARTING
+  UNSCHEDULED
+}
+
+type JobConnection {
+  filteredCount: Int!
+  totalCount: Int!
+  nodes: [Job]!
+}
+
+enum SortOption {
+  ID
+  STATUS
+  LAST_RUN
+}
+
+enum SortDirection {
+  ASC
+  DESC
+}
+
+type Query {
+  jobs(
+    filter: String
+    sortBy: SortOption
+    sortDirection: SortDirection
+  ): JobConnection
+  job(
     id: ID!
-    labels: [JobLabel]!
-    mem: Int!
-    runs: [JobRun]!
-    schedule: JobSchedule!
-  }
-
-  type JobRun {
-    id: ID!
-    finishedAt: Int!
-    createdAt: Int!
-    status: JobStatus!
-    runTime: Int!
-    children: [JobRunTask]!
-  }
-
-  type JobRunTask {
-    taskId: ID!
-    status: JobRunStatus!
-    startedAt: Int!
-    finishedAt: Int!
-    runTime: Int!
-  }
-
-  type JobSchedule {
-    id: ID!
-    enabled: Boolean!
-    cron: String!
-    timezone: String!
-    startingDeadlineSeconds: Int!
-  }
-
-  type JobDocker {
-    image: String!
-    forcePullImage: Boolean!
-  }
-
-  type JobLabel {
-    key: String!
-    value: String!
-  }
-
-	enum JobRunStatus {
-		NOT_AVAILABLE
-		SUCCESS
-		FAILED
-	}
-
-	enum JobStatus {
-		RUNNING
-		COMPLETED
-		SCHEDULED
-		UNSCHEDULED
-		FAILED
-		ACTIVE
-		STARTING
-		INITIAL
-	}
-
-	type JobConnection {
-    filteredCount: Int!
-    totalCount: Int!
-		nodes: [Job]!
-	}
-
-	enum SortOption {
-		ID
-		STATUS
-		LAST_RUN
-	}
-
-	enum SortDirection {
-		ASC
-		DESC
-	}
-
-	type Query {
-		jobs(filter: String, sortBy: SortOption, sortDirection: SortDirection): JobConnection
-		job(id: ID!, filter: String, sortBy: SortOption, sortDirection: SortDirection): Job
-	}
+    filter: String
+    sortBy: SortOption
+    sortDirection: SortDirection
+  ): Job
+}
 `;
 
 function isNamespace(job: IJobResponse): boolean {
@@ -195,7 +365,11 @@ export const resolvers = ({
   pollingInterval: number;
 }) => ({
   Query: {
-    jobs(_obj = {}, args: IJobsArg = {}, _context = {}) {
+    jobs(
+      _obj = {},
+      args: IJobsArg = {},
+      _context = {}
+    ): Observable<JobConnection> {
       const { sortBy = "id", sortDirection = "ASC", filter } = args;
       const pollingInterval$ = Observable.interval(pollingInterval);
       const responses$ = pollingInterval$.switchMap(fetchJobs);
@@ -267,7 +441,7 @@ export const resolvers = ({
           };
         });
     },
-    job(_obj = {}, { id }: IJobDetailArgs, _context = {}) {
+    job(_obj = {}, { id }: IJobDetailArgs, _context = {}): Observable<Job> {
       console.log("JobModel");
       const pollingInterval$ = Observable.interval(pollingInterval);
       // TODO: change to exhaust map

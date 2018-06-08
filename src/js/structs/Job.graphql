@@ -14,7 +14,7 @@ type Job {
   mem: Int!
   name: String!
   schedules: ScheduleConnection!
-  scheduleStatus: Jobstatus!
+  scheduleStatus: JobStatus!
 }
 
 type JobRunConnection {
@@ -110,4 +110,35 @@ enum JobStatus {
   SCHEDULED
   STARTING
   UNSCHEDULED
+}
+
+type JobConnection {
+  filteredCount: Int!
+  totalCount: Int!
+  nodes: [Job]!
+}
+
+enum SortOption {
+  ID
+  STATUS
+  LAST_RUN
+}
+
+enum SortDirection {
+  ASC
+  DESC
+}
+
+type Query {
+  jobs(
+    filter: String
+    sortBy: SortOption
+    sortDirection: SortDirection
+  ): JobConnection
+  job(
+    id: ID!
+    filter: String
+    sortBy: SortOption
+    sortDirection: SortDirection
+  ): Job
 }

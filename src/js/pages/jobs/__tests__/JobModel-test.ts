@@ -108,7 +108,7 @@ describe.skip("JobData", () => {
         fetchJobs,
         fetchJobDetail: defaultFetchJobDetail,
         pollingInterval: m.time("--|")
-      }).Query.metronomeItems({});
+      }).Query.jobs({});
       const expected$ = m.cold("----x-x-(x|)", {
         x: 0 // we are only interested in the timing, not in the data at this point
       });
@@ -223,7 +223,7 @@ describe.skip("JobData", () => {
             fetchJobs,
             fetchJobDetail: defaultFetchJobDetail,
             pollingInterval: m.time("--|")
-          }).Query.metronomeItems({}, { sortBy, sortDirection });
+          }).Query.jobs({}, { sortBy, sortDirection });
 
           const expected$ = m.cold("--(x|)", {
             x: output
@@ -276,7 +276,7 @@ describe.skip("JobData", () => {
             fetchJobs,
             fetchJobDetail: defaultFetchJobDetail,
             pollingInterval: m.time("--|")
-          }).Query.metronomeItems({}, { filter });
+          }).Query.jobs({}, { filter });
 
           const expected$ = m.cold("--(x|)", {
             x: output
@@ -302,7 +302,7 @@ describe("JobDetail", () => {
         fetchJobs: defaultFetchJobs,
         fetchJobDetail,
         pollingInterval: m.time("--|")
-      }).Query.metronomeItem({}, { id: "foo" });
+      }).Query.job({}, { id: "foo" });
 
       const expected$ = m.cold("----x-x-(x|)", {
         x: "foo"
@@ -370,7 +370,7 @@ describe("JobDetail", () => {
         fetchJobs,
         fetchJobDetail,
         pollingInterval: m.time("|")
-      }).Query.metronomeItem({}, { id: "foo" });
+      }).Query.job({}, { id: "foo" });
 
       const expected$ = m.cold("(x|)", {
         x: expectedJobData
