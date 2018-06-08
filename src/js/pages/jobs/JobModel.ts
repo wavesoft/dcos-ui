@@ -21,29 +21,22 @@ interface IJobRun {
   children: any[];
 }
 
-interface IJobsArg {
-  filter?: string;
-  sortBy?: string;
-  sortDirection?: string;
-}
-
-interface IJobDetailArgs {
-  id: string;
-  sortBy?: string;
-  sortDirection?: "ASC" | "DESC";
+export interface Query {
+  jobs: JobConnection | null;
+  job: Job | null;
 }
 
 export interface JobsQueryArgs {
-  filter: string | null;
-  sortBy: SortOption | null;
-  sortDirection: SortDirection | null;
+  filter?: string | null;
+  sortBy?: SortOption | null;
+  sortDirection?: SortDirection | null;
 }
 
 export interface JobQueryArgs {
   id: string;
-  filter: string | null;
-  sortBy: SortOption | null;
-  sortDirection: SortDirection | null;
+  filter?: string | null;
+  sortBy?: SortOption | null;
+  sortDirection?: SortDirection | null;
 }
 
 export type SortOption = "ID" | "STATUS" | "LAST_RUN";
@@ -53,7 +46,7 @@ export type SortDirection = "ASC" | "DESC";
 export interface JobConnection {
   filteredCount: number;
   totalCount: number;
-  nodes: Job[];
+  nodes: Array<Job>;
 }
 
 export interface Job {
@@ -66,9 +59,9 @@ export interface Job {
   id: string;
   jobRuns: JobRunConnection;
   json: string;
-  labels: Label[];
+  labels: Array<Label>;
   lastRunsSummary: JobHistorySummary;
-  lastRunStatus: JobRunStatus;
+  lastRunStatus: JobRunStatusSummary;
   mem: number;
   name: string;
   schedules: ScheduleConnection;
@@ -77,22 +70,27 @@ export interface Job {
 
 export interface JobRunConnection {
   longestRunningActiveRun: JobRun | null;
-  nodes: JobRun[];
+  nodes: Array<JobRun>;
 }
 
 export interface JobRun {
   dateCreated: number;
   dateFinished: number;
   jobID: string;
-  status: JobRunStatus;
+  status: JobRunStatusSummary;
   tasks: JobTaskConnection;
+}
+
+export interface JobRunStatusSummary {
+  status: JobRunStatus | null;
+  time: number | null;
 }
 
 export type JobRunStatus = "FAILED" | "NOT_AVAILABLE" | "SUCCESS";
 
 export interface JobTaskConnection {
   longestRunningTask: JobTask;
-  nodes: JobTask[];
+  nodes: Array<JobTask>;
 }
 
 export interface JobTask {
@@ -138,7 +136,7 @@ export interface JobHistorySummary {
 }
 
 export interface ScheduleConnection {
-  nodes: Schedule[];
+  nodes: Array<Schedule>;
 }
 
 export interface Schedule {
@@ -172,7 +170,7 @@ type Job {
   json: String!
   labels: [Label]!
   lastRunsSummary: JobHistorySummary!
-  lastRunStatus: JobRunStatus!
+  lastRunStatus: JobRunStatusSummary!
   mem: Int!
   name: String!
   schedules: ScheduleConnection!
@@ -188,7 +186,7 @@ type JobRun {
   dateCreated: Int!
   dateFinished: Int!
   jobID: String!
-  status: JobRunStatus!
+  status: JobRunStatusSummary!
   tasks: JobTaskConnection!
 }
 
@@ -221,8 +219,8 @@ type Label {
   value: String!
 }
 
-type JobRunStatus {
-  status: String
+type JobRunStatusSummary {
+  status: JobRunStatus
   time: Int
 }
 
@@ -367,7 +365,7 @@ export const resolvers = ({
   Query: {
     jobs(
       _obj = {},
-      args: IJobsArg = {},
+      args: JobsQueryArgs = {},
       _context = {}
     ): Observable<JobConnection> {
       const { sortBy = "id", sortDirection = "ASC", filter } = args;
@@ -441,7 +439,7 @@ export const resolvers = ({
           };
         });
     },
-    job(_obj = {}, { id }: IJobDetailArgs, _context = {}): Observable<Job> {
+    job(_obj = {}, { id }: JobQueryArgs, _context = {}): Observable<Job> {
       console.log("JobModel");
       const pollingInterval$ = Observable.interval(pollingInterval);
       // TODO: change to exhaust map
