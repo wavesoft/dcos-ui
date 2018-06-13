@@ -1,6 +1,6 @@
 import { makeExecutableSchema, IResolvers } from "graphql-tools";
 import { Observable } from "rxjs";
-import { runJob } from "../../../../../src/js/events/MetronomeClient";
+import { runJob, deleteJob } from "../../../../../src/js/events/MetronomeClient";
 
 export interface Query {
   jobs: JobConnection | null;
@@ -272,6 +272,7 @@ type Query {
 }
 type Mutation {
   runJob(id: String!): JobRun!
+  deleteJob(id: String!): JobRun!
 }
 `;
 
@@ -296,6 +297,13 @@ export const resolvers = (): IResolvers => ({
       _context = {}
     ): Observable<Job | null> {
       return runJob(_args.id);
+    },
+    deleteJob(
+      _obj = {},
+      _args: GeneralArgs,
+      _context = {}
+    ): Observable<Job | null> {
+      return deleteJob(_args.id);
     }
   }
 });
