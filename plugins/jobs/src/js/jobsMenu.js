@@ -1,7 +1,6 @@
-import StringUtil from "#SRC/js/utils/StringUtil";
-import UserActions from "#SRC/js/constants/UserActions";
 import jobsRunNow from "./jobsRunNow";
 import jobsToggleSchedule from "./jobsToggleSchedule";
+import jobsDelete from "./jobsDelete";
 
 export default function jobsMenu(job, customActionHandlers) {
   if (!job) {
@@ -21,12 +20,7 @@ export default function jobsMenu(job, customActionHandlers) {
     actions.push(jobsToggleSchedule(job));
   }
 
-  // TODO - use delete mediator https://jira.mesosphere.com/browse/DCOS-38492
-  actions.push({
-    className: "text-danger",
-    label: StringUtil.capitalize(UserActions.DELETE),
-    onItemSelect: customActionHandlers.delete
-  });
+  actions.push(jobsDelete(job, customActionHandlers.delete));
 
   return actions;
 }
