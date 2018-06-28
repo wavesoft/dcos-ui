@@ -6,6 +6,7 @@ import React from "react";
 import moment from "moment";
 
 import JobStates from "#PLUGINS/jobs/src/js/constants/JobStates";
+import JobsDeleteModal from "#PLUGINS/jobs/src/js/JobsDeleteModal";
 
 import CollapsingString from "../../components/CollapsingString";
 import CheckboxTable from "../../components/CheckboxTable";
@@ -13,7 +14,6 @@ import ExpandingTable from "../../components/ExpandingTable";
 import FilterBar from "../../components/FilterBar";
 import FilterHeadline from "../../components/FilterHeadline";
 import Icon from "../../components/Icon";
-import JobStopRunModal from "../../components/modals/JobStopRunModal";
 import TaskStates from "../../../../plugins/services/src/js/constants/TaskStates";
 import TimeAgo from "../../components/TimeAgo";
 
@@ -227,25 +227,6 @@ class JobRunHistoryTable extends React.Component {
     );
   }
 
-  getStopRunModal(checkedItems, hasCheckedTasks) {
-    if (!hasCheckedTasks) {
-      return null;
-    }
-
-    const { isStopRunModalShown } = this.state;
-    const jobRuns = Object.keys(checkedItems);
-
-    return (
-      <JobStopRunModal
-        jobID={this.props.job.getId()}
-        selectedItems={jobRuns}
-        onClose={this.handleStopJobRunModalClose}
-        onSuccess={this.handleStopJobRunSuccess}
-        open={isStopRunModalShown}
-      />
-    );
-  }
-
   renderJobIDColumn(prop, row, rowOptions = {}) {
     if (!rowOptions.isParent) {
       const taskID = row.taskID;
@@ -389,7 +370,10 @@ class JobRunHistoryTable extends React.Component {
           sortProp="startedAt"
           tableComponent={CheckboxTable}
         />
-        {this.getStopRunModal(checkedItems, hasCheckedTasks)}
+        <JobsDeleteModal
+          checkedItems={checkedItems}
+          hasCheckedTasks={hasCheckedTasks}
+        />
       </div>
     );
   }

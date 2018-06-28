@@ -4,50 +4,21 @@ import PropTypes from "prop-types";
 import React from "react";
 import { StoreMixin } from "mesosphere-shared-reactjs";
 
-import MetronomeStore from "../../stores/MetronomeStore";
-import ModalHeading from "../modals/ModalHeading";
-
-const METHODS_TO_BIND = ["handleButtonConfirm"];
+import ModalHeading from "#SRC/js/components/modals/ModalHeading";
 
 class JobStopRunModal extends mixin(StoreMixin) {
   constructor() {
     super(...arguments);
 
-    this.store_listeners = [
-      {
-        name: "metronome",
-        events: ["jobStopRunSuccess", "jobStopRunError"],
-        suppressUpdate: true
-      }
-    ];
-
-    this.state = {
-      pendingRequest: false
-    };
-
-    METHODS_TO_BIND.forEach(method => {
-      this[method] = this[method].bind(this);
-    });
+    this.handleButtonConfirm = this.handleButtonConfirm.bind(this);
   }
 
   handleButtonConfirm() {
     const { selectedItems, jobID } = this.props;
     // TODO DCOS-8763 introduce support for multiple job run IDs
     if (selectedItems.length === 1) {
-      MetronomeStore.stopJobRun(jobID, selectedItems[0]);
+      this.props.action(jobID, selectedItems[0]);
     }
-
-    this.setState({ pendingRequest: true });
-  }
-
-  onMetronomeStoreJobStopRunSuccess() {
-    this.setState({ pendingRequest: false });
-    this.props.onClose();
-    this.props.onSuccess();
-  }
-
-  onMetronomeStoreJobStopRunError() {
-    this.props.onClose();
   }
 
   getContentHeader(selectedItems, selectedItemsLength) {
@@ -98,7 +69,7 @@ class JobStopRunModal extends mixin(StoreMixin) {
     return (
       <Confirm
         closeByBackdropClick={true}
-        disabled={this.state.pendingRequest}
+        // disabled={this.props.pendingRequest}
         header={this.getContentHeader(selectedItems, selectedItemsLength)}
         open={open}
         onClose={onClose}
