@@ -14,9 +14,7 @@ function action(jobID, selectedItem) {
 
 // isStopRunModalShown
 
-const JobsDelete = {};
-
-JobsDelete.Modal = componentFromStream(props$ => {
+const JobsStopRun = componentFromStream(props$ => {
   return props$.map(
     ({
       job,
@@ -46,4 +44,4 @@ JobsDelete.Modal = componentFromStream(props$ => {
   );
 });
 
-export default JobsDelete;
+export default JobsStopRun;

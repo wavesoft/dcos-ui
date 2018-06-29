@@ -370,7 +370,7 @@ class JobRunHistoryTable extends React.Component {
           sortProp="startedAt"
           tableComponent={CheckboxTable}
         />
-        <JobsDelete.Modal
+        <JobsStopRun
           checkedItems={checkedItems}
           hasCheckedTasks={hasCheckedTasks}
           onClose={this.handleStopJobRunModalClose}
