@@ -6,7 +6,7 @@ import React from "react";
 import moment from "moment";
 
 import JobStates from "#PLUGINS/jobs/src/js/constants/JobStates";
-import JobsDeleteModal from "#PLUGINS/jobs/src/js/JobsDeleteModal";
+import JobsDelete from "#PLUGINS/jobs/src/js/JobsDelete";
 
 import CollapsingString from "../../components/CollapsingString";
 import CheckboxTable from "../../components/CheckboxTable";
@@ -370,9 +370,11 @@ class JobRunHistoryTable extends React.Component {
           sortProp="startedAt"
           tableComponent={CheckboxTable}
         />
-        <JobsDeleteModal
+        <JobsDelete.Modal
           checkedItems={checkedItems}
           hasCheckedTasks={hasCheckedTasks}
+          onClose={this.handleStopJobRunModalClose}
+          onSuccess={this.handleStopJobRunSuccess}
         />
       </div>
     );

@@ -15,7 +15,6 @@ class JobStopRunModal extends mixin(StoreMixin) {
 
   handleButtonConfirm() {
     const { selectedItems, jobID } = this.props;
-    // TODO DCOS-8763 introduce support for multiple job run IDs
     if (selectedItems.length === 1) {
       this.props.action(jobID, selectedItems[0]);
     }
