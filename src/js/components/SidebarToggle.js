@@ -13,7 +13,7 @@ function getSidebarState() {
   };
 }
 
-var SidebarToggle = React.createClass({
+export default React.createClass({
   displayName: "SidebarToggle",
 
   mixins: [InternalStorageMixin],
@@ -70,5 +70,3 @@ var SidebarToggle = React.createClass({
     );
   }
 });
-
-module.exports = SidebarToggle;
