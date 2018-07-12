@@ -1,5 +1,7 @@
 import * as React from "react";
+
 import { HeaderBar as UIHeaderBar } from "ui-kit-stage/HeaderBar";
+import AccountDropdown from "./AccountDropdown";
 
 export default function HeaderBar() {
   // remove this to activate component
@@ -13,7 +15,7 @@ export default function HeaderBar() {
       <div className="header-bar-logo-wrapper">
         <div className="header-bar-logo" />
       </div>
-      <span>user-menu component here</span>
+      <AccountDropdown />
       <span>cluster-menu component here</span>
     </UIHeaderBar>
   );
