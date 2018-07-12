@@ -13,7 +13,12 @@ const headerBarStyles: object = {
   flexShrink: 1,
   flexGrow: 0,
   flexBasis: "auto",
-  zIndex: 999
+  zIndex: 999,
+  display: "flex",
+  paddingLeft: "20px",
+  paddingRight: "20px",
+  justifyContent: "space-between",
+  alignItems: "center"
 };
 
 export class HeaderBar extends React.PureComponent {
