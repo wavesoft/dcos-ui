@@ -313,23 +313,8 @@ class Sidebar extends React.Component {
     return <span className="version-number">v.{data.version}</span>;
   }
 
-  toggleSidebarDocking() {
-    global.requestAnimationFrame(() => {
-      if (SidebarStore.get("isDocked")) {
-        SidebarActions.undock();
-      } else {
-        SidebarActions.dock();
-      }
-    });
-  }
-
   render() {
-    let dockIconID = "sidebar-expand";
     let overlay = null;
-
-    if (SidebarStore.get("isDocked")) {
-      dockIconID = "sidebar-collapse";
-    }
 
     if (SidebarStore.get("isVisible")) {
       overlay = (
@@ -364,14 +349,6 @@ class Sidebar extends React.Component {
               </div>
             </div>
           </GeminiScrollbar>
-          <div className="sidebar-footer">
-            <Icon
-              className="sidebar-dock-trigger icon-white"
-              size="mini"
-              id={dockIconID}
-              onClick={this.toggleSidebarDocking}
-            />
-          </div>
         </div>
       </div>
     );

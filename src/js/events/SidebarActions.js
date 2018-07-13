@@ -19,6 +19,7 @@ module.exports = {
   },
 
   close() {
+    console.log(123);
     AppDispatcher.handleSidebarAction({
       type: REQUEST_SIDEBAR_CLOSE,
       data: false
