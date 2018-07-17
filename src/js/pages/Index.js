@@ -141,13 +141,13 @@ var Index = React.createClass({
   },
 
   render() {
-    var { isDocked, isVisible } = this.internalStorage_get();
+    var { isVisible } = this.internalStorage_get();
     const showErrorScreen =
       this.state.configErrorCount >= Config.delayAfterErrorCount;
 
     var classSet = classNames("application-wrapper", {
       "sidebar-visible": isVisible,
-      "sidebar-docked": isDocked
+      "sidebar-docked": isVisible
     });
 
     return (

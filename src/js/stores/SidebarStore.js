@@ -5,8 +5,6 @@ import {
   REQUEST_CLUSTER_LINKING,
   REQUEST_SIDEBAR_CLOSE,
   REQUEST_SIDEBAR_OPEN,
-  REQUEST_SIDEBAR_DOCK,
-  REQUEST_SIDEBAR_UNDOCK,
   REQUEST_SIDEBAR_WIDTH_CHANGE,
   REQUEST_VERSIONS_ERROR,
   REQUEST_VERSIONS_SUCCESS,
@@ -52,32 +50,19 @@ class SidebarStore extends GetSetBaseStore {
       var action = payload.action;
 
       switch (action.type) {
-        case REQUEST_SIDEBAR_DOCK:
-        case REQUEST_SIDEBAR_UNDOCK:
-          var nextDockedState = action.data;
-
-          if (this.get("isDocked") !== nextDockedState) {
-            const savedStates = UserSettingsStore.getKey(SAVED_STATE_KEY) || {};
-
-            this.set({
-              isVisible: nextDockedState ? false : nextDockedState,
-              isDocked: nextDockedState
-            });
-
-            this.emitChange(SIDEBAR_CHANGE);
-
-            savedStates.sidebar = { isDocked: nextDockedState };
-            UserSettingsStore.setKey(SAVED_STATE_KEY, savedStates);
-          }
-          break;
         case REQUEST_SIDEBAR_CLOSE:
         case REQUEST_SIDEBAR_OPEN:
-          var oldisVisible = this.get("isVisible");
           var isVisible = action.data;
 
-          // only emitting on change
-          if (oldisVisible !== isVisible) {
+          if (this.get("isVisible") !== isVisible) {
             this.set({ isVisible });
+            const savedStates = UserSettingsStore.getKey(SAVED_STATE_KEY) || {};
+
+            this.set({ isVisible });
+            savedStates.sidebar = { isVisible };
+
+            UserSettingsStore.setKey(SAVED_STATE_KEY, savedStates);
+
             this.emitChange(SIDEBAR_CHANGE);
           }
           break;
@@ -104,18 +89,13 @@ class SidebarStore extends GetSetBaseStore {
   }
 
   init() {
-    let isDocked = Util.findNestedPropertyInObject(
+    const isVisible = Util.findNestedPropertyInObject(
       UserSettingsStore.getKey(SAVED_STATE_KEY),
-      "sidebar.isDocked"
+      "sidebar.isVisible"
     );
 
-    if (isDocked == null) {
-      isDocked = true;
-    }
-
     this.set({
-      isDocked,
-      isVisible: false,
+      isVisible,
       versions: {}
     });
   }
