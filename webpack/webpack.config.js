@@ -85,11 +85,10 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: requireAll([
-              "babel-preset-es2015",
-              "babel-preset-stage-3",
-              "babel-preset-react"
-            ])
+            presets: [
+              ["@babel/preset-env", { modules: false }],
+              "@babel/preset-react"
+            ]
           }
         }
       },
