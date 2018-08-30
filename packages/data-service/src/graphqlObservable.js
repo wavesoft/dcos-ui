@@ -16,10 +16,15 @@ export function graphqlObservable(doc, schema, context) {
   if (doc.definitions.length !== 1) {
     return throwObservable("document root must have a single definition");
   }
+  const executionContext = { doc, schema };
 
-  return resolve(schema._typeMap, doc.definitions[0], context, null).map(
-    data => ({ data })
-  );
+  return resolve(
+    executionContext,
+    schema._typeMap,
+    doc.definitions[0],
+    context,
+    null
+  ).map(data => ({ data }));
 }
 
 function throwObservable(error) {
@@ -29,23 +34,23 @@ function throwObservable(error) {
   return Observable.throw(graphqlError);
 }
 
-function resolve(types, definition, context, parent) {
+function resolve(executionContext, types, definition, context, parent) {
   if (definition.kind === "OperationDefinition") {
-    return resolveOperation(types, definition, context);
+    return resolveOperation(executionContext, types, definition, context);
   }
 
   if (definition.kind === "Field" && definition.selectionSet !== undefined) {
-    return resolveNode(types, definition, context, parent);
+    return resolveNode(executionContext, types, definition, context, parent);
   }
 
   if (definition.kind === "Field") {
-    return resolveLeaf(types, definition, context, parent);
+    return resolveLeaf(executionContext, types, definition, context, parent);
   }
 
   return throwObservable(`kind not supported "${definition.kind}".`);
 }
 
-function resolveOperation(types, definition, context) {
+function resolveOperation(executionContext, types, definition, context) {
   const translateOperation = {
     query: "Query",
     mutation: "Mutation"
@@ -55,10 +60,16 @@ function resolveOperation(types, definition, context) {
     translateOperation[definition.operation]
   ].getFields();
 
-  return resolveResult(null, nextTypeMap, definition, context);
+  return resolveResult(
+    executionContext,
+    null,
+    nextTypeMap,
+    definition,
+    context
+  );
 }
 
-function resolveNode(types, definition, context, parent) {
+function resolveNode(executionContext, types, definition, context, parent) {
   const args = buildResolveArgs(definition, context);
   const resolver = types[definition.name.value];
 
@@ -87,30 +98,73 @@ function resolveNode(types, definition, context, parent) {
     }
 
     if (emitted instanceof Array) {
-      return resolveArrayResults(emitted, types, definition, context, resolver);
+      return resolveArrayResults(
+        executionContext,
+        emitted,
+        types,
+        definition,
+        context,
+        resolver
+      );
     }
 
-    return resolveResult(emitted, types, definition, context, resolver);
+    return resolveResult(
+      executionContext,
+      emitted,
+      types,
+      definition,
+      context,
+      resolver
+    );
   });
 }
 
-function resolveLeaf(types, definition, context, parent) {
+function resolveLeaf(executionContext, types, definition, context, parent) {
+  // console.log("resolveLeaf", types, definition, context, parent);
+  console.log("Execution Context", executionContext);
+  console.log("Types", types);
+  console.log("Definition", definition);
+  console.log("Context", context);
+  console.log("Parent", parent);
+  // TODO: check for field Resolver
+  // TODO: write test for nested field resolver
   return Observable.of(parent[definition.name.value]);
 }
 
-function resolveResult(parent, types, definition, context, resolver) {
+function resolveResult(
+  executionContext,
+  parent,
+  types,
+  definition,
+  context,
+  resolver
+) {
   return definition.selectionSet.selections.reduce((acc, sel) => {
     const refinedTypes = refineTypes(resolver, parent, types);
-    const result = resolve(refinedTypes, sel, context, parent);
+    const result = resolve(
+      executionContext,
+      refinedTypes,
+      sel,
+      context,
+      parent
+    );
     const fieldName = (sel.alias || sel.name).value;
 
     return acc.combineLatest(result, objectAppendWithKey(fieldName));
   }, Observable.of({}));
 }
 
-function resolveArrayResults(parents, types, definition, context, resolver) {
+function resolveArrayResults(
+  executionContext,
+  parents,
+  types,
+  definition,
+  context,
+  resolver
+) {
   return parents.reduce((acc, result) => {
     const resultObserver = resolveResult(
+      executionContext,
       result,
       types,
       definition,
