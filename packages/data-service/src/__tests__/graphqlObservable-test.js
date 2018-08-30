@@ -15,16 +15,17 @@ import { graphqlObservable } from "../graphqlObservable";
 const typeDefs = `
   type Shuttle {
     name: String!
+    shuttleId: String!
   }
-  
+
   type Query {
     launched(name: String): [Shuttle!]!
   }
-  
+
   type Mutation {
     createShuttle(name: String): Shuttle!
     createShuttleList(name: String): [Shuttle!]!
-  }  
+  }
 `;
 
 const mockResolvers = {
@@ -59,6 +60,12 @@ const mockResolvers = {
         { name: "challenger" },
         { name: args.name }
       ]);
+    }
+  },
+
+  Shuttle: {
+    shuttleId(obj, args, context, info) {
+      return obj.name.toUpperCase();
     }
   }
 };
@@ -184,6 +191,28 @@ describe("graphqlObservable", function() {
       const dataSource = Observable.of(expectedData);
       const expected = m.cold("(a|)", {
         a: { data: { launched: [{ title: "challenger" }] } }
+      });
+
+      const result = graphqlObservable(query, schema, {
+        query: dataSource
+      });
+
+      m.expect(result.take(1)).toBeObservable(expected);
+    });
+
+    itMarbles("uses field resolvers", function(m) {
+      const query = gql`
+        query {
+          launched {
+            shuttleId
+          }
+        }
+      `;
+
+      const sourceData = [{ name: "challenger", firstFlight: 1984 }];
+      const dataSource = Observable.of(sourceData);
+      const expected = m.cold("(a|)", {
+        a: { data: { launched: [{ shuttleId: "CHALLENGER" }] } }
       });
 
       const result = graphqlObservable(query, schema, {
