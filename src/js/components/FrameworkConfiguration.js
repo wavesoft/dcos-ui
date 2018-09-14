@@ -15,6 +15,7 @@ import ToggleButton from "#SRC/js/components/ToggleButton";
 import ModalHeading from "#SRC/js/components/modals/ModalHeading";
 import UniversePackage from "#SRC/js/structs/UniversePackage";
 import Util from "#SRC/js/utils/Util";
+import { getFirstTabAndField } from "#SRC/js/utils/FrameworkConfigurationUtil";
 import StringUtil from "#SRC/js/utils/StringUtil";
 import CosmosErrorMessage from "#SRC/js/components/CosmosErrorMessage";
 import FrameworkConfigurationForm, {
@@ -33,11 +34,13 @@ const METHODS_TO_BIND = [
   "handleCloseConfirmModal",
   "handleConfirmGoBack"
 ];
-class FrameworkConfiguration extends Component {
+
+export default class FrameworkConfiguration extends Component {
   constructor(props) {
     super(props);
 
-    const { activeTab, focusField } = this.getFirstTabAndField();
+    const { packageDetails } = this.props;
+    const { activeTab, focusField } = getFirstTabAndField(packageDetails);
 
     this.state = {
       reviewActive: false,
@@ -85,24 +88,6 @@ class FrameworkConfiguration extends Component {
     const { activeTab, focusField } = this.getFirstTabAndField();
 
     this.setState({ reviewActive: false, activeTab, focusField });
-  }
-
-  getFirstTabAndField() {
-    const { packageDetails } = this.props;
-    const schema = packageDetails.getConfig();
-
-    const [activeTab] = Object.keys(schema.properties);
-    const [focusField] = Object.keys(
-      Util.findNestedPropertyInObject(
-        schema,
-        `properties.${activeTab}.properties`
-      )
-    );
-
-    return {
-      activeTab,
-      focusField
-    };
   }
 
   handleJSONToggle() {
@@ -382,5 +367,3 @@ FrameworkConfiguration.propTypes = {
   deployErrors: PropTypes.object,
   defaultConfigWarning: PropTypes.string
 };
-
-module.exports = FrameworkConfiguration;
