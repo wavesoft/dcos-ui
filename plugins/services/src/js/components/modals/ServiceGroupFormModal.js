@@ -82,7 +82,6 @@ class ServiceGroupFormModal extends React.PureComponent {
 
     return (
       <FormModal
-        ref="form"
         buttonDefinition={buttonDefinition}
         disabled={isPending}
         modalProps={{

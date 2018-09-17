@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
-import ReactDOM from "react-dom";
 
 import FilterBar from "#SRC/js/components/FilterBar";
 import FilterInputText from "#SRC/js/components/FilterInputText";
@@ -23,16 +22,16 @@ class SearchLog extends React.Component {
       watching: 0
     };
 
+    this.filterInputRef = React.createRef();
+
     METHODS_TO_BIND.forEach(method => {
       this[method] = this[method].bind(this);
     });
   }
 
   componentDidMount() {
-    const filterInput = ReactDOM.findDOMNode(this.refs.filterInput);
-
-    if (filterInput) {
-      filterInput.addEventListener("keydown", this.handleKeyDown);
+    if (this.filterInputRef) {
+      this.filterInputRef.addEventListener("keydown", this.handleKeyDown);
     }
   }
 
@@ -54,10 +53,8 @@ class SearchLog extends React.Component {
   }
 
   componentWillUnmount() {
-    const filterInput = ReactDOM.findDOMNode(this.refs.filterInput);
-
-    if (filterInput) {
-      filterInput.removeEventListener("keydown", this.handleKeyDown);
+    if (this.filterInputRef) {
+      this.filterInputRef.removeEventListener("keydown", this.handleKeyDown);
     }
   }
 
@@ -155,7 +152,7 @@ class SearchLog extends React.Component {
           rightAlignLastNChildren={React.Children.count(actions)}
         >
           <FilterInputText
-            ref="filterInput"
+            ref={this.filterInputRef}
             className="flex-grow flex-box flush-bottom"
             placeholder="Search"
             searchString={this.state.searchString}

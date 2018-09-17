@@ -11,10 +11,16 @@ import Image from "./Image";
 import ScrollbarUtil from "../utils/ScrollbarUtil";
 
 class ReviewConfig extends React.Component {
+  constructor() {
+    super();
+
+    this.geminiRef = React.createRef();
+  }
+
   componentDidMount() {
     // Timeout necessary due to modal content height updates on did mount
     setTimeout(() => {
-      ScrollbarUtil.updateWithRef(this.refs.gemini);
+      ScrollbarUtil.updateWithRef(this.geminiRef);
     });
   }
 
@@ -88,7 +94,11 @@ class ReviewConfig extends React.Component {
     return (
       <div className={this.props.className}>
         {this.getHeader()}
-        <GeminiScrollbar autoshow={true} className="review-config" ref="gemini">
+        <GeminiScrollbar
+          autoshow={true}
+          className="review-config"
+          ref={this.geminiRef}
+        >
           <div className="modal-body flush-top flush-bottom">
             {this.getDefinitionReview()}
           </div>
