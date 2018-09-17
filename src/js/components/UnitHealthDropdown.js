@@ -1,5 +1,4 @@
 import { Dropdown } from "reactjs-components";
-import PureRender from "react-addons-pure-render-mixin";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -11,10 +10,9 @@ const DEFAULT_ITEM = {
   selectedHtml: "All Health Checks"
 };
 
-class UnitHealthDropdown extends React.Component {
+class UnitHealthDropdown extends React.PureComponent {
   constructor() {
     super(...arguments);
-    this.shouldComponentUpdate = PureRender.shouldComponentUpdate.bind(this);
     this.state = { dropdownItems: this.getDropdownItems() };
   }
 

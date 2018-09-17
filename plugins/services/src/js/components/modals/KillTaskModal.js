@@ -1,7 +1,6 @@
 import { Confirm } from "reactjs-components";
 import PropTypes from "prop-types";
 import React from "react";
-import PureRender from "react-addons-pure-render-mixin";
 
 import ModalHeading from "#SRC/js/components/modals/ModalHeading";
 import StringUtil from "#SRC/js/utils/StringUtil";
@@ -13,15 +12,13 @@ const ACTION_DISPLAY_NAMES = {
   stop: "Stop"
 };
 
-class KillTaskModal extends React.Component {
+class KillTaskModal extends React.PureComponent {
   constructor() {
     super(...arguments);
 
     this.state = {
       errorMsg: null
     };
-
-    this.shouldComponentUpdate = PureRender.shouldComponentUpdate.bind(this);
   }
 
   componentWillUpdate(nextProps) {

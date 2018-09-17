@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import React from "react";
-import PureRender from "react-addons-pure-render-mixin";
 
 import FormModal from "#SRC/js/components/FormModal";
 import ModalHeading from "#SRC/js/components/modals/ModalHeading";
@@ -10,15 +9,13 @@ import Pod from "../../structs/Pod";
 import Service from "../../structs/Service";
 import ServiceTree from "../../structs/ServiceTree";
 
-class ServiceScaleFormModal extends React.Component {
+class ServiceScaleFormModal extends React.PureComponent {
   constructor() {
     super(...arguments);
 
     this.state = {
       errorMsg: null
     };
-
-    this.shouldComponentUpdate = PureRender.shouldComponentUpdate.bind(this);
   }
 
   componentWillUpdate(nextProps) {

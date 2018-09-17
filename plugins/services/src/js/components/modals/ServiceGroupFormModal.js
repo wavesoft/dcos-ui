@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import React from "react";
-import PureRender from "react-addons-pure-render-mixin";
 
 import FormModal from "#SRC/js/components/FormModal";
 import ModalHeading from "#SRC/js/components/modals/ModalHeading";
@@ -8,15 +7,13 @@ import ServiceValidatorUtil from "../../utils/ServiceValidatorUtil";
 
 const METHODS_TO_BIND = ["handleNewGroupSubmit"];
 
-class ServiceGroupFormModal extends React.Component {
+class ServiceGroupFormModal extends React.PureComponent {
   constructor() {
     super(...arguments);
 
     METHODS_TO_BIND.forEach(method => {
       this[method] = this[method].bind(this);
     });
-
-    this.shouldComponentUpdate = PureRender.shouldComponentUpdate.bind(this);
   }
 
   componentWillUpdate(nextProps) {

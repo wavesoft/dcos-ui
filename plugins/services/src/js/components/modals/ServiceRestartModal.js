@@ -1,7 +1,6 @@
 import { Confirm } from "reactjs-components";
 import PropTypes from "prop-types";
 import React from "react";
-import PureRender from "react-addons-pure-render-mixin";
 
 import ModalHeading from "#SRC/js/components/modals/ModalHeading";
 
@@ -10,15 +9,13 @@ import Pod from "../../structs/Pod";
 import Service from "../../structs/Service";
 import ServiceTree from "../../structs/ServiceTree";
 
-class ServiceRestartModal extends React.Component {
+class ServiceRestartModal extends React.PureComponent {
   constructor() {
     super(...arguments);
 
     this.state = {
       errorMsg: null
     };
-
-    this.shouldComponentUpdate = PureRender.shouldComponentUpdate.bind(this);
   }
 
   componentWillUpdate(nextProps) {

@@ -1,4 +1,3 @@
-import PureRender from "react-addons-pure-render-mixin";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -7,12 +6,7 @@ import ConfigurationMapHeading from "../../../components/ConfigurationMapHeading
 import ConfigurationMapRow from "../../../components/ConfigurationMapRow";
 import ConfigurationMapSection from "../../../components/ConfigurationMapSection";
 
-class NodeInfoPanel extends React.Component {
-  constructor() {
-    super(...arguments);
-    this.shouldComponentUpdate = PureRender.shouldComponentUpdate.bind(this);
-  }
-
+class NodeInfoPanel extends React.PureComponent {
   render() {
     const { summary, docsURL, output } = this.props;
 

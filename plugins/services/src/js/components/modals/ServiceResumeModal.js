@@ -1,7 +1,6 @@
 import { Confirm } from "reactjs-components";
 import PropTypes from "prop-types";
 import React from "react";
-import PureRender from "react-addons-pure-render-mixin";
 
 import FieldInput from "#SRC/js/components/form/FieldInput";
 import FormGroup from "#SRC/js/components/form/FormGroup";
@@ -14,7 +13,7 @@ import ServiceTree from "../../structs/ServiceTree";
 
 const METHODS_TO_BIND = ["handleConfirmation", "handleInstancesFieldChange"];
 
-class ServiceResumeModal extends React.Component {
+class ServiceResumeModal extends React.PureComponent {
   constructor() {
     super(...arguments);
 
@@ -22,8 +21,6 @@ class ServiceResumeModal extends React.Component {
       instancesFieldValue: 1,
       errorMsg: null
     };
-
-    this.shouldComponentUpdate = PureRender.shouldComponentUpdate.bind(this);
 
     METHODS_TO_BIND.forEach(method => {
       this[method] = this[method].bind(this);

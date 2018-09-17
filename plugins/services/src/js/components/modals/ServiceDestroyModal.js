@@ -1,6 +1,5 @@
 import { Confirm } from "reactjs-components";
 import { routerShape } from "react-router";
-import PureRender from "react-addons-pure-render-mixin";
 import PropTypes from "prop-types";
 import React from "react";
 import { injectIntl, intlShape } from "react-intl";
@@ -25,7 +24,7 @@ const METHODS_TO_BIND = [
   "handleFormSubmit"
 ];
 
-class ServiceDestroyModal extends React.Component {
+class ServiceDestroyModal extends React.PureComponent {
   constructor() {
     super(...arguments);
 
@@ -33,8 +32,6 @@ class ServiceDestroyModal extends React.Component {
       errorMsg: null,
       serviceNameConfirmationValue: ""
     };
-
-    this.shouldComponentUpdate = PureRender.shouldComponentUpdate.bind(this);
 
     METHODS_TO_BIND.forEach(method => {
       this[method] = this[method].bind(this);

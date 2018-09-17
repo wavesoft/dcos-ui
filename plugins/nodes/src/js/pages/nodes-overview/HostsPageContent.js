@@ -1,4 +1,3 @@
-import PureRender from "react-addons-pure-render-mixin";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -24,10 +23,9 @@ import NodesTextFilter from "../../filters/NodesTextFilter";
 
 const METHODS_TO_BIND = ["onResetFilter", "onFilterChangeHandler"];
 
-class HostsPageContent extends React.Component {
+class HostsPageContent extends React.PureComponent {
   constructor() {
     super(...arguments);
-    this.shouldComponentUpdate = PureRender.shouldComponentUpdate.bind(this);
 
     this.state = {
       expression: "",

@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import PureRender from "react-addons-pure-render-mixin";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -12,10 +11,10 @@ import NodesGridDials from "./NodesGridDials";
 var MAX_SERVICES_TO_SHOW = 32;
 var OTHER_SERVICES_COLOR = 32;
 
+// When migrating to ES6 class, it should be possible to extend React.PureComponent
+
 var NodesGridView = React.createClass({
   displayName: "NodesGridView",
-
-  mixins: [PureRender],
 
   propTypes: {
     hasLoadingError: PropTypes.bool,
