@@ -1,12 +1,13 @@
 import { Modal } from "reactjs-components";
 import PropTypes from "prop-types";
 import React from "react";
+import createReactClass from "create-react-class";
 
 import ClickToSelect from "../ClickToSelect";
 import Config from "../../config/Config";
 import ModalHeading from "../modals/ModalHeading";
 
-var VersionsModal = React.createClass({
+var VersionsModal = createReactClass({
   displayName: "VersionsModal",
 
   propTypes: {

@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
 import React from "react";
+import createReactClass from "create-react-class";
 
 import { Modal } from "reactjs-components";
 
 import ModalHeading from "../modals/ModalHeading";
 
-var ErrorModal = React.createClass({
+var ErrorModal = createReactClass({
   displayName: "ErrorModal",
 
   propTypes: {

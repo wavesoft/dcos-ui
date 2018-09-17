@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
+import createReactClass from "create-react-class";
 import { Hooks } from "PluginSDK";
 import { MountService } from "foundation-ui";
 
@@ -10,7 +11,7 @@ import EventTypes from "../constants/EventTypes";
 import SidebarStore from "../stores/SidebarStore";
 import VersionsModal from "./modals/VersionsModal";
 
-var Modals = React.createClass({
+var Modals = createReactClass({
   displayName: "Modals",
 
   propTypes: {

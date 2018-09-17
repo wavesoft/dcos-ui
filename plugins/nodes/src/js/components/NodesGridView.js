@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
+import createReactClass from "create-react-class";
 
 import Loader from "#SRC/js/components/Loader";
 import RequestErrorMsg from "#SRC/js/components/RequestErrorMsg";
@@ -13,7 +14,7 @@ var OTHER_SERVICES_COLOR = 32;
 
 // When migrating to ES6 class, it should be possible to extend React.PureComponent
 
-var NodesGridView = React.createClass({
+var NodesGridView = createReactClass({
   displayName: "NodesGridView",
 
   propTypes: {

@@ -1,5 +1,6 @@
 import { routerShape, Link } from "react-router";
 import React from "react";
+import createReactClass from "create-react-class";
 import { StoreMixin } from "mesosphere-shared-reactjs";
 import { FormattedMessage } from "react-intl";
 
@@ -50,7 +51,7 @@ const DashboardBreadcrumbs = () => {
   return <Page.Header.Breadcrumbs iconID="dashboard" breadcrumbs={crumbs} />;
 };
 
-var DashboardPage = React.createClass({
+var DashboardPage = createReactClass({
   displayName: "DashboardPage",
 
   mixins: [InternalStorageMixin, StoreMixin],

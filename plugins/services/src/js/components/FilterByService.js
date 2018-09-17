@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
+import createReactClass from "create-react-class";
 import { Dropdown } from "reactjs-components";
 
 import { Badge } from "@dcos/ui-kit";
@@ -7,7 +8,7 @@ import Framework from "../structs/Framework";
 
 var defaultId = "default";
 
-var FilterByService = React.createClass({
+var FilterByService = createReactClass({
   displayName: "FilterByService",
 
   propTypes: {

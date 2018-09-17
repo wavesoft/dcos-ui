@@ -1,12 +1,13 @@
 import { Link } from "react-router";
 import React from "react";
+import createReactClass from "create-react-class";
 
 import AlertPanel from "../components/AlertPanel";
 import AlertPanelHeader from "../components/AlertPanelHeader";
 import Page from "../components/Page";
 import SidebarActions from "../events/SidebarActions";
 
-var NotFoundPage = React.createClass({
+var NotFoundPage = createReactClass({
   displayName: "NotFoundPage",
 
   statics: {
