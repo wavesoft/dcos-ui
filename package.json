@@ -65,7 +65,7 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-gemini-scrollbar": "^2.3.4",
-    "react-intl": "2.2.3",
+    "react-intl": "^2.5.0",
     "react-jsonschema-form": "1.0.4",
     "react-redux": "4.4.6",
     "react-router": "2.8.1",
