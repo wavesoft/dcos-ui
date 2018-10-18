@@ -3,7 +3,7 @@
 npm install
 npm run scaffold
 
-echo <<EOF > src/js/config/Config.dev.ts
+echo <<EOF > src/js/config/Config.dev.js
 // Configuration overrides
 const enterprise = true;
 
