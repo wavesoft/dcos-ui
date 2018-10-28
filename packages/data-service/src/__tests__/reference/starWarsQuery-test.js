@@ -89,7 +89,7 @@ describe("Star Wars Query Tests", () => {
   });
 
   // Requires support to nested queries https://jira.mesosphere.com/browse/DCOS-22358
-  describe.skip("Nested Queries", () => {
+  describe("Nested Queries", () => {
     it("Allows us to query for the friends of friends of R2-D2", async () => {
       const query = `
         query NestedQuery {
