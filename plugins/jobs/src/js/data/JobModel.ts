@@ -159,7 +159,19 @@ export const resolvers = ({
 
         return responses$.map(response => JobTypeResolver(response));
       }
+    },
+    JobConnection: {
+      nodes(...args) {
+        console.log("HIT", ...args);
+
+        return Observable.of([]);
+      }
     }
+    // JobConnection: {
+    //   nodes() {
+    //     return [];
+    //   }
+    // }
   };
 };
 
