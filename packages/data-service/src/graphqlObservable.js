@@ -93,21 +93,21 @@ function resolveNode(types, definition, context, parent) {
   const newTypes = { ...types, ...whatever };
 
   return resolvedObservable.concatMap(emitted => {
+    // TODO: change these types to resemble
+    // See: https://facebook.github.io/graphql/June2018/#ResolveFieldValue()
+    // ResolveFieldValue(objectValue, argumentValues)
+    // objectValue: whatever the endpoint gives you
+    // argumentValues: unclear in the spec, would assume it's the last args given to the system
+    const resolverArgs = [emitted, newTypes, definition, context, resolver];
     if (!emitted) {
       return throwObservable("resolver emitted empty value");
     }
 
     if (emitted instanceof Array) {
-      return resolveArrayResults(
-        emitted,
-        newTypes,
-        definition,
-        context,
-        resolver
-      );
+      return resolveArrayResults(...resolverArgs);
     }
 
-    return resolveResult(emitted, newTypes, definition, context, resolver);
+    return resolveResult(...resolverArgs);
   });
 }
 
