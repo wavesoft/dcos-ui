@@ -13,6 +13,26 @@ import JobDetailPageContainer from "#PLUGINS/jobs/src/js/JobDetailPageContainer"
 import JobsTaskDetailPage from "#PLUGINS/jobs/src/js/pages/JobTaskDetailPage";
 import JobsPage from "../pages/JobsPage";
 
+import GraphiQL from "graphiql";
+import "graphiql/graphiql.css";
+
+function GraphiQLWrapper() {
+  const schema = null; // our graphql has no introspection currently, so we need to get the schema
+  // fetcher seems to be able to handle observables
+  const fetcher = () => Promise.resolve({});
+  return (
+    <div id="isolator" style={{ width: "100%" }}>
+      <GraphiQL fetcher={fetcher} schema={schema} />
+    </div>
+  );
+}
+
+GraphiQLWrapper.routeConfig = {
+  label: "GraphiQL",
+  icon: <span>🚒</span>,
+  matches: /^\/development/
+};
+
 const jobsRoutes = [
   {
     type: Redirect,
@@ -21,7 +41,7 @@ const jobsRoutes = [
   },
   {
     type: Route,
-    component: JobsPage,
+    component: GraphiQLWrapper,
     path: "jobs",
     category: "root",
     isInSidebar: true,
